@@ -4,11 +4,11 @@ import {
   Check,
   ChevronRight,
   Flame,
-  KeyRound,
   ListChecks,
   LoaderCircle,
   RotateCcw,
   Send,
+  Settings,
   Sparkles,
   Timer,
   X,
@@ -21,6 +21,7 @@ import { useCatalog } from '../lib/data.ts'
 import { formatEuro, formatNutrient } from '../lib/format.ts'
 import {
   askGeminiChef,
+  checkBackendGeminiStatus,
   checkGeminiServer,
   clearGeminiApiKey,
   getStoredGeminiApiKey,
@@ -62,13 +63,21 @@ export function Chatbot() {
   const ui = useUi()
 
   const [apiKey, setApiKey] = useState<string>(() => getStoredGeminiApiKey())
+  const [backendReady, setBackendReady] = useState<boolean>(false)
   const [showKeyModal, setShowKeyModal] = useState<boolean>(false)
   const [keyInput, setKeyInput] = useState<string>(apiKey)
   const [serverOn, setServerOn] = useState(false)
   useEffect(() => {
     void checkGeminiServer().then(setServerOn)
   }, [])
-  const geminiOn = apiKey !== '' || serverOn
+
+  useEffect(() => {
+    checkBackendGeminiStatus().then((hasKey) => {
+      setBackendReady(hasKey)
+    })
+  }, [apiKey])
+
+  const isAiActive = backendReady || serverOn || Boolean(apiKey)
 
   const [messages, setMessages] = useState<ChatItem[]>(() => [
     {
@@ -76,7 +85,7 @@ export function Chatbot() {
       role: 'assistant',
       text: '¡Hola! Soy tu **Chef IA** de SíChef 👨‍🍳✨\n\nPuedes pedirme en lenguaje natural lo que te apetezca hoy (por ejemplo: *«me apetece un plato caliente con arroz»* o *«un plato con mucha proteína»*). Te daré una recomendación directa con productos de Mercadona, te explicaré por qué y podrás añadirla a tu Recetario.',
       timestamp: 0,
-      source: getStoredGeminiApiKey() ? 'gemini' : 'local',
+      source: 'local',
     },
   ])
 
@@ -159,7 +168,7 @@ export function Chatbot() {
     saveGeminiApiKey(keyInput)
     setApiKey(keyInput.trim())
     setShowKeyModal(false)
-    ui.notify(keyInput.trim() ? 'Clave de Google Gemini guardada' : 'Clave eliminada')
+    ui.notify(keyInput.trim() ? 'Ajustes guardados' : 'Clave eliminada')
   }
 
   const handleClearKey = () => {
@@ -167,23 +176,23 @@ export function Chatbot() {
     setApiKey('')
     setKeyInput('')
     setShowKeyModal(false)
-    ui.notify('Clave de Google Gemini eliminada')
+    ui.notify('Clave eliminada')
   }
 
   return (
     <div className="flex h-full flex-col bg-canvas">
-      {/* Cabecera con estado de la API de Google Gemini */}
+      {/* Cabecera con estado del Chef IA */}
       <ScreenHeader
         title="Chef IA"
-        subtitle="Recomendaciones personalizadas con Google Gemini"
+        subtitle="Tu asistente de recetas con productos reales de Mercadona"
       >
         <div className="mt-3 flex items-center justify-between gap-2 border-t border-white/20 pt-2.5">
           <div className="flex items-center gap-1.5 text-xs font-bold text-white/90">
             <span
-              className={`size-2 rounded-full ${geminiOn ? 'bg-emerald-300 animate-pulse' : 'bg-amber-300'}`}
+              className={`size-2 rounded-full ${isAiActive ? 'bg-emerald-300 animate-pulse' : 'bg-emerald-300/80'}`}
               aria-hidden
             />
-            <span>{apiKey ? 'Google Gemini activo (tu clave)' : serverOn ? 'Google Gemini activo' : 'Modo local (sin clave)'}</span>
+            <span>{isAiActive ? 'En línea' : 'Disponible'}</span>
           </div>
           <button
             type="button"
@@ -193,8 +202,8 @@ export function Chatbot() {
             }}
             className="inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-xs font-black text-white hover:bg-white/30 transition-colors"
           >
-            <KeyRound className="size-3.5" aria-hidden />
-            <span>{apiKey ? 'Configurar clave' : serverOn ? 'Usar otra clave' : 'Añadir API Key'}</span>
+            <Settings className="size-3.5" aria-hidden />
+            <span>Ajustes</span>
           </button>
         </div>
       </ScreenHeader>
@@ -223,18 +232,9 @@ export function Chatbot() {
           return (
             <div key={msg.id} className="flex flex-col items-start gap-1 max-w-[95%]">
               {/* Etiqueta de procedencia */}
-              <div className="flex items-center gap-1 text-[11px] font-extrabold text-muted pl-1">
+              <div className="flex items-center gap-1.5 text-[11px] font-extrabold text-muted pl-1">
                 <Bot className="size-3.5 text-brand" aria-hidden />
                 <span>Chef IA</span>
-                {msg.source === 'gemini' ? (
-                  <span className="inline-flex items-center gap-0.5 rounded-full bg-emerald-50 px-1.5 py-0.2 text-[10px] font-bold text-brand-dark">
-                    <Sparkles className="size-2.5" /> Gemini
-                  </span>
-                ) : (
-                  <span className="rounded-full bg-panel px-1.5 py-0.2 text-[10px] font-bold text-muted">
-                    Local
-                  </span>
-                )}
               </div>
 
               {/* Burbuja de texto */}
@@ -354,7 +354,7 @@ export function Chatbot() {
         {loading && (
           <div className="flex items-center gap-2 rounded-2xl bg-white px-4 py-3 text-xs font-bold text-muted shadow-soft border border-line max-w-[85%]">
             <LoaderCircle className="size-4 animate-spin text-accent" aria-hidden />
-            <span>Chef IA pensando tu recomendación con Google Gemini…</span>
+            <span>Chef IA pensando tu recomendación…</span>
           </div>
         )}
 
@@ -402,18 +402,18 @@ export function Chatbot() {
         </form>
       </div>
 
-      {/* Modal de configuración de API Key de Google Gemini */}
+      {/* Modal de configuración del Asistente */}
       {showKeyModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
           <div className="w-full max-w-sm rounded-3xl bg-white p-5 shadow-phone space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="grid size-9 place-items-center rounded-full bg-brand-soft text-brand">
-                  <KeyRound className="size-5" />
+                  <Settings className="size-5" />
                 </div>
                 <div>
-                  <h2 className="text-base font-black text-ink">API Key de Google</h2>
-                  <p className="text-xs font-semibold text-muted">Google Gemini Flash</p>
+                  <h2 className="text-base font-black text-ink">Ajustes del Asistente</h2>
+                  <p className="text-xs font-semibold text-muted">Estado y conexión</p>
                 </div>
               </div>
               <button
@@ -426,38 +426,32 @@ export function Chatbot() {
             </div>
 
             <p className="text-xs text-muted leading-relaxed">
-              Introduce tu clave de Google Gemini para habilitar el procesamiento en tiempo real con
-              los modelos más avanzados de Google.
+              En producción y en local, la conexión se gestiona de forma segura a través del servidor
+              mediante variables de entorno, protegiendo el servicio sin exponer claves en el navegador.
             </p>
+
+            {backendReady && (
+              <div className="rounded-xl border border-emerald-200/80 bg-emerald-50 p-2.5 text-xs font-bold text-brand-dark">
+                ✅ Servidor conectado y activo. El chatbot está listo para recomendar recetas.
+              </div>
+            )}
 
             <form onSubmit={handleSaveKeySubmit} className="space-y-3">
               <div>
-                <label htmlFor="gemini-key" className="block text-xs font-extrabold text-ink mb-1">
-                  Clave de API (Google AI Studio)
+                <label htmlFor="assistant-key" className="block text-xs font-extrabold text-ink mb-1">
+                  Clave opcional de pruebas
                 </label>
                 <input
-                  id="gemini-key"
+                  id="assistant-key"
                   type="password"
                   value={keyInput}
                   onChange={(e) => setKeyInput(e.target.value)}
-                  placeholder="AIzaSy..."
+                  placeholder="Introduce clave de pruebas..."
                   className="w-full rounded-xl border border-line bg-canvas px-3 py-2 text-sm font-medium focus:border-brand focus:outline-none"
                 />
               </div>
 
               <div className="rounded-xl bg-canvas p-2.5 text-[11px] text-muted space-y-1">
-                <p>
-                  💡 <strong>¿No tienes clave?</strong> Consíguela gratis en{' '}
-                  <a
-                    href="https://aistudio.google.com/app/apikey"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-bold text-brand underline"
-                  >
-                    Google AI Studio
-                  </a>
-                  .
-                </p>
                 <p>🔒 La clave se almacena exclusivamente de forma local en tu navegador.</p>
               </div>
 

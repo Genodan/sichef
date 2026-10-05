@@ -1,5 +1,8 @@
-// Integración con la API de Google Gemini para SíChef («Chef IA»).
-// Cumple estrictamente con AGENTS.md:
+// Integración segura con Google Gemini para SíChef («Chef IA»).
+// Protege la clave GEMINI_API_KEY en el backend/servidor (Vercel Serverless Function / Vite dev server)
+// sin exponer la clave en el código cliente ni en variables públicas del navegador.
+//
+// Cumple con AGENTS.md:
 // 1. La IA no inventa datos: solo recomienda recetas del catálogo oficial (recipes.json).
 // 2. Precios y nutrientes siempre «calculados», nunca «estimados».
 // 3. Reglas duras de alérgenos antes de recomendar.
@@ -40,38 +43,11 @@ async function listUsableModels(apiKey: string): Promise<string[]> {
   return discovered.models
 }
 
+/** Devuelve la clave si el usuario ha configurado una manualmente en el navegador */
 export function getStoredGeminiApiKey(): string {
-  const local = typeof window !== 'undefined' ? window.localStorage.getItem(STORAGE_KEY) : null
-  if (local && local.trim()) return local.trim()
-  // La clave del equipo NO se mete en el bundle: vive en el servidor (api/gemini.ts, GEMINI_API_KEY en Vercel).
-  return ''
-}
-
-let serverStatus: Promise<boolean> | null = null
-
-/** ¿Hay una clave configurada en el servidor de Vercel? (en `npm run dev` no hay servidor → false) */
-export function checkGeminiServer(): Promise<boolean> {
-  serverStatus ??= fetch('/api/gemini')
-    .then((r) => (r.ok ? r.json() : { configured: false }))
-    .then((d: { configured?: boolean }) => d?.configured === true)
-    .catch(() => false)
-  return serverStatus
-}
-
-/** Petición a Gemini a través de la función de Vercel (la clave no sale del servidor). */
-async function callGeminiServer(
-  systemPrompt: string,
-  userMessage: string,
-  history: { role: 'user' | 'assistant'; text: string }[],
-): Promise<{ text: string; model: string }> {
-  const res = await fetch('/api/gemini', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ systemPrompt, userMessage, history: history.slice(-4) }),
-  })
-  const data = (await res.json().catch(() => ({}))) as { text?: string; model?: string; error?: string }
-  if (!res.ok || !data.text) throw new Error(data.error || `Servidor de Gemini (${res.status})`)
-  return { text: data.text, model: data.model ?? 'gemini' }
+  if (typeof window === 'undefined') return ''
+  const local = window.localStorage.getItem(STORAGE_KEY)
+  return local ? local.trim() : ''
 }
 
 export function saveGeminiApiKey(key: string): void {
@@ -89,6 +65,32 @@ export function clearGeminiApiKey(): void {
     window.localStorage.removeItem(STORAGE_KEY)
   }
 }
+
+let serverStatusPromise: Promise<boolean> | null = null
+
+/** Comprueba si el backend (servidor Vercel o Vite dev) tiene GEMINI_API_KEY configurada */
+export async function checkBackendGeminiStatus(): Promise<boolean> {
+  serverStatusPromise ??= (async () => {
+    try {
+      const res = await fetch('/api/chat', { method: 'GET' }).catch(() => null)
+      if (res && res.ok) {
+        const d = (await res.json().catch(() => ({}))) as { hasKey?: boolean; configured?: boolean }
+        if (d.hasKey || d.configured) return true
+      }
+      const res2 = await fetch('/api/gemini', { method: 'GET' }).catch(() => null)
+      if (res2 && res2.ok) {
+        const d2 = (await res2.json().catch(() => ({}))) as { configured?: boolean; hasKey?: boolean }
+        if (d2.configured || d2.hasKey) return true
+      }
+      return false
+    } catch {
+      return false
+    }
+  })()
+  return serverStatusPromise
+}
+
+export const checkGeminiServer = checkBackendGeminiStatus
 
 export interface RecommendationResult {
   recipeId: string | null
@@ -172,7 +174,73 @@ REGLAS ESTRICTAS DE SÍCHEF (OBLIGATORIAS):
   "reason": string
 }`
 
-/** Realiza la petición a la API de Google Gemini */
+/** Realiza la petición segura a través del endpoint /api/chat o /api/gemini (servidor backend) */
+async function callChatBackend(
+  systemPrompt: string,
+  userMessage: string,
+  history: { role: 'user' | 'assistant'; text: string }[],
+  customKey?: string,
+): Promise<{ text: string; model?: string }> {
+  const contents = [
+    ...history.slice(-4).map((h) => ({
+      role: h.role === 'user' ? 'user' : 'model',
+      parts: [{ text: h.text }],
+    })),
+    {
+      role: 'user',
+      parts: [{ text: userMessage }],
+    },
+  ]
+
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+  }
+  if (customKey && customKey.trim()) {
+    headers['x-gemini-api-key'] = customKey.trim()
+  }
+
+  const res = await fetch('/api/chat', {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({
+      systemInstruction: {
+        parts: [{ text: systemPrompt }],
+      },
+      contents,
+      generationConfig: {
+        temperature: 0.2,
+        responseMimeType: 'application/json',
+      },
+    }),
+  })
+
+  if (res.ok) {
+    const data = await res.json()
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text
+    if (text) {
+      return { text, model: 'gemini' }
+    }
+  }
+
+  if (res.status === 404) {
+    const resGemini = await fetch('/api/gemini', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ systemPrompt, userMessage, history: history.slice(-4) }),
+    })
+    if (resGemini.ok) {
+      const gData = await resGemini.json().catch(() => ({}))
+      if (gData.text) {
+        return { text: gData.text, model: gData.model ?? 'gemini' }
+      }
+    }
+  }
+
+  const errData = await res.json().catch(() => null)
+  throw new Error(errData?.error || `Error del servidor (${res.status})`)
+}
+
+/** Realiza la petición directa a la API de Google Gemini en el cliente como fallback */
 async function callGeminiApi(
   apiKey: string,
   systemPrompt: string,
@@ -212,7 +280,6 @@ async function callGeminiApi(
 
       if (!res.ok) {
         const errorText = await res.text().catch(() => '')
-        // Si el modelo no existe (404), intentamos con el siguiente modelo de la lista
         if ([404, 429, 500, 503].includes(res.status)) {
           lastError = new Error(`Modelo ${model} no disponible (${res.status})`)
           continue
@@ -228,17 +295,16 @@ async function callGeminiApi(
       return { text, model }
     } catch (err) {
       lastError = err instanceof Error ? err : new Error(String(err))
-      // Si no es un 404, propagamos el error para no enmascarar claves inválidas o errores de cuota
       if (!/no disponible/.test(lastError.message)) {
         throw lastError
       }
     }
   }
 
-  throw lastError ?? new Error('No se pudo conectar con los modelos de Google Gemini')
+  throw lastError || new Error('No se pudo conectar con ningún modelo de Gemini')
 }
 
-/** Motor de recomendación local inteligente (fallback si no hay API key o no hay red) */
+/** Motor de recomendación local inteligente (fallback si no hay clave configurada o no hay red) */
 function localChefFallback({
   userPrompt,
   catalog,
@@ -367,63 +433,67 @@ function localChefFallback({
 
 /**
  * Función principal para interactuar con el Chef IA:
- * Si hay clave de Google Gemini, llama a la API.
- * Si falla la API o no hay clave, recurre al motor local garantizando que la app siempre responda.
+ * 1. Intenta consultar el backend seguro /api/chat o /api/gemini (usa GEMINI_API_KEY del servidor o clave custom).
+ * 2. Si el servidor no está disponible y hay clave local, consulta directamente a Gemini.
+ * 3. Si no hay clave o falla la red, recurre al motor local inteligente de SíChef.
  */
 export async function askGeminiChef(params: ChatContextParams): Promise<RecommendationResult> {
-  const apiKey = getStoredGeminiApiKey()
-  const useServer = !apiKey && (await checkGeminiServer())
+  const customKey = getStoredGeminiApiKey()
 
-  if (apiKey || useServer) {
+  try {
+    const catalogContext = buildCatalogContext(params.catalog, params.visibility, params.household)
+    const userMessage = `Petición del usuario: "${params.userPrompt}"\n\nCatálogo de recetas oficiales de SíChef:\n${catalogContext}`
+
+    let result: { text: string; model?: string }
     try {
-      const catalogContext = buildCatalogContext(params.catalog, params.visibility, params.household)
-      const userMessage = `Petición del usuario: "${params.userPrompt}"\n\nCatálogo de recetas oficiales de SíChef:\n${catalogContext}`
-
-      const { text, model } = apiKey
-        ? await callGeminiApi(apiKey, SYSTEM_INSTRUCTION, userMessage, params.history ?? [])
-        : await callGeminiServer(SYSTEM_INSTRUCTION, userMessage, params.history ?? [])
-
-      // Extraer y limpiar JSON de la respuesta
-      let parsed: { recipeId?: string | null; reply?: string; reason?: string }
-      try {
-        const jsonMatch = text.match(/\{[\s\S]*\}/)
-        const cleanJson = jsonMatch ? jsonMatch[0] : text
-        parsed = JSON.parse(cleanJson)
-      } catch {
-        parsed = {
-          recipeId: null,
-          reply: text,
-          reason: 'Respuesta generada por Google Gemini.',
-        }
-      }
-
-      // Validar si el recipeId existe en el catálogo
-      let validRecipeId: string | null = null
-      if (parsed.recipeId && typeof parsed.recipeId === 'string') {
-        const found = params.catalog.recipes.find((r) => r.id === parsed.recipeId)
-        if (found) {
-          validRecipeId = found.id
-        }
-      }
-
-      return {
-        recipeId: validRecipeId,
-        reply: parsed.reply || 'Aquí tienes mi recomendación de SíChef.',
-        reason: parsed.reason || 'Basado en los ingredientes y valores nutricionales de nuestro catálogo.',
-        source: 'gemini',
-        modelUsed: model,
-      }
-    } catch (err) {
-      console.warn('Fallo en la llamada a Google Gemini, usando fallback local:', err)
-      // En caso de error en la API (p. ej. cuota, corte de red), recurrir al motor local
-      const local = localChefFallback(params)
-      return {
-        ...local,
-        reply: `${local.reply} *(Nota: Gemini no pudo responder (${err instanceof Error ? err.message : 'error'}), se usó el motor local de SíChef)*`,
+      result = await callChatBackend(SYSTEM_INSTRUCTION, userMessage, params.history ?? [], customKey)
+    } catch (backendErr) {
+      if (customKey) {
+        result = await callGeminiApi(customKey, SYSTEM_INSTRUCTION, userMessage, params.history ?? [])
+      } else {
+        throw backendErr
       }
     }
-  }
 
-  // Sin API key configurada: respuesta con motor local
-  return localChefFallback(params)
+    const { text, model } = result
+
+    // Extraer y limpiar JSON de la respuesta
+    let parsed: { recipeId?: string | null; reply?: string; reason?: string }
+    try {
+      const jsonMatch = text.match(/\{[\s\S]*\}/)
+      const cleanJson = jsonMatch ? jsonMatch[0] : text
+      parsed = JSON.parse(cleanJson)
+    } catch {
+      parsed = {
+        recipeId: null,
+        reply: text,
+        reason: 'Recomendación basada en tus preferencias y el catálogo de SíChef.',
+      }
+    }
+
+    // Validar si el recipeId existe en el catálogo
+    let validRecipeId: string | null = null
+    if (parsed.recipeId && typeof parsed.recipeId === 'string') {
+      const found = params.catalog.recipes.find((r) => r.id === parsed.recipeId)
+      if (found) {
+        validRecipeId = found.id
+      }
+    }
+
+    return {
+      recipeId: validRecipeId,
+      reply: parsed.reply || 'Aquí tienes mi recomendación de SíChef.',
+      reason: parsed.reason || 'Basado en los ingredientes y valores nutricionales de nuestro catálogo.',
+      source: 'gemini',
+      modelUsed: model,
+    }
+  } catch (err) {
+    console.warn('Llamada a Gemini no disponible, usando motor local:', err)
+    // En caso de que el backend no tenga GEMINI_API_KEY o falle la red, fallback a motor local
+    const local = localChefFallback(params)
+    return {
+      ...local,
+      reply: `${local.reply}`,
+    }
+  }
 }
