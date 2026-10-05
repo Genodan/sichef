@@ -1,4 +1,4 @@
-import { ChevronRight, PackageSearch, Search as SearchIcon, ShieldCheck, X } from 'lucide-react'
+import { ChevronRight, PackageSearch, Search as SearchIcon, ShieldCheck, Sparkles, X } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import type { Product } from '../types.ts'
 import { RecipeRow } from '../components/RecipeRow.tsx'
@@ -109,6 +109,24 @@ export function Search() {
       </ScreenHeader>
 
       <div className="no-scrollbar flex-1 overflow-y-auto px-4 pb-6 pt-4">
+        {!selected && (
+          <button
+            type="button"
+            onClick={() => ui.goTo('chat')}
+            className="mb-3 flex w-full items-center justify-between gap-2 rounded-2xl border border-brand/20 bg-brand-soft/70 p-3 text-left transition-colors hover:bg-brand-soft"
+          >
+            <div className="flex items-center gap-2.5 min-w-0">
+              <span className="grid size-8 shrink-0 place-items-center rounded-xl bg-brand text-white shadow-2xs">
+                <Sparkles className="size-4" aria-hidden />
+              </span>
+              <div className="min-w-0">
+                <p className="text-xs font-black text-brand-dark">¿Prefieres pedir lo que te apetece?</p>
+                <p className="truncate text-[11px] font-semibold text-muted">Habla con el Chef IA para recomendaciones directas</p>
+              </div>
+            </div>
+            <ChevronRight className="size-4 shrink-0 text-brand" aria-hidden />
+          </button>
+        )}
         {selected ? (
           <>
             <div className="mb-4 flex items-center gap-3 rounded-3xl bg-white p-3 shadow-soft">

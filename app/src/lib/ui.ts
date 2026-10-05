@@ -2,9 +2,9 @@
 
 import { createContext, useContext } from 'react'
 
-export type TabId = 'descubre' | 'buscar' | 'recetario' | 'cesta' | 'perfil'
+export type TabId = 'descubre' | 'buscar' | 'recetario' | 'cesta' | 'perfil' | 'chat'
 
-export const TAB_IDS: readonly TabId[] = ['descubre', 'buscar', 'recetario', 'cesta', 'perfil']
+export const TAB_IDS: readonly TabId[] = ['descubre', 'buscar', 'recetario', 'cesta', 'perfil', 'chat']
 
 export interface ToastAction {
   label: string
