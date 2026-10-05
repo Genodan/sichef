@@ -34,6 +34,6 @@ Inspirado en el mockup del equipo: fondo verde `#1f8a4c`, logo «Sí» blanco + 
 | `data/`, `app/public/data/`, `app/public/img/` | 🗂️ Datos (Luigi · Onur) | solo Datos |
 | `docs/` | 🎤 Pitch (Martín · Andrés) | solo Pitch |
 
-- Trabaja en una rama (`app/…`, `data/…`, `docs/…`) y abre un PR. Solo el integrador mergea a `main`.
+- **Nunca hagas push directo a `main`.** Crea una rama (`app/…`, `data/…`, `docs/…`), haz push de la rama y abre un PR. Solo el integrador (Bogdan, @Genodan) mergea a `main`.
 - Antes de un PR: `cd app && npm run build` sin errores.
 - Nunca subas `.env`, claves ni `data/raw/`.
