@@ -55,8 +55,25 @@ const isRecipe = (x: unknown): x is Recipe =>
   isObj(x) && typeof x.id === 'string' && typeof x.name === 'string' && Array.isArray(x.ingredients) && Array.isArray(x.steps)
 const isStore = (x: unknown): x is Store => isObj(x) && typeof x.id === 'string' && Array.isArray(x.aisles) && isObj(x.locations)
 
+function normalizeRawItem(item: unknown, name: FileName): unknown {
+  if (!isObj(item)) return item
+  if (name === 'products') {
+    const p = { ...item }
+    if (!p.name && typeof p.nombre === 'string') p.name = p.nombre
+    if (p.unit_price === undefined && typeof p.precio === 'number') p.unit_price = p.precio
+    return p
+  }
+  if (name === 'recipes') {
+    const r = { ...item }
+    if (!r.name && typeof r.nombre === 'string') r.name = r.nombre
+    return r
+  }
+  return item
+}
+
 function keep<T>(list: unknown[], guard: (x: unknown) => x is T, name: FileName): T[] {
-  const ok = list.filter(guard)
+  const normalized = list.map((item) => normalizeRawItem(item, name))
+  const ok = normalized.filter(guard)
   if (ok.length !== list.length) {
     console.warn(`[SíChef] ${name}.json: ${list.length - ok.length} registro(s) ignorado(s) por no cumplir el contrato.`)
   }

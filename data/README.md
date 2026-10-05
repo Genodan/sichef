@@ -16,6 +16,7 @@ Datos **reales y verificables** del template de SíChef. La app solo lee los JSO
 ```bash
 python3 data/scripts/build_template_data.py            # usa la caché de data/raw/
 python3 data/scripts/build_template_data.py --refresh  # vuelve a descargarlo todo (precios del día)
+python3 data/scripts/ingest_datos_branch.py            # normaliza e integra data/products.json y data/recipes.json del grupo Datos
 python3 data/scripts/validate.py                       # comprueba contra app/src/types.ts (sale con 1 si hay errores)
 ```
 

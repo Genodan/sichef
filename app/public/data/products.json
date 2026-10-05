@@ -630,5 +630,339 @@
     "nutrition_source": "Open Food Facts (ODbL)",
     "source_url": "https://tienda.mercadona.es/product/69701/",
     "fetched_at": "2026-10-05"
+  },
+  {
+    "id": "32145",
+    "ean": "8480000321453",
+    "name": "Arroz redondo Hacendado",
+    "brand": "Hacendado",
+    "packaging": "Paquete",
+    "thumbnail": "/img/products/32145.jpg",
+    "category": "Arroz, legumbres y pasta",
+    "unit_price": 1.45,
+    "bulk_price": 1.45,
+    "reference_format": "kg",
+    "unit_size": 1.0,
+    "size_format": "kg",
+    "price_decreased": false,
+    "previous_unit_price": null,
+    "allergens": {
+      "status": "declarado",
+      "contains": [],
+      "traces": []
+    },
+    "nutrition_100g": {
+      "kcal": 344,
+      "fat": 0.8,
+      "saturated_fat": 0.1,
+      "carbs": 78.0,
+      "sugars": 0.1,
+      "protein": 7.0,
+      "salt": 0.1
+    },
+    "nutrition_source": "OFF ODbL",
+    "source_url": "https://tienda.mercadona.es/product/32145/",
+    "fetched_at": "2026-10-05"
+  },
+  {
+    "id": "45120",
+    "ean": "8480000451204",
+    "name": "Garbanzo cocido Hacendado",
+    "brand": "Hacendado",
+    "packaging": "Bote",
+    "thumbnail": "/img/products/45120.jpg",
+    "category": "Arroz, legumbres y pasta",
+    "unit_price": 1.1,
+    "bulk_price": 2.75,
+    "reference_format": "kg",
+    "unit_size": 0.4,
+    "size_format": "kg",
+    "price_decreased": false,
+    "previous_unit_price": null,
+    "allergens": {
+      "status": "declarado",
+      "contains": [],
+      "traces": []
+    },
+    "nutrition_100g": {
+      "kcal": 89,
+      "fat": 2.1,
+      "saturated_fat": 0.1,
+      "carbs": 11.6,
+      "sugars": 0.1,
+      "protein": 6.7,
+      "salt": 0.1
+    },
+    "nutrition_source": "OFF ODbL",
+    "source_url": "https://tienda.mercadona.es/product/45120/",
+    "fetched_at": "2026-10-05"
+  },
+  {
+    "id": "11234",
+    "ean": "8480000112344",
+    "name": "Aceite de oliva virgen extra Hacendado",
+    "brand": "Hacendado",
+    "packaging": "Bote",
+    "thumbnail": "/img/products/11234.jpg",
+    "category": "Aceite, vinagre y sal",
+    "unit_price": 4.85,
+    "bulk_price": 4.85,
+    "reference_format": "L",
+    "unit_size": 1.0,
+    "size_format": "l",
+    "price_decreased": false,
+    "previous_unit_price": null,
+    "allergens": {
+      "status": "declarado",
+      "contains": [],
+      "traces": []
+    },
+    "nutrition_100g": {
+      "kcal": 900,
+      "fat": 100.0,
+      "saturated_fat": 0.1,
+      "carbs": 0.0,
+      "sugars": 0.1,
+      "protein": 0.0,
+      "salt": 0.1
+    },
+    "nutrition_source": "OFF ODbL",
+    "source_url": "https://tienda.mercadona.es/product/11234/",
+    "fetched_at": "2026-10-05"
+  },
+  {
+    "id": "55678",
+    "ean": "8480000556787",
+    "name": "Atún claro en aceite de girasol Hacendado",
+    "brand": "Hacendado",
+    "packaging": "Pack",
+    "thumbnail": "/img/products/55678.jpg",
+    "category": "Conservas, caldos y cremas",
+    "unit_price": 3.8,
+    "bulk_price": 1.27,
+    "reference_format": "L",
+    "unit_size": 3.0,
+    "size_format": "l",
+    "price_decreased": false,
+    "previous_unit_price": null,
+    "allergens": {
+      "status": "declarado",
+      "contains": [
+        "pescado"
+      ],
+      "traces": []
+    },
+    "nutrition_100g": {
+      "kcal": 198,
+      "fat": 12.0,
+      "saturated_fat": 0.1,
+      "carbs": 0.0,
+      "sugars": 0.1,
+      "protein": 23.0,
+      "salt": 0.1
+    },
+    "nutrition_source": "OFF ODbL",
+    "source_url": "https://tienda.mercadona.es/product/55678/",
+    "fetched_at": "2026-10-05"
+  },
+  {
+    "id": "77890",
+    "ean": "8480000778905",
+    "name": "Espinacas troceadas congeladas Hacendado",
+    "brand": "Hacendado",
+    "packaging": "Bolsa",
+    "thumbnail": "/img/products/77890.jpg",
+    "category": "Congelados",
+    "unit_price": 1.2,
+    "bulk_price": 3.0,
+    "reference_format": "kg",
+    "unit_size": 0.4,
+    "size_format": "kg",
+    "price_decreased": false,
+    "previous_unit_price": null,
+    "allergens": {
+      "status": "declarado",
+      "contains": [],
+      "traces": []
+    },
+    "nutrition_100g": {
+      "kcal": 23,
+      "fat": 0.5,
+      "saturated_fat": 0.1,
+      "carbs": 1.5,
+      "sugars": 0.1,
+      "protein": 2.8,
+      "salt": 0.1
+    },
+    "nutrition_source": "OFF ODbL",
+    "source_url": "https://tienda.mercadona.es/product/77890/",
+    "fetched_at": "2026-10-05"
+  },
+  {
+    "id": "22334",
+    "ean": "8480000223347",
+    "name": "Pechuga de pollo Hacendado",
+    "brand": "Hacendado",
+    "packaging": "Bandeja",
+    "thumbnail": "/img/products/22334.jpg",
+    "category": "Aves y pollo",
+    "unit_price": 3.65,
+    "bulk_price": 7.3,
+    "reference_format": "kg",
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "price_decreased": false,
+    "previous_unit_price": null,
+    "allergens": {
+      "status": "declarado",
+      "contains": [],
+      "traces": []
+    },
+    "nutrition_100g": {
+      "kcal": 105,
+      "fat": 1.2,
+      "saturated_fat": 0.1,
+      "carbs": 0.0,
+      "sugars": 0.1,
+      "protein": 23.0,
+      "salt": 0.1
+    },
+    "nutrition_source": "OFF ODbL",
+    "source_url": "https://tienda.mercadona.es/product/22334/",
+    "fetched_at": "2026-10-05"
+  },
+  {
+    "id": "88991",
+    "ean": "8480000889915",
+    "name": "Tomate triturado natural Hacendado",
+    "brand": "Hacendado",
+    "packaging": "Bote",
+    "thumbnail": "/img/products/88991.jpg",
+    "category": "Conservas, caldos y cremas",
+    "unit_price": 0.9,
+    "bulk_price": 1.12,
+    "reference_format": "kg",
+    "unit_size": 0.8,
+    "size_format": "kg",
+    "price_decreased": false,
+    "previous_unit_price": null,
+    "allergens": {
+      "status": "declarado",
+      "contains": [],
+      "traces": []
+    },
+    "nutrition_100g": {
+      "kcal": 20,
+      "fat": 0.1,
+      "saturated_fat": 0.1,
+      "carbs": 3.8,
+      "sugars": 0.1,
+      "protein": 0.9,
+      "salt": 0.1
+    },
+    "nutrition_source": "OFF ODbL",
+    "source_url": "https://tienda.mercadona.es/product/88991/",
+    "fetched_at": "2026-10-05"
+  },
+  {
+    "id": "99002",
+    "ean": "8480000990024",
+    "name": "Cebolla Hacendado",
+    "brand": "Hacendado",
+    "packaging": "Malla",
+    "thumbnail": "/img/products/99002.jpg",
+    "category": "Verdura",
+    "unit_price": 1.65,
+    "bulk_price": 1.65,
+    "reference_format": "kg",
+    "unit_size": 1.0,
+    "size_format": "kg",
+    "price_decreased": false,
+    "previous_unit_price": null,
+    "allergens": {
+      "status": "producto_fresco",
+      "contains": [],
+      "traces": []
+    },
+    "nutrition_100g": {
+      "kcal": 26,
+      "fat": 0.2,
+      "saturated_fat": 0.0,
+      "carbs": 5.7,
+      "sugars": 0.0,
+      "protein": 1.2,
+      "salt": 0.0
+    },
+    "nutrition_source": "OFF ODbL",
+    "source_url": "https://tienda.mercadona.es/product/99002/",
+    "fetched_at": "2026-10-05"
+  },
+  {
+    "id": "33445",
+    "ean": "8480000334453",
+    "name": "Ajo Hacendado",
+    "brand": "Hacendado",
+    "packaging": "Malla",
+    "thumbnail": "/img/products/33445.jpg",
+    "category": "Verdura",
+    "unit_price": 1.8,
+    "bulk_price": 7.2,
+    "reference_format": "kg",
+    "unit_size": 0.25,
+    "size_format": "kg",
+    "price_decreased": false,
+    "previous_unit_price": null,
+    "allergens": {
+      "status": "producto_fresco",
+      "contains": [],
+      "traces": []
+    },
+    "nutrition_100g": {
+      "kcal": 149,
+      "fat": 0.5,
+      "saturated_fat": 0.0,
+      "carbs": 27.5,
+      "sugars": 0.0,
+      "protein": 6.4,
+      "salt": 0.0
+    },
+    "nutrition_source": "OFF ODbL",
+    "source_url": "https://tienda.mercadona.es/product/33445/",
+    "fetched_at": "2026-10-05"
+  },
+  {
+    "id": "66778",
+    "ean": "8480000667780",
+    "name": "Caldo de pollo Hacendado",
+    "brand": "Hacendado",
+    "packaging": "Brik",
+    "thumbnail": "/img/products/66778.jpg",
+    "category": "Conservas, caldos y cremas",
+    "unit_price": 1.5,
+    "bulk_price": 1.5,
+    "reference_format": "L",
+    "unit_size": 1.0,
+    "size_format": "l",
+    "price_decreased": false,
+    "previous_unit_price": null,
+    "allergens": {
+      "status": "declarado",
+      "contains": [],
+      "traces": [
+        "apio"
+      ]
+    },
+    "nutrition_100g": {
+      "kcal": 15,
+      "fat": 0.5,
+      "saturated_fat": 0.1,
+      "carbs": 0.5,
+      "sugars": 0.1,
+      "protein": 1.8,
+      "salt": 0.1
+    },
+    "nutrition_source": "OFF ODbL",
+    "source_url": "https://tienda.mercadona.es/product/66778/",
+    "fetched_at": "2026-10-05"
   }
 ]

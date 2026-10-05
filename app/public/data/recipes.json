@@ -403,5 +403,136 @@
       "url": "https://es.wikibooks.org/w/index.php?title=Artes+culinarias%2FRecetas%2FChampi%C3%B1ones+al+ajillo&oldid=426712",
       "license": "CC BY-SA 4.0"
     }
+  },
+  {
+    "id": "receta-garbanzos",
+    "name": "Garbanzos con espinacas",
+    "subtitle": "Guiso tradicional andaluz · Legumbres",
+    "image": {
+      "url": "/img/recipes/receta-garbanzos.jpg",
+      "author": "Tubamirum (Wikimedia Commons)",
+      "license": "Public domain",
+      "source_url": "https://commons.wikimedia.org/wiki/File:GarbanzosConEspinacas.jpg"
+    },
+    "servings": 2,
+    "time_min": 20,
+    "tags": [
+      "legumbres",
+      "tradicional",
+      "rápida",
+      "andaluz"
+    ],
+    "ingredients": [
+      {
+        "name": "Garbanzo cocido",
+        "quantity": 400.0,
+        "unit": "g",
+        "label": "400 g",
+        "product_id": "45120",
+        "optional": false
+      },
+      {
+        "name": "Espinacas troceadas congeladas",
+        "quantity": 200.0,
+        "unit": "g",
+        "label": "200 g",
+        "product_id": "77890",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 20.0,
+        "unit": "ml",
+        "label": "20 ml",
+        "product_id": "11234",
+        "optional": false
+      },
+      {
+        "name": "Ajo",
+        "quantity": 10.0,
+        "unit": "g",
+        "label": "10 g",
+        "product_id": "33445",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Descongelar las espinacas en el microondas o cocerlas brevemente y escurrirlas bien.",
+      "Picar los dientes de ajo en láminas finas y dorarlos en una sartén amplia con el aceite de oliva a fuego medio.",
+      "Añadir las espinacas bien escurridas a la sartén y rehogar durante 3 o 4 minutos para que tomen el sabor del ajo.",
+      "Enjuagar y escurrir los garbanzos cocidos de bote, e incorporarlos a la sartén junto con las espinacas.",
+      "Saltear todo junto a fuego medio durante 5 minutos para que se mezclen los sabores y servir bien caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es/es/consejos/alimentacion/receta-de-garbanzos-con-espinacas",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-pollo",
+    "name": "Arroz con pollo y caldo",
+    "subtitle": "Arroz meloso casero · Cocina española",
+    "image": {
+      "url": "/img/recipes/receta-pollo.jpg",
+      "author": "Linalymon (Wikimedia Commons)",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Arroz_con_Pollo.jpg"
+    },
+    "servings": 2,
+    "time_min": 30,
+    "tags": [
+      "arroz",
+      "pollo",
+      "plato principal",
+      "tradicional"
+    ],
+    "ingredients": [
+      {
+        "name": "Arroz redondo",
+        "quantity": 200.0,
+        "unit": "g",
+        "label": "200 g",
+        "product_id": "32145",
+        "optional": false
+      },
+      {
+        "name": "Pechuga de pollo",
+        "quantity": 250.0,
+        "unit": "g",
+        "label": "250 g",
+        "product_id": "22334",
+        "optional": false
+      },
+      {
+        "name": "Caldo de pollo",
+        "quantity": 500.0,
+        "unit": "ml",
+        "label": "500 ml",
+        "product_id": "66778",
+        "optional": false
+      },
+      {
+        "name": "Cebolla",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "99002",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Cortar la pechuga de pollo en dados medianos y picar finamente la cebolla.",
+      "En una cazuela o paellera con un hilo de aceite, dorar los trozos de pechuga de pollo a fuego vivo y reservar.",
+      "En el mismo recipiente, pochar la cebolla picada a fuego medio hasta que esté transparente y tierna.",
+      "Añadir el arroz redondo y sofreírlo durante 2 minutos hasta que quede nacarado.",
+      "Verter el caldo de pollo caliente, reincorporar el pollo y cocinar a fuego medio durante 18 minutos hasta que el arroz esté en su punto.",
+      "Retirar del fuego, dejar reposar tapado 3 minutos y servir."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es/es/consejos/alimentacion/recetas-de-arroz-con-pollo",
+      "license": "Receta Mercadona"
+    }
   }
 ]

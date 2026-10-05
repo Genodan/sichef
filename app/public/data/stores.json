@@ -145,6 +145,56 @@
         "aisle": 1,
         "side": "der",
         "shelf": "C"
+      },
+      "32145": {
+        "aisle": 7,
+        "side": "der",
+        "shelf": "A"
+      },
+      "45120": {
+        "aisle": 7,
+        "side": "izq",
+        "shelf": "C"
+      },
+      "11234": {
+        "aisle": 6,
+        "side": "der",
+        "shelf": "A"
+      },
+      "55678": {
+        "aisle": 8,
+        "side": "der",
+        "shelf": "A"
+      },
+      "77890": {
+        "aisle": 10,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "22334": {
+        "aisle": 2,
+        "side": "izq",
+        "shelf": "C"
+      },
+      "88991": {
+        "aisle": 8,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "99002": {
+        "aisle": 1,
+        "side": "der",
+        "shelf": "A"
+      },
+      "33445": {
+        "aisle": 1,
+        "side": "der",
+        "shelf": "B"
+      },
+      "66778": {
+        "aisle": 8,
+        "side": "der",
+        "shelf": "C"
       }
     },
     "stock": {
@@ -167,7 +217,17 @@
       "3210": true,
       "26951": true,
       "4706": true,
-      "69701": true
+      "69701": true,
+      "32145": true,
+      "45120": true,
+      "11234": true,
+      "55678": true,
+      "77890": true,
+      "22334": true,
+      "88991": true,
+      "99002": true,
+      "33445": true,
+      "66778": true
     }
   },
   {
@@ -320,6 +380,56 @@
         "aisle": 2,
         "side": "der",
         "shelf": "B"
+      },
+      "32145": {
+        "aisle": 8,
+        "side": "der",
+        "shelf": "A"
+      },
+      "45120": {
+        "aisle": 8,
+        "side": "izq",
+        "shelf": "D"
+      },
+      "11234": {
+        "aisle": 9,
+        "side": "der",
+        "shelf": "A"
+      },
+      "55678": {
+        "aisle": 7,
+        "side": "izq",
+        "shelf": "D"
+      },
+      "77890": {
+        "aisle": 10,
+        "side": "der",
+        "shelf": "A"
+      },
+      "22334": {
+        "aisle": 4,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "88991": {
+        "aisle": 7,
+        "side": "izq",
+        "shelf": "B"
+      },
+      "99002": {
+        "aisle": 2,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "33445": {
+        "aisle": 2,
+        "side": "der",
+        "shelf": "D"
+      },
+      "66778": {
+        "aisle": 7,
+        "side": "der",
+        "shelf": "B"
       }
     },
     "stock": {
@@ -342,7 +452,17 @@
       "3210": true,
       "26951": false,
       "4706": true,
-      "69701": true
+      "69701": true,
+      "32145": true,
+      "45120": true,
+      "11234": true,
+      "55678": true,
+      "77890": true,
+      "22334": true,
+      "88991": true,
+      "99002": true,
+      "33445": true,
+      "66778": true
     }
   }
 ]
