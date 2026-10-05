@@ -14,7 +14,7 @@
     "nutricion_calculada": { "kcal": 450, "precio_total": 2.45 }
   },
   {
-    "id": "receta-pollo",
+    "id": "receta-pollo-arroz",
     "nombre": "Arroz con pollo y caldo",
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Arroz_con_pollo.jpg",
     "fuente": "info.mercadona.es",
@@ -26,5 +26,375 @@
     ],
     "alergenos_derivados": { "gluten": "libre" },
     "nutricion_calculada": { "kcal": 820, "precio_total": 3.45 }
+  },
+  {
+    "id": "receta-lentejas",
+    "nombre": "Lentejas tradicionales",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Lentejas_con_chorizo.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "11111", "cantidad": "300g" },
+      { "producto_id": "99002", "cantidad": "100g" },
+      { "producto_id": "33445", "cantidad": "10g" },
+      { "producto_id": "88991", "cantidad": "200g" }
+    ],
+    "alergenos_derivados": { "gluten": "libre" },
+    "nutricion_calculada": { "kcal": 510, "precio_total": 3.85 }
+  },
+  {
+    "id": "receta-merluza-tomate",
+    "nombre": "Merluza al tomate",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Fish_dish.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "22222", "cantidad": "400g" },
+      { "producto_id": "88991", "cantidad": "400g" },
+      { "producto_id": "11234", "cantidad": "30ml" }
+    ],
+    "alergenos_derivados": { "pescado": "contiene" },
+    "nutricion_calculada": { "kcal": 420, "precio_total": 6.15 }
+  },
+  {
+    "id": "receta-macarrones-bolonesa",
+    "nombre": "Macarrones con carne y tomate",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Spaghetti_Bolognese_small.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10013", "cantidad": "250g" },
+      { "producto_id": "10038", "cantidad": "200g" },
+      { "producto_id": "88991", "cantidad": "300g" },
+      { "producto_id": "11234", "cantidad": "20ml" }
+    ],
+    "alergenos_derivados": { "gluten": "contiene" },
+    "nutricion_calculada": { "kcal": 750, "precio_total": 5.40 }
+  },
+  {
+    "id": "receta-tortilla-patatas",
+    "nombre": "Tortilla de patatas clásica",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Tortilla_de_patatas_madrid.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10018", "cantidad": "600g" },
+      { "producto_id": "10014", "cantidad": "240g" },
+      { "producto_id": "99002", "cantidad": "150g" },
+      { "producto_id": "11234", "cantidad": "50ml" }
+    ],
+    "alergenos_derivados": { "huevo": "contiene" },
+    "nutricion_calculada": { "kcal": 680, "precio_total": 4.90 }
+  },
+  {
+    "id": "receta-salmorn-ensalada",
+    "nombre": "Ensalada fresca con salmón ahumado",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Smoked_salmon_salad.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10068", "cantidad": "200g" },
+      { "producto_id": "10028", "cantidad": "100g" },
+      { "producto_id": "11234", "cantidad": "20ml" },
+      { "producto_id": "10032", "cantidad": "10ml" }
+    ],
+    "alergenos_derivados": { "pescado": "contiene" },
+    "nutricion_calculada": { "kcal": 310, "precio_total": 5.45 }
+  },
+  {
+    "id": "receta-crema-calabacin",
+    "nombre": "Crema suave de calabacín",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Zucchini_soup.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10019", "cantidad": "500g" },
+      { "producto_id": "99002", "cantidad": "100g" },
+      { "producto_id": "10043", "cantidad": "100ml" },
+      { "producto_id": "11234", "cantidad": "20ml" }
+    ],
+    "alergenos_derivados": { "leche": "contiene" },
+    "nutricion_calculada": { "kcal": 280, "precio_total": 3.35 }
+  },
+  {
+    "id": "receta-pizza-casera",
+    "nombre": "Pizza rápida de mozzarella",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-en_pizza_margherita.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10040", "cantidad": "200g" },
+      { "producto_id": "88991", "cantidad": "150g" },
+      { "producto_id": "10025", "cantidad": "100g" }
+    ],
+    "alergenos_derivados": { "gluten": "contiene", "leche": "contiene" },
+    "nutricion_calculada": { "kcal": 550, "precio_total": 2.95 }
+  },
+  {
+    "id": "receta-brocoli-salteado",
+    "nombre": "Brócoli salteado al ajillo",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Broccoli_cooking.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10046", "cantidad": "400g" },
+      { "producto_id": "33445", "cantidad": "15g" },
+      { "producto_id": "11234", "cantidad": "30ml" }
+    ],
+    "alergenos_derivados": { "gluten": "libre" },
+    "nutricion_calculada": { "kcal": 310, "precio_total": 3.45 }
+  },
+  {
+    "id": "receta-arroz-basmati-atun",
+    "nombre": "Arroz basmati con atún y maíz",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Rice_and_tuna.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10083", "cantidad": "200g" },
+      { "producto_id": "55678", "cantidad": "150g" },
+      { "producto_id": "10030", "cantidad": "100g" }
+    ],
+    "alergenos_derivados": { "pescado": "contiene" },
+    "nutricion_calculada": { "kcal": 610, "precio_total": 3.40 }
+  },
+  {
+    "id": "receta-alubias-bacon",
+    "nombre": "Alubias blancas con bacon",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/White_bean_soup.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10035", "cantidad": "400g" },
+      { "producto_id": "10073", "cantidad": "100g" },
+      { "producto_id": "99002", "cantidad": "100g" }
+    ],
+    "alergenos_derivados": { "gluten": "libre" },
+    "nutricion_calculada": { "kcal": 490, "precio_total": 3.35 }
+  },
+  {
+    "id": "receta-pasta-espinacas",
+    "nombre": "Espaguetis con espinacas y queso",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Spaghetti_with_spinach.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10084", "cantidad": "250g" },
+      { "producto_id": "10036", "cantidad": "150g" },
+      { "producto_id": "10025", "cantidad": "50g" }
+    ],
+    "alergenos_derivados": { "gluten": "contiene", "leche": "contiene" },
+    "nutricion_calculada": { "kcal": 620, "precio_total": 3.00 }
+  },
+  {
+    "id": "receta-costilla-horno",
+    "nombre": "Costillas de cerdo asadas con patatas",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Pork_ribs_with_potatoes.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10039", "cantidad": "500g" },
+      { "producto_id": "10018", "cantidad": "400g" },
+      { "producto_id": "11234", "cantidad": "30ml" }
+    ],
+    "alergenos_derivados": { "gluten": "libre" },
+    "nutricion_calculada": { "kcal": 950, "precio_total": 6.85 }
+  },
+  {
+    "id": "receta-alerta-alergeno",
+    "nombre": "Pollo especial con salsa secreta",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Chicken_with_sauce.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "22334", "cantidad": "300g" },
+      { "producto_id": "99999", "cantidad": "50ml" }
+    ],
+    "alergenos_derivados": { "frutos_secos": "desconocido" },
+    "nutricion_calculada": { "kcal": 400, "precio_total": 5.75 }
+  },
+  {
+    "id": "receta-solomillo-pimienta",
+    "nombre": "Solomillo de cerdo a la plancha",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Pork_tenderloin.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10075", "cantidad": "350g" },
+      { "producto_id": "11234", "cantidad": "20ml" },
+      { "producto_id": "10022", "cantidad": "5g" }
+    ],
+    "alergenos_derivados": { "gluten": "libre" },
+    "nutricion_calculada": { "kcal": 490, "precio_total": 6.80 }
+  },
+  {
+    "id": "receta-pollo-empanado",
+    "nombre": "Pechuga de pollo empanada con ensalada",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Breaded_chicken_cutlet.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10050", "cantidad": "400g" },
+      { "producto_id": "10068", "cantidad": "150g" },
+      { "producto_id": "10069", "cantidad": "100g" }
+    ],
+    "alergenos_derivados": { "gluten": "contiene" },
+    "nutricion_calculada": { "kcal": 520, "precio_total": 4.30 }
+  },
+  {
+    "id": "receta-croquetas-caseras",
+    "nombre": "Menú de croquetas con patatas",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Croquetas_de_jamon.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10051", "cantidad": "250g" },
+      { "producto_id": "10018", "cantidad": "300g" },
+      { "producto_id": "11234", "cantidad": "20ml" }
+    ],
+    "alergenos_derivados": { "gluten": "contiene", "leche": "contiene" },
+    "nutricion_calculada": { "kcal": 610, "precio_total": 2.80 }
+  },
+  {
+    "id": "receta-pasta-carbonara",
+    "nombre": "Espaguetis con bacon y nata",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Spaghetti_Carbonara.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10084", "cantidad": "250g" },
+      { "producto_id": "10073", "cantidad": "100g" },
+      { "producto_id": "10043", "cantidad": "100ml" },
+      { "producto_id": "10014", "cantidad": "1 ud" }
+    ],
+    "alergenos_derivados": { "gluten": "contiene", "leche": "contiene", "huevo": "contiene" },
+    "nutricion_calculada": { "kcal": 840, "precio_total": 3.70 }
+  },
+  {
+    "id": "receta-arroz-caldoso-marisco",
+    "nombre": "Arroz con langostinos",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Seafood_paella.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "32145", "cantidad": "200g" },
+      { "producto_id": "10079", "cantidad": "250g" },
+      { "producto_id": "10033", "cantidad": "500ml" },
+      { "producto_id": "99002", "cantidad": "80g" }
+    ],
+    "alergenos_derivados": { "crustaceos": "contiene", "apio": "contiene" },
+    "nutricion_calculada": { "kcal": 680, "precio_total": 5.20 }
+  },
+  {
+    "id": "receta-hummus-crudites",
+    "nombre": "Hummus con bastoncitos de zanahoria",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Hummus_with_pita.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10098", "cantidad": "120g" },
+      { "producto_id": "10020", "cantidad": "150g" }
+    ],
+    "alergenos_derivados": { "sesamo": "contiene" },
+    "nutricion_calculada": { "kcal": 310, "precio_total": 1.90 }
+  },
+  {
+    "id": "receta-muslos-horno",
+    "nombre": "Muslos de pollo al horno con patatas",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Roast_chicken_legs.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10076", "cantidad": "500g" },
+      { "producto_id": "10018", "cantidad": "400g" },
+      { "producto_id": "11234", "cantidad": "30ml" }
+    ],
+    "alergenos_derivados": { "gluten": "libre" },
+    "nutricion_calculada": { "kcal": 790, "precio_total": 4.50 }
+  },
+  {
+    "id": "receta-alitas-picantes",
+    "nombre": "Alitas de pollo especiadas",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Chicken_wings.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10077", "cantidad": "500g" },
+      { "producto_id": "10023", "cantidad": "10g" },
+      { "producto_id": "11234", "cantidad": "20ml" }
+    ],
+    "alergenos_derivados": { "gluten": "libre" },
+    "nutricion_calculada": { "kcal": 850, "precio_total": 3.40 }
+  },
+  {
+    "id": "receta-ensalada-pulpo",
+    "nombre": "Ensalada templada de pulpo",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Octopus_salad.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10078", "cantidad": "150g" },
+      { "producto_id": "10068", "cantidad": "150g" },
+      { "producto_id": "10069", "cantidad": "100g" },
+      { "producto_id": "11234", "cantidad": "20ml" }
+    ],
+    "alergenos_derivados": { "moluscos": "contiene" },
+    "nutricion_calculada": { "kcal": 340, "precio_total": 6.30 }
+  },
+  {
+    "id": "receta-crema-calabaza",
+    "nombre": "Crema de calabaza de otoño",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Pumpkin_soup.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10070", "cantidad": "500g" },
+      { "producto_id": "99002", "cantidad": "100g" },
+      { "producto_id": "10043", "cantidad": "100ml" },
+      { "producto_id": "11234", "cantidad": "20ml" }
+    ],
+    "alergenos_derivados": { "leche": "contiene" },
+    "nutricion_calculada": { "kcal": 260, "precio_total": 2.90 }
+  },
+  {
+    "id": "receta-berenjenas-rellenas",
+    "nombre": "Berenjenas rellenas de carne",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Stuffed_eggplant.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10071", "cantidad": "400g" },
+      { "producto_id": "10038", "cantidad": "200g" },
+      { "producto_id": "88991", "cantidad": "200g" },
+      { "producto_id": "10025", "cantidad": "60g" }
+    ],
+    "alergenos_derivados": { "leche": "contiene" },
+    "nutricion_calculada": { "kcal": 490, "precio_total": 6.10 }
+  },
+  {
+    "id": "receta-guacamole-nachos",
+    "nombre": "Guacamole fresco con patatas fritas",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Guacamole_with_chips.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10099", "cantidad": "200g" },
+      { "producto_id": "10096", "cantidad": "150g" }
+    ],
+    "alergenos_derivados": { "gluten": "libre" },
+    "nutricion_calculada": { "kcal": 650, "precio_total": 3.15 }
+  },
+  {
+    "id": "receta-avena-manzana",
+    "nombre": "Porridge de avena con manzana",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Porridge_with_apple.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10085", "cantidad": "80g" },
+      { "producto_id": "10015", "cantidad": "250ml" },
+      { "producto_id": "10064", "cantidad": "150g" }
+    ],
+    "alergenos_derivados": { "leche": "contiene", "gluten": "puede_contener" },
+    "nutricion_calculada": { "kcal": 440, "precio_total": 1.70 }
+  },
+  {
+    "id": "receta-sardinillas-pan",
+    "nombre": "Tosta de sardinillas con tomate",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Sardine_bruschetta.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10081", "cantidad": "115g" },
+      { "producto_id": "10055", "cantidad": "100g" },
+      { "producto_id": "88991", "cantidad": "100g" }
+    ],
+    "alergenos_derivados": { "pescado": "contiene", "gluten": "contiene" },
+    "nutricion_calculada": { "kcal": 410, "precio_total": 3.40 }
+  },
+  {
+    "id": "receta-crema-chocolate",
+    "nombre": "Postre de café y chocolate negro",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Dark_chocolate_pieces.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "10057", "cantidad": "50g" },
+      { "producto_id": "10058", "cantidad": "15g" }
+    ],
+    "alergenos_derivados": { "soja": "contiene" },
+    "nutricion_calculada": { "kcal": 300, "precio_total": 1.85 }
   }
 ]
