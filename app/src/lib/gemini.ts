@@ -12,7 +12,33 @@ import { formatEuro, formatNutrient } from './format.ts'
 const STORAGE_KEY = 'sichef_gemini_api_key'
 
 // Modelos de Google Gemini ordenados por preferencia
-const GEMINI_MODELS = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash']
+/** Solo como último recurso: los modelos se descubren en vivo con ListModels (los antiguos dan 404). */
+const FALLBACK_MODELS = ['gemini-flash-latest', 'gemini-2.5-flash']
+
+let discovered: { key: string; models: string[] } | null = null
+
+/** Pide a Google los modelos disponibles para esta clave y elige los «flash» de texto más recientes. */
+async function listUsableModels(apiKey: string): Promise<string[]> {
+  if (discovered?.key === apiKey) return discovered.models
+  try {
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?pageSize=200&key=${apiKey}`)
+    if (!res.ok) throw new Error(String(res.status))
+    const data = (await res.json()) as { models?: { name: string; supportedGenerationMethods?: string[] }[] }
+    const names = (data.models ?? [])
+      .filter((m) => m.supportedGenerationMethods?.includes('generateContent'))
+      .map((m) => m.name.replace(/^models\//, ''))
+      .filter((n) => n.startsWith('gemini') && !/(image|tts|audio|live|embedding|vision|thinking-exp)/.test(n))
+    const score = (n: string) => {
+      const v = Number(n.match(/gemini-(\d+(?:\.\d+)?)/)?.[1] ?? 0)
+      return v * 10 + (n.includes('flash') ? 3 : 0) - (n.includes('lite') ? 1 : 0) - (/preview|exp/.test(n) ? 2 : 0) + (n.includes('latest') ? 0.5 : 0)
+    }
+    const models = [...new Set(names)].sort((a, b) => score(b) - score(a)).slice(0, 4)
+    discovered = { key: apiKey, models: [...models, ...FALLBACK_MODELS.filter((m) => !models.includes(m))] }
+  } catch {
+    discovered = { key: apiKey, models: FALLBACK_MODELS }
+  }
+  return discovered.models
+}
 
 export function getStoredGeminiApiKey(): string {
   const local = typeof window !== 'undefined' ? window.localStorage.getItem(STORAGE_KEY) : null
@@ -140,7 +166,7 @@ async function callGeminiApi(
     },
   ]
 
-  for (const model of GEMINI_MODELS) {
+  for (const model of await listUsableModels(apiKey)) {
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`
     try {
       const res = await fetch(endpoint, {
