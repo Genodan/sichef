@@ -213,7 +213,7 @@ async function callGeminiApi(
       if (!res.ok) {
         const errorText = await res.text().catch(() => '')
         // Si el modelo no existe (404), intentamos con el siguiente modelo de la lista
-        if (res.status === 404) {
+        if ([404, 429, 500, 503].includes(res.status)) {
           lastError = new Error(`Modelo ${model} no disponible (${res.status})`)
           continue
         }
@@ -229,7 +229,7 @@ async function callGeminiApi(
     } catch (err) {
       lastError = err instanceof Error ? err : new Error(String(err))
       // Si no es un 404, propagamos el error para no enmascarar claves inválidas o errores de cuota
-      if (!lastError.message.includes('404')) {
+      if (!/no disponible/.test(lastError.message)) {
         throw lastError
       }
     }
