@@ -1,0 +1,348 @@
+[
+  {
+    "id": "ruzafa",
+    "name": "Mercadona Ruzafa (simulada)",
+    "simulated": true,
+    "aisles": [
+      {
+        "number": 1,
+        "name": "Fruta y verdura"
+      },
+      {
+        "number": 2,
+        "name": "Carne y aves"
+      },
+      {
+        "number": 3,
+        "name": "Pescado y marisco"
+      },
+      {
+        "number": 4,
+        "name": "Charcutería y embutidos"
+      },
+      {
+        "number": 5,
+        "name": "Huevos y lácteos"
+      },
+      {
+        "number": 6,
+        "name": "Aceite, especias y salsas"
+      },
+      {
+        "number": 7,
+        "name": "Arroz, legumbres y pasta"
+      },
+      {
+        "number": 8,
+        "name": "Conservas y caldos"
+      },
+      {
+        "number": 9,
+        "name": "Panadería"
+      },
+      {
+        "number": 10,
+        "name": "Congelados"
+      }
+    ],
+    "locations": {
+      "2781": {
+        "aisle": 2,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "69089": {
+        "aisle": 1,
+        "side": "der",
+        "shelf": "D"
+      },
+      "69320": {
+        "aisle": 1,
+        "side": "der",
+        "shelf": "A"
+      },
+      "69310": {
+        "aisle": 1,
+        "side": "der",
+        "shelf": "A"
+      },
+      "69912": {
+        "aisle": 1,
+        "side": "izq",
+        "shelf": "C"
+      },
+      "69297": {
+        "aisle": 1,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "4640": {
+        "aisle": 6,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "31504": {
+        "aisle": 5,
+        "side": "der",
+        "shelf": "D"
+      },
+      "69448": {
+        "aisle": 1,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "69066": {
+        "aisle": 1,
+        "side": "der",
+        "shelf": "C"
+      },
+      "47994": {
+        "aisle": 6,
+        "side": "izq",
+        "shelf": "B"
+      },
+      "54209": {
+        "aisle": 4,
+        "side": "der",
+        "shelf": "A"
+      },
+      "60573": {
+        "aisle": 6,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "69669": {
+        "aisle": 1,
+        "side": "izq",
+        "shelf": "C"
+      },
+      "26030": {
+        "aisle": 7,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "85144": {
+        "aisle": 3,
+        "side": "izq",
+        "shelf": "D"
+      },
+      "3210": {
+        "aisle": 1,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "26951": {
+        "aisle": 1,
+        "side": "izq",
+        "shelf": "D"
+      },
+      "4706": {
+        "aisle": 6,
+        "side": "der",
+        "shelf": "B"
+      },
+      "69701": {
+        "aisle": 1,
+        "side": "der",
+        "shelf": "C"
+      }
+    },
+    "stock": {
+      "2781": true,
+      "69089": true,
+      "69320": true,
+      "69310": true,
+      "69912": true,
+      "69297": true,
+      "4640": true,
+      "31504": true,
+      "69448": true,
+      "69066": true,
+      "47994": true,
+      "54209": true,
+      "60573": true,
+      "69669": true,
+      "26030": true,
+      "85144": true,
+      "3210": true,
+      "26951": true,
+      "4706": true,
+      "69701": true
+    }
+  },
+  {
+    "id": "benimaclet",
+    "name": "Mercadona Benimaclet (simulada)",
+    "simulated": true,
+    "aisles": [
+      {
+        "number": 1,
+        "name": "Panadería"
+      },
+      {
+        "number": 2,
+        "name": "Fruta y verdura"
+      },
+      {
+        "number": 3,
+        "name": "Huevos y lácteos"
+      },
+      {
+        "number": 4,
+        "name": "Carne y aves"
+      },
+      {
+        "number": 5,
+        "name": "Charcutería y embutidos"
+      },
+      {
+        "number": 6,
+        "name": "Pescado y marisco"
+      },
+      {
+        "number": 7,
+        "name": "Conservas y caldos"
+      },
+      {
+        "number": 8,
+        "name": "Arroz, legumbres y pasta"
+      },
+      {
+        "number": 9,
+        "name": "Aceite, especias y salsas"
+      },
+      {
+        "number": 10,
+        "name": "Congelados"
+      },
+      {
+        "number": 11,
+        "name": "Bebidas"
+      }
+    ],
+    "locations": {
+      "2781": {
+        "aisle": 4,
+        "side": "der",
+        "shelf": "B"
+      },
+      "69089": {
+        "aisle": 2,
+        "side": "der",
+        "shelf": "A"
+      },
+      "69320": {
+        "aisle": 2,
+        "side": "der",
+        "shelf": "B"
+      },
+      "69310": {
+        "aisle": 2,
+        "side": "izq",
+        "shelf": "C"
+      },
+      "69912": {
+        "aisle": 2,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "69297": {
+        "aisle": 2,
+        "side": "izq",
+        "shelf": "B"
+      },
+      "4640": {
+        "aisle": 9,
+        "side": "der",
+        "shelf": "D"
+      },
+      "31504": {
+        "aisle": 3,
+        "side": "izq",
+        "shelf": "D"
+      },
+      "69448": {
+        "aisle": 2,
+        "side": "der",
+        "shelf": "B"
+      },
+      "69066": {
+        "aisle": 2,
+        "side": "izq",
+        "shelf": "B"
+      },
+      "47994": {
+        "aisle": 9,
+        "side": "der",
+        "shelf": "D"
+      },
+      "54209": {
+        "aisle": 5,
+        "side": "izq",
+        "shelf": "D"
+      },
+      "60573": {
+        "aisle": 9,
+        "side": "der",
+        "shelf": "D"
+      },
+      "69669": {
+        "aisle": 2,
+        "side": "der",
+        "shelf": "B"
+      },
+      "26030": {
+        "aisle": 8,
+        "side": "der",
+        "shelf": "D"
+      },
+      "85144": {
+        "aisle": 6,
+        "side": "izq",
+        "shelf": "D"
+      },
+      "3210": {
+        "aisle": 2,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "26951": {
+        "aisle": 2,
+        "side": "izq",
+        "shelf": "D"
+      },
+      "4706": {
+        "aisle": 9,
+        "side": "der",
+        "shelf": "A"
+      },
+      "69701": {
+        "aisle": 2,
+        "side": "der",
+        "shelf": "B"
+      }
+    },
+    "stock": {
+      "2781": true,
+      "69089": true,
+      "69320": true,
+      "69310": true,
+      "69912": true,
+      "69297": true,
+      "4640": true,
+      "31504": true,
+      "69448": true,
+      "69066": true,
+      "47994": true,
+      "54209": true,
+      "60573": true,
+      "69669": true,
+      "26030": true,
+      "85144": true,
+      "3210": true,
+      "26951": false,
+      "4706": true,
+      "69701": true
+    }
+  }
+]

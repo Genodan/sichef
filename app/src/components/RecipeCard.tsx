@@ -38,10 +38,10 @@ export function RecipeCard({ info, mine, reason }: Props) {
   const badge = badges[0]
   return (
     <article
-      className="flex h-full select-none flex-col rounded-[30px] bg-white p-2.5 shadow-card"
+      className="flex h-full select-none flex-col overflow-hidden rounded-[30px] bg-white p-2.5 shadow-card"
       aria-label={`Receta: ${recipe.name}`}
     >
-      <div className="relative min-h-[140px] flex-1 overflow-hidden rounded-[22px] bg-brand-soft">
+      <div className="relative min-h-[110px] flex-1 overflow-hidden rounded-[22px] bg-brand-soft">
         <SafeImage
           src={recipe.image?.url}
           alt={recipe.name}
@@ -62,9 +62,9 @@ export function RecipeCard({ info, mine, reason }: Props) {
         )}
       </div>
 
-      <div className="flex flex-col gap-2.5 px-2.5 pb-1.5 pt-3">
+      <div className="flex shrink-0 flex-col gap-2 px-2 pb-1 pt-2.5">
         <div className="flex items-center justify-between gap-2">
-          <h3 className="text-lg font-extrabold">Por ración</h3>
+          <h3 className="text-base font-extrabold">Por ración</h3>
           {badge && (
             <span className="truncate rounded-full bg-cream px-2.5 py-1 text-xs font-extrabold text-accent-dark">
               {badge.label}
@@ -72,9 +72,9 @@ export function RecipeCard({ info, mine, reason }: Props) {
           )}
         </div>
         <NutrientBars nutrition={nutrition} />
-        <AllergenChips allergens={allergens} mine={mine} max={3} withTraces={false} />
+        <AllergenChips allergens={allergens} mine={mine} max={2} withTraces={false} />
         {nutrition.partial && nutrition.counted > 0 && (
-          <p className="text-[10.5px] font-semibold text-muted">
+          <p className="truncate text-[10.5px] font-semibold text-muted">
             * Nutrición parcial:{' '}
             {nutrition.missing.length > 0
               ? `faltan datos de ${plural(nutrition.missing.length, 'ingrediente', 'ingredientes')}`

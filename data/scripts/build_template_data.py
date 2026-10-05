@@ -174,7 +174,7 @@ RECIPES: List[Dict[str, Any]] = [
             {"src": "1 {{ing|pimiento}} rojo", "name": "Pimiento rojo", "pieces": 1, "label": "1 pimiento rojo", "product_id": "69310"},
             {"src": "4 {{ing|tomate}}s maduros", "name": "Tomates maduros", "pieces": 4, "label": "4 tomates maduros", "product_id": "69912"},
             {"src": "3 dientes de {{ing|ajo}}", "name": "Ajo", "quantity": 3, "unit": "ud", "label": "3 dientes", "product_id": "69297"},
-            {"src": "{{ing|aceite|aceite de oliva}}", "name": "Aceite de oliva", "quantity": 0, "unit": "ml", "label": "cantidad no indicada", "product_id": "4740", "optional": True},
+            {"src": "{{ing|aceite|aceite de oliva}}", "name": "Aceite de oliva", "quantity": 0, "unit": "ml", "label": "cantidad no indicada", "product_id": "4640", "optional": True},
             {"src": "{{ing|sal}}", "name": "Sal", "quantity": 0, "unit": "g", "label": "cantidad no indicada", "product_id": None, "optional": True},
         ],
     },
@@ -189,7 +189,7 @@ RECIPES: List[Dict[str, Any]] = [
             {"src": "8 {{ing|huevo|huevos}} grandes", "name": "Huevos grandes (talla L o XL)", "quantity": 8, "unit": "ud", "label": "8 huevos", "product_id": "31504"},
             {"src": "1 kg de {{ing|patata|patatas}}", "name": "Patatas", "quantity": 1000, "unit": "g", "label": "1 kg", "product_id": "69448"},
             {"src": "1 {{ing|cebolla}} mediana", "name": "Cebolla", "quantity": 1, "unit": "ud", "label": "1 cebolla mediana o grande", "product_id": "69089"},
-            {"src": "1/2 litro de {{ing|aceite|aceite de oliva}}", "name": "Aceite de oliva (para freír)", "quantity": 500, "unit": "ml", "label": "1/2 litro (para freír)", "product_id": "4740"},
+            {"src": "1/2 litro de {{ing|aceite|aceite de oliva}}", "name": "Aceite de oliva (para freír)", "quantity": 500, "unit": "ml", "label": "1/2 litro (para freír)", "product_id": "4640"},
             {"src": "{{ing|Sal}}", "name": "Sal", "quantity": 0, "unit": "g", "label": "una pizca por yema", "product_id": None, "optional": True},
         ],
     },
@@ -201,13 +201,13 @@ RECIPES: List[Dict[str, Any]] = [
         "photo": "File:Quick Lentils with Chorizo (7017166123).jpg",
         "tags": ["legumbres", "chorizo", "primer plato", "gastronomía de España"],
         "ingredients": [
-            {"src": "20 ml de {{ing|aceite}} de oliva", "name": "Aceite de oliva", "quantity": 20, "unit": "ml", "label": "20 ml", "product_id": "4740"},
+            {"src": "20 ml de {{ing|aceite}} de oliva", "name": "Aceite de oliva", "quantity": 20, "unit": "ml", "label": "20 ml", "product_id": "4640"},
             {"src": "4 dientes de {{ing|ajo}}", "name": "Ajo", "quantity": 4, "unit": "ud", "label": "4 dientes", "product_id": "69297"},
             {"src": "1 {{ing|patata}}", "name": "Patata", "pieces": 1, "label": "1 patata", "product_id": "69066"},
             {"src": "1/2 {{ing|cebolla}}", "name": "Cebolla", "quantity": 0.5, "unit": "ud", "label": "1/2 cebolla", "product_id": "69089"},
             {"src": "1   {{ing|tomate}}", "name": "Tomate", "pieces": 1, "label": "1 tomate", "product_id": "69912"},
             {"src": "2 hojas  de {{ing|laurel}}", "name": "Laurel", "quantity": 2, "unit": "ud", "label": "2 hojas", "product_id": "47994"},
-            {"src": "300 g de {{ing|chorizo}}", "name": "Chorizo", "quantity": 300, "unit": "g", "label": "300 g", "product_id": "6048"},
+            {"src": "300 g de {{ing|chorizo}}", "name": "Chorizo", "quantity": 300, "unit": "g", "label": "300 g", "product_id": "54209"},
             {"src": "1 cucharada pequeña de {{ing|pimentón}}", "name": "Pimentón", "quantity": 1, "unit": "ud", "label": "1 cucharada pequeña", "product_id": "60573"},
             {"src": "1 cucharada pequeña de {{ing|sal}}", "name": "Sal", "quantity": 1, "unit": "ud", "label": "1 cucharada pequeña", "product_id": None, "optional": True},
             {"src": "{{ing|agua}}", "name": "Agua", "quantity": 1000, "unit": "ml", "label": "1 litro", "product_id": None, "optional": True},
@@ -237,7 +237,7 @@ RECIPES: List[Dict[str, Any]] = [
         "tags": ["setas", "ajillo", "aperitivo", "primer plato", "vegetariana", "vegana", "gastronomía de España"],
         "ingredients": [
             {"src": "1,5 kg {{ing|champiñones}} pequeños", "name": "Champiñones pequeños", "quantity": 1500, "unit": "g", "label": "1,5 kg", "product_id": "26951"},
-            {"src": "9 cucharadas soperas de {{ing|aceite|aceite de oliva virgen extra}}", "name": "Aceite de oliva virgen extra", "quantity": 135, "unit": "ml", "label": "9 cucharadas soperas", "product_id": "4740"},
+            {"src": "9 cucharadas soperas de {{ing|aceite|aceite de oliva virgen extra}}", "name": "Aceite de oliva virgen extra", "quantity": 135, "unit": "ml", "label": "9 cucharadas soperas", "product_id": "4706"},
             {"src": "3 dientes de {{ing|ajo|ajos}} picados", "name": "Ajo", "quantity": 3, "unit": "ud", "label": "3 dientes picados", "product_id": "69297"},
             {"src": "2 cucharadas soperas de {{ing|perejil}} picado", "name": "Perejil picado", "quantity": 2, "unit": "ud", "label": "2 cucharadas soperas", "product_id": "69701"},
             {"src": "{{ing|Limón}} para zumo", "name": "Limón", "quantity": 0, "unit": "ud", "label": "para zumo (cantidad no indicada)", "product_id": "3210", "optional": True},
@@ -515,7 +515,8 @@ def parse_allergens(prod: Dict[str, Any]) -> Dict[str, Any]:
     allowed = dict(FRESH_CATEGORIES)
     if TREAT_SINGLE_INGREDIENT_PANTRY_AS_FRESH:
         allowed.update(PANTRY_SINGLE_INGREDIENT)
-    if cat1 in allowed and is_single_ingredient(i_plain):
+    pantry = cat1 in PANTRY_SINGLE_INGREDIENT and TREAT_SINGLE_INGREDIENT_PANTRY_AS_FRESH
+    if cat1 in allowed and (is_pantry_single(i_plain) if pantry else is_single_ingredient(i_plain)):
         inherent = allowed[cat1]
         if inherent is None:  # marisco: según especie
             inherent = [c for c in find_codes(prod["display_name"]) if c in ("moluscos", "crustaceos")]
@@ -523,6 +524,15 @@ def parse_allergens(prod: Dict[str, Any]) -> Dict[str, Any]:
                 return {"status": "desconocido", "contains": [], "traces": []}
         return {"status": "producto_fresco", "contains": list(inherent), "traces": []}
     return {"status": "desconocido", "contains": [], "traces": []}
+
+
+def is_pantry_single(ingredients_plain: str) -> bool:
+    """Solo con el interruptor activado: aceite de oliva (aunque sea mezcla de
+    aceites de oliva) o sal marina, sin ningún otro ingrediente."""
+    t = re.sub(r"^ingredientes:\s*", "", ingredients_plain.lower()).strip(" .")
+    t = re.sub(r"\b100\s*%", "", t)
+    parts = [x.strip(" .") for x in re.split(r",|\by\b", t) if x.strip(" .")]
+    return bool(parts) and all(re.fullmatch(r"aceite de oliva( virgen( extra)?| refinado)?|sal( marina)?", x) for x in parts)
 
 
 def is_single_ingredient(ingredients_plain: str) -> bool:
@@ -535,7 +545,7 @@ def is_single_ingredient(ingredients_plain: str) -> bool:
         return True  # fresco sin lista de ingredientes (fruta, verdura...)
     if re.search(r"[,;:]|\be-?\d{3}\b|\by\b|\be\b", t):
         return False
-    return len(t.split()) <= 4
+    return len(t.split()) <= 5
 
 
 # ---------------------------------------------------------------------------
@@ -782,6 +792,13 @@ def main() -> None:
         log(f"receta {r['id']}")
         recipes.append(build_recipe(r, products))
 
+    # Limpia imágenes generadas por ejecuciones anteriores que ya no se usan
+    for folder, keep in ((IMG_PRODUCTS, set(products)), (IMG_RECIPES, {r["id"] for r in RECIPES})):
+        for f in folder.glob("*.jpg"):
+            if f.stem not in keep:
+                log(f"  elimino imagen sin uso {f.name}")
+                f.unlink()
+
     stores = build_stores(list(products.values()), cats)
     allergens = [{"code": c, "name": n, "emoji": e} for c, n, e in ALLERGENS]
 
@@ -799,6 +816,7 @@ def main() -> None:
               f" | envase completo: {', '.join(s['whole_package_lines']) or '—'}")
         print(f"    nutrición/ración{' PARCIAL' if s['nutrition_partial'] else ''}: {n['kcal']} kcal, prot {n['protein']} g,"
               f" hidr {n['carbs']} g, grasas {n['fat']} g, azúc {n['sugars']} g, sal {n['salt']} g"
+              f" | cobertura por peso {s['nutrition_weight_coverage']} %"
               f"{' | sin dato: ' + ', '.join(s['nutrition_missing']) if s['nutrition_missing'] else ''}")
     unk = [p for p in products.values() if p["allergens"]["status"] == "desconocido"]
     print("Alérgenos «desconocido»: " + ", ".join(f"{p['name']} ({p['id']})" for p in unk))

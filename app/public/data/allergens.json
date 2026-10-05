@@ -1,0 +1,72 @@
+[
+  {
+    "code": "gluten",
+    "name": "Gluten",
+    "emoji": "🌾"
+  },
+  {
+    "code": "crustaceos",
+    "name": "Crustáceos",
+    "emoji": "🦐"
+  },
+  {
+    "code": "huevos",
+    "name": "Huevos",
+    "emoji": "🥚"
+  },
+  {
+    "code": "pescado",
+    "name": "Pescado",
+    "emoji": "🐟"
+  },
+  {
+    "code": "cacahuetes",
+    "name": "Cacahuetes",
+    "emoji": "🥜"
+  },
+  {
+    "code": "soja",
+    "name": "Soja",
+    "emoji": "🫘"
+  },
+  {
+    "code": "leche",
+    "name": "Leche",
+    "emoji": "🥛"
+  },
+  {
+    "code": "frutos_cascara",
+    "name": "Frutos de cáscara",
+    "emoji": "🌰"
+  },
+  {
+    "code": "apio",
+    "name": "Apio",
+    "emoji": "🥬"
+  },
+  {
+    "code": "mostaza",
+    "name": "Mostaza",
+    "emoji": "🟡"
+  },
+  {
+    "code": "sesamo",
+    "name": "Sésamo",
+    "emoji": "⚪"
+  },
+  {
+    "code": "sulfitos",
+    "name": "Sulfitos",
+    "emoji": "🍷"
+  },
+  {
+    "code": "altramuces",
+    "name": "Altramuces",
+    "emoji": "🌼"
+  },
+  {
+    "code": "moluscos",
+    "name": "Moluscos",
+    "emoji": "🦪"
+  }
+]

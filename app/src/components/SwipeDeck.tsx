@@ -170,24 +170,21 @@ export function SwipeDeck({ items, mine, reasons, onDecide, onOpen, empty }: Pro
         tabIndex={top ? 0 : -1}
         onKeyDown={onKeyDown}
       >
-        {top ? (
-          <AnimatePresence custom={exitDir}>
-            {items.slice(0, 3).map((info, index) => (
-              <DeckCard
-                key={info.recipe.id}
-                info={info}
-                index={index}
-                exitDir={exitDir}
-                mine={mine}
-                reason={reasons?.get(info.recipe.id)}
-                onSwiped={decide}
-                onOpen={() => onOpen(info.recipe.id)}
-              />
-            ))}
-          </AnimatePresence>
-        ) : (
-          empty
-        )}
+        {!top && empty}
+        <AnimatePresence custom={exitDir}>
+          {items.slice(0, 3).map((info, index) => (
+            <DeckCard
+              key={info.recipe.id}
+              info={info}
+              index={index}
+              exitDir={exitDir}
+              mine={mine}
+              reason={reasons?.get(info.recipe.id)}
+              onSwiped={decide}
+              onOpen={() => onOpen(info.recipe.id)}
+            />
+          ))}
+        </AnimatePresence>
         <p className="sr-only" aria-live="polite">
           {top
             ? `${top.recipe.name}. ${top.cost.perServing !== null ? `${formatEuro(top.cost.perServing)} por ración.` : ''}`

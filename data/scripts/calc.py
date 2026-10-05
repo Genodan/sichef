@@ -58,6 +58,8 @@ def recipe_summary(recipe: Dict[str, Any], products: Dict[str, Dict[str, Any]]) 
     whole: List[str] = []
     sums = {k: 0.0 for k in NUTRIENTS}
     missing_nutrition: List[str] = []
+    weighed = 0.0  # g/ml de líneas con peso
+    covered = 0.0  # g/ml de líneas con peso y nutrición completa
     for ing in recipe["ingredients"]:
         if ing.get("optional") or ing.get("product_id") is None:
             continue
@@ -68,13 +70,19 @@ def recipe_summary(recipe: Dict[str, Any], products: Dict[str, Dict[str, Any]]) 
         if lc["whole_package"]:
             whole.append(ing["name"])
         n = prod.get("nutrition_100g")
+        if ing["unit"] in ("g", "ml"):
+            weighed += float(ing["quantity"])
         if ing["unit"] in ("g", "ml") and n:
+            complete = True
             for k in NUTRIENTS:
                 if n.get(k) is None:
-                    if ing["name"] not in missing_nutrition:
-                        missing_nutrition.append(ing["name"])
+                    complete = False
                 else:
                     sums[k] += float(ing["quantity"]) / 100.0 * n[k]
+            if complete:
+                covered += float(ing["quantity"])
+            else:
+                missing_nutrition.append(ing["name"])
         else:
             missing_nutrition.append(ing["name"])
     servings = recipe["servings"]
@@ -86,4 +94,6 @@ def recipe_summary(recipe: Dict[str, Any], products: Dict[str, Dict[str, Any]]) 
         "nutrition_per_serving": {k: round(v / servings, 1) for k, v in sums.items()},
         "nutrition_partial": bool(missing_nutrition),
         "nutrition_missing": missing_nutrition,
+        # % del peso (g/ml) de la receta con nutrición completa; las líneas en 'ud' no tienen peso
+        "nutrition_weight_coverage": round(100.0 * covered / weighed) if weighed else 0,
     }
