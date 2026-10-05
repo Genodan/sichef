@@ -741,3 +741,173 @@ export function buildShoppingList(
     aislesToVisit: groups.map((g) => g.aisle).filter((a): a is number => a !== null),
   }
 }
+
+// ---------------------------------------------------------------------------
+// Ingredientes compartidos entre recetas y la cesta
+// ---------------------------------------------------------------------------
+
+export interface SharedBasketIngredient {
+  ingredientName: string
+  ingredientIndex: number
+  productId: string
+  product: Product
+  recipeQuantity: number
+  recipeUnit: RecipeIngredient['unit']
+  recipeLabel: string
+  /** Otras recetas en la cesta que usan este mismo producto */
+  otherUses: {
+    recipeId: string
+    recipeName: string
+    label: string
+  }[]
+  /** Envases actuales en la cesta para este producto sumando las otras recetas */
+  currentBasketPackages: number
+  /** Envases totales necesarios sumando las otras recetas + esta receta */
+  totalPackagesNeeded: number
+  /** Si hace falta comprar envases adicionales (totalPackagesNeeded > currentBasketPackages) */
+  needsExtraPackage: boolean
+  /** Envases adicionales recomendados (totalPackagesNeeded - currentBasketPackages) */
+  extraPackagesNeeded: number
+  /** Si este ingrediente ya ha sido añadido a la cesta para esta receta */
+  isAddedToBasketForThisRecipe: boolean
+}
+
+export interface RecipeBasketOverlap {
+  recipeId: string
+  recipeName: string
+  /** Todos los ingredientes de la receta que coinciden con productos en la cesta por otras recetas */
+  sharedIngredients: SharedBasketIngredient[]
+  /** Ingredientes compartidos que necesitan envases adicionales y aún no se han añadido para esta receta */
+  needsMore: SharedBasketIngredient[]
+  /** Ingredientes compartidos que necesitaban más envases y ya fueron añadidos para esta receta */
+  alreadyAddedExtra: SharedBasketIngredient[]
+  /** Ingredientes compartidos donde el envase en la cesta es suficiente para ambas recetas */
+  sufficient: SharedBasketIngredient[]
+}
+
+/**
+ * Comprueba si la receta requiere ingredientes que ya están en la cesta por otras recetas,
+ * y determina si los envases actuales bastan o si se necesita añadir más (p. ej. 2 envases, 1 por receta).
+ */
+export function computeRecipeBasketOverlap(
+  recipe: Recipe,
+  basketRecipeIds: readonly string[],
+  pantry: Record<string, string> | undefined,
+  allRecipes: readonly Recipe[],
+  products: ProductIndex,
+): RecipeBasketOverlap {
+  const recipeMap = new Map<string, Recipe>()
+  for (const r of allRecipes) recipeMap.set(r.id, r)
+
+  // 1. Recolectar ingredientes en la cesta de OTRAS recetas
+  interface OtherBasketUsage {
+    product: Product
+    totalQty: number
+    isConvertible: boolean
+    uses: { recipeId: string; recipeName: string; label: string }[]
+  }
+
+  const otherBasketProducts = new Map<string, OtherBasketUsage>()
+
+  for (const rId of basketRecipeIds) {
+    if (rId === recipe.id) continue
+    const otherRecipe = recipeMap.get(rId)
+    if (!otherRecipe) continue
+
+    for (let j = 0; j < otherRecipe.ingredients.length; j++) {
+      if (pantry?.[`${rId}:${j}`] !== 'basket') continue
+      const ing = otherRecipe.ingredients[j]
+      if (ing.optional || !ing.product_id) continue
+
+      const product = products.get(ing.product_id)
+      if (!product) continue
+
+      let entry = otherBasketProducts.get(product.id)
+      if (!entry) {
+        entry = { product, totalQty: 0, isConvertible: true, uses: [] }
+        otherBasketProducts.set(product.id, entry)
+      }
+
+      const q = convertQuantity(ing.quantity, ing.unit, sizeUnit(product))
+      if (q === null) {
+        entry.isConvertible = false
+      } else {
+        entry.totalQty += q
+      }
+      entry.uses.push({
+        recipeId: otherRecipe.id,
+        recipeName: otherRecipe.name,
+        label: ing.label,
+      })
+    }
+  }
+
+  // 2. Analizar cada ingrediente de la receta evaluada
+  const sharedIngredients: SharedBasketIngredient[] = []
+
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    const ing = recipe.ingredients[i]
+    if (ing.optional || !ing.product_id) continue
+
+    const otherUsage = otherBasketProducts.get(ing.product_id)
+    if (!otherUsage) continue
+
+    const product = otherUsage.product
+    const qThis = convertQuantity(ing.quantity, ing.unit, sizeUnit(product))
+
+    // Calcular envases de las otras recetas
+    let currentBasketPackages = 1
+    if (otherUsage.isConvertible) {
+      const p = packagesFor(otherUsage.totalQty, product)
+      currentBasketPackages = p !== null && p > 0 ? p : 1
+    } else {
+      currentBasketPackages = Math.max(1, otherUsage.uses.length)
+    }
+
+    // Calcular envases combinados (otras recetas + esta receta)
+    let totalPackagesNeeded = currentBasketPackages + 1
+    if (otherUsage.isConvertible && qThis !== null) {
+      const pTotal = packagesFor(otherUsage.totalQty + qThis, product)
+      if (pTotal !== null) {
+        totalPackagesNeeded = pTotal
+      }
+    }
+
+    if (totalPackagesNeeded < currentBasketPackages) {
+      totalPackagesNeeded = currentBasketPackages
+    }
+
+    const extraPackagesNeeded = totalPackagesNeeded - currentBasketPackages
+    const needsExtraPackage = extraPackagesNeeded > 0
+    const isAddedToBasketForThisRecipe = pantry?.[`${recipe.id}:${i}`] === 'basket'
+
+    sharedIngredients.push({
+      ingredientName: ing.name,
+      ingredientIndex: i,
+      productId: product.id,
+      product,
+      recipeQuantity: ing.quantity,
+      recipeUnit: ing.unit,
+      recipeLabel: ing.label,
+      otherUses: otherUsage.uses,
+      currentBasketPackages,
+      totalPackagesNeeded,
+      needsExtraPackage,
+      extraPackagesNeeded,
+      isAddedToBasketForThisRecipe,
+    })
+  }
+
+  const needsMore = sharedIngredients.filter((s) => s.needsExtraPackage && !s.isAddedToBasketForThisRecipe)
+  const alreadyAddedExtra = sharedIngredients.filter((s) => s.needsExtraPackage && s.isAddedToBasketForThisRecipe)
+  const sufficient = sharedIngredients.filter((s) => !s.needsExtraPackage)
+
+  return {
+    recipeId: recipe.id,
+    recipeName: recipe.name,
+    sharedIngredients,
+    needsMore,
+    alreadyAddedExtra,
+    sufficient,
+  }
+}

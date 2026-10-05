@@ -3,9 +3,11 @@
 import { useMemo } from 'react'
 import type { AllergenCode, Store } from '../types.ts'
 import {
+  computeRecipeBasketOverlap,
   recipeHouseholdSuitability,
   recipeVisibility,
   type HouseholdSuitability,
+  type RecipeBasketOverlap,
   type RecipeInfo,
   type Visibility,
 } from './compute.ts'
@@ -79,4 +81,29 @@ export function useAllergenLabel() {
     const a = allergenByCode.get(code)
     return { emoji: a?.emoji ?? '⚠️', name: a?.name ?? code.replace(/_/g, ' ') }
   }
+}
+
+/** Comprobación de ingredientes de una receta compartidos con productos en la cesta. */
+export function useRecipeBasketOverlap(recipeId: string | null): RecipeBasketOverlap | null {
+  const { recipes, productsById } = useCatalog()
+  const { state } = useAppState()
+  return useMemo(() => {
+    if (!recipeId) return null
+    const recipe = recipes.find((r) => r.id === recipeId)
+    if (!recipe) return null
+    return computeRecipeBasketOverlap(recipe, state.basket.recipeIds, state.pantry, recipes, productsById)
+  }, [recipeId, recipes, productsById, state.basket.recipeIds, state.pantry])
+}
+
+/** Mapa de ingredientes compartidos con la cesta para todas las recetas del catálogo. */
+export function useAllBasketOverlaps(): ReadonlyMap<string, RecipeBasketOverlap> {
+  const { recipes, productsById } = useCatalog()
+  const { state } = useAppState()
+  return useMemo(() => {
+    const map = new Map<string, RecipeBasketOverlap>()
+    for (const r of recipes) {
+      map.set(r.id, computeRecipeBasketOverlap(r, state.basket.recipeIds, state.pantry, recipes, productsById))
+    }
+    return map
+  }, [recipes, productsById, state.basket.recipeIds, state.pantry])
 }

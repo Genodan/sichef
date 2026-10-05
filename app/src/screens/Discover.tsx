@@ -6,7 +6,7 @@ import { Logo } from '../components/Logo.tsx'
 import { SwipeDeck, type Decision } from '../components/SwipeDeck.tsx'
 import { EmptyState, PrimaryButton } from '../components/ui.tsx'
 import { LIKE_ADDS_TO_BASKET, useAppState } from '../lib/appState.ts'
-import { rankRecipes, type RankInput, type RecipeInfo } from '../lib/compute.ts'
+import { computeRecipeBasketOverlap, rankRecipes, type RankInput, type RecipeInfo } from '../lib/compute.ts'
 import { useCatalog } from '../lib/data.ts'
 import { useHiddenSummary, useHouseholdSuitability, useVisibility } from '../lib/hooks.ts'
 import { useUi } from '../lib/ui.ts'
@@ -79,23 +79,57 @@ export function Discover() {
 
   const onDecide = (id: string, decision: Decision) => {
     const wasInBasket = state.basket.recipeIds.includes(id)
-    const name = catalog.info.get(id)?.recipe.name ?? 'la receta'
+    const recipe = catalog.info.get(id)?.recipe
+    const name = recipe?.name ?? 'la receta'
     setSticky(items[1]?.recipe.id ?? null)
     dispatch({ type: decision, id })
-    ui.notify(
-      decision === 'like'
-        ? LIKE_ADDS_TO_BASKET
-          ? `¡Sí! «${name}» va a tu cesta`
-          : `«${name}» guardada en tu Recetario`
-        : `Paso de «${name}»`,
-      {
+
+    if (decision === 'like') {
+      const overlap = recipe
+        ? computeRecipeBasketOverlap(recipe, state.basket.recipeIds, state.pantry, catalog.recipes, catalog.productsById)
+        : null
+
+      if (overlap && overlap.needsMore.length > 0) {
+        const first = overlap.needsMore[0]
+        const otherName = first.otherUses[0]?.recipeName ?? 'otra receta'
+        ui.notify(
+          `«${name}» guardada. 💡 Tienes «${first.ingredientName}» en tu cesta (por «${otherName}»): necesitarás ${first.totalPackagesNeeded} envases (1 por receta).`,
+          {
+            label: 'Ver receta',
+            run: () => ui.openRecipe(id),
+          },
+        )
+      } else if (overlap && overlap.sufficient.length > 0) {
+        const first = overlap.sufficient[0]
+        const otherName = first.otherUses[0]?.recipeName ?? 'otra receta'
+        ui.notify(
+          `«${name}» guardada. 💡 «${first.ingredientName}» ya está en tu cesta (por «${otherName}») y 1 envase es suficiente para ambas.`,
+          {
+            label: 'Ver receta',
+            run: () => ui.openRecipe(id),
+          },
+        )
+      } else {
+        ui.notify(
+          LIKE_ADDS_TO_BASKET ? `¡Sí! «${name}» va a tu cesta` : `«${name}» guardada en tu Recetario`,
+          {
+            label: 'Deshacer',
+            run: () => {
+              setSticky(id)
+              dispatch({ type: 'undoDecision', id, wasInBasket })
+            },
+          },
+        )
+      }
+    } else {
+      ui.notify(`Paso de «${name}»`, {
         label: 'Deshacer',
         run: () => {
           setSticky(id)
           dispatch({ type: 'undoDecision', id, wasInBasket })
         },
-      },
-    )
+      })
+    }
   }
 
   const visibleCount = catalog.recipes.length - hidden.total

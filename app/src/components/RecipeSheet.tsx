@@ -18,10 +18,16 @@ import { AnimatePresence, motion } from 'motion/react'
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import type { Store } from '../types.ts'
 import { getIngredientStatus, useAppState } from '../lib/appState.ts'
-import type { IngredientLine, RecipeInfo } from '../lib/compute.ts'
+import type { IngredientLine, RecipeInfo, SharedBasketIngredient } from '../lib/compute.ts'
 import { useCatalog } from '../lib/data.ts'
 import { formatDate, formatEuro, formatLocation, formatMinutes, NA, plural } from '../lib/format.ts'
-import { useAllergenLabel, useCurrentStore, useRecipeHouseholdSuitability, useVisibility } from '../lib/hooks.ts'
+import {
+  useAllergenLabel,
+  useCurrentStore,
+  useRecipeBasketOverlap,
+  useRecipeHouseholdSuitability,
+  useVisibility,
+} from '../lib/hooks.ts'
 import { useUi } from '../lib/ui.ts'
 import { AllergenChips } from './AllergenChips.tsx'
 import { HiddenReasons } from './HiddenReasons.tsx'
@@ -74,12 +80,14 @@ function IngredientRow({
   line,
   store,
   status,
+  sharedItem,
   onToggleBasket,
   onToggleHome,
 }: {
   line: IngredientLine
   store: Store | null
   status: 'basket' | 'home' | 'none'
+  sharedItem?: SharedBasketIngredient
   onToggleBasket: () => void
   onToggleHome: () => void
 }) {
@@ -143,6 +151,35 @@ function IngredientRow({
               {stock === false && <span className="ml-1 font-extrabold text-pass">· Sin stock</span>}
             </p>
           )}
+
+          {sharedItem && (
+            <div className="mt-1.5">
+              {sharedItem.needsExtraPackage ? (
+                status === 'basket' ? (
+                  <p className="flex items-center gap-1 text-[11px] font-black text-brand-dark">
+                    <span>✅</span>
+                    <span>
+                      En cesta ({sharedItem.totalPackagesNeeded} envases en total para «{sharedItem.otherUses[0]?.recipeName}» y esta receta)
+                    </span>
+                  </p>
+                ) : (
+                  <p className="flex items-center gap-1 text-[11px] font-black text-amber-800">
+                    <span>⚠️</span>
+                    <span>
+                      Ya en cesta por «{sharedItem.otherUses[0]?.recipeName}» · Necesitas {sharedItem.totalPackagesNeeded} envases (1 por receta)
+                    </span>
+                  </p>
+                )
+              ) : (
+                <p className="flex items-center gap-1 text-[11px] font-black text-brand-dark">
+                  <span>✨</span>
+                  <span>
+                    En cesta por «{sharedItem.otherUses[0]?.recipeName}» · 1 envase cubre ambas recetas
+                  </span>
+                </p>
+              )}
+            </div>
+          )}
         </div>
       </div>
 
@@ -174,11 +211,17 @@ function IngredientRow({
             className={`flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-extrabold transition-all ${
               status === 'basket'
                 ? 'bg-accent text-white shadow-soft'
-                : 'bg-white text-ink hover:bg-cream hover:text-accent-dark'
+                : sharedItem?.needsExtraPackage
+                  ? 'bg-amber-100 text-amber-900 border border-amber-300 hover:bg-accent hover:text-white hover:border-transparent'
+                  : 'bg-white text-ink hover:bg-cream hover:text-accent-dark'
             }`}
           >
             <ShoppingBasket className="size-3.5" strokeWidth={2.5} aria-hidden />
-            {status === 'basket' ? 'En la cesta' : 'A la cesta'}
+            {status === 'basket'
+              ? 'En la cesta'
+              : sharedItem?.needsExtraPackage
+                ? '+ Añadir 2º envase'
+                : 'A la cesta'}
           </button>
           <button
             type="button"
@@ -206,6 +249,7 @@ function SheetContent({ info, onClose }: { info: RecipeInfo; onClose: () => void
   const store = useCurrentStore()
   const visibility = useVisibility().get(recipe.id)
   const suitability = useRecipeHouseholdSuitability(recipe.id)
+  const overlap = useRecipeBasketOverlap(recipe.id)
   const allergenLabel = useAllergenLabel()
   const backRef = useRef<HTMLButtonElement>(null)
   const [scrolled, setScrolled] = useState(false)
@@ -521,6 +565,87 @@ function SheetContent({ info, onClose }: { info: RecipeInfo; onClose: () => void
               <p className="text-sm italic text-muted">{NA}</p>
             ) : (
               <>
+                {/* Alerta de ingredientes compartidos con la cesta */}
+                {overlap && overlap.sharedIngredients.length > 0 && (
+                  <div className="mb-4 flex flex-col gap-2 rounded-2xl bg-panel/85 p-3.5 border border-line">
+                    <div className="flex items-center gap-1.5 text-xs font-black text-ink">
+                      <ShoppingBasket className="size-4 text-accent" />
+                      <span>Ingredientes compartidos con tu cesta</span>
+                    </div>
+
+                    {overlap.needsMore.length > 0 && (
+                      <div className="flex flex-col gap-2 rounded-xl bg-amber-50 border border-amber-200/90 p-2.5 text-xs text-amber-950">
+                        <div className="flex items-start gap-2">
+                          <span className="text-sm">⚠️</span>
+                          <div className="flex-1 min-w-0">
+                            <p className="font-extrabold text-accent-dark">
+                              Recomendado añadir 2º envase a la cesta
+                            </p>
+                            <p className="mt-0.5 text-[11px] font-semibold text-amber-900/90 leading-tight">
+                              Ya tienes estos ingredientes en la cesta por otra receta. Como se necesita uno por cada receta, te recomendamos añadir otro envase para cocinar ambas:
+                            </p>
+                          </div>
+                        </div>
+
+                        <ul className="flex flex-col gap-1.5 pt-1">
+                          {overlap.needsMore.map((item) => (
+                            <li
+                              key={item.ingredientIndex}
+                              className="flex items-center justify-between gap-2 rounded-lg bg-white/95 p-2 border border-amber-200 shadow-xs"
+                            >
+                              <div className="min-w-0 flex-1">
+                                <p className="font-black text-ink truncate">{item.ingredientName} ({item.recipeLabel})</p>
+                                <p className="text-[10px] font-bold text-muted truncate">
+                                  En cesta por: {item.otherUses.map((u) => u.recipeName).join(', ')} · Total necesario: {item.totalPackagesNeeded} envases
+                                </p>
+                              </div>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  if (!isLiked) dispatch({ type: 'like', id: recipe.id })
+                                  dispatch({
+                                    type: 'setIngredientStatus',
+                                    recipeId: recipe.id,
+                                    ingredientIndex: item.ingredientIndex,
+                                    status: 'basket',
+                                  })
+                                  ui.notify(`Añadido 2º envase de «${item.ingredientName}» a la cesta`)
+                                }}
+                                className="shrink-0 rounded-full bg-accent px-3 py-1 text-[11px] font-black text-white shadow-soft hover:bg-accent-dark transition-colors"
+                              >
+                                + Añadir 2º envase
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {overlap.alreadyAddedExtra.length > 0 && (
+                      <div className="flex items-center gap-2 rounded-xl bg-emerald-50 border border-emerald-200 p-2 text-xs text-emerald-950 font-semibold">
+                        <span>✅</span>
+                        <span>
+                          {overlap.alreadyAddedExtra.length === 1
+                            ? `2º envase de «${overlap.alreadyAddedExtra[0].ingredientName}» ya añadido a la cesta (cubiertas ambas recetas).`
+                            : `Envases extra añadidos a la cesta para todas las recetas.`}
+                        </span>
+                      </div>
+                    )}
+
+                    {overlap.sufficient.length > 0 && (
+                      <div className="flex items-start gap-2 rounded-xl bg-brand-soft border border-brand/20 p-2 text-xs text-brand-dark">
+                        <span className="text-sm">✨</span>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-extrabold">Aprovechas envase de la cesta</p>
+                          <p className="mt-0.5 text-[11px] font-semibold text-brand-dark/90 leading-tight">
+                            {overlap.sufficient.map((s) => `«${s.ingredientName}»`).join(', ')} ya está en tu cesta y 1 envase es suficiente para ambas recetas.
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+
                 {/* Pestañas para ver qué tienes en casa, en la cesta y sin acción */}
                 <div className="no-scrollbar -mx-1 mb-3 flex gap-1.5 overflow-x-auto px-1" role="tablist" aria-label="Filtro de ingredientes">
                   <button
@@ -608,6 +733,7 @@ function SheetContent({ info, onClose }: { info: RecipeInfo; onClose: () => void
                         line={line}
                         store={store}
                         status={status}
+                        sharedItem={overlap?.sharedIngredients.find((s) => s.ingredientIndex === index)}
                         onToggleBasket={() => toggleBasket(index)}
                         onToggleHome={() => toggleHome(index)}
                       />

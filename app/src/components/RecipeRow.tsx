@@ -1,6 +1,6 @@
 import { Flame, ShieldAlert, TrendingDown } from 'lucide-react'
 import type { ReactNode } from 'react'
-import type { HouseholdSuitability, RecipeInfo, Visibility } from '../lib/compute.ts'
+import type { HouseholdSuitability, RecipeBasketOverlap, RecipeInfo, Visibility } from '../lib/compute.ts'
 import { formatEuro, formatNutrient } from '../lib/format.ts'
 import { SafeImage } from './SafeImage.tsx'
 
@@ -13,10 +13,20 @@ interface Props {
   actions?: ReactNode
   /** Resumen de estado de ingredientes (cesta, casa, pendientes). */
   ingredientSummary?: ReactNode
+  /** Ingredientes compartidos con la cesta */
+  basketOverlap?: RecipeBasketOverlap | null
 }
 
 /** Fila de receta para listas (Buscar, Recetario). */
-export function RecipeRow({ info, onOpen, visibility, suitability, actions, ingredientSummary }: Props) {
+export function RecipeRow({
+  info,
+  onOpen,
+  visibility,
+  suitability,
+  actions,
+  ingredientSummary,
+  basketOverlap,
+}: Props) {
   const { recipe, cost, nutrition, priceDecreased } = info
   const hidden = visibility && !visibility.visible
   return (
@@ -46,6 +56,38 @@ export function RecipeRow({ info, onOpen, visibility, suitability, actions, ingr
             )}
           </p>
           {ingredientSummary && <div className="mt-1.5">{ingredientSummary}</div>}
+          {basketOverlap && basketOverlap.sharedIngredients.length > 0 && (
+            <div className="mt-1.5">
+              {basketOverlap.needsMore.length > 0 ? (
+                <div className="flex items-center gap-1.5 rounded-xl bg-amber-50 border border-amber-200/80 px-2.5 py-1 text-[11px] font-black text-amber-900 leading-tight">
+                  <span className="shrink-0 text-amber-600 text-xs" aria-hidden>🛒</span>
+                  <span>
+                    {basketOverlap.needsMore.length === 1
+                      ? `Tienes «${basketOverlap.needsMore[0].ingredientName}» en cesta · Necesitas ${basketOverlap.needsMore[0].totalPackagesNeeded} envases (1 por receta)`
+                      : `${basketOverlap.needsMore.length} ingredientes en cesta · Recomendado añadir 2º envase`}
+                  </span>
+                </div>
+              ) : basketOverlap.alreadyAddedExtra.length > 0 ? (
+                <div className="flex items-center gap-1.5 rounded-xl bg-emerald-50 border border-emerald-200/80 px-2.5 py-1 text-[11px] font-black text-emerald-900 leading-tight">
+                  <span className="shrink-0 text-emerald-600 text-xs" aria-hidden>✅</span>
+                  <span>
+                    {basketOverlap.alreadyAddedExtra.length === 1
+                      ? `2º envase de «${basketOverlap.alreadyAddedExtra[0].ingredientName}» añadido a la cesta`
+                      : `Envases extra añadidos a la cesta para ambas recetas`}
+                  </span>
+                </div>
+              ) : basketOverlap.sufficient.length > 0 ? (
+                <div className="flex items-center gap-1.5 rounded-xl bg-emerald-50 border border-emerald-200/80 px-2.5 py-1 text-[11px] font-black text-emerald-900 leading-tight">
+                  <span className="shrink-0 text-emerald-600 text-xs" aria-hidden>✨</span>
+                  <span>
+                    {basketOverlap.sufficient.length === 1
+                      ? `Comparte «${basketOverlap.sufficient[0].ingredientName}» con la cesta (1 envase suficiente)`
+                      : `Comparte ${basketOverlap.sufficient.length} ingredientes con la cesta (1 envase suficiente)`}
+                  </span>
+                </div>
+              ) : null}
+            </div>
+          )}
           {suitability && suitability.members.length > 0 ? (
             <div className="mt-1 text-[11px] font-black">
               {suitability.allCanEat ? (
