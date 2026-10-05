@@ -21,6 +21,7 @@ import { useCatalog } from '../lib/data.ts'
 import { formatEuro, formatNutrient } from '../lib/format.ts'
 import {
   askGeminiChef,
+  checkBackendGeminiStatus,
   clearGeminiApiKey,
   getStoredGeminiApiKey,
   saveGeminiApiKey,
@@ -61,8 +62,17 @@ export function Chatbot() {
   const ui = useUi()
 
   const [apiKey, setApiKey] = useState<string>(() => getStoredGeminiApiKey())
+  const [backendReady, setBackendReady] = useState<boolean>(false)
   const [showKeyModal, setShowKeyModal] = useState<boolean>(false)
   const [keyInput, setKeyInput] = useState<string>(apiKey)
+
+  useEffect(() => {
+    checkBackendGeminiStatus().then((hasKey) => {
+      setBackendReady(hasKey)
+    })
+  }, [apiKey])
+
+  const isAiActive = backendReady || Boolean(apiKey)
 
   const [messages, setMessages] = useState<ChatItem[]>(() => [
     {
@@ -70,7 +80,7 @@ export function Chatbot() {
       role: 'assistant',
       text: '¡Hola! Soy tu **Chef IA** de SíChef 👨‍🍳✨\n\nPuedes pedirme en lenguaje natural lo que te apetezca hoy (por ejemplo: *«me apetece un plato caliente con arroz»* o *«un plato con mucha proteína»*). Te daré una recomendación directa con productos de Mercadona, te explicaré por qué y podrás añadirla a tu Recetario.',
       timestamp: 0,
-      source: getStoredGeminiApiKey() ? 'gemini' : 'local',
+      source: 'local',
     },
   ])
 
@@ -174,10 +184,10 @@ export function Chatbot() {
         <div className="mt-3 flex items-center justify-between gap-2 border-t border-white/20 pt-2.5">
           <div className="flex items-center gap-1.5 text-xs font-bold text-white/90">
             <span
-              className={`size-2 rounded-full ${apiKey ? 'bg-emerald-300 animate-pulse' : 'bg-amber-300'}`}
+              className={`size-2 rounded-full ${isAiActive ? 'bg-emerald-300 animate-pulse' : 'bg-amber-300'}`}
               aria-hidden
             />
-            <span>{apiKey ? 'Google Gemini Activo' : 'Modo local (Sin clave)'}</span>
+            <span>{isAiActive ? 'Google Gemini Activo' : 'Modo local (Sin clave)'}</span>
           </div>
           <button
             type="button"
@@ -188,7 +198,7 @@ export function Chatbot() {
             className="inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-xs font-black text-white hover:bg-white/30 transition-colors"
           >
             <KeyRound className="size-3.5" aria-hidden />
-            <span>{apiKey ? 'Configurar clave' : 'Añadir API Key'}</span>
+            <span>{isAiActive ? 'Estado API' : 'Añadir API Key'}</span>
           </button>
         </div>
       </ScreenHeader>
@@ -420,14 +430,20 @@ export function Chatbot() {
             </div>
 
             <p className="text-xs text-muted leading-relaxed">
-              Introduce tu clave de Google Gemini para habilitar el procesamiento en tiempo real con
-              los modelos más avanzados de Google.
+              En producción (Vercel) y en local, la clave se configura de forma segura en el servidor
+              mediante la variable <strong>GEMINI_API_KEY</strong>, protegiéndola sin exponerla jamás en el navegador.
             </p>
+
+            {backendReady && (
+              <div className="rounded-xl border border-emerald-200/80 bg-emerald-50 p-2.5 text-xs font-bold text-brand-dark">
+                ✅ Servidor conectado con <code>GEMINI_API_KEY</code>. La IA ya está activa y funcionando de forma segura.
+              </div>
+            )}
 
             <form onSubmit={handleSaveKeySubmit} className="space-y-3">
               <div>
                 <label htmlFor="gemini-key" className="block text-xs font-extrabold text-ink mb-1">
-                  Clave de API (Google AI Studio)
+                  Clave opcional personalizada (modo local / pruebas)
                 </label>
                 <input
                   id="gemini-key"
@@ -452,7 +468,7 @@ export function Chatbot() {
                   </a>
                   .
                 </p>
-                <p>🔒 La clave se almacena exclusivamente de forma local en tu navegador.</p>
+                <p>🔒 Tu clave nunca se sube a GitHub ni se expone a los visitantes.</p>
               </div>
 
               <div className="flex gap-2 pt-1">
