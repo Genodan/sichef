@@ -27,6 +27,13 @@ export interface Allergen {
   emoji: string // "🌰"
 }
 
+/** Miembro del hogar para gestión independiente de alérgenos por persona. */
+export interface HouseholdMember {
+  id: string
+  name: string
+  allergies: AllergenCode[]
+}
+
 /**
  * Cómo sabemos los alérgenos de un producto:
  * - "declarado": viene de la ficha de Mercadona (nutrition_information.allergens / ingredientes en negrita)

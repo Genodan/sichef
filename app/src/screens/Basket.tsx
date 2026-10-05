@@ -1,7 +1,9 @@
 import {
   CheckCircle2,
   Clock,
+  Compass,
   Info,
+  ListFilter,
   MapPin,
   PackageCheck,
   PackageX,
@@ -19,6 +21,7 @@ import { SafeImage } from '../components/SafeImage.tsx'
 import { EmptyState, PrimaryButton, ScreenHeader } from '../components/ui.tsx'
 import { DigitalPriceTag } from '../components/DigitalPriceTag.tsx'
 import { InteractiveStoreMap } from '../components/InteractiveStoreMap.tsx'
+import { StoreSimulator } from '../components/StoreSimulator.tsx'
 import { getIngredientStatus, useAppState } from '../lib/appState.ts'
 import { buildShoppingList } from '../lib/compute.ts'
 import { useCatalog } from '../lib/data.ts'
@@ -35,6 +38,7 @@ export function Basket() {
 
   // Modo de compra: 'tienda' (compra física asistida con etiquetas digitales) vs 'online' (pedido a domicilio)
   const [buyMode, setBuyMode] = useState<'tienda' | 'online'>('tienda')
+  const [tiendaView, setTiendaView] = useState<'simulador' | 'etiquetas'>('simulador')
 
   // Modales
   const [showInStoreModal, setShowInStoreModal] = useState(false)
@@ -269,119 +273,155 @@ export function Basket() {
                   </div>
                 </section>
 
-                {/* Banner de tecnología ESL y tienda simulada */}
-                <p className="mb-3 flex gap-2 rounded-2xl bg-cream px-3.5 py-2.5 text-xs font-semibold text-accent-dark">
-                  <Info className="mt-0.5 size-4 shrink-0" aria-hidden />
-                  <span>
-                    <strong className="font-extrabold">Tarjetas de precio digitales (ESL):</strong> Ubicación exacta en lineal
-                    y balda sincronizada con la tienda. Pulsa «Localizar» para hacer parpadear su luz LED.
-                  </span>
-                </p>
-
-                {/* Mapa interactivo de la tienda con lugares de cada producto */}
-                {store && (
-                  <section className="mb-4 rounded-3xl bg-white p-4 shadow-soft" aria-labelledby="mapa-titulo">
-                    <h2 id="mapa-titulo" className="mb-3 flex items-center gap-1.5 text-base font-extrabold text-ink">
-                      <MapPin className="size-4 text-brand" aria-hidden /> Mapa de la tienda y productos
-                    </h2>
-                    <InteractiveStoreMap
-                      store={store}
-                      items={list.items}
-                      checkedProductIds={checked}
-                      route={list.aislesToVisit}
-                      doneAisles={doneAisles}
-                      onToggleProduct={(productId) => dispatch({ type: 'toggleChecked', productId })}
-                    />
-                  </section>
-                )}
-
-                {/* Listado de pasillos con Tarjetas de Precio Digitales */}
-                <div className="flex flex-col gap-3">
-                  <div className="flex items-center justify-between px-1">
-                    <h2 className="text-sm font-black uppercase tracking-wide text-muted">
-                      Ruta guiada por pasillos ({list.groups.length})
-                    </h2>
-                    {doneCount > 0 && (
-                      <button
-                        type="button"
-                        onClick={() => dispatch({ type: 'clearChecked' })}
-                        className="inline-flex items-center gap-1 text-xs font-extrabold text-muted hover:text-ink"
-                      >
-                        <RotateCcw className="size-3" /> Desmarcar todo
-                      </button>
-                    )}
-                  </div>
-
-                  {list.groups.map((g) => (
-                    <section key={g.aisle ?? 'sin'} className="rounded-3xl bg-white p-4 shadow-soft">
-                      <div className="mb-3 flex items-center gap-2">
-                        <span
-                          className={`grid size-7 place-items-center rounded-full text-sm font-black ${
-                            g.aisle === null
-                              ? 'bg-panel text-muted'
-                              : doneAisles.has(g.aisle)
-                                ? 'bg-brand-soft text-brand'
-                                : 'bg-brand text-white'
-                          }`}
-                          aria-hidden
-                        >
-                          {g.aisle ?? '?'}
-                        </span>
-                        <div>
-                          <h3 className="font-black text-ink text-sm">
-                            {g.aisle === null ? `Ubicación: ${NA}` : `Pasillo ${g.aisle}${g.aisleName ? ` · ${g.aisleName}` : ''}`}
-                          </h3>
-                          <span className="text-[11px] font-semibold text-muted">
-                            {g.items.length} {plural(g.items.length, 'tarjeta digital', 'tarjetas digitales')}
-                          </span>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-col gap-3">
-                        {g.items.map((item) => (
-                          <DigitalPriceTag
-                            key={item.product.id}
-                            item={item}
-                            checked={checked.has(item.product.id)}
-                            onToggle={() => dispatch({ type: 'toggleChecked', productId: item.product.id })}
-                            aisleName={g.aisleName}
-                          />
-                        ))}
-                      </div>
-                    </section>
-                  ))}
-
-                  {list.missing.length > 0 && (
-                    <section className="rounded-3xl bg-white p-4 shadow-soft">
-                      <h2 className="mb-2 flex items-center gap-2 text-base font-extrabold">
-                        <PackageX className="size-5 text-muted" aria-hidden /> Sin producto en el catálogo
-                      </h2>
-                      <ul className="flex flex-col gap-1 text-sm">
-                        {list.missing.map((m, i) => (
-                          <li key={`${m.recipeId}-${i}`}>
-                            <strong className="font-extrabold">{m.ingredient}</strong> ({m.label}) · {m.recipeName}:{' '}
-                            <span className="italic text-muted">{NA}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </section>
-                  )}
-                </div>
-
-                {/* Botón flotante inferior de finalizar compra */}
-                <div className="mt-4 flex flex-col items-center gap-2">
-                  <PrimaryButton
-                    variant="brand"
-                    onClick={handleFinishInStoreClick}
-                    className="w-full flex items-center justify-center gap-2 py-3.5 text-base font-black shadow-button"
+                {/* Selector de vista dentro de Compra en tienda: Demo Simulador vs Lista */}
+                <div className="mb-3.5 flex rounded-2xl bg-panel p-1">
+                  <button
+                    type="button"
+                    onClick={() => setTiendaView('simulador')}
+                    className={`flex flex-1 items-center justify-center gap-1.5 rounded-xl py-2 text-xs font-black transition-all ${
+                      tiendaView === 'simulador' ? 'bg-brand text-white shadow-soft' : 'text-muted hover:text-ink'
+                    }`}
                   >
-                    <CheckCircle2 className="size-5" />
-                    <span>He terminado la compra</span>
-                  </PrimaryButton>
-                  <p className="text-center text-[11px] font-semibold text-muted">
-                    Al terminar, los ingredientes recogidos se marcarán como «En casa» en tu Recetario.
-                  </p>
+                    <Compass className="size-4" />
+                    <span>Demo Simulador (Tu posición)</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setTiendaView('etiquetas')}
+                    className={`flex flex-1 items-center justify-center gap-1.5 rounded-xl py-2 text-xs font-black transition-all ${
+                      tiendaView === 'etiquetas' ? 'bg-brand text-white shadow-soft' : 'text-muted hover:text-ink'
+                    }`}
+                  >
+                    <ListFilter className="size-4" />
+                    <span>Lista y mapa ESL</span>
+                  </button>
                 </div>
+
+                {tiendaView === 'simulador' && store ? (
+                  <StoreSimulator
+                    store={store}
+                    items={list.items}
+                    checkedProductIds={checked}
+                    onToggleProduct={(productId) => dispatch({ type: 'toggleChecked', productId })}
+                    onFinishPurchase={handleFinishInStoreClick}
+                  />
+                ) : (
+                  <>
+                    {/* Banner de tecnología ESL y tienda simulada */}
+                    <p className="mb-3 flex gap-2 rounded-2xl bg-cream px-3.5 py-2.5 text-xs font-semibold text-accent-dark">
+                      <Info className="mt-0.5 size-4 shrink-0" aria-hidden />
+                      <span>
+                        <strong className="font-extrabold">Tarjetas de precio digitales (ESL):</strong> Ubicación exacta en lineal
+                        y balda sincronizada con la tienda. Pulsa «Localizar» para hacer parpadear su luz LED.
+                      </span>
+                    </p>
+
+                    {/* Mapa interactivo de la tienda con lugares de cada producto */}
+                    {store && (
+                      <section className="mb-4 rounded-3xl bg-white p-4 shadow-soft" aria-labelledby="mapa-titulo">
+                        <h2 id="mapa-titulo" className="mb-3 flex items-center gap-1.5 text-base font-extrabold text-ink">
+                          <MapPin className="size-4 text-brand" aria-hidden /> Mapa de la tienda y productos
+                        </h2>
+                        <InteractiveStoreMap
+                          store={store}
+                          items={list.items}
+                          checkedProductIds={checked}
+                          route={list.aislesToVisit}
+                          doneAisles={doneAisles}
+                          onToggleProduct={(productId) => dispatch({ type: 'toggleChecked', productId })}
+                        />
+                      </section>
+                    )}
+
+                    {/* Listado de pasillos con Tarjetas de Precio Digitales */}
+                    <div className="flex flex-col gap-3">
+                      <div className="flex items-center justify-between px-1">
+                        <h2 className="text-sm font-black uppercase tracking-wide text-muted">
+                          Ruta guiada por pasillos ({list.groups.length})
+                        </h2>
+                        {doneCount > 0 && (
+                          <button
+                            type="button"
+                            onClick={() => dispatch({ type: 'clearChecked' })}
+                            className="inline-flex items-center gap-1 text-xs font-extrabold text-muted hover:text-ink"
+                          >
+                            <RotateCcw className="size-3" /> Desmarcar todo
+                          </button>
+                        )}
+                      </div>
+
+                      {list.groups.map((g) => (
+                        <section key={g.aisle ?? 'sin'} className="rounded-3xl bg-white p-4 shadow-soft">
+                          <div className="mb-3 flex items-center gap-2">
+                            <span
+                              className={`grid size-7 place-items-center rounded-full text-sm font-black ${
+                                g.aisle === null
+                                  ? 'bg-panel text-muted'
+                                  : doneAisles.has(g.aisle)
+                                    ? 'bg-brand-soft text-brand'
+                                    : 'bg-brand text-white'
+                              }`}
+                              aria-hidden
+                            >
+                              {g.aisle ?? '?'}
+                            </span>
+                            <div>
+                              <h3 className="font-black text-ink text-sm">
+                                {g.aisle === null ? `Ubicación: ${NA}` : `Pasillo ${g.aisle}${g.aisleName ? ` · ${g.aisleName}` : ''}`}
+                              </h3>
+                              <span className="text-[11px] font-semibold text-muted">
+                                {g.items.length} {plural(g.items.length, 'tarjeta digital', 'tarjetas digitales')}
+                              </span>
+                            </div>
+                          </div>
+
+                          <div className="flex flex-col gap-3">
+                            {g.items.map((item) => (
+                              <DigitalPriceTag
+                                key={item.product.id}
+                                item={item}
+                                checked={checked.has(item.product.id)}
+                                onToggle={() => dispatch({ type: 'toggleChecked', productId: item.product.id })}
+                                aisleName={g.aisleName}
+                              />
+                            ))}
+                          </div>
+                        </section>
+                      ))}
+
+                      {list.missing.length > 0 && (
+                        <section className="rounded-3xl bg-white p-4 shadow-soft">
+                          <h2 className="mb-2 flex items-center gap-2 text-base font-extrabold">
+                            <PackageX className="size-5 text-muted" aria-hidden /> Sin producto en el catálogo
+                          </h2>
+                          <ul className="flex flex-col gap-1 text-sm">
+                            {list.missing.map((m, i) => (
+                              <li key={`${m.recipeId}-${i}`}>
+                                <strong className="font-extrabold">{m.ingredient}</strong> ({m.label}) · {m.recipeName}:{' '}
+                                <span className="italic text-muted">{NA}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </section>
+                      )}
+                    </div>
+
+                    {/* Botón flotante inferior de finalizar compra */}
+                    <div className="mt-4 flex flex-col items-center gap-2">
+                      <PrimaryButton
+                        variant="brand"
+                        onClick={handleFinishInStoreClick}
+                        className="w-full flex items-center justify-center gap-2 py-3.5 text-base font-black shadow-button"
+                      >
+                        <CheckCircle2 className="size-5" />
+                        <span>He terminado la compra</span>
+                      </PrimaryButton>
+                      <p className="text-center text-[11px] font-semibold text-muted">
+                        Al terminar, los ingredientes recogidos se marcarán como «En casa» en tu Recetario.
+                      </p>
+                    </div>
+                  </>
+                )}
               </>
             ) : (
               /* =================== OPCIÓN 1: PEDIDO A DOMICILIO ONLINE =================== */

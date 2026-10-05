@@ -1,4 +1,4 @@
-import { BookHeart, House, Search, ShoppingBasket, User, type LucideIcon } from 'lucide-react'
+import { BookHeart, House, Search, ShoppingBasket, Sparkles, User, type LucideIcon } from 'lucide-react'
 import type { TabId } from '../lib/ui.ts'
 
 const TABS: { id: TabId; label: string; Icon: LucideIcon }[] = [
@@ -7,6 +7,7 @@ const TABS: { id: TabId; label: string; Icon: LucideIcon }[] = [
   { id: 'recetario', label: 'Recetario', Icon: BookHeart },
   { id: 'cesta', label: 'Cesta', Icon: ShoppingBasket },
   { id: 'perfil', label: 'Perfil', Icon: User },
+  { id: 'chat', label: 'Chef IA', Icon: Sparkles },
 ]
 
 interface Props {
@@ -18,7 +19,7 @@ interface Props {
 export function BottomNav({ tab, onChange, basketCount }: Props) {
   return (
     <nav aria-label="Navegación principal" className="relative z-30 shrink-0 border-t border-line bg-white pb-[var(--bottom-inset)]">
-      <ul className="grid grid-cols-5">
+      <ul className="grid grid-cols-6">
         {TABS.map(({ id, label, Icon }) => {
           const active = id === tab
           return (
@@ -28,11 +29,11 @@ export function BottomNav({ tab, onChange, basketCount }: Props) {
                 onClick={() => onChange(id)}
                 aria-current={active ? 'page' : undefined}
                 aria-label={id === 'cesta' && basketCount > 0 ? `${label} (${basketCount} ${basketCount === 1 ? 'producto' : 'productos'})` : label}
-                className={`relative flex w-full flex-col items-center gap-0.5 pb-2 pt-2.5 text-[11px] font-extrabold transition-colors ${
+                className={`relative flex w-full flex-col items-center gap-0.5 px-0.5 pb-2 pt-2 text-[10px] sm:text-[11px] font-extrabold transition-colors ${
                   active ? 'text-brand' : 'text-muted hover:text-ink'
                 }`}
               >
-                {active && <span className="absolute inset-x-3 -top-px h-[3px] rounded-b-full bg-accent" aria-hidden />}
+                {active && <span className="absolute inset-x-2 -top-px h-[3px] rounded-b-full bg-accent" aria-hidden />}
                 <span className="relative">
                   <Icon className="size-6" strokeWidth={active ? 2.5 : 2} fill={active && id === 'descubre' ? 'currentColor' : 'none'} aria-hidden />
                   {id === 'cesta' && basketCount > 0 && (

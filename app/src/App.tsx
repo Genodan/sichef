@@ -10,6 +10,7 @@ import { CatalogContext, useCatalogLoader } from './lib/data.ts'
 import { AppStateProvider } from './lib/state.tsx'
 import { tabFromHash, UiContext, type TabId, type ToastAction, type UiApi } from './lib/ui.ts'
 import { Basket } from './screens/Basket.tsx'
+import { Chatbot } from './screens/Chatbot.tsx'
 import { Cookbook } from './screens/Cookbook.tsx'
 import { Discover } from './screens/Discover.tsx'
 import { Profile } from './screens/Profile.tsx'
@@ -58,6 +59,7 @@ function Shell() {
         {tab === 'recetario' && <Cookbook />}
         {tab === 'cesta' && <Basket />}
         {tab === 'perfil' && <Profile />}
+        {tab === 'chat' && <Chatbot />}
       </main>
       <BottomNav tab={tab} onChange={goTo} basketCount={basketCount} />
       <RecipeSheet recipeId={recipeId} onClose={closeRecipe} />

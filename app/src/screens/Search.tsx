@@ -6,6 +6,7 @@ import {
   Search as SearchIcon,
   ShieldCheck,
   ShoppingBasket,
+  Sparkles,
   X,
 } from 'lucide-react'
 import { useMemo, useState } from 'react'
@@ -16,7 +17,7 @@ import { EmptyState, ScreenHeader } from '../components/ui.tsx'
 import { normalizeText, type RecipeInfo } from '../lib/compute.ts'
 import { useCatalog } from '../lib/data.ts'
 import { formatEuro, formatLocation, formatNutrient, plural } from '../lib/format.ts'
-import { useCurrentStore, useVisibility } from '../lib/hooks.ts'
+import { useCurrentStore, useHouseholdSuitability, useVisibility } from '../lib/hooks.ts'
 import { useUi } from '../lib/ui.ts'
 
 function ProductButton({
@@ -69,6 +70,7 @@ export function Search() {
   const { products, productsById, recipes, info } = useCatalog()
   const store = useCurrentStore()
   const visibility = useVisibility()
+  const household = useHouseholdSuitability()
   const ui = useUi()
   const [query, setQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('Todos')
@@ -138,7 +140,10 @@ export function Search() {
   const selectedRecipes = (selected ? (usage.get(selected.id) ?? []) : [])
     .map((id) => info.get(id))
     .filter((x): x is RecipeInfo => x !== undefined)
-  const visibleRecipes = selectedRecipes.filter((i) => visibility.get(i.recipe.id)?.visible)
+  const visibleRecipes = selectedRecipes.filter((i) => {
+    const s = household.get(i.recipe.id)
+    return s && s.members.length > 0 ? s.canEat.length > 0 : visibility.get(i.recipe.id)?.visible
+  })
   const hiddenCount = selectedRecipes.length - visibleRecipes.length
 
   return (
@@ -189,6 +194,24 @@ export function Search() {
       </ScreenHeader>
 
       <div className="no-scrollbar flex-1 overflow-y-auto px-4 pb-6 pt-4">
+        {!selected && (
+          <button
+            type="button"
+            onClick={() => ui.goTo('chat')}
+            className="mb-3 flex w-full items-center justify-between gap-2 rounded-2xl border border-brand/20 bg-brand-soft/70 p-3 text-left transition-colors hover:bg-brand-soft"
+          >
+            <div className="flex items-center gap-2.5 min-w-0">
+              <span className="grid size-8 shrink-0 place-items-center rounded-xl bg-brand text-white shadow-2xs">
+                <Sparkles className="size-4" aria-hidden />
+              </span>
+              <div className="min-w-0">
+                <p className="text-xs font-black text-brand-dark">¿Prefieres pedir lo que te apetece?</p>
+                <p className="truncate text-[11px] font-semibold text-muted">Habla con el Chef IA para recomendaciones directas</p>
+              </div>
+            </div>
+            <ChevronRight className="size-4 shrink-0 text-brand" aria-hidden />
+          </button>
+        )}
         {selected ? (
           <>
             {/* Tarjeta de producto seleccionado */}
@@ -264,7 +287,13 @@ export function Search() {
                 {visibleRecipes.length > 0 ? (
                   <ul className="flex flex-col gap-2.5">
                     {visibleRecipes.map((i) => (
-                      <RecipeRow key={i.recipe.id} info={i} onOpen={() => ui.openRecipe(i.recipe.id)} />
+                      <RecipeRow
+                        key={i.recipe.id}
+                        info={i}
+                        suitability={household.get(i.recipe.id)}
+                        visibility={visibility.get(i.recipe.id)}
+                        onOpen={() => ui.openRecipe(i.recipe.id)}
+                      />
                     ))}
                   </ul>
                 ) : (
