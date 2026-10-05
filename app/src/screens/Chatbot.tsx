@@ -21,6 +21,7 @@ import { useCatalog } from '../lib/data.ts'
 import { formatEuro, formatNutrient } from '../lib/format.ts'
 import {
   askGeminiChef,
+  checkGeminiServer,
   clearGeminiApiKey,
   getStoredGeminiApiKey,
   saveGeminiApiKey,
@@ -63,6 +64,11 @@ export function Chatbot() {
   const [apiKey, setApiKey] = useState<string>(() => getStoredGeminiApiKey())
   const [showKeyModal, setShowKeyModal] = useState<boolean>(false)
   const [keyInput, setKeyInput] = useState<string>(apiKey)
+  const [serverOn, setServerOn] = useState(false)
+  useEffect(() => {
+    void checkGeminiServer().then(setServerOn)
+  }, [])
+  const geminiOn = apiKey !== '' || serverOn
 
   const [messages, setMessages] = useState<ChatItem[]>(() => [
     {
@@ -174,10 +180,10 @@ export function Chatbot() {
         <div className="mt-3 flex items-center justify-between gap-2 border-t border-white/20 pt-2.5">
           <div className="flex items-center gap-1.5 text-xs font-bold text-white/90">
             <span
-              className={`size-2 rounded-full ${apiKey ? 'bg-emerald-300 animate-pulse' : 'bg-amber-300'}`}
+              className={`size-2 rounded-full ${geminiOn ? 'bg-emerald-300 animate-pulse' : 'bg-amber-300'}`}
               aria-hidden
             />
-            <span>{apiKey ? 'Google Gemini Activo' : 'Modo local (Sin clave)'}</span>
+            <span>{apiKey ? 'Google Gemini activo (tu clave)' : serverOn ? 'Google Gemini activo' : 'Modo local (sin clave)'}</span>
           </div>
           <button
             type="button"
@@ -188,7 +194,7 @@ export function Chatbot() {
             className="inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-xs font-black text-white hover:bg-white/30 transition-colors"
           >
             <KeyRound className="size-3.5" aria-hidden />
-            <span>{apiKey ? 'Configurar clave' : 'Añadir API Key'}</span>
+            <span>{apiKey ? 'Configurar clave' : serverOn ? 'Usar otra clave' : 'Añadir API Key'}</span>
           </button>
         </div>
       </ScreenHeader>

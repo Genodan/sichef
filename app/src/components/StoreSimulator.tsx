@@ -31,8 +31,13 @@ interface Pt {
 const VB_W = 100
 const VB_H = 152
 const METERS_PER_UNIT = 0.5
-const WALK_SPEED = 34 // u/s en la animación
-const STOP_MS = 2200
+/** Velocidades de la demo: unidades del plano por segundo y pausa frente a cada etiqueta. */
+const SPEEDS = {
+  lenta: { label: 'Lenta', emoji: '🐢', walk: 7, stopMs: 3600 },
+  normal: { label: 'Normal', emoji: '🚶', walk: 13, stopMs: 2800 },
+  rapida: { label: 'Rápida', emoji: '🏃', walk: 30, stopMs: 1800 },
+} as const
+type Speed = keyof typeof SPEEDS
 const SHELF_ORDER = ['A', 'B', 'C', 'D']
 
 const Y_BACK = 20 // pasillo frente a los mostradores
@@ -424,6 +429,7 @@ export function StoreSimulator({ store, items, checkedProductIds, onToggleProduc
 
   const [phase, setPhase] = useState<Phase>('idle')
   const [paused, setPaused] = useState(false)
+  const [speed, setSpeed] = useState<Speed>('normal')
   const [d, setD] = useState(0)
   const [stopIndex, setStopIndex] = useState(0)
   const dRef = useRef(0)
@@ -450,7 +456,7 @@ export function StoreSimulator({ store, items, checkedProductIds, onToggleProduc
       last = now
       const next = route.stops[stopRef.current]
       const limit = next ? next.at : route.length
-      const nd = Math.min(limit, dRef.current + WALK_SPEED * dt)
+      const nd = Math.min(limit, dRef.current + SPEEDS[speed].walk * dt)
       dRef.current = nd
       setD(nd)
       if (nd >= limit) {
@@ -464,15 +470,15 @@ export function StoreSimulator({ store, items, checkedProductIds, onToggleProduc
     }
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
-  }, [phase, paused, route])
+  }, [phase, paused, route, speed])
 
   // Frente a la etiqueta: se enciende, y tras una pausa el producto pasa al carro.
   useEffect(() => {
     if (phase !== 'stop' || paused || !current) return
-    const t = window.setTimeout(() => pick(), STOP_MS)
+    const t = window.setTimeout(() => pick(), SPEEDS[speed].stopMs)
     return () => window.clearTimeout(t)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase, paused, stopIndex])
+  }, [phase, paused, stopIndex, speed])
 
   function pick() {
     const s = route.stops[stopRef.current]
@@ -646,6 +652,26 @@ export function StoreSimulator({ store, items, checkedProductIds, onToggleProduc
             </motion.div>
           )}
         </AnimatePresence>
+      </div>
+
+      {/* Velocidad del recorrido */}
+      <div className="flex items-center gap-2 rounded-2xl bg-white p-1.5 shadow-soft ring-1 ring-line" role="radiogroup" aria-label="Velocidad del recorrido">
+        <span className="pl-2 text-[11px] font-black uppercase tracking-wide text-muted">Velocidad</span>
+        {(Object.keys(SPEEDS) as Speed[]).map((key) => (
+          <button
+            key={key}
+            type="button"
+            role="radio"
+            aria-checked={speed === key}
+            onClick={() => setSpeed(key)}
+            className={`flex flex-1 items-center justify-center gap-1 rounded-xl py-2 text-xs font-black transition-colors ${
+              speed === key ? 'bg-brand text-white shadow-soft' : 'text-ink hover:bg-panel'
+            }`}
+          >
+            <span aria-hidden>{SPEEDS[key].emoji}</span>
+            {SPEEDS[key].label}
+          </button>
+        ))}
       </div>
 
       {/* Controles */}
