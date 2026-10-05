@@ -205,7 +205,7 @@ export function Profile() {
                   <p className="text-xs font-semibold text-muted">
                     {activeMember.allergies.length === 0
                       ? 'Sin alergias seleccionadas · Puede comer de todo'
-                      : `${activeMember.allergies.length} ${plural(activeMember.allergies.length, 'alérgeno seleccionado', 'alérgenos seleccionados')}`}
+                      : plural(activeMember.allergies.length, 'alérgeno seleccionado', 'alérgenos seleccionados')}
                   </p>
                 </div>
               )}

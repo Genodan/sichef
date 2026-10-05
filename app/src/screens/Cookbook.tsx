@@ -65,7 +65,7 @@ export function Cookbook() {
                       {counts.none > 0 && (
                         <span className="inline-flex items-center gap-1 rounded-full bg-panel px-2 py-0.5 text-muted">
                           <CircleDot className="size-3 shrink-0" aria-hidden />
-                          {counts.none} {plural(counts.none, 'pendiente', 'pendientes')}
+                          {plural(counts.none, 'pendiente', 'pendientes')}
                         </span>
                       )}
                       {counts.none === 0 && counts.basket === 0 && counts.home > 0 && (

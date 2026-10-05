@@ -370,7 +370,7 @@ export function Basket() {
                                 {g.aisle === null ? `Ubicación: ${NA}` : `Pasillo ${g.aisle}${g.aisleName ? ` · ${g.aisleName}` : ''}`}
                               </h3>
                               <span className="text-[11px] font-semibold text-muted">
-                                {g.items.length} {plural(g.items.length, 'tarjeta digital', 'tarjetas digitales')}
+                                {plural(g.items.length, 'tarjeta digital', 'tarjetas digitales')}
                               </span>
                             </div>
                           </div>

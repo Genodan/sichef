@@ -806,7 +806,7 @@ function SheetContent({ info, onClose }: { info: RecipeInfo; onClose: () => void
               className="flex h-14 flex-1 items-center justify-center gap-2 rounded-full bg-brand text-lg font-extrabold text-white shadow-button"
             >
               <ShoppingBasket className="size-5" strokeWidth={2.5} aria-hidden />
-              Ver cesta ({basketCount} {plural(basketCount, 'producto', 'productos')})
+              Ver cesta ({plural(basketCount, 'producto', 'productos')})
             </motion.button>
             <button
               type="button"
