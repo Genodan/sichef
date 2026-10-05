@@ -43,9 +43,35 @@ async function listUsableModels(apiKey: string): Promise<string[]> {
 export function getStoredGeminiApiKey(): string {
   const local = typeof window !== 'undefined' ? window.localStorage.getItem(STORAGE_KEY) : null
   if (local && local.trim()) return local.trim()
-  const envKey = import.meta.env.VITE_GEMINI_API_KEY
-  if (typeof envKey === 'string' && envKey.trim()) return envKey.trim()
+  // La clave del equipo NO se mete en el bundle: vive en el servidor (api/gemini.ts, GEMINI_API_KEY en Vercel).
   return ''
+}
+
+let serverStatus: Promise<boolean> | null = null
+
+/** ¿Hay una clave configurada en el servidor de Vercel? (en `npm run dev` no hay servidor → false) */
+export function checkGeminiServer(): Promise<boolean> {
+  serverStatus ??= fetch('/api/gemini')
+    .then((r) => (r.ok ? r.json() : { configured: false }))
+    .then((d: { configured?: boolean }) => d?.configured === true)
+    .catch(() => false)
+  return serverStatus
+}
+
+/** Petición a Gemini a través de la función de Vercel (la clave no sale del servidor). */
+async function callGeminiServer(
+  systemPrompt: string,
+  userMessage: string,
+  history: { role: 'user' | 'assistant'; text: string }[],
+): Promise<{ text: string; model: string }> {
+  const res = await fetch('/api/gemini', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ systemPrompt, userMessage, history: history.slice(-4) }),
+  })
+  const data = (await res.json().catch(() => ({}))) as { text?: string; model?: string; error?: string }
+  if (!res.ok || !data.text) throw new Error(data.error || `Servidor de Gemini (${res.status})`)
+  return { text: data.text, model: data.model ?? 'gemini' }
 }
 
 export function saveGeminiApiKey(key: string): void {
@@ -346,18 +372,16 @@ function localChefFallback({
  */
 export async function askGeminiChef(params: ChatContextParams): Promise<RecommendationResult> {
   const apiKey = getStoredGeminiApiKey()
+  const useServer = !apiKey && (await checkGeminiServer())
 
-  if (apiKey) {
+  if (apiKey || useServer) {
     try {
       const catalogContext = buildCatalogContext(params.catalog, params.visibility, params.household)
       const userMessage = `Petición del usuario: "${params.userPrompt}"\n\nCatálogo de recetas oficiales de SíChef:\n${catalogContext}`
 
-      const { text, model } = await callGeminiApi(
-        apiKey,
-        SYSTEM_INSTRUCTION,
-        userMessage,
-        params.history ?? [],
-      )
+      const { text, model } = apiKey
+        ? await callGeminiApi(apiKey, SYSTEM_INSTRUCTION, userMessage, params.history ?? [])
+        : await callGeminiServer(SYSTEM_INSTRUCTION, userMessage, params.history ?? [])
 
       // Extraer y limpiar JSON de la respuesta
       let parsed: { recipeId?: string | null; reply?: string; reason?: string }
