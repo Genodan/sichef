@@ -19,20 +19,110 @@ interface Pt {
   y: number
 }
 
-// ── Plano (unidades SVG). Tienda simulada: pasillos verticales, entrada abajo a la izquierda, cajas a la derecha.
+// ─────────────────────────────────────────────────────────────────────────────
+// Planimetría simulada inspirada en un Mercadona real (vista cenital, en vertical):
+//  · fondo: obrador/panadería y mostradores de carnicería, pescadería y charcutería
+//  · pared izquierda: fruta y verdura (mural + mesas), junto a la entrada
+//  · pared derecha: murales refrigerados (lácteos, huevos) y congelados
+//  · centro: dos bloques de góndolas separados por un pasillo transversal
+//  · frente: línea de cajas, entrada y salida
+// Unidades SVG: 1 u ≈ 0,5 m.
+// ─────────────────────────────────────────────────────────────────────────────
 const VB_W = 100
-const VB_H = 140
-const MARGIN = 6
-const TOP_CROSS = 11 // pasillo transversal de arriba
-const BOTTOM_CROSS = 126 // pasillo transversal de abajo
-const SHELF_TOP = 18
-const SHELF_BOTTOM = 119
-const ENTRANCE: Pt = { x: 12, y: 135 }
-const CHECKOUT: Pt = { x: 86, y: 135 }
-/** Escala del plano simulado: 1 unidad ≈ 0,5 m; paso de compra ≈ 1 m/s. */
+const VB_H = 152
 const METERS_PER_UNIT = 0.5
-const WALK_SPEED = 34 // unidades por segundo en la animación
-const STOP_MS = 2200 // pausa frente a cada etiqueta
+const WALK_SPEED = 34 // u/s en la animación
+const STOP_MS = 2200
+const SHELF_ORDER = ['A', 'B', 'C', 'D']
+
+const Y_BACK = 20 // pasillo frente a los mostradores
+const Y_MID = 66 // pasillo transversal central
+const Y_FRONT = 110 // pasillo frente a las cajas
+const LANE_PRODUCE = 22
+const LANE_FRIDGE = 84
+const CENTER_LANES = [32, 42, 52, 62, 72]
+const GONDOLA_X = [27, 37, 47, 57, 67, 77]
+const BLOCKS: [number, number][] = [
+  [26, 62],
+  [70, 106],
+]
+const ENTRANCE: Pt = { x: 14, y: 140 }
+const CHECKOUT: Pt = { x: 62, y: 124 }
+
+/** Pasillos por los que se puede caminar (segmentos horizontales y verticales). */
+interface Seg {
+  a: Pt
+  b: Pt
+}
+const SEGMENTS: Seg[] = [
+  { a: { x: 10, y: Y_BACK }, b: { x: 86, y: Y_BACK } },
+  { a: { x: LANE_PRODUCE, y: Y_MID }, b: { x: LANE_FRIDGE, y: Y_MID } },
+  { a: { x: 10, y: Y_FRONT }, b: { x: 86, y: Y_FRONT } },
+  ...[LANE_PRODUCE, ...CENTER_LANES, LANE_FRIDGE].map((x) => ({ a: { x, y: Y_BACK }, b: { x, y: Y_FRONT } })),
+  { a: { x: ENTRANCE.x, y: Y_FRONT }, b: ENTRANCE },
+  { a: { x: CHECKOUT.x, y: Y_FRONT }, b: CHECKOUT },
+]
+
+/** Zona del plano donde se colocan los productos de una sección. */
+interface Zone {
+  /** 'lane' = a lo largo de un pasillo vertical; 'cross' = a lo largo del pasillo del fondo. */
+  kind: 'lane' | 'cross'
+  fixed: number
+  from: number
+  to: number
+  /** Dirección fija de la etiqueta (murales y mostradores); si no, según el lado izq/der. */
+  tag?: Pt
+}
+
+const PERIMETER: { match: RegExp; zone: Zone; fallback: string }[] = [
+  { match: /fruta|verdura/i, fallback: 'Fruta y verdura', zone: { kind: 'lane', fixed: LANE_PRODUCE, from: 30, to: 100, tag: { x: -4.6, y: 0 } } },
+  { match: /pan|horno|boller/i, fallback: 'Horno', zone: { kind: 'cross', fixed: Y_BACK, from: 11, to: 17, tag: { x: 0, y: -5 } } },
+  { match: /carne|aves|carnicer/i, fallback: 'Carnicería', zone: { kind: 'cross', fixed: Y_BACK, from: 25, to: 41, tag: { x: 0, y: -5 } } },
+  { match: /pescad|marisc/i, fallback: 'Pescadería', zone: { kind: 'cross', fixed: Y_BACK, from: 45, to: 61, tag: { x: 0, y: -5 } } },
+  { match: /charcut|embutid|queso/i, fallback: 'Charcutería', zone: { kind: 'cross', fixed: Y_BACK, from: 65, to: 81, tag: { x: 0, y: -5 } } },
+  { match: /l[aá]cte|leche|huevo|yogur|refriger/i, fallback: 'Lácteos y huevos', zone: { kind: 'lane', fixed: LANE_FRIDGE, from: 25, to: 61, tag: { x: 4.6, y: 0 } } },
+  { match: /congel/i, fallback: 'Congelados', zone: { kind: 'lane', fixed: LANE_FRIDGE, from: 71, to: 105, tag: { x: 4.6, y: 0 } } },
+]
+/** Huecos de góndola central: bloque de arriba (izq→der) y luego bloque de abajo. */
+const CENTER_SLOTS: Zone[] = BLOCKS.flatMap(([from, to]) =>
+  CENTER_LANES.map((x) => ({ kind: 'lane' as const, fixed: x, from: from + 2, to: to - 2 })),
+)
+/** Rótulos de relleno para las góndolas sin sección en los datos (como en una tienda real). */
+const FILLER = ['Desayunos', 'Bebidas', 'Droguería', 'Perfumería', 'Mascotas', 'Dulces', 'Snacks', 'Limpieza', 'Infantil', 'Agua']
+
+interface Layout {
+  zoneOf: Map<number, Zone>
+  perimeterLabels: { label: string; aisle: number | null; zone: Zone }[]
+  slotLabels: { label: string; aisle: number | null; zone: Zone }[]
+}
+
+function useLayout(store: Store): Layout {
+  return useMemo(() => {
+    const aisles = [...(store.aisles ?? [])].sort((a, b) => a.number - b.number)
+    const zoneOf = new Map<number, Zone>()
+    const usedPerimeter = new Set<number>()
+    const general: { number: number; name: string }[] = []
+    for (const a of aisles) {
+      const i = PERIMETER.findIndex((p, idx) => !usedPerimeter.has(idx) && p.match.test(a.name))
+      if (i >= 0) {
+        usedPerimeter.add(i)
+        zoneOf.set(a.number, PERIMETER[i].zone)
+      } else general.push(a)
+    }
+    general.forEach((a, i) => zoneOf.set(a.number, CENTER_SLOTS[i % CENTER_SLOTS.length]))
+
+    const perimeterLabels = PERIMETER.map((p) => {
+      const a = aisles.find((x) => zoneOf.get(x.number) === p.zone)
+      return { label: a?.name ?? p.fallback, aisle: a?.number ?? null, zone: p.zone }
+    })
+    let filler = 0
+    const slotLabels = CENTER_SLOTS.map((zone, i) => {
+      const a = general[i]
+      return { label: a?.name ?? FILLER[filler++ % FILLER.length], aisle: a?.number ?? null, zone }
+    })
+    return { zoneOf, perimeterLabels, slotLabels }
+  }, [store.aisles])
+}
 
 function hash(s: string): number {
   let h = 0
@@ -40,39 +130,71 @@ function hash(s: string): number {
   return h
 }
 
-const SHELF_ORDER = ['A', 'B', 'C', 'D']
-
-function useLayout(store: Store) {
-  return useMemo(() => {
-    const aisles = [...(store.aisles ?? [])].sort((a, b) => a.number - b.number)
-    const n = Math.max(1, aisles.length)
-    const laneW = (VB_W - MARGIN * 2) / n
-    const laneIndex = new Map(aisles.map((a, i) => [a.number, i]))
-    const laneX = (aisle: number) => MARGIN + ((laneIndex.get(aisle) ?? 0) + 0.5) * laneW
-    return { aisles, laneW, laneX }
-  }, [store.aisles])
+/** Punto del suelo frente al producto y posición de su etiqueta en el lineal. */
+function stopFor(item: ShoppingItem, zone: Zone) {
+  const t = (hash(item.product.id) % 1000) / 1000
+  const along = zone.from + t * (zone.to - zone.from)
+  const floor = zone.kind === 'lane' ? { x: zone.fixed, y: along } : { x: along, y: zone.fixed }
+  const dir = zone.tag ?? { x: item.location?.side === 'izq' ? -3.2 : 3.2, y: 0 }
+  return { floor, tag: { x: floor.x + dir.x, y: floor.y + dir.y } }
 }
 
-/** Punto del suelo frente al producto (centro del pasillo) y posición de su etiqueta en la estantería. */
-function stopFor(item: ShoppingItem, laneX: (a: number) => number, laneW: number) {
-  const loc = item.location!
-  const y = SHELF_TOP + 6 + (hash(item.product.id) % 1000) / 1000 * (SHELF_BOTTOM - SHELF_TOP - 12)
-  const x = laneX(loc.aisle)
-  const tagX = x + (loc.side === 'izq' ? -1 : 1) * laneW * 0.32
-  return { floor: { x, y }, tag: { x: tagX, y } }
+// ── Caminos: grafo de pasillos + Dijkstra (nunca atraviesa estanterías)
+const k = (p: Pt) => `${p.x.toFixed(2)},${p.y.toFixed(2)}`
+const isH = (s: Seg) => Math.abs(s.a.y - s.b.y) < 0.01
+function onSeg(p: Pt, s: Seg) {
+  const [x0, x1] = [Math.min(s.a.x, s.b.x), Math.max(s.a.x, s.b.x)]
+  const [y0, y1] = [Math.min(s.a.y, s.b.y), Math.max(s.a.y, s.b.y)]
+  return p.x >= x0 - 0.01 && p.x <= x1 + 0.01 && p.y >= y0 - 0.01 && p.y <= y1 + 0.01 && (isH(s) ? Math.abs(p.y - s.a.y) < 0.01 : Math.abs(p.x - s.a.x) < 0.01)
 }
 
-/** Camino en «L» por los pasillos transversales (no atraviesa estanterías). */
-function legBetween(a: Pt, b: Pt): Pt[] {
-  if (Math.abs(a.x - b.x) < 0.5) return [b]
-  const viaTop = Math.abs(a.y - TOP_CROSS) + Math.abs(b.y - TOP_CROSS)
-  const viaBottom = Math.abs(a.y - BOTTOM_CROSS) + Math.abs(b.y - BOTTOM_CROSS)
-  const c = viaTop < viaBottom ? TOP_CROSS : BOTTOM_CROSS
-  return [{ x: a.x, y: c }, { x: b.x, y: c }, b]
+function buildGraph(extra: Pt[]) {
+  const nodes = new Map<string, Pt>()
+  const adj = new Map<string, { to: string; w: number }[]>()
+  for (const s of SEGMENTS) {
+    const pts: Pt[] = [s.a, s.b, ...extra.filter((p) => onSeg(p, s))]
+    for (const o of SEGMENTS) {
+      if (isH(s) === isH(o)) continue
+      const p = isH(s) ? { x: o.a.x, y: s.a.y } : { x: s.a.x, y: o.a.y }
+      if (onSeg(p, s) && onSeg(p, o)) pts.push(p)
+    }
+    pts.sort((p, q) => (isH(s) ? p.x - q.x : p.y - q.y))
+    for (let i = 0; i < pts.length; i++) {
+      nodes.set(k(pts[i]), pts[i])
+      if (i === 0) continue
+      const [a, b] = [k(pts[i - 1]), k(pts[i])]
+      if (a === b) continue
+      const w = Math.hypot(pts[i].x - pts[i - 1].x, pts[i].y - pts[i - 1].y)
+      adj.set(a, [...(adj.get(a) ?? []), { to: b, w }])
+      adj.set(b, [...(adj.get(b) ?? []), { to: a, w }])
+    }
+  }
+  return { nodes, adj }
 }
 
-function dist(a: Pt, b: Pt) {
-  return Math.hypot(a.x - b.x, a.y - b.y)
+function shortest(g: ReturnType<typeof buildGraph>, from: Pt) {
+  const dist = new Map<string, number>([[k(from), 0]])
+  const prev = new Map<string, string>()
+  const open = new Set(g.nodes.keys())
+  while (open.size) {
+    let u: string | null = null
+    for (const n of open) if (dist.has(n) && (u === null || dist.get(n)! < dist.get(u)!)) u = n
+    if (u === null) break
+    open.delete(u)
+    for (const { to, w } of g.adj.get(u) ?? []) {
+      const nd = dist.get(u)! + w
+      if (nd < (dist.get(to) ?? Infinity)) {
+        dist.set(to, nd)
+        prev.set(to, u)
+      }
+    }
+  }
+  const pathTo = (p: Pt): Pt[] => {
+    const out: Pt[] = []
+    for (let c: string | undefined = k(p); c; c = prev.get(c)) out.unshift(g.nodes.get(c)!)
+    return out
+  }
+  return { dist: (p: Pt) => dist.get(k(p)) ?? Infinity, pathTo }
 }
 
 interface Route {
@@ -82,32 +204,40 @@ interface Route {
   length: number
 }
 
-function buildRoute(items: ShoppingItem[], laneX: (a: number) => number, laneW: number): Route {
-  // Orden en serpiente: pasillos de menor a mayor, subiendo y bajando alternativamente.
-  const located = items.filter((i) => i.location)
-  const aisleOrder = [...new Set(located.map((i) => i.location!.aisle))].sort((a, b) => a - b)
-  const ordered = aisleOrder.flatMap((aisle, k) => {
-    const inAisle = located
-      .filter((i) => i.location!.aisle === aisle)
-      .map((item) => ({ item, ...stopFor(item, laneX, laneW) }))
-    inAisle.sort((p, q) => (k % 2 === 0 ? q.floor.y - p.floor.y : p.floor.y - q.floor.y))
-    return inAisle
-  })
+function buildRoute(items: ShoppingItem[], layout: Layout): Route {
+  const pending = items
+    .filter((i) => i.location && layout.zoneOf.has(i.location.aisle))
+    .map((item) => ({ item, ...stopFor(item, layout.zoneOf.get(item.location!.aisle)!) }))
+  const g = buildGraph([ENTRANCE, CHECKOUT, ...pending.map((p) => p.floor)])
 
+  // Vecino más cercano por distancia real caminando.
   const points: Pt[] = [ENTRANCE]
-  const stops: Route['stops'] = []
+  const ordered: typeof pending = []
   let cur = ENTRANCE
-  for (const s of ordered) {
-    points.push(...legBetween(cur, s.floor))
-    cur = s.floor
-    stops.push({ ...s, at: points.length - 1 })
+  const left = [...pending]
+  while (left.length) {
+    const sp = shortest(g, cur)
+    left.sort((a, b) => sp.dist(a.floor) - sp.dist(b.floor))
+    const next = left.shift()!
+    points.push(...sp.pathTo(next.floor).slice(1))
+    ordered.push(next)
+    cur = next.floor
   }
-  points.push(...legBetween(cur, CHECKOUT))
+  const stopIdx = [] as number[]
+  {
+    // índices de cada parada dentro de `points`
+    let from = 0
+    for (const s of ordered) {
+      const i = points.findIndex((p, j) => j >= from && k(p) === k(s.floor))
+      stopIdx.push(i)
+      from = i
+    }
+  }
+  points.push(...shortest(g, cur).pathTo(CHECKOUT).slice(1))
 
   const cumulative = [0]
-  for (let i = 1; i < points.length; i++) cumulative.push(cumulative[i - 1] + dist(points[i - 1], points[i]))
-  // `at` pasa de índice de punto a distancia recorrida
-  for (const s of stops) s.at = cumulative[s.at]
+  for (let i = 1; i < points.length; i++) cumulative.push(cumulative[i - 1] + Math.hypot(points[i].x - points[i - 1].x, points[i].y - points[i - 1].y))
+  const stops = ordered.map((s, i) => ({ ...s, at: cumulative[stopIdx[i]] }))
   return { stops, points, cumulative, length: cumulative[cumulative.length - 1] }
 }
 
@@ -123,7 +253,6 @@ function pointAt(route: Route, d: number): Pt {
   return points[points.length - 1]
 }
 
-/** Recorte del camino hasta la distancia d (para pintar lo ya recorrido). */
 function pathUntil(route: Route, d: number): Pt[] {
   const out: Pt[] = [route.points[0]]
   for (let i = 1; i < route.points.length; i++) {
@@ -138,19 +267,160 @@ function pathUntil(route: Route, d: number): Pt[] {
 
 const toPoints = (pts: Pt[]) => pts.map((p) => `${p.x.toFixed(2)},${p.y.toFixed(2)}`).join(' ')
 
+// ── Dibujo de la planimetría (estilo plano técnico, discreto)
+const INK = '#17251c'
+const LINE = '#9aa69e'
+const FILL = '#e9eee9'
+
+function Shelf({ x, y, w, h, step = 3 }: { x: number; y: number; w: number; h: number; step?: number }) {
+  const vertical = h > w
+  const n = Math.floor((vertical ? h : w) / step)
+  return (
+    <g>
+      <rect x={x} y={y} width={w} height={h} fill={FILL} stroke={LINE} strokeWidth="0.25" />
+      {Array.from({ length: n - 1 }, (_, i) =>
+        vertical ? (
+          <line key={i} x1={x} x2={x + w} y1={y + (i + 1) * step} y2={y + (i + 1) * step} stroke={LINE} strokeWidth="0.15" />
+        ) : (
+          <line key={i} y1={y} y2={y + h} x1={x + (i + 1) * step} x2={x + (i + 1) * step} stroke={LINE} strokeWidth="0.15" />
+        ),
+      )}
+      {vertical ? (
+        <line x1={x + w / 2} x2={x + w / 2} y1={y} y2={y + h} stroke={LINE} strokeWidth="0.2" />
+      ) : (
+        <line y1={y + h / 2} y2={y + h / 2} x1={x} x2={x + w} stroke={LINE} strokeWidth="0.2" />
+      )}
+    </g>
+  )
+}
+
+function Label({ x, y, text, active, rotate }: { x: number; y: number; text: string; active: boolean; rotate?: number }) {
+  return (
+    <text
+      x={x}
+      y={y}
+      transform={rotate ? `rotate(${rotate} ${x} ${y})` : undefined}
+      textAnchor="middle"
+      fontSize="2.2"
+      fontWeight="900"
+      letterSpacing="0.1"
+      fill={active ? '#146b3a' : '#7d8a82'}
+    >
+      {text.toUpperCase()}
+    </text>
+  )
+}
+
+function FloorPlan({ layout, activeAisles }: { layout: Layout; activeAisles: Set<number> }) {
+  const isActive = (a: number | null) => a !== null && activeAisles.has(a)
+  const per = (re: RegExp) => layout.perimeterLabels[PERIMETER.findIndex((p) => p.match.source === re.source)]
+  const [produce, bakery, meat, fish, deli, dairy, frozen] = PERIMETER.map((p) => per(p.match))
+  return (
+    <g>
+      <defs>
+        <pattern id="hatch" width="2.4" height="2.4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="2.4" stroke="#c4ccc6" strokeWidth="0.5" />
+        </pattern>
+      </defs>
+      {/* Almacén y muelle (fuera de la sala de ventas) */}
+      <rect x="0" y="0" width={VB_W} height="3.2" fill="url(#hatch)" />
+      <rect x={VB_W - 2.4} y="0" width="2.4" height={VB_H} fill="url(#hatch)" />
+      {/* Sala de ventas */}
+      <rect x="2" y="3.2" width={VB_W - 4.4} height="142" fill="#fbfcfa" stroke={INK} strokeWidth="0.7" />
+
+      {/* Horno / obrador */}
+      <rect x="4" y="5" width="15" height="10" rx="0.8" fill="#f6ead2" stroke={LINE} strokeWidth="0.25" />
+      <Label x={11.5} y={10.8} text={bakery.label} active={isActive(bakery.aisle)} />
+
+      {/* Mostradores del fondo */}
+      {[
+        { z: meat, x: 23 },
+        { z: fish, x: 43 },
+        { z: deli, x: 63 },
+      ].map(({ z, x }) => (
+        <g key={x}>
+          <rect x={x} y="5" width="20" height="5.5" fill="#dde7ef" stroke={LINE} strokeWidth="0.25" />
+          <path d={`M${x} 10.5 Q${x + 10} 15.5 ${x + 20} 10.5`} fill="#eef3f7" stroke={LINE} strokeWidth="0.25" />
+          <Label x={x + 10} y={8.6} text={z.label} active={isActive(z.aisle)} />
+        </g>
+      ))}
+      <Shelf x={85} y={5} w={9} h={6} />
+
+      {/* Fruta y verdura: mural + mesas */}
+      <Shelf x={3.4} y={24} w={3} h={82} step={4} />
+      {[30, 42, 54, 66, 78, 90].map((y) => (
+        <rect key={y} x="9" y={y} width="8.5" height="8" rx="1.2" fill="#e3f1e2" stroke={LINE} strokeWidth="0.25" />
+      ))}
+      <Label x={13} y={27.6} text={produce.label} active={isActive(produce.aisle)} />
+
+      {/* Murales refrigerados y congelados */}
+      <Shelf x={89} y={22} w={5} h={42} step={4} />
+      <Label x={91.5} y={43} text={dairy.label} active={isActive(dairy.aisle)} rotate={90} />
+      <rect x="88.6" y="69" width="5.8" height="37" fill="#e4eef6" stroke={LINE} strokeWidth="0.25" />
+      <line x1="91.5" x2="91.5" y1="69" y2="106" stroke={LINE} strokeWidth="0.2" />
+      <Label x={91.5} y={87.5} text={frozen.label} active={isActive(frozen.aisle)} rotate={90} />
+
+      {/* Góndolas centrales */}
+      {BLOCKS.map(([y0, y1]) => GONDOLA_X.map((x) => <Shelf key={`${x}-${y0}`} x={x - 2} y={y0} w={4} h={y1 - y0} />))}
+      {layout.slotLabels.map((s, i) => {
+        const upper = i < CENTER_LANES.length
+        const y = upper ? 24.4 : 108.6
+        const act = isActive(s.aisle)
+        return (
+          <g key={i}>
+            {s.aisle !== null && (
+              <>
+                <circle cx={s.zone.fixed} cy={upper ? 64 : 68} r="1.9" fill={act ? '#1f8a4c' : '#c9d2cb'} />
+                <text x={s.zone.fixed} y={upper ? 64.8 : 68.8} textAnchor="middle" fontSize="2.2" fontWeight="900" fill="#fff">
+                  {s.aisle}
+                </text>
+              </>
+            )}
+            <text x={s.zone.fixed} y={y} textAnchor="middle" fontSize="1.7" fontWeight="800" fill={act ? '#146b3a' : '#9aa69e'}>
+              {s.label.split(/[ ,]/)[0].toUpperCase()}
+            </text>
+          </g>
+        )
+      })}
+
+      {/* Línea de cajas */}
+      {[34, 42, 50, 58, 66, 74, 82].map((x) => (
+        <g key={x}>
+          <rect x={x - 1.2} y="116" width="2.4" height="10" rx="0.4" fill="#fdf1d8" stroke={LINE} strokeWidth="0.25" />
+          <rect x={x + 1.6} y="121" width="2.2" height="2.2" fill="#f2c26b" />
+        </g>
+      ))}
+      <text x="58" y="131" textAnchor="middle" fontSize="2.4" fontWeight="900" fill="#b86e00">
+        LÍNEA DE CAJAS
+      </text>
+
+      {/* Accesos */}
+      <rect x="7" y="143.6" width="14" height="2.6" fill="#fbfcfa" />
+      <path d="M8 146 L8 142 M20 146 L20 142" stroke={INK} strokeWidth="0.4" />
+      <text x="14" y="149.6" textAnchor="middle" fontSize="2.4" fontWeight="900" fill="#146b3a">
+        ENTRADA ↑
+      </text>
+      <rect x="80" y="143.6" width="12" height="2.6" fill="#fbfcfa" />
+      <text x="86" y="149.6" textAnchor="middle" fontSize="2.4" fontWeight="900" fill="#7d8a82">
+        SALIDA ↓
+      </text>
+    </g>
+  )
+}
+
 type Phase = 'idle' | 'walking' | 'stop' | 'done'
 
 export function StoreSimulator({ store, items, checkedProductIds, onToggleProduct, onFinishPurchase }: StoreSimulatorProps) {
-  const { aisles, laneW, laneX } = useLayout(store)
+  const layout = useLayout(store)
+  const totalAisles = store.aisles?.length ?? 0
 
   // La ruta se congela al empezar, para que marcar productos no la recalcule a mitad.
   const [frozenIds, setFrozenIds] = useState<string[] | null>(null)
   const routeItems = useMemo(() => {
     const ids = frozenIds
-    const source = ids ? items.filter((i) => ids.includes(i.product.id)) : items.filter((i) => !checkedProductIds.has(i.product.id))
-    return source
+    return ids ? items.filter((i) => ids.includes(i.product.id)) : items.filter((i) => !checkedProductIds.has(i.product.id))
   }, [items, checkedProductIds, frozenIds])
-  const route = useMemo(() => buildRoute(routeItems, laneX, laneW), [routeItems, laneX, laneW])
+  const route = useMemo(() => buildRoute(routeItems, layout), [routeItems, layout])
 
   const [phase, setPhase] = useState<Phase>('idle')
   const [paused, setPaused] = useState(false)
@@ -159,7 +429,8 @@ export function StoreSimulator({ store, items, checkedProductIds, onToggleProduc
   const dRef = useRef(0)
   const stopRef = useRef(0)
 
-  const visitedAisles = new Set(route.stops.map((s) => s.item.location!.aisle)).size
+  const activeAisles = useMemo(() => new Set(route.stops.map((s) => s.item.location!.aisle)), [route])
+  const visitedAisles = activeAisles.size
   const meters = Math.round(route.length * METERS_PER_UNIT)
   const minutes = Math.max(1, Math.round((meters + route.stops.length * 20) / 60))
   const current = route.stops[stopIndex] ?? null
@@ -167,6 +438,7 @@ export function StoreSimulator({ store, items, checkedProductIds, onToggleProduc
   const pickedTotal = route.stops
     .filter((s) => checkedProductIds.has(s.item.product.id))
     .reduce((sum, s) => sum + s.item.product.unit_price * (s.item.packages ?? 1), 0)
+  const aisleName = (n: number) => store.aisles.find((a) => a.number === n)?.name ?? ''
 
   // Bucle de animación: avanza a velocidad constante y se detiene en cada etiqueta.
   useEffect(() => {
@@ -263,11 +535,11 @@ export function StoreSimulator({ store, items, checkedProductIds, onToggleProduc
           {phase === 'idle' &&
             (nothing
               ? 'Añade recetas a la cesta para trazar tu ruta.'
-              : `Ruta óptima: ${route.stops.length} productos en ${visitedAisles} de ${aisles.length} pasillos · ~${meters} m · ~${minutes} min`)}
+              : `Ruta óptima: ${route.stops.length} productos en ${visitedAisles} de ${totalAisles} pasillos · ~${meters} m · ~${minutes} min`)}
           {phase === 'walking' && current && (
             <>
               Vamos al <span className="text-sun">pasillo {current.item.location!.aisle}</span> ·{' '}
-              {aisles.find((a) => a.number === current.item.location!.aisle)?.name}
+              {aisleName(current.item.location!.aisle)}
             </>
           )}
           {phase === 'walking' && !current && 'Todo en el carro. ¡A la línea de cajas!'}
@@ -291,7 +563,7 @@ export function StoreSimulator({ store, items, checkedProductIds, onToggleProduc
           <span>Plano simulado</span>
         </div>
 
-        <svg viewBox={`0 0 ${VB_W} ${VB_H}`} className="block w-full" role="img" aria-label="Plano de la tienda con la ruta de compra">
+        <svg viewBox={`0 0 ${VB_W} ${VB_H}`} className="block w-full rounded-2xl" role="img" aria-label="Plano de la tienda con la ruta de compra">
           <defs>
             <filter id="glow" x="-200%" y="-200%" width="500%" height="500%">
               <feGaussianBlur stdDeviation="1.6" result="b" />
@@ -302,47 +574,7 @@ export function StoreSimulator({ store, items, checkedProductIds, onToggleProduc
             </filter>
           </defs>
 
-          <rect x="1" y="1" width={VB_W - 2} height={VB_H - 2} rx="5" fill="#f6f8f5" stroke="#e7ebe7" />
-
-          {/* Estanterías entre pasillos */}
-          {Array.from({ length: aisles.length + 1 }, (_, k) => {
-            const x = MARGIN + k * laneW
-            const w = laneW * 0.42
-            return (
-              <rect
-                key={k}
-                x={x - w / 2}
-                y={SHELF_TOP}
-                width={w}
-                height={SHELF_BOTTOM - SHELF_TOP}
-                rx="1.2"
-                fill="#dfe6e0"
-                stroke="#cdd6cf"
-                strokeWidth="0.3"
-              />
-            )
-          })}
-
-          {/* Número de pasillo */}
-          {aisles.map((a) => {
-            const active = route.stops.some((s) => s.item.location!.aisle === a.number)
-            return (
-              <g key={a.number}>
-                <circle cx={laneX(a.number)} cy={TOP_CROSS + 3} r="2.6" fill={active ? '#1f8a4c' : '#c9d2cb'} />
-                <text x={laneX(a.number)} y={TOP_CROSS + 4.1} textAnchor="middle" fontSize="3" fontWeight="900" fill="#fff">
-                  {a.number}
-                </text>
-              </g>
-            )
-          })}
-
-          {/* Entrada y cajas */}
-          <g fontSize="3.2" fontWeight="900">
-            <rect x={ENTRANCE.x - 9} y={VB_H - 9} width="18" height="6" rx="3" fill="#e6f4ea" />
-            <text x={ENTRANCE.x} y={VB_H - 4.8} textAnchor="middle" fill="#146b3a">ENTRADA</text>
-            <rect x={CHECKOUT.x - 9} y={VB_H - 9} width="18" height="6" rx="3" fill="#fdf1d8" />
-            <text x={CHECKOUT.x} y={VB_H - 4.8} textAnchor="middle" fill="#b86e00">CAJAS</text>
-          </g>
+          <FloorPlan layout={layout} activeAisles={activeAisles} />
 
           {/* Ruta completa (por recorrer) y tramo recorrido */}
           <polyline points={toPoints(route.points)} fill="none" stroke="#1f8a4c" strokeOpacity="0.35" strokeWidth="1.1" strokeDasharray="2 1.6" strokeLinecap="round" strokeLinejoin="round">
