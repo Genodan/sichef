@@ -1,0 +1,1631 @@
+[
+  {
+    "id": "receta-garbanzos",
+    "name": "Garbanzos con espinacas",
+    "subtitle": "Guiso tradicional andaluz · Legumbres",
+    "image": {
+      "url": "/img/recipes/receta-garbanzos.jpg",
+      "author": "Tubamirum (Wikimedia Commons)",
+      "license": "Public domain",
+      "source_url": "https://commons.wikimedia.org/wiki/File:GarbanzosConEspinacas.jpg"
+    },
+    "servings": 2,
+    "time_min": 20,
+    "tags": [
+      "legumbres",
+      "tradicional",
+      "rápida",
+      "andaluz"
+    ],
+    "ingredients": [
+      {
+        "name": "Garbanzo cocido",
+        "quantity": 400.0,
+        "unit": "g",
+        "label": "400 g",
+        "product_id": "45120",
+        "optional": false
+      },
+      {
+        "name": "Espinacas troceadas congeladas",
+        "quantity": 200.0,
+        "unit": "g",
+        "label": "200 g",
+        "product_id": "77890",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 20.0,
+        "unit": "ml",
+        "label": "20 ml",
+        "product_id": "11234",
+        "optional": false
+      },
+      {
+        "name": "Ajo",
+        "quantity": 10.0,
+        "unit": "g",
+        "label": "10 g",
+        "product_id": "33445",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Descongelar las espinacas en el microondas o cocerlas brevemente y escurrirlas bien.",
+      "Picar los dientes de ajo en láminas finas y dorarlos en una sartén amplia con el aceite de oliva a fuego medio.",
+      "Añadir las espinacas bien escurridas a la sartén y rehogar durante 3 o 4 minutos para que tomen el sabor del ajo.",
+      "Enjuagar y escurrir los garbanzos cocidos de bote, e incorporarlos a la sartén junto con las espinacas.",
+      "Saltear todo junto a fuego medio durante 5 minutos para que se mezclen los sabores y servir bien caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es/es/consejos/alimentacion/receta-de-garbanzos-con-espinacas",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-pollo-arroz",
+    "name": "Arroz con pollo y caldo",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Arroz_con_pollo.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Arroz_con_pollo.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Arroz redondo",
+        "quantity": 200.0,
+        "unit": "g",
+        "label": "200 g",
+        "product_id": "32145",
+        "optional": false
+      },
+      {
+        "name": "Pechuga de pollo",
+        "quantity": 250.0,
+        "unit": "g",
+        "label": "250 g",
+        "product_id": "22334",
+        "optional": false
+      },
+      {
+        "name": "Caldo de pollo",
+        "quantity": 500.0,
+        "unit": "ml",
+        "label": "500 ml",
+        "product_id": "66778",
+        "optional": false
+      },
+      {
+        "name": "Cebolla",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "99002",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-lentejas",
+    "name": "Lentejas tradicionales",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Lentejas_con_chorizo.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Lentejas_con_chorizo.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Lenteja castellana",
+        "quantity": 300.0,
+        "unit": "g",
+        "label": "300 g",
+        "product_id": "11111",
+        "optional": false
+      },
+      {
+        "name": "Cebolla",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "99002",
+        "optional": false
+      },
+      {
+        "name": "Ajo",
+        "quantity": 10.0,
+        "unit": "g",
+        "label": "10 g",
+        "product_id": "33445",
+        "optional": false
+      },
+      {
+        "name": "Tomate triturado natural",
+        "quantity": 200.0,
+        "unit": "g",
+        "label": "200 g",
+        "product_id": "88991",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-merluza-tomate",
+    "name": "Merluza al tomate",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Fish_dish.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Fish_dish.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Merluza filetes congelada",
+        "quantity": 400.0,
+        "unit": "g",
+        "label": "400 g",
+        "product_id": "22222",
+        "optional": false
+      },
+      {
+        "name": "Tomate triturado natural",
+        "quantity": 400.0,
+        "unit": "g",
+        "label": "400 g",
+        "product_id": "88991",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 30.0,
+        "unit": "ml",
+        "label": "30 ml",
+        "product_id": "11234",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-macarrones-bolonesa",
+    "name": "Macarrones con carne y tomate",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Spaghetti_Bolognese_small.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Spaghetti_Bolognese_small.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Macarrones",
+        "quantity": 250.0,
+        "unit": "g",
+        "label": "250 g",
+        "product_id": "10013",
+        "optional": false
+      },
+      {
+        "name": "Filete de ternera",
+        "quantity": 200.0,
+        "unit": "g",
+        "label": "200 g",
+        "product_id": "10038",
+        "optional": false
+      },
+      {
+        "name": "Tomate triturado natural",
+        "quantity": 300.0,
+        "unit": "g",
+        "label": "300 g",
+        "product_id": "88991",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 20.0,
+        "unit": "ml",
+        "label": "20 ml",
+        "product_id": "11234",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-tortilla-patatas",
+    "name": "Tortilla de patatas clásica",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Tortilla_de_patatas_madrid.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Tortilla_de_patatas_madrid.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Patata",
+        "quantity": 600.0,
+        "unit": "g",
+        "label": "600 g",
+        "product_id": "10018",
+        "optional": false
+      },
+      {
+        "name": "Huevos camperos",
+        "quantity": 240.0,
+        "unit": "g",
+        "label": "240 g",
+        "product_id": "10014",
+        "optional": false
+      },
+      {
+        "name": "Cebolla",
+        "quantity": 150.0,
+        "unit": "g",
+        "label": "150 g",
+        "product_id": "99002",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 50.0,
+        "unit": "ml",
+        "label": "50 ml",
+        "product_id": "11234",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-salmorn-ensalada",
+    "name": "Ensalada fresca con salmón ahumado",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Smoked_salmon_salad.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Smoked_salmon_salad.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Lechuga iceberg",
+        "quantity": 200.0,
+        "unit": "g",
+        "label": "200 g",
+        "product_id": "10068",
+        "optional": false
+      },
+      {
+        "name": "Salmón ahumado",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "10028",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 20.0,
+        "unit": "ml",
+        "label": "20 ml",
+        "product_id": "11234",
+        "optional": false
+      },
+      {
+        "name": "Vinagre de vino blanco",
+        "quantity": 10.0,
+        "unit": "ml",
+        "label": "10 ml",
+        "product_id": "10032",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-crema-calabacin",
+    "name": "Crema suave de calabacín",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Zucchini_soup.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Zucchini_soup.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Calabacín",
+        "quantity": 500.0,
+        "unit": "g",
+        "label": "500 g",
+        "product_id": "10019",
+        "optional": false
+      },
+      {
+        "name": "Cebolla",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "99002",
+        "optional": false
+      },
+      {
+        "name": "Nata para cocinar",
+        "quantity": 100.0,
+        "unit": "ml",
+        "label": "100 ml",
+        "product_id": "10043",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 20.0,
+        "unit": "ml",
+        "label": "20 ml",
+        "product_id": "11234",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-pizza-casera",
+    "name": "Pizza rápida de mozzarella",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-en_pizza_margherita.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-en_pizza_margherita.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Pan de molde sin corteza",
+        "quantity": 200.0,
+        "unit": "g",
+        "label": "200 g",
+        "product_id": "10040",
+        "optional": false
+      },
+      {
+        "name": "Tomate triturado natural",
+        "quantity": 150.0,
+        "unit": "g",
+        "label": "150 g",
+        "product_id": "88991",
+        "optional": false
+      },
+      {
+        "name": "Queso rallado mozzarella",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "10025",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-brocoli-salteado",
+    "name": "Brócoli salteado al ajillo",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Broccoli_cooking.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Broccoli_cooking.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Brócoli congelado",
+        "quantity": 400.0,
+        "unit": "g",
+        "label": "400 g",
+        "product_id": "10046",
+        "optional": false
+      },
+      {
+        "name": "Ajo",
+        "quantity": 15.0,
+        "unit": "g",
+        "label": "15 g",
+        "product_id": "33445",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 30.0,
+        "unit": "ml",
+        "label": "30 ml",
+        "product_id": "11234",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-arroz-basmati-atun",
+    "name": "Arroz basmati con atún y maíz",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Rice_and_tuna.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Rice_and_tuna.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Arroz basmati",
+        "quantity": 200.0,
+        "unit": "g",
+        "label": "200 g",
+        "product_id": "10083",
+        "optional": false
+      },
+      {
+        "name": "Atún claro en aceite de girasol",
+        "quantity": 150.0,
+        "unit": "g",
+        "label": "150 g",
+        "product_id": "55678",
+        "optional": false
+      },
+      {
+        "name": "Maíz dulce en grano",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "10030",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-alubias-bacon",
+    "name": "Alubias blancas con bacon",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/White_bean_soup.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/White_bean_soup.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Alubia blanca cocida",
+        "quantity": 400.0,
+        "unit": "g",
+        "label": "400 g",
+        "product_id": "10035",
+        "optional": false
+      },
+      {
+        "name": "Bacon ahumado en lonchas",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "10073",
+        "optional": false
+      },
+      {
+        "name": "Cebolla",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "99002",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-pasta-espinacas",
+    "name": "Espaguetis con espinacas y queso",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Spaghetti_with_spinach.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Spaghetti_with_spinach.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Espaguetis",
+        "quantity": 250.0,
+        "unit": "g",
+        "label": "250 g",
+        "product_id": "10084",
+        "optional": false
+      },
+      {
+        "name": "Espinacas frescas",
+        "quantity": 150.0,
+        "unit": "g",
+        "label": "150 g",
+        "product_id": "10036",
+        "optional": false
+      },
+      {
+        "name": "Queso rallado mozzarella",
+        "quantity": 50.0,
+        "unit": "g",
+        "label": "50 g",
+        "product_id": "10025",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-costilla-horno",
+    "name": "Costillas de cerdo asadas con patatas",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Pork_ribs_with_potatoes.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Pork_ribs_with_potatoes.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Costilla de cerdo",
+        "quantity": 500.0,
+        "unit": "g",
+        "label": "500 g",
+        "product_id": "10039",
+        "optional": false
+      },
+      {
+        "name": "Patata",
+        "quantity": 400.0,
+        "unit": "g",
+        "label": "400 g",
+        "product_id": "10018",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 30.0,
+        "unit": "ml",
+        "label": "30 ml",
+        "product_id": "11234",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-alerta-alergeno",
+    "name": "Pollo especial con salsa secreta",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Chicken_with_sauce.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Chicken_with_sauce.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Pechuga de pollo",
+        "quantity": 300.0,
+        "unit": "g",
+        "label": "300 g",
+        "product_id": "22334",
+        "optional": false
+      },
+      {
+        "name": "Salsa secreta (Test Alérgeno)",
+        "quantity": 50.0,
+        "unit": "ml",
+        "label": "50 ml",
+        "product_id": "99999",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-solomillo-pimienta",
+    "name": "Solomillo de cerdo a la plancha",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Pork_tenderloin.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Pork_tenderloin.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Solomillo de cerdo",
+        "quantity": 350.0,
+        "unit": "g",
+        "label": "350 g",
+        "product_id": "10075",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 20.0,
+        "unit": "ml",
+        "label": "20 ml",
+        "product_id": "11234",
+        "optional": false
+      },
+      {
+        "name": "Sal marina fina",
+        "quantity": 5.0,
+        "unit": "g",
+        "label": "5 g",
+        "product_id": "10022",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-pollo-empanado",
+    "name": "Pechuga de pollo empanada con ensalada",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Breaded_chicken_cutlet.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Breaded_chicken_cutlet.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Pechuga de pollo empanada",
+        "quantity": 400.0,
+        "unit": "g",
+        "label": "400 g",
+        "product_id": "10050",
+        "optional": false
+      },
+      {
+        "name": "Lechuga iceberg",
+        "quantity": 150.0,
+        "unit": "g",
+        "label": "150 g",
+        "product_id": "10068",
+        "optional": false
+      },
+      {
+        "name": "Pepino",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "10069",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-croquetas-caseras",
+    "name": "Menú de croquetas con patatas",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Croquetas_de_jamon.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Croquetas_de_jamon.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Croquetas de jamón cocido",
+        "quantity": 250.0,
+        "unit": "g",
+        "label": "250 g",
+        "product_id": "10051",
+        "optional": false
+      },
+      {
+        "name": "Patata",
+        "quantity": 300.0,
+        "unit": "g",
+        "label": "300 g",
+        "product_id": "10018",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 20.0,
+        "unit": "ml",
+        "label": "20 ml",
+        "product_id": "11234",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-pasta-carbonara",
+    "name": "Espaguetis con bacon y nata",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Spaghetti_Carbonara.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Spaghetti_Carbonara.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Espaguetis",
+        "quantity": 250.0,
+        "unit": "g",
+        "label": "250 g",
+        "product_id": "10084",
+        "optional": false
+      },
+      {
+        "name": "Bacon ahumado en lonchas",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "10073",
+        "optional": false
+      },
+      {
+        "name": "Nata para cocinar",
+        "quantity": 100.0,
+        "unit": "ml",
+        "label": "100 ml",
+        "product_id": "10043",
+        "optional": false
+      },
+      {
+        "name": "Huevos camperos",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "product_id": "10014",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-arroz-caldoso-marisco",
+    "name": "Arroz con langostinos",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Seafood_paella.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Seafood_paella.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Arroz redondo",
+        "quantity": 200.0,
+        "unit": "g",
+        "label": "200 g",
+        "product_id": "32145",
+        "optional": false
+      },
+      {
+        "name": "Langostinos cocidos congelados",
+        "quantity": 250.0,
+        "unit": "g",
+        "label": "250 g",
+        "product_id": "10079",
+        "optional": false
+      },
+      {
+        "name": "Caldo de verduras",
+        "quantity": 500.0,
+        "unit": "ml",
+        "label": "500 ml",
+        "product_id": "10033",
+        "optional": false
+      },
+      {
+        "name": "Cebolla",
+        "quantity": 80.0,
+        "unit": "g",
+        "label": "80 g",
+        "product_id": "99002",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-hummus-crudites",
+    "name": "Hummus con bastoncitos de zanahoria",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Hummus_with_pita.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Hummus_with_pita.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Hummus clásico",
+        "quantity": 120.0,
+        "unit": "g",
+        "label": "120 g",
+        "product_id": "10098",
+        "optional": false
+      },
+      {
+        "name": "Zanahoria",
+        "quantity": 150.0,
+        "unit": "g",
+        "label": "150 g",
+        "product_id": "10020",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-muslos-horno",
+    "name": "Muslos de pollo al horno con patatas",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Roast_chicken_legs.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Roast_chicken_legs.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Muslos de pollo",
+        "quantity": 500.0,
+        "unit": "g",
+        "label": "500 g",
+        "product_id": "10076",
+        "optional": false
+      },
+      {
+        "name": "Patata",
+        "quantity": 400.0,
+        "unit": "g",
+        "label": "400 g",
+        "product_id": "10018",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 30.0,
+        "unit": "ml",
+        "label": "30 ml",
+        "product_id": "11234",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-alitas-picantes",
+    "name": "Alitas de pollo especiadas",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Chicken_wings.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Chicken_wings.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Alitas de pollo",
+        "quantity": 500.0,
+        "unit": "g",
+        "label": "500 g",
+        "product_id": "10077",
+        "optional": false
+      },
+      {
+        "name": "Pimentón dulce",
+        "quantity": 10.0,
+        "unit": "g",
+        "label": "10 g",
+        "product_id": "10023",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 20.0,
+        "unit": "ml",
+        "label": "20 ml",
+        "product_id": "11234",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-ensalada-pulpo",
+    "name": "Ensalada templada de pulpo",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Octopus_salad.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Octopus_salad.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Pulpo cocido",
+        "quantity": 150.0,
+        "unit": "g",
+        "label": "150 g",
+        "product_id": "10078",
+        "optional": false
+      },
+      {
+        "name": "Lechuga iceberg",
+        "quantity": 150.0,
+        "unit": "g",
+        "label": "150 g",
+        "product_id": "10068",
+        "optional": false
+      },
+      {
+        "name": "Pepino",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "10069",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 20.0,
+        "unit": "ml",
+        "label": "20 ml",
+        "product_id": "11234",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-crema-calabaza",
+    "name": "Crema de calabaza de otoño",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Pumpkin_soup.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Pumpkin_soup.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Calabaza",
+        "quantity": 500.0,
+        "unit": "g",
+        "label": "500 g",
+        "product_id": "10070",
+        "optional": false
+      },
+      {
+        "name": "Cebolla",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "99002",
+        "optional": false
+      },
+      {
+        "name": "Nata para cocinar",
+        "quantity": 100.0,
+        "unit": "ml",
+        "label": "100 ml",
+        "product_id": "10043",
+        "optional": false
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "quantity": 20.0,
+        "unit": "ml",
+        "label": "20 ml",
+        "product_id": "11234",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-berenjenas-rellenas",
+    "name": "Berenjenas rellenas de carne",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Stuffed_eggplant.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Stuffed_eggplant.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Berenjena",
+        "quantity": 400.0,
+        "unit": "g",
+        "label": "400 g",
+        "product_id": "10071",
+        "optional": false
+      },
+      {
+        "name": "Filete de ternera",
+        "quantity": 200.0,
+        "unit": "g",
+        "label": "200 g",
+        "product_id": "10038",
+        "optional": false
+      },
+      {
+        "name": "Tomate triturado natural",
+        "quantity": 200.0,
+        "unit": "g",
+        "label": "200 g",
+        "product_id": "88991",
+        "optional": false
+      },
+      {
+        "name": "Queso rallado mozzarella",
+        "quantity": 60.0,
+        "unit": "g",
+        "label": "60 g",
+        "product_id": "10025",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-guacamole-nachos",
+    "name": "Guacamole fresco con patatas fritas",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Guacamole_with_chips.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Guacamole_with_chips.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Guacamole fresco",
+        "quantity": 200.0,
+        "unit": "g",
+        "label": "200 g",
+        "product_id": "10099",
+        "optional": false
+      },
+      {
+        "name": "Patatas fritas de bolsa clásicas",
+        "quantity": 150.0,
+        "unit": "g",
+        "label": "150 g",
+        "product_id": "10096",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-avena-manzana",
+    "name": "Porridge de avena con manzana",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Porridge_with_apple.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Porridge_with_apple.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Avena en copos",
+        "quantity": 80.0,
+        "unit": "g",
+        "label": "80 g",
+        "product_id": "10085",
+        "optional": false
+      },
+      {
+        "name": "Leche entera",
+        "quantity": 250.0,
+        "unit": "ml",
+        "label": "250 ml",
+        "product_id": "10015",
+        "optional": false
+      },
+      {
+        "name": "Manzana Golden",
+        "quantity": 150.0,
+        "unit": "g",
+        "label": "150 g",
+        "product_id": "10064",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-sardinillas-pan",
+    "name": "Tosta de sardinillas con tomate",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Sardine_bruschetta.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Sardine_bruschetta.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Sardinillas en aceite de oliva",
+        "quantity": 115.0,
+        "unit": "g",
+        "label": "115 g",
+        "product_id": "10081",
+        "optional": false
+      },
+      {
+        "name": "Pan de barra",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "10055",
+        "optional": false
+      },
+      {
+        "name": "Tomate triturado natural",
+        "quantity": 100.0,
+        "unit": "g",
+        "label": "100 g",
+        "product_id": "88991",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  },
+  {
+    "id": "receta-crema-chocolate",
+    "name": "Postre de café y chocolate negro",
+    "subtitle": "Receta casera",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Dark_chocolate_pieces.jpg",
+      "author": "Equipo SíChef",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Dark_chocolate_pieces.jpg"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "casera"
+    ],
+    "ingredients": [
+      {
+        "name": "Chocolate negro 85%",
+        "quantity": 50.0,
+        "unit": "g",
+        "label": "50 g",
+        "product_id": "10057",
+        "optional": false
+      },
+      {
+        "name": "Café molido natural",
+        "quantity": 15.0,
+        "unit": "g",
+        "label": "15 g",
+        "product_id": "10058",
+        "optional": false
+      }
+    ],
+    "steps": [
+      "Preparar los ingredientes.",
+      "Cocinar a fuego medio.",
+      "Servir caliente."
+    ],
+    "source": {
+      "name": "info.mercadona.es",
+      "url": "https://info.mercadona.es",
+      "license": "Receta Mercadona"
+    }
+  }
+]

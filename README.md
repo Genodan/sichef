@@ -10,11 +10,11 @@ SíChef une dos ideas en una sola app:
 **Regla de oro: la IA no inventa, reelabora.** Solo usamos datos que existen (catálogo, precios, alérgenos, nutrición, ubicación). Si falta un dato, la app muestra «dato no disponible».
 
 ## Equipo
-| Área | Personas | Carpeta |
+| Área | Personas (GitHub) | Carpeta |
 |---|---|---|
-| 📱 App | Bogdan · Hugo | `app/` |
-| 🗂️ Datos | Luigi · Onur | `data/` y `app/public/data/` |
-| 🎤 Pitch | Martín · Andrés | `docs/` |
+| 📱 App | Bogdan ([@Genodan](https://github.com/Genodan)) · Hugo ([@Hugog22](https://github.com/Hugog22)) | `app/` |
+| 🗂️ Datos | Luigi ([@luicons01](https://github.com/luicons01)) · Onur ([@TuqRu1337](https://github.com/TuqRu1337)) | `data/` y `app/public/data/` |
+| 🎤 Pitch | Martín ([@MartinLiarte](https://github.com/MartinLiarte)) · Andrés ([@AndresN1](https://github.com/AndresN1)) | `docs/` |
 
 Integrador del código: **Bogdan**. Solo él mergea a `main`.
 
