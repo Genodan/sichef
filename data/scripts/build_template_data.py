@@ -103,7 +103,7 @@ ALLERGEN_KEYWORDS: List[Tuple[str, str]] = [
     (r"apio", "apio"),
     (r"mostaza", "mostaza"),
     (r"s[eé]samo|ajonjol[ií]", "sesamo"),
-    (r"sulfitos?|di[oó]xido de azufre|anh[ií]drido sulfuroso|metabisulfito|e-?22[0-8]", "sulfitos"),
+    (r"(?:di|bi|meta|hidrogeno)?sulfitos?(?: s[oó]dicos?| pot[aá]sicos?| c[aá]lcicos?)?|di[oó]xido de azufre|anh[ií]drido sulfuroso|e[- ]?22[0-8]", "sulfitos"),
     (r"altramu(z|ces)", "altramuces"),
     (r"moluscos?|mejill[oó]n(es)?|almejas?|calamar(es)?|pulpo|sepia|berberechos?|ostras?|vieiras?", "moluscos"),
 ]
@@ -494,9 +494,12 @@ def parse_allergens(prod: Dict[str, Any]) -> Dict[str, Any]:
                 informative = True
     for m in re.finditer(r"<strong>(.*?)</strong>", i_html, re.S):
         frag = strip_html(m.group(1))
-        start = max(0, m.start() - 40)
-        context = strip_html(i_html[start:m.start()]).lower()
-        kind = classify_statement(frag) or classify_statement(context[-25:]) or "contains"
+        # Contexto = la frase completa en la que está la negrita (no solo unos caracteres)
+        sentence = re.split(r"\.\s", strip_html(i_html[: m.start()]).lower())[-1]
+        if re.search(r"puede contener|trazas", sentence):
+            kind = "traces"
+        else:
+            kind = classify_statement(frag) or "contains"
         codes = find_codes(frag)
         if not codes:
             continue
@@ -505,9 +508,22 @@ def parse_allergens(prod: Dict[str, Any]) -> Dict[str, Any]:
         elif kind == "contains":
             add(contains, codes)
         informative = True
+    # 2b) Por seguridad, cualquier palabra alergénica en la lista (aunque no vaya en negrita) cuenta como «contiene»
+    if i_plain.strip():
+        for sent in re.split(r"(?<=[.])\s+", i_plain):
+            if classify_statement(sent) == "traces":
+                continue
+            codes = find_codes(sent)
+            if codes:
+                add(contains, codes)
+                informative = True
     traces = [c for c in traces if c not in contains]
     if informative:
         return {"status": "declarado", "contains": contains, "traces": traces}
+    # 2c) Lista de ingredientes presente y sin ningún alérgeno: el Reglamento (UE) 1169/2011 (art. 21)
+    #     obliga a resaltar los alérgenos en esa lista, así que la etiqueta declara «sin alérgenos».
+    if len(re.sub(r"^ingredientes:\s*", "", i_plain.strip().lower())) >= 3:
+        return {"status": "declarado", "contains": [], "traces": []}
 
     # 3) x99 / vacío / código desconocido -> desconocido, SALVO producto fresco de 1 ingrediente
     cats = prod.get("categories") or [{}]
