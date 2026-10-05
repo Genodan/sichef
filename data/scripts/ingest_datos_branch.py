@@ -285,7 +285,10 @@ def normalize_recipe(r: Dict[str, Any], products_by_id: Dict[str, Dict[str, Any]
             "optional": False,
         })
 
-    steps = RECIPE_STEPS.get(rid, ["Preparar los ingredientes.", "Cocinar a fuego medio.", "Servir caliente."])
+    steps = r.get("steps") or r.get("pasos") or RECIPE_STEPS.get(rid, ["Preparar los ingredientes.", "Cocinar a fuego medio.", "Servir caliente."])
+    servings = int(r.get("servings") or r.get("raciones") or meta.get("servings", 2))
+    time_min = int(r.get("time_min") or r.get("tiempo_min") or meta.get("time_min", 25))
+    tags = r.get("tags") or r.get("etiquetas") or meta.get("tags", ["casera"])
 
     return {
         "id": rid,
@@ -297,9 +300,9 @@ def normalize_recipe(r: Dict[str, Any], products_by_id: Dict[str, Dict[str, Any]
             "license": "CC BY-SA 4.0",
             "source_url": r.get("foto_real_url", ""),
         }),
-        "servings": meta.get("servings", 2),
-        "time_min": meta.get("time_min", 25),
-        "tags": meta.get("tags", ["casera"]),
+        "servings": servings,
+        "time_min": time_min,
+        "tags": tags,
         "ingredients": ingredients,
         "steps": steps,
         "source": meta.get("source", {
