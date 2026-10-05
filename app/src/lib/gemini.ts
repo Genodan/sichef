@@ -110,17 +110,28 @@ export interface ChatContextParams {
 }
 
 /** Prepara el catálogo en formato estructurado para alimentar a Google Gemini. */
+/** Regla fija (sin IA): ¿pueden comer esta receta todos los miembros del hogar? */
+function isSafeRecipe(
+  id: string,
+  visibility: ReadonlyMap<string, Visibility>,
+  household: ReadonlyMap<string, HouseholdSuitability>,
+): boolean {
+  const suit = household.get(id)
+  const vis = visibility.get(id)
+  return suit ? suit.allCanEat : vis ? vis.visible : true
+}
+
 function buildCatalogContext(
   catalog: Catalog,
   visibility: ReadonlyMap<string, Visibility>,
   household: ReadonlyMap<string, HouseholdSuitability>,
 ): string {
   return catalog.recipes
+    // Filtro duro de alérgenos ANTES de la IA: las recetas no aptas ni siquiera se le envían.
+    .filter((r) => isSafeRecipe(r.id, visibility, household))
     .map((r) => {
       const info: RecipeInfo | undefined = catalog.info.get(r.id)
-      const vis = visibility.get(r.id)
-      const suit = household.get(r.id)
-      const safeForHousehold = suit ? suit.allCanEat : vis ? vis.visible : true
+      const safeForHousehold = true
 
       const costStr =
         info && info.cost.perServing !== null
@@ -475,7 +486,8 @@ export async function askGeminiChef(params: ChatContextParams): Promise<Recommen
     let validRecipeId: string | null = null
     if (parsed.recipeId && typeof parsed.recipeId === 'string') {
       const found = params.catalog.recipes.find((r) => r.id === parsed.recipeId)
-      if (found) {
+      // Validación: la receta debe existir Y ser apta para el hogar; si no, se descarta.
+      if (found && isSafeRecipe(found.id, params.visibility, params.household)) {
         validRecipeId = found.id
       }
     }
