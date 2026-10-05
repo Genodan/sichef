@@ -32,7 +32,7 @@ async function usableModels(key: string): Promise<string[]> {
       const v = Number(n.match(/gemini-(\d+(?:\.\d+)?)/)?.[1] ?? 0)
       return v * 10 + (n.includes('flash') ? 3 : 0) - (n.includes('lite') ? 1 : 0) - (/preview|exp/.test(n) ? 2 : 0)
     }
-    const best = [...new Set(names)].sort((a, b) => score(b) - score(a)).slice(0, 4)
+    const best = [...new Set(names)].sort((a, b) => score(b) - score(a)).slice(0, 6)
     cachedModels = [...best, ...FALLBACK_MODELS.filter((m) => !best.includes(m))]
   } catch {
     cachedModels = FALLBACK_MODELS
@@ -79,8 +79,9 @@ export async function POST(request: Request) {
         generationConfig: { temperature: 0.2, responseMimeType: 'application/json' },
       }),
     })
-    if (res.status === 404) {
-      lastError = `Modelo ${model} no disponible (404)`
+    // 404 = modelo retirado; 429/500/503 = cuota o saturación → probar el siguiente modelo
+    if ([404, 429, 500, 503].includes(res.status)) {
+      lastError = `Modelo ${model} no disponible (${res.status})`
       continue
     }
     if (!res.ok) {
