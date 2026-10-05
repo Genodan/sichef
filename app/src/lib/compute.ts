@@ -562,7 +562,7 @@ export interface ShoppingItem {
   quantity: number | null
   packages: number | null
   cost: number | null
-  uses: { recipeId: string; recipeName: string; label: string }[]
+  uses: { recipeId: string; recipeName: string; label: string; ingredientIndex: number }[]
   location: StoreLocation | null
   /** Stock simulado de la tienda; null si la tienda no lo indica. */
   inStock: boolean | null
@@ -615,7 +615,7 @@ export function buildShoppingList(
       const q = convertQuantity(ing.quantity, ing.unit, sizeUnit(product))
       if (q === null) entry.ok = false
       else entry.qty += q
-      entry.uses.push({ recipeId: recipe.id, recipeName: recipe.name, label: ing.label })
+      entry.uses.push({ recipeId: recipe.id, recipeName: recipe.name, label: ing.label, ingredientIndex: i })
     }
   }
 

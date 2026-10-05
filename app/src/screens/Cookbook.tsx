@@ -36,7 +36,7 @@ export function Cookbook() {
           <ul className="flex flex-col gap-2.5">
             {liked.map((i) => {
               const id = i.recipe.id
-              const totalIngredients = i.recipe.ingredients.filter((ing) => !ing.optional).length
+              const totalIngredients = i.recipe.ingredients.length
               const counts = getRecipeIngredientCounts(state.pantry, id, totalIngredients)
               return (
                 <RecipeRow

@@ -57,6 +57,7 @@ export type Action =
   | { type: 'setAllIngredientsStatus'; recipeId: string; totalIngredients: number; status: 'basket' | 'home' | 'none' }
   | { type: 'toggleChecked'; productId: string }
   | { type: 'clearChecked' }
+  | { type: 'completeBasketPurchase'; specificKeys?: string[] }
   | { type: 'reset' }
 
 const without = (list: string[], id: string) => list.filter((x) => x !== id)
@@ -206,6 +207,24 @@ export function reducer(state: AppState, action: Action): AppState {
     }
     case 'clearChecked':
       return { ...state, basket: { ...state.basket, checked: [] } }
+    case 'completeBasketPurchase': {
+      const newPantry = { ...state.pantry }
+      const keysToUpdate = action.specificKeys ?? Object.keys(newPantry).filter((k) => newPantry[k] === 'basket')
+      for (const k of keysToUpdate) {
+        newPantry[k] = 'home'
+      }
+      const remainingRecipeIds = state.basket.recipeIds.filter((recipeId) =>
+        recipeHasBasketItems(newPantry, recipeId),
+      )
+      return {
+        ...state,
+        pantry: newPantry,
+        basket: {
+          recipeIds: remainingRecipeIds,
+          checked: remainingRecipeIds.length === 0 ? [] : state.basket.checked,
+        },
+      }
+    }
     case 'reset':
       return initialState
   }
