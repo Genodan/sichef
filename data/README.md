@@ -181,3 +181,16 @@ Resultado con los datos de hoy (2026-10-05, `vlc1`). La segunda columna es el �
 
 - `RecipeIngredient.nutrition_grams?: number | null`: gramos que cuentan para la nutrición, separados de la cantidad que se compra. Permitiría poner `null` en el aceite de freír (absorción desconocida) y un peso documentado en los huevos (p. ej. el mínimo de la talla L de la ficha de Mercadona, «> 63 g»), si el equipo lo acepta.
 - `Product.edible_fraction?: number | null`: solo con una fuente abierta de porción comestible. Desbloquearía el pollo entero y el mejillón vivo.
+
+## Productos reales de Mercadona (5 oct, 15:30)
+
+Los 120 productos de la app son **reales** de tienda.mercadona.es (precio, foto, EAN, formato y alérgenos de la ficha).
+
+- `data/mercadona_reales.json`: los 120 productos reales ya normalizados al contrato de `app/src/types.ts`.
+- `data/mercadona_mapping.json`: id de demostración (de `data/products.json`) → id real de Mercadona.
+- `ingest_datos_branch.py` (se ejecuta en `predev`/`prebuild`, también en Vercel) aplica al final esos productos **sin red**, así que en `data/recipes.json` se pueden seguir usando los ids antiguos.
+- Para regenerarlos: `python3 data/scripts/realify_products.py match` (revisar y ajustar `OVERRIDES`) y luego `apply`.
+
+Nutrición: Open Food Facts (ODbL) por EAN o CIQUAL 2020 (ANSES) para frescos; si no existe → `null` → «dato no disponible» (71 de 120 tienen datos). Nunca se rellenan valores.
+
+Alérgenos (reglas fijas, Reglamento UE 1169/2011): «Contiene» / «Puede contener» del campo de alérgenos y negritas de la lista de ingredientes (la frase completa decide si es traza). Si hay lista de ingredientes sin ningún alérgeno, la etiqueta declara «sin alérgenos» (art. 21 obliga a resaltarlos). Sin ficha ni lista → «desconocido» (4 productos).

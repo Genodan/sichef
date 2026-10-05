@@ -461,6 +461,12 @@ def main():
     for r in recipes:
         print(f"    - {r['name']} ({r['id']})")
 
+    # Paso final: sustituir los productos de demostración por los REALES de Mercadona
+    # guardados en data/mercadona_reales.json (sin red; ver realify_products.py).
+    import realify_products
+
+    realify_products.overlay()
+
 
 if __name__ == "__main__":
     main()
