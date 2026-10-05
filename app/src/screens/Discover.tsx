@@ -8,14 +8,14 @@ import { EmptyState, PrimaryButton } from '../components/ui.tsx'
 import { LIKE_ADDS_TO_BASKET, useAppState } from '../lib/appState.ts'
 import { rankRecipes, type RankInput, type RecipeInfo } from '../lib/compute.ts'
 import { useCatalog } from '../lib/data.ts'
-import { useHiddenSummary, useVisibility } from '../lib/hooks.ts'
+import { useHiddenSummary, useHouseholdSuitability, useVisibility } from '../lib/hooks.ts'
 import { useUi } from '../lib/ui.ts'
 
 function hiddenText(byAllergy: number, byData: number): string {
   const recetas = (n: number) => `${n} ${n === 1 ? 'receta oculta' : 'recetas ocultas'}`
   const ocultas = (n: number) => `${n} ${n === 1 ? 'oculta' : 'ocultas'}`
-  if (byAllergy && byData) return `${ocultas(byAllergy)} por tus alergias · ${byData} por falta de datos`
-  if (byAllergy) return `${recetas(byAllergy)} por tus alergias`
+  if (byAllergy && byData) return `${ocultas(byAllergy)} por alérgenos · ${byData} por falta de datos`
+  if (byAllergy) return `${recetas(byAllergy)} por alérgenos`
   return `${recetas(byData)} por falta de datos`
 }
 
@@ -24,8 +24,10 @@ export function Discover() {
   const { state, dispatch } = useAppState()
   const ui = useUi()
   const visibility = useVisibility()
+  const household = useHouseholdSuitability()
   const hidden = useHiddenSummary()
   const [showHidden, setShowHidden] = useState(false)
+  const [filterTarget, setFilterTarget] = useState<'all' | 'any' | string>('all')
   /** La carta que asomaba detrás pasa delante aunque el ranking cambie tras decidir. */
   const [sticky, setSticky] = useState<string | null>(null)
 
@@ -36,13 +38,26 @@ export function Discover() {
       return i ? { id, features: i.features } : null
     }
     const candidates = catalog.recipes
-      .filter((r) => visibility.get(r.id)?.visible && !decided.has(r.id))
+      .filter((r) => {
+        if (decided.has(r.id)) return false
+        const hs = household.get(r.id)
+        if (!hs || hs.members.length === 0) {
+          return visibility.get(r.id)?.visible
+        }
+        if (filterTarget === 'all') {
+          return hs.cannotEat.length === 0
+        }
+        if (filterTarget === 'any') {
+          return true
+        }
+        return hs.canEat.some((m) => m.memberId === filterTarget)
+      })
       .map((r) => input(r.id))
       .filter((x): x is RankInput => x !== null)
     const liked = state.likes.map(input).filter((x): x is RankInput => x !== null)
     const passed = state.passes.map(input).filter((x): x is RankInput => x !== null)
     return rankRecipes(candidates, liked, passed)
-  }, [catalog, visibility, state.likes, state.passes])
+  }, [catalog, visibility, household, filterTarget, state.likes, state.passes])
 
   const { items, reasons } = useMemo(() => {
     const order = [...ranked]
@@ -127,7 +142,7 @@ export function Discover() {
         </h1>
       </header>
 
-      <div className="flex min-h-7 shrink-0 px-5 pb-2">
+      <div className="flex min-h-7 shrink-0 px-5 pb-1">
         {hidden.total > 0 ? (
           <button
             type="button"
@@ -145,19 +160,61 @@ export function Discover() {
             className="flex items-center gap-1.5 rounded-full bg-white/15 py-1 pl-2.5 pr-2 text-xs font-bold text-white hover:bg-white/25"
           >
             <UserRound className="size-4 text-sun" aria-hidden />
-            ¿Tienes alergias? Añádelas en tu perfil
+            ¿Tienes alergias en casa? Añádelas en el perfil
             <ChevronRight className="size-4" aria-hidden />
           </button>
         ) : (
           <p className="flex items-center gap-1.5 py-1 text-xs font-bold text-white/85">
-            <ShieldCheck className="size-4 text-sun" aria-hidden /> Filtrando por tus alergias
+            <ShieldCheck className="size-4 text-sun" aria-hidden /> Filtrando por alérgenos de la casa
           </p>
         )}
       </div>
 
+      {state.profile.members.length > 1 && (
+        <div className="no-scrollbar -mx-2 flex gap-1.5 overflow-x-auto px-5 pb-2 pt-0.5">
+          <button
+            type="button"
+            onClick={() => setFilterTarget('all')}
+            className={`shrink-0 rounded-full px-3 py-1 text-xs font-black transition-colors ${
+              filterTarget === 'all'
+                ? 'bg-white text-brand shadow-soft'
+                : 'bg-white/20 text-white hover:bg-white/30'
+            }`}
+          >
+            👨‍👩‍👧 Toda la casa
+          </button>
+          <button
+            type="button"
+            onClick={() => setFilterTarget('any')}
+            className={`shrink-0 rounded-full px-3 py-1 text-xs font-black transition-colors ${
+              filterTarget === 'any'
+                ? 'bg-white text-brand shadow-soft'
+                : 'bg-white/20 text-white hover:bg-white/30'
+            }`}
+          >
+            🍽️ Ver todas
+          </button>
+          {state.profile.members.map((m) => (
+            <button
+              key={m.id}
+              type="button"
+              onClick={() => setFilterTarget(m.id)}
+              className={`shrink-0 rounded-full px-3 py-1 text-xs font-black transition-colors ${
+                filterTarget === m.id
+                  ? 'bg-white text-brand shadow-soft'
+                  : 'bg-white/20 text-white hover:bg-white/30'
+              }`}
+            >
+              👤 {m.name}
+            </button>
+          ))}
+        </div>
+      )}
+
       <SwipeDeck
         items={items}
         mine={state.profile.allergies}
+        suitabilities={household}
         reasons={reasons}
         onDecide={onDecide}
         onOpen={ui.openRecipe}
@@ -170,26 +227,36 @@ export function Discover() {
 
       <BottomSheet open={showHidden} onClose={() => setShowHidden(false)} title="Recetas ocultas">
         <p className="mb-4 text-sm font-semibold text-muted">
-          Reglas fijas, sin IA: si una receta lleva un alérgeno de tu perfil (o trazas, si las excluyes), no aparece. Si
-          falta el dato de alérgenos de algún producto y tienes alergias, tampoco: preferimos no arriesgar.
+          Reglas fijas, sin IA: si una receta lleva un alérgeno de las personas de la casa (o trazas, si las excluyes),
+          no aparece para ellas. Si falta el dato de alérgenos de algún producto y hay alergias, tampoco: preferimos no arriesgar.
         </p>
         {[...hidden.byAllergy, ...hidden.byData].length === 0 ? (
           <p className="text-sm font-semibold">No hay recetas ocultas.</p>
         ) : (
           <ul className="flex flex-col gap-3">
-            {[...hidden.byAllergy, ...hidden.byData].map(({ info, visibility: v }) => (
-              <li key={info.recipe.id} className="rounded-2xl bg-panel p-3.5">
-                <p className="mb-1 flex items-center gap-1.5 font-extrabold">
-                  {v.byAllergy ? (
-                    <ShieldCheck className="size-4 text-pass" aria-hidden />
-                  ) : (
-                    <ShieldQuestion className="size-4 text-accent-dark" aria-hidden />
-                  )}
-                  {info.recipe.name}
-                </p>
-                <HiddenReasons reasons={v.reasons} />
-              </li>
-            ))}
+            {[...hidden.byAllergy, ...hidden.byData].map(({ info, visibility: v }) => {
+              const hs = household.get(info.recipe.id)
+              return (
+                <li key={info.recipe.id} className="rounded-2xl bg-panel p-3.5">
+                  <p className="mb-1 flex items-center justify-between gap-1.5 font-extrabold">
+                    <span className="flex items-center gap-1.5 truncate">
+                      {v.byAllergy ? (
+                        <ShieldCheck className="size-4 shrink-0 text-pass" aria-hidden />
+                      ) : (
+                        <ShieldQuestion className="size-4 shrink-0 text-accent-dark" aria-hidden />
+                      )}
+                      {info.recipe.name}
+                    </span>
+                    {hs && hs.cannotEat.length > 0 && (
+                      <span className="shrink-0 text-xs font-bold text-pass">
+                        No apto para: {hs.cannotEat.map((m) => m.memberName).join(', ')}
+                      </span>
+                    )}
+                  </p>
+                  <HiddenReasons reasons={v.reasons} />
+                </li>
+              )
+            })}
           </ul>
         )}
         <div className="mt-5 flex justify-center">

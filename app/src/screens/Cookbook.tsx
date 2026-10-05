@@ -5,13 +5,14 @@ import { getRecipeIngredientCounts, useAppState } from '../lib/appState.ts'
 import type { RecipeInfo } from '../lib/compute.ts'
 import { useCatalog } from '../lib/data.ts'
 import { plural } from '../lib/format.ts'
-import { useVisibility } from '../lib/hooks.ts'
+import { useHouseholdSuitability, useVisibility } from '../lib/hooks.ts'
 import { useUi } from '../lib/ui.ts'
 
 export function Cookbook() {
   const { info } = useCatalog()
   const { state, dispatch } = useAppState()
   const visibility = useVisibility()
+  const household = useHouseholdSuitability()
   const ui = useUi()
   const liked = [...state.likes]
     .reverse()
@@ -43,6 +44,7 @@ export function Cookbook() {
                   key={id}
                   info={i}
                   visibility={visibility.get(id)}
+                  suitability={household.get(id)}
                   onOpen={() => ui.openRecipe(id)}
                   ingredientSummary={
                     <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-extrabold">

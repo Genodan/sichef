@@ -2,7 +2,13 @@
 
 import { useMemo } from 'react'
 import type { AllergenCode, Store } from '../types.ts'
-import { recipeVisibility, type RecipeInfo, type Visibility } from './compute.ts'
+import {
+  recipeHouseholdSuitability,
+  recipeVisibility,
+  type HouseholdSuitability,
+  type RecipeInfo,
+  type Visibility,
+} from './compute.ts'
 import { useAppState } from './appState.ts'
 import { useCatalog } from './data.ts'
 
@@ -13,7 +19,7 @@ export function useCurrentStore(): Store | null {
   return stores.find((s) => s.id === storeId) ?? stores[0] ?? null
 }
 
-/** Visibilidad de cada receta con el perfil actual (filtro duro de alérgenos). */
+/** Visibilidad de cada receta con el perfil actual (filtro duro de alérgenos de toda la casa). */
 export function useVisibility(): ReadonlyMap<string, Visibility> {
   const { info } = useCatalog()
   const { allergies, excludeTraces } = useAppState().state.profile
@@ -22,6 +28,31 @@ export function useVisibility(): ReadonlyMap<string, Visibility> {
     for (const [id, i] of info) out.set(id, recipeVisibility(i.allergens, { allergies, excludeTraces }))
     return out
   }, [info, allergies, excludeTraces])
+}
+
+/** Idoneidad de cada receta por miembro de la casa («Quién puede comer y quién no»). */
+export function useHouseholdSuitability(): ReadonlyMap<string, HouseholdSuitability> {
+  const { info } = useCatalog()
+  const { members, excludeTraces } = useAppState().state.profile
+  return useMemo(() => {
+    const out = new Map<string, HouseholdSuitability>()
+    for (const [id, i] of info) {
+      out.set(id, recipeHouseholdSuitability(i.allergens, members, excludeTraces))
+    }
+    return out
+  }, [info, members, excludeTraces])
+}
+
+/** Idoneidad de una receta específica para los miembros de la casa. */
+export function useRecipeHouseholdSuitability(recipeId: string | null): HouseholdSuitability | null {
+  const { info } = useCatalog()
+  const { members, excludeTraces } = useAppState().state.profile
+  return useMemo(() => {
+    if (!recipeId) return null
+    const i = info.get(recipeId)
+    if (!i) return null
+    return recipeHouseholdSuitability(i.allergens, members, excludeTraces)
+  }, [recipeId, info, members, excludeTraces])
 }
 
 /** Resumen de recetas ocultas: por alergia y por falta de datos. */

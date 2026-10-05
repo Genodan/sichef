@@ -2,13 +2,28 @@
 // El proveedor con persistencia en localStorage está en state.tsx.
 
 import { createContext, useContext, type Dispatch } from 'react'
-import type { AllergenCode } from '../types.ts'
+import type { AllergenCode, HouseholdMember } from '../types.ts'
 import { ALLERGEN_CODES } from './compute.ts'
 
 /** «Tú dices sí. SíChef hace el resto»: un «¡Sí!» guarda la receta en el Recetario. */
 export const LIKE_ADDS_TO_BASKET = false
 
+export function getHouseholdAllergies(members: readonly HouseholdMember[]): AllergenCode[] {
+  const set = new Set<AllergenCode>()
+  for (const m of members) {
+    for (const a of m.allergies) set.add(a)
+  }
+  return ALLERGEN_CODES.filter((c) => set.has(c))
+}
+
+export const defaultMembers: HouseholdMember[] = [
+  { id: 'yo', name: 'Yo', allergies: [] },
+]
+
 export interface Profile {
+  /** Personas de la casa con sus alergias individuales. */
+  members: HouseholdMember[]
+  /** Alergias acumuladas de toda la casa (unión de todos los miembros). */
   allergies: AllergenCode[]
   /** Tratar «Puede contener» como alérgeno (activado por defecto). */
   excludeTraces: boolean
@@ -35,7 +50,12 @@ export interface AppState {
 }
 
 export const initialState: AppState = {
-  profile: { allergies: [], excludeTraces: true, storeId: null },
+  profile: {
+    members: defaultMembers,
+    allergies: [],
+    excludeTraces: true,
+    storeId: null,
+  },
   likes: [],
   passes: [],
   pantry: {},
@@ -43,6 +63,11 @@ export const initialState: AppState = {
 }
 
 export type Action =
+  | { type: 'addMember'; name: string; allergies?: AllergenCode[] }
+  | { type: 'removeMember'; id: string }
+  | { type: 'updateMemberName'; id: string; name: string }
+  | { type: 'toggleMemberAllergy'; memberId: string; code: AllergenCode }
+  | { type: 'setMemberAllergies'; memberId: string; allergies: AllergenCode[] }
   | { type: 'toggleAllergy'; code: AllergenCode }
   | { type: 'setExcludeTraces'; value: boolean }
   | { type: 'setStore'; storeId: string }
@@ -97,12 +122,103 @@ export function getRecipeIngredientCounts(
 
 export function reducer(state: AppState, action: Action): AppState {
   switch (action.type) {
+    case 'addMember': {
+      const trimmed = action.name.trim()
+      if (!trimmed) return state
+      const newMember: HouseholdMember = {
+        id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+        name: trimmed,
+        allergies: action.allergies ? ALLERGEN_CODES.filter((c) => action.allergies?.includes(c)) : [],
+      }
+      const members = [...state.profile.members, newMember]
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          members,
+          allergies: getHouseholdAllergies(members),
+        },
+      }
+    }
+    case 'removeMember': {
+      let members = state.profile.members.filter((m) => m.id !== action.id)
+      if (members.length === 0) {
+        members = defaultMembers
+      }
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          members,
+          allergies: getHouseholdAllergies(members),
+        },
+      }
+    }
+    case 'updateMemberName': {
+      const trimmed = action.name.trim()
+      if (!trimmed) return state
+      const members = state.profile.members.map((m) => (m.id === action.id ? { ...m, name: trimmed } : m))
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          members,
+        },
+      }
+    }
+    case 'toggleMemberAllergy': {
+      const members = state.profile.members.map((m) => {
+        if (m.id !== action.memberId) return m
+        const has = m.allergies.includes(action.code)
+        const allergies = has
+          ? m.allergies.filter((c) => c !== action.code)
+          : ALLERGEN_CODES.filter((c) => c === action.code || m.allergies.includes(c))
+        return { ...m, allergies }
+      })
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          members,
+          allergies: getHouseholdAllergies(members),
+        },
+      }
+    }
+    case 'setMemberAllergies': {
+      const members = state.profile.members.map((m) => {
+        if (m.id !== action.memberId) return m
+        return { ...m, allergies: ALLERGEN_CODES.filter((c) => action.allergies.includes(c)) }
+      })
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          members,
+          allergies: getHouseholdAllergies(members),
+        },
+      }
+    }
     case 'toggleAllergy': {
-      const has = state.profile.allergies.includes(action.code)
-      const allergies = has
-        ? state.profile.allergies.filter((c) => c !== action.code)
-        : ALLERGEN_CODES.filter((c) => c === action.code || state.profile.allergies.includes(c))
-      return { ...state, profile: { ...state.profile, allergies } }
+      const firstId = state.profile.members[0]?.id ?? 'yo'
+      const members =
+        state.profile.members.length > 0
+          ? state.profile.members.map((m, idx) => {
+              if (idx !== 0) return m
+              const has = m.allergies.includes(action.code)
+              const allergies = has
+                ? m.allergies.filter((c) => c !== action.code)
+                : ALLERGEN_CODES.filter((c) => c === action.code || m.allergies.includes(c))
+              return { ...m, allergies }
+            })
+          : [{ id: firstId, name: 'Yo', allergies: [action.code] }]
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          members,
+          allergies: getHouseholdAllergies(members),
+        },
+      }
     }
     case 'setExcludeTraces':
       return { ...state, profile: { ...state.profile, excludeTraces: action.value } }
@@ -253,7 +369,24 @@ export function sanitizeState(raw: unknown): AppState {
   const r = raw as Record<string, unknown>
   const p = (typeof r.profile === 'object' && r.profile !== null ? r.profile : {}) as Record<string, unknown>
   const b = (typeof r.basket === 'object' && r.basket !== null ? r.basket : {}) as Record<string, unknown>
-  const allergies = strings(p.allergies)
+  
+  let members: HouseholdMember[] = []
+  if (Array.isArray(p.members) && p.members.length > 0) {
+    members = p.members
+      .filter((m): m is Record<string, unknown> => typeof m === 'object' && m !== null)
+      .map((m, idx) => ({
+        id: typeof m.id === 'string' && m.id ? m.id : `m-${idx + 1}`,
+        name: typeof m.name === 'string' && m.name.trim() ? m.name.trim() : `Persona ${idx + 1}`,
+        allergies: ALLERGEN_CODES.filter((c) => strings(m.allergies).includes(c)),
+      }))
+  }
+
+  // Migración de perfil antiguo (solo allergies) o si members quedó vacío
+  if (members.length === 0) {
+    const legacyAllergies = ALLERGEN_CODES.filter((c) => strings(p.allergies).includes(c))
+    members = [{ id: 'yo', name: 'Yo', allergies: legacyAllergies }]
+  }
+
   const pantry = parsePantry(r.pantry)
   const rawRecipeIds = strings(b.recipeIds)
   const pantryRecipeIds = Object.entries(pantry)
@@ -263,7 +396,8 @@ export function sanitizeState(raw: unknown): AppState {
 
   return {
     profile: {
-      allergies: ALLERGEN_CODES.filter((c) => allergies.includes(c)),
+      members,
+      allergies: getHouseholdAllergies(members),
       excludeTraces: typeof p.excludeTraces === 'boolean' ? p.excludeTraces : true,
       storeId: typeof p.storeId === 'string' ? p.storeId : null,
     },

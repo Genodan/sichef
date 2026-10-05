@@ -4,6 +4,7 @@
 
 import type {
   AllergenCode,
+  HouseholdMember,
   Nutrition100,
   Product,
   Recipe,
@@ -406,6 +407,70 @@ export function recipeVisibility(a: RecipeAllergens, profile: AllergyProfile): V
     visible: reasons.length === 0,
     reasons,
     byAllergy: reasons.some((r) => r.kind !== 'dato_no_disponible'),
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Idoneidad por miembro del hogar («Quién puede comer y quién no»)
+// ---------------------------------------------------------------------------
+
+export interface MemberSuitability {
+  memberId: string
+  memberName: string
+  canEat: boolean
+  reasons: HiddenReason[]
+  byAllergy: boolean
+  conflictAllergens: AllergenCode[]
+}
+
+export interface HouseholdSuitability {
+  members: MemberSuitability[]
+  canEat: MemberSuitability[]
+  cannotEat: MemberSuitability[]
+  allCanEat: boolean
+  noneCanEat: boolean
+  someCanEat: boolean
+}
+
+/** Calcula de forma determinista para cada persona de la casa si puede o no comer la receta. */
+export function recipeHouseholdSuitability(
+  a: RecipeAllergens,
+  members: readonly HouseholdMember[],
+  excludeTraces: boolean,
+): HouseholdSuitability {
+  const memberResults: MemberSuitability[] = members.map((m) => {
+    if (m.allergies.length === 0) {
+      return {
+        memberId: m.id,
+        memberName: m.name,
+        canEat: true,
+        reasons: [],
+        byAllergy: false,
+        conflictAllergens: [],
+      }
+    }
+    const vis = recipeVisibility(a, { allergies: m.allergies, excludeTraces })
+    const conflictAllergens = vis.reasons.flatMap((r) => (r.kind !== 'dato_no_disponible' ? r.allergens : []))
+    return {
+      memberId: m.id,
+      memberName: m.name,
+      canEat: vis.visible,
+      reasons: vis.reasons,
+      byAllergy: vis.byAllergy,
+      conflictAllergens: [...new Set(conflictAllergens)],
+    }
+  })
+
+  const canEat = memberResults.filter((m) => m.canEat)
+  const cannotEat = memberResults.filter((m) => !m.canEat)
+
+  return {
+    members: memberResults,
+    canEat,
+    cannotEat,
+    allCanEat: memberResults.length > 0 && cannotEat.length === 0,
+    noneCanEat: memberResults.length > 0 && canEat.length === 0,
+    someCanEat: canEat.length > 0 && cannotEat.length > 0,
   }
 }
 

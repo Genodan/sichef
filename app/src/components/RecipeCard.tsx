@@ -1,7 +1,8 @@
 import { Sparkles, TrendingDown } from 'lucide-react'
 import type { AllergenCode } from '../types.ts'
-import type { RecipeInfo } from '../lib/compute.ts'
+import type { HouseholdSuitability, RecipeInfo } from '../lib/compute.ts'
 import { formatEuro, NA, plural } from '../lib/format.ts'
+import { useAllergenLabel } from '../lib/hooks.ts'
 import { AllergenChips } from './AllergenChips.tsx'
 import { NutrientBars } from './Nutrition.tsx'
 import { SafeImage } from './SafeImage.tsx'
@@ -26,14 +27,69 @@ export function PriceRibbon({ info }: { info: RecipeInfo }) {
   )
 }
 
+/** Indicador en la tarjeta de quién puede comer en casa y quién no. */
+export function HouseholdCardBadge({ suitability }: { suitability?: HouseholdSuitability }) {
+  const allergenLabel = useAllergenLabel()
+  if (!suitability || suitability.members.length === 0) return null
+
+  if (suitability.allCanEat) {
+    const names = suitability.canEat.map((m) => m.memberName).join(', ')
+    return (
+      <div className="flex items-center gap-1.5 rounded-2xl bg-brand-soft px-2.5 py-1 text-xs font-black text-brand-dark">
+        <span className="text-sm leading-none" aria-hidden>✅</span>
+        <span className="truncate">
+          Apto para toda la casa <span className="font-semibold text-brand-dark/80">({names})</span>
+        </span>
+      </div>
+    )
+  }
+
+  if (suitability.someCanEat) {
+    return (
+      <div className="flex flex-wrap items-center gap-1 text-[11.5px] font-black leading-tight">
+        <span className="inline-flex items-center gap-1 rounded-full bg-brand-soft px-2 py-0.5 text-brand-dark">
+          <span aria-hidden>✅</span> {suitability.canEat.map((m) => m.memberName).join(', ')}
+        </span>
+        <span className="inline-flex items-center gap-1 rounded-full bg-pass-soft px-2 py-0.5 text-pass">
+          <span aria-hidden>❌</span>{' '}
+          {suitability.cannotEat
+            .map((m) => {
+              const conflicts = m.conflictAllergens.map((c) => allergenLabel(c).name).join(', ')
+              return `${m.memberName}${conflicts ? ` (${conflicts})` : ''}`
+            })
+            .join(' · ')}
+        </span>
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex items-center gap-1.5 rounded-2xl bg-pass-soft px-2.5 py-1 text-xs font-black text-pass">
+      <span className="text-sm leading-none" aria-hidden>❌</span>
+      <span className="truncate">
+        No apto en casa:{' '}
+        <span className="font-semibold">
+          {suitability.cannotEat
+            .map((m) => {
+              const conflicts = m.conflictAllergens.map((c) => allergenLabel(c).name).join(', ')
+              return `${m.memberName}${conflicts ? ` (${conflicts})` : ''}`
+            })
+            .join(' · ')}
+        </span>
+      </span>
+    </div>
+  )
+}
+
 interface Props {
   info: RecipeInfo
   mine: readonly AllergenCode[]
+  suitability?: HouseholdSuitability
   /** «¿Por qué esta receta?» (plantilla fija, calculada por la recomendación). */
   reason?: string
 }
 
-export function RecipeCard({ info, mine, reason }: Props) {
+export function RecipeCard({ info, mine, suitability, reason }: Props) {
   const { recipe, nutrition, badges, allergens } = info
   const badge = badges[0]
   return (
@@ -72,6 +128,7 @@ export function RecipeCard({ info, mine, reason }: Props) {
           )}
         </div>
         <NutrientBars nutrition={nutrition} />
+        <HouseholdCardBadge suitability={suitability} />
         <AllergenChips allergens={allergens} mine={mine} max={2} withTraces={false} />
         {nutrition.partial && nutrition.counted > 0 && (
           <p className="truncate text-[10.5px] font-semibold text-muted">

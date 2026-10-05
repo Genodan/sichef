@@ -3,7 +3,7 @@ import { AnimatePresence, animate, motion, useMotionValue, useTransform, type Va
 import { useRef, useState, type KeyboardEvent, type ReactNode } from 'react'
 import type { AllergenCode } from '../types.ts'
 import { LIKE_ADDS_TO_BASKET } from '../lib/appState.ts'
-import type { RecipeInfo } from '../lib/compute.ts'
+import type { HouseholdSuitability, RecipeInfo } from '../lib/compute.ts'
 import { formatEuro } from '../lib/format.ts'
 import { RecipeCard } from './RecipeCard.tsx'
 
@@ -31,12 +31,13 @@ interface CardProps {
   index: number
   exitDir: number
   mine: readonly AllergenCode[]
+  suitability?: HouseholdSuitability
   reason?: string
   onSwiped: (dir: 1 | -1) => void
   onOpen: () => void
 }
 
-function DeckCard({ info, index, exitDir, mine, reason, onSwiped, onOpen }: CardProps) {
+function DeckCard({ info, index, exitDir, mine, suitability, reason, onSwiped, onOpen }: CardProps) {
   const x = useMotionValue(0)
   const rotate = useTransform(x, [-260, 0, 260], [-16, 0, 16])
   const yes = useTransform(x, [24, SWIPE_DISTANCE], [0, 1])
@@ -76,7 +77,7 @@ function DeckCard({ info, index, exitDir, mine, reason, onSwiped, onOpen }: Card
           if (isTop && p && Math.hypot(e.clientX - p.x, e.clientY - p.y) < 8) onOpen()
         }}
       >
-        <RecipeCard info={info} mine={mine} reason={reason} />
+        <RecipeCard info={info} mine={mine} suitability={suitability} reason={reason} />
         <motion.span
           style={{ opacity: yes }}
           className="pointer-events-none absolute left-6 top-[32%] -rotate-12 rounded-2xl border-4 border-brand-bright bg-white/90 px-4 py-1 text-3xl font-black text-brand-bright"
@@ -133,6 +134,7 @@ function ActionButton({
 interface Props {
   items: readonly RecipeInfo[]
   mine: readonly AllergenCode[]
+  suitabilities?: ReadonlyMap<string, HouseholdSuitability>
   /** Texto «¿por qué esta receta?» por id (opcional). */
   reasons?: ReadonlyMap<string, string>
   onDecide: (id: string, decision: Decision) => void
@@ -141,7 +143,7 @@ interface Props {
   empty: ReactNode
 }
 
-export function SwipeDeck({ items, mine, reasons, onDecide, onOpen, empty }: Props) {
+export function SwipeDeck({ items, mine, suitabilities, reasons, onDecide, onOpen, empty }: Props) {
   const [exitDir, setExitDir] = useState<1 | -1>(1)
   const top = items[0]
 
@@ -179,6 +181,7 @@ export function SwipeDeck({ items, mine, reasons, onDecide, onOpen, empty }: Pro
               index={index}
               exitDir={exitDir}
               mine={mine}
+              suitability={suitabilities?.get(info.recipe.id)}
               reason={reasons?.get(info.recipe.id)}
               onSwiped={decide}
               onOpen={() => onOpen(info.recipe.id)}

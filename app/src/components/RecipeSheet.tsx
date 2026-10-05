@@ -21,7 +21,7 @@ import { getIngredientStatus, useAppState } from '../lib/appState.ts'
 import type { IngredientLine, RecipeInfo } from '../lib/compute.ts'
 import { useCatalog } from '../lib/data.ts'
 import { formatDate, formatEuro, formatLocation, formatMinutes, NA, plural } from '../lib/format.ts'
-import { useCurrentStore, useVisibility } from '../lib/hooks.ts'
+import { useAllergenLabel, useCurrentStore, useRecipeHouseholdSuitability, useVisibility } from '../lib/hooks.ts'
 import { useUi } from '../lib/ui.ts'
 import { AllergenChips } from './AllergenChips.tsx'
 import { HiddenReasons } from './HiddenReasons.tsx'
@@ -205,6 +205,8 @@ function SheetContent({ info, onClose }: { info: RecipeInfo; onClose: () => void
   const ui = useUi()
   const store = useCurrentStore()
   const visibility = useVisibility().get(recipe.id)
+  const suitability = useRecipeHouseholdSuitability(recipe.id)
+  const allergenLabel = useAllergenLabel()
   const backRef = useRef<HTMLButtonElement>(null)
   const [scrolled, setScrolled] = useState(false)
   const [filter, setFilter] = useState<'todos' | 'basket' | 'home' | 'none'>('todos')
@@ -353,13 +355,17 @@ function SheetContent({ info, onClose }: { info: RecipeInfo; onClose: () => void
             </ul>
           )}
 
-          {visibility && !visibility.visible && (
+          {suitability && suitability.cannotEat.length > 0 && (
             <div className="mt-4 flex gap-3 rounded-2xl bg-pass-soft p-3.5 text-pass" role="alert">
               <ShieldAlert className="size-5 shrink-0" aria-hidden />
               <div>
-                <p className="font-extrabold">Ojo: no encaja con tu perfil</p>
+                <p className="font-extrabold">
+                  {suitability.noneCanEat
+                    ? 'Ojo: no es apto para nadie en la casa'
+                    : `Ojo: no es apto para ${suitability.cannotEat.map((m) => m.memberName).join(', ')}`}
+                </p>
                 <div className="text-ink">
-                  <HiddenReasons reasons={visibility.reasons} />
+                  <HiddenReasons reasons={visibility?.reasons ?? []} />
                 </div>
               </div>
             </div>
@@ -383,6 +389,106 @@ function SheetContent({ info, onClose }: { info: RecipeInfo; onClose: () => void
             Precios <strong>calculados</strong> sumando los productos: por ración = lo que usas; en caja = envases completos.
             {cost.partial && ` Sin precio: ${cost.missing.join(', ')}.`}
           </p>
+
+          <Section
+            title="¿Quién puede comer en casa?"
+            aside={
+              <button
+                type="button"
+                onClick={() => {
+                  onClose()
+                  ui.goTo('perfil')
+                }}
+                className="text-xs font-extrabold text-brand hover:underline"
+              >
+                Configurar personas
+              </button>
+            }
+          >
+            {!suitability || suitability.members.length === 0 ? (
+              <p className="text-sm font-semibold text-muted">
+                No hay personas configuradas en el perfil.{' '}
+                <button
+                  type="button"
+                  onClick={() => {
+                    onClose()
+                    ui.goTo('perfil')
+                  }}
+                  className="font-bold text-brand underline"
+                >
+                  Añade a tu familia en el Perfil
+                </button>
+              </p>
+            ) : (
+              <div className="flex flex-col gap-2.5">
+                <div className="flex items-center gap-2 rounded-2xl bg-panel px-3 py-2 text-xs font-bold text-muted">
+                  {suitability.allCanEat ? (
+                    <span className="text-brand-dark font-extrabold">
+                      ✅ ¡Plato seguro! Todas las personas de la casa pueden comerlo ({suitability.members.length}).
+                    </span>
+                  ) : suitability.noneCanEat ? (
+                    <span className="text-pass font-extrabold">
+                      ❌ Ninguna persona de la casa puede comer este plato de forma segura.
+                    </span>
+                  ) : (
+                    <span>
+                      <strong className="text-ink">{suitability.canEat.length}</strong> de{' '}
+                      <strong className="text-ink">{suitability.members.length}</strong> personas pueden comer este plato.
+                    </span>
+                  )}
+                </div>
+
+                <ul className="flex flex-col gap-2">
+                  {suitability.members.map((m) => {
+                    return (
+                      <li
+                        key={m.memberId}
+                        className={`flex items-center justify-between gap-3 rounded-2xl p-3 transition-colors ${
+                          m.canEat
+                            ? 'bg-brand-soft/70 ring-1 ring-brand/20'
+                            : 'bg-pass-soft/80 ring-1 ring-pass/25'
+                        }`}
+                      >
+                        <div className="flex items-center gap-3 min-w-0">
+                          <span
+                            className={`grid size-9 shrink-0 place-items-center rounded-full text-sm font-black text-white shadow-soft ${
+                              m.canEat ? 'bg-brand' : 'bg-pass'
+                            }`}
+                          >
+                            {m.memberName.charAt(0).toUpperCase()}
+                          </span>
+                          <div className="min-w-0">
+                            <p className="truncate text-sm font-black text-ink">{m.memberName}</p>
+                            <p className="text-xs font-semibold text-muted truncate">
+                              {m.canEat
+                                ? 'Apto para comer · Sin alérgenos conflictivos'
+                                : m.reasons
+                                    .map((r) =>
+                                      r.kind === 'contiene'
+                                        ? `Contiene ${r.allergens.map((c) => allergenLabel(c).name).join(', ')}`
+                                        : r.kind === 'trazas'
+                                          ? `Trazas de ${r.allergens.map((c) => allergenLabel(c).name).join(', ')}`
+                                          : 'Falta información de alérgenos',
+                                    )
+                                    .join(' · ')}
+                            </p>
+                          </div>
+                        </div>
+
+                        <span
+                          className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-black shadow-soft ${
+                            m.canEat ? 'bg-brand text-white' : 'bg-pass text-white'
+                          }`}
+                        >
+                          {m.canEat ? 'Apto ✅' : 'No apto ❌'}
+                        </span>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            )}
+          </Section>
 
           <Section title="Nutrición por ración" aside={<span className="text-xs font-bold text-muted">calculada</span>}>
             <NutritionGrid nutrition={nutrition} />

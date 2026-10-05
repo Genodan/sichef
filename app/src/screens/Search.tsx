@@ -7,7 +7,7 @@ import { EmptyState, ScreenHeader } from '../components/ui.tsx'
 import { normalizeText, type RecipeInfo } from '../lib/compute.ts'
 import { useCatalog } from '../lib/data.ts'
 import { formatEuro, plural } from '../lib/format.ts'
-import { useVisibility } from '../lib/hooks.ts'
+import { useHouseholdSuitability, useVisibility } from '../lib/hooks.ts'
 import { useUi } from '../lib/ui.ts'
 
 function ProductButton({ product, count, onClick }: { product: Product; count: number; onClick: () => void }) {
@@ -42,6 +42,7 @@ function ProductButton({ product, count, onClick }: { product: Product; count: n
 export function Search() {
   const { products, productsById, recipes, info } = useCatalog()
   const visibility = useVisibility()
+  const household = useHouseholdSuitability()
   const ui = useUi()
   const [query, setQuery] = useState('')
   const [selectedId, setSelectedId] = useState<string | null>(null)
@@ -82,7 +83,10 @@ export function Search() {
   const selectedRecipes = (selected ? (usage.get(selected.id) ?? []) : [])
     .map((id) => info.get(id))
     .filter((x): x is RecipeInfo => x !== undefined)
-  const visibleRecipes = selectedRecipes.filter((i) => visibility.get(i.recipe.id)?.visible)
+  const visibleRecipes = selectedRecipes.filter((i) => {
+    const s = household.get(i.recipe.id)
+    return s && s.members.length > 0 ? s.canEat.length > 0 : visibility.get(i.recipe.id)?.visible
+  })
   const hiddenCount = selectedRecipes.length - visibleRecipes.length
 
   return (
@@ -133,7 +137,13 @@ export function Search() {
             {visibleRecipes.length > 0 ? (
               <ul className="flex flex-col gap-2.5">
                 {visibleRecipes.map((i) => (
-                  <RecipeRow key={i.recipe.id} info={i} onOpen={() => ui.openRecipe(i.recipe.id)} />
+                  <RecipeRow
+                    key={i.recipe.id}
+                    info={i}
+                    suitability={household.get(i.recipe.id)}
+                    visibility={visibility.get(i.recipe.id)}
+                    onOpen={() => ui.openRecipe(i.recipe.id)}
+                  />
                 ))}
               </ul>
             ) : (

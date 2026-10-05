@@ -1,6 +1,6 @@
 import { Flame, ShieldAlert, TrendingDown } from 'lucide-react'
 import type { ReactNode } from 'react'
-import type { RecipeInfo, Visibility } from '../lib/compute.ts'
+import type { HouseholdSuitability, RecipeInfo, Visibility } from '../lib/compute.ts'
 import { formatEuro, formatNutrient } from '../lib/format.ts'
 import { SafeImage } from './SafeImage.tsx'
 
@@ -8,6 +8,7 @@ interface Props {
   info: RecipeInfo
   onOpen: () => void
   visibility?: Visibility
+  suitability?: HouseholdSuitability
   /** Botones a la derecha (cesta, quitar…). */
   actions?: ReactNode
   /** Resumen de estado de ingredientes (cesta, casa, pendientes). */
@@ -15,7 +16,7 @@ interface Props {
 }
 
 /** Fila de receta para listas (Buscar, Recetario). */
-export function RecipeRow({ info, onOpen, visibility, actions, ingredientSummary }: Props) {
+export function RecipeRow({ info, onOpen, visibility, suitability, actions, ingredientSummary }: Props) {
   const { recipe, cost, nutrition, priceDecreased } = info
   const hidden = visibility && !visibility.visible
   return (
@@ -45,11 +46,31 @@ export function RecipeRow({ info, onOpen, visibility, actions, ingredientSummary
             )}
           </p>
           {ingredientSummary && <div className="mt-1.5">{ingredientSummary}</div>}
-          {hidden && (
-            <p className="mt-1 inline-flex items-center gap-1 text-xs font-extrabold text-pass">
-              <ShieldAlert className="size-3.5" aria-hidden />
-              {visibility.byAllergy ? 'Contiene alérgenos de tu perfil' : 'Alérgenos: dato no disponible'}
-            </p>
+          {suitability && suitability.members.length > 0 ? (
+            <div className="mt-1 text-[11px] font-black">
+              {suitability.allCanEat ? (
+                <span className="inline-flex items-center gap-1 text-brand-dark">
+                  <span aria-hidden>✅</span> Apto para toda la casa
+                </span>
+              ) : suitability.noneCanEat ? (
+                <span className="inline-flex items-center gap-1 text-pass">
+                  <span aria-hidden>❌</span> No apto en casa
+                </span>
+              ) : (
+                <span className="flex flex-wrap items-center gap-1">
+                  <span className="text-brand-dark">✅ {suitability.canEat.map((m) => m.memberName).join(', ')}</span>
+                  <span className="text-muted">·</span>
+                  <span className="text-pass">❌ {suitability.cannotEat.map((m) => m.memberName).join(', ')}</span>
+                </span>
+              )}
+            </div>
+          ) : (
+            hidden && (
+              <p className="mt-1 inline-flex items-center gap-1 text-xs font-extrabold text-pass">
+                <ShieldAlert className="size-3.5" aria-hidden />
+                {visibility.byAllergy ? 'Contiene alérgenos de tu perfil' : 'Alérgenos: dato no disponible'}
+              </p>
+            )
           )}
         </div>
       </button>
