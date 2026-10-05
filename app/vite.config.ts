@@ -2,7 +2,15 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig, loadEnv, type Plugin } from 'vite'
 
-const GEMINI_MODELS = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash']
+const GEMINI_MODELS = [
+  'gemini-3.5-flash-lite',
+  'gemini-3.1-flash-lite',
+  'gemini-2.5-flash-lite',
+  'gemini-2.0-flash-lite',
+  'gemini-2.5-flash',
+  'gemini-2.0-flash',
+  'gemini-1.5-flash',
+]
 
 function chatApiPlugin(apiKey: string): Plugin {
   return {
