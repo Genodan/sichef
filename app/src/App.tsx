@@ -45,6 +45,11 @@ function Shell() {
 
   const ui = useMemo<UiApi>(() => ({ tab, goTo, openRecipe: setRecipeId, notify }), [tab, goTo, notify])
 
+  const basketCount = useMemo(
+    () => Object.values(state.pantry).filter((s) => s === 'basket').length,
+    [state.pantry],
+  )
+
   return (
     <UiContext value={ui}>
       <main className="relative min-h-0 flex-1 overflow-hidden">
@@ -54,7 +59,7 @@ function Shell() {
         {tab === 'cesta' && <Basket />}
         {tab === 'perfil' && <Profile />}
       </main>
-      <BottomNav tab={tab} onChange={goTo} basketCount={state.basket.recipeIds.length} />
+      <BottomNav tab={tab} onChange={goTo} basketCount={basketCount} />
       <RecipeSheet recipeId={recipeId} onClose={closeRecipe} />
       <Toast toast={toast} onDismiss={() => setToast(null)} />
     </UiContext>

@@ -1,9 +1,11 @@
 import {
   Check,
   ChevronLeft,
+  CircleDot,
   Clock,
   Euro,
   ExternalLink,
+  House,
   MapPin,
   Share2,
   ShieldAlert,
@@ -15,7 +17,7 @@ import {
 import { AnimatePresence, motion } from 'motion/react'
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import type { Store } from '../types.ts'
-import { useAppState } from '../lib/appState.ts'
+import { getIngredientStatus, useAppState } from '../lib/appState.ts'
 import type { IngredientLine, RecipeInfo } from '../lib/compute.ts'
 import { useCatalog } from '../lib/data.ts'
 import { formatDate, formatEuro, formatLocation, formatMinutes, NA, plural } from '../lib/format.ts'
@@ -68,65 +70,130 @@ function Stat({ icon, label, value }: { icon: ReactNode; label: string; value: s
   )
 }
 
-function IngredientRow({ line, store }: { line: IngredientLine; store: Store | null }) {
+function IngredientRow({
+  line,
+  store,
+  status,
+  onToggleBasket,
+  onToggleHome,
+}: {
+  line: IngredientLine
+  store: Store | null
+  status: 'basket' | 'home' | 'none'
+  onToggleBasket: () => void
+  onToggleHome: () => void
+}) {
   const { ingredient, product } = line
   const location = product && store ? (store.locations?.[product.id] ?? null) : null
   const aisleName = location ? store?.aisles?.find((a) => a.number === location.aisle)?.name : null
   const stock = product && store ? store.stock?.[product.id] : undefined
+
   return (
-    <li className="flex gap-3 py-3">
-      <SafeImage
-        src={product?.thumbnail}
-        alt={product?.name ?? ''}
-        kind="producto"
-        className="size-14 shrink-0 rounded-2xl bg-white object-contain ring-1 ring-line"
-      />
-      <div className="min-w-0 flex-1">
-        <div className="flex items-start justify-between gap-2">
-          <p className="font-extrabold leading-tight">
-            {ingredient.name}
-            {ingredient.optional && (
-              <span className="ml-1.5 rounded-full bg-panel px-1.5 py-0.5 align-middle text-[10px] font-bold text-muted">
-                opcional
-              </span>
+    <li className="flex flex-col gap-2.5 py-3.5">
+      <div className="flex gap-3">
+        <SafeImage
+          src={product?.thumbnail}
+          alt={product?.name ?? ''}
+          kind="producto"
+          className="size-14 shrink-0 rounded-2xl bg-white object-contain ring-1 ring-line"
+        />
+        <div className="min-w-0 flex-1">
+          <div className="flex items-start justify-between gap-2">
+            <p className="font-extrabold leading-tight">
+              {ingredient.name}
+              {ingredient.optional && (
+                <span className="ml-1.5 rounded-full bg-panel px-1.5 py-0.5 align-middle text-[10px] font-bold text-muted">
+                  opcional
+                </span>
+              )}
+            </p>
+            <p className="shrink-0 text-right text-sm font-extrabold tabular-nums">
+              {line.usedCost !== null ? formatEuro(line.usedCost) : <span className="text-xs font-semibold italic text-muted">{NA}</span>}
+            </p>
+          </div>
+          <p className="text-sm font-semibold text-muted">
+            {ingredient.label}
+            {product ? (
+              <>
+                {' · '}
+                <span className="text-ink/80">{product.name}</span>
+                {product.packaging ? ` (${product.packaging.toLowerCase()})` : ''}
+              </>
+            ) : (
+              <> · Producto: <span className="italic">{NA}</span></>
             )}
           </p>
-          <p className="shrink-0 text-right text-sm font-extrabold tabular-nums">
-            {line.usedCost !== null ? formatEuro(line.usedCost) : <span className="text-xs font-semibold italic text-muted">{NA}</span>}
-          </p>
-        </div>
-        <p className="text-sm font-semibold text-muted">
-          {ingredient.label}
-          {product ? (
-            <>
-              {' · '}
-              <span className="text-ink/80">{product.name}</span>
-              {product.packaging ? ` (${product.packaging.toLowerCase()})` : ''}
-            </>
-          ) : (
-            <> · Producto: <span className="italic">{NA}</span></>
+          {product && (
+            <p className="mt-0.5 flex flex-wrap items-center gap-x-2 text-xs font-semibold text-muted">
+              <span>
+                Envase {formatEuro(product.unit_price)}
+                {line.packages !== null && line.packages > 1 ? ` × ${line.packages}` : ''}
+              </span>
+              {product.price_decreased && (
+                <span className="inline-flex items-center gap-0.5 font-bold text-brand">
+                  <TrendingDown className="size-3" aria-hidden /> Ha bajado de precio
+                </span>
+              )}
+            </p>
           )}
-        </p>
-        {product && (
-          <p className="mt-0.5 flex flex-wrap items-center gap-x-2 text-xs font-semibold text-muted">
-            <span>
-              Envase {formatEuro(product.unit_price)}
-              {line.packages !== null && line.packages > 1 ? ` × ${line.packages}` : ''}
+          {product && (
+            <p className="mt-1 flex items-center gap-1 text-xs font-bold text-brand-dark">
+              <MapPin className="size-3.5 shrink-0" aria-hidden />
+              {formatLocation(location, aisleName)}
+              {stock === false && <span className="ml-1 font-extrabold text-pass">· Sin stock</span>}
+            </p>
+          )}
+        </div>
+      </div>
+
+      {/* Selector de opciones: Añadir a la cesta / Tengo en casa */}
+      <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl bg-panel/75 p-2">
+        <div className="text-xs font-extrabold">
+          {status === 'basket' && (
+            <span className="inline-flex items-center gap-1 text-accent-dark">
+              <ShoppingBasket className="size-3.5 shrink-0" aria-hidden /> En tu cesta
             </span>
-            {product.price_decreased && (
-              <span className="inline-flex items-center gap-0.5 font-bold text-brand">
-                <TrendingDown className="size-3" aria-hidden /> Ha bajado de precio
-              </span>
-            )}
-          </p>
-        )}
-        {product && (
-          <p className="mt-1 flex items-center gap-1 text-xs font-bold text-brand-dark">
-            <MapPin className="size-3.5 shrink-0" aria-hidden />
-            {formatLocation(location, aisleName)}
-            {stock === false && <span className="ml-1 font-extrabold text-pass">· Sin stock</span>}
-          </p>
-        )}
+          )}
+          {status === 'home' && (
+            <span className="inline-flex items-center gap-1 text-brand-dark">
+              <House className="size-3.5 shrink-0" aria-hidden /> En casa
+            </span>
+          )}
+          {status === 'none' && (
+            <span className="inline-flex items-center gap-1 text-muted">
+              <CircleDot className="size-3.5 shrink-0" aria-hidden /> Sin seleccionar
+            </span>
+          )}
+        </div>
+
+        <div className="flex items-center gap-1.5">
+          <button
+            type="button"
+            onClick={onToggleBasket}
+            aria-pressed={status === 'basket'}
+            className={`flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-extrabold transition-all ${
+              status === 'basket'
+                ? 'bg-accent text-white shadow-soft'
+                : 'bg-white text-ink hover:bg-cream hover:text-accent-dark'
+            }`}
+          >
+            <ShoppingBasket className="size-3.5" strokeWidth={2.5} aria-hidden />
+            {status === 'basket' ? 'En la cesta' : 'A la cesta'}
+          </button>
+          <button
+            type="button"
+            onClick={onToggleHome}
+            aria-pressed={status === 'home'}
+            className={`flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-extrabold transition-all ${
+              status === 'home'
+                ? 'bg-brand text-white shadow-soft'
+                : 'bg-white text-ink hover:bg-brand-soft hover:text-brand-dark'
+            }`}
+          >
+            <House className="size-3.5" strokeWidth={2.5} aria-hidden />
+            {status === 'home' ? 'En casa' : 'Tengo en casa'}
+          </button>
+        </div>
       </div>
     </li>
   )
@@ -140,7 +207,21 @@ function SheetContent({ info, onClose }: { info: RecipeInfo; onClose: () => void
   const visibility = useVisibility().get(recipe.id)
   const backRef = useRef<HTMLButtonElement>(null)
   const [scrolled, setScrolled] = useState(false)
-  const inBasket = state.basket.recipeIds.includes(recipe.id)
+  const [filter, setFilter] = useState<'todos' | 'basket' | 'home' | 'none'>('todos')
+  const isLiked = state.likes.includes(recipe.id)
+
+  const ingredients = cost.lines
+  const basketCount = ingredients.filter((_, i) => getIngredientStatus(state.pantry, recipe.id, i) === 'basket').length
+  const homeCount = ingredients.filter((_, i) => getIngredientStatus(state.pantry, recipe.id, i) === 'home').length
+  const noneCount = Math.max(0, ingredients.length - basketCount - homeCount)
+
+  const displayedIngredients = ingredients
+    .map((line, index) => ({
+      line,
+      index,
+      status: getIngredientStatus(state.pantry, recipe.id, index),
+    }))
+    .filter((item) => filter === 'todos' || item.status === filter)
 
   useEffect(() => {
     backRef.current?.focus()
@@ -165,14 +246,40 @@ function SheetContent({ info, onClose }: { info: RecipeInfo; onClose: () => void
     }
   }
 
-  const add = () => {
-    dispatch({ type: 'like', id: recipe.id })
-    dispatch({ type: 'addToBasket', id: recipe.id })
-    ui.notify(`«${recipe.name}» está en tu cesta`, { label: 'Ver cesta', run: () => ui.goTo('cesta') })
-    onClose()
+  const toggleBasket = (index: number) => {
+    if (!isLiked) dispatch({ type: 'like', id: recipe.id })
+    const current = getIngredientStatus(state.pantry, recipe.id, index)
+    const next = current === 'basket' ? 'none' : 'basket'
+    dispatch({ type: 'setIngredientStatus', recipeId: recipe.id, ingredientIndex: index, status: next })
   }
 
-  const ingredients = cost.lines
+  const toggleHome = (index: number) => {
+    if (!isLiked) dispatch({ type: 'like', id: recipe.id })
+    const current = getIngredientStatus(state.pantry, recipe.id, index)
+    const next = current === 'home' ? 'none' : 'home'
+    dispatch({ type: 'setIngredientStatus', recipeId: recipe.id, ingredientIndex: index, status: next })
+  }
+
+  const addAllPendingToBasket = () => {
+    if (!isLiked) dispatch({ type: 'like', id: recipe.id })
+    for (let i = 0; i < ingredients.length; i++) {
+      if (getIngredientStatus(state.pantry, recipe.id, i) === 'none') {
+        dispatch({ type: 'setIngredientStatus', recipeId: recipe.id, ingredientIndex: i, status: 'basket' })
+      }
+    }
+    ui.notify('Ingredientes pendientes añadidos a la cesta')
+  }
+
+  const markAllPendingAsHome = () => {
+    if (!isLiked) dispatch({ type: 'like', id: recipe.id })
+    for (let i = 0; i < ingredients.length; i++) {
+      if (getIngredientStatus(state.pantry, recipe.id, i) === 'none') {
+        dispatch({ type: 'setIngredientStatus', recipeId: recipe.id, ingredientIndex: i, status: 'home' })
+      }
+    }
+    ui.notify('Ingredientes marcados como que los tienes en casa')
+  }
+
   const nutritionSources = nutrition.sources.length ? nutrition.sources.join(', ') : NA
 
   return (
@@ -307,11 +414,101 @@ function SheetContent({ info, onClose }: { info: RecipeInfo; onClose: () => void
             {ingredients.length === 0 ? (
               <p className="text-sm italic text-muted">{NA}</p>
             ) : (
-              <ul className="divide-y divide-line">
-                {ingredients.map((line, i) => (
-                  <IngredientRow key={`${line.ingredient.name}-${i}`} line={line} store={store} />
-                ))}
-              </ul>
+              <>
+                {/* Pestañas para ver qué tienes en casa, en la cesta y sin acción */}
+                <div className="no-scrollbar -mx-1 mb-3 flex gap-1.5 overflow-x-auto px-1" role="tablist" aria-label="Filtro de ingredientes">
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={filter === 'todos'}
+                    onClick={() => setFilter('todos')}
+                    className={`shrink-0 rounded-full px-3 py-1 text-xs font-extrabold transition-colors ${
+                      filter === 'todos' ? 'bg-ink text-white' : 'bg-panel text-muted hover:text-ink'
+                    }`}
+                  >
+                    Todos ({ingredients.length})
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={filter === 'basket'}
+                    onClick={() => setFilter('basket')}
+                    className={`inline-flex shrink-0 items-center gap-1 rounded-full px-3 py-1 text-xs font-extrabold transition-colors ${
+                      filter === 'basket' ? 'bg-accent text-white' : 'bg-cream text-accent-dark hover:bg-accent/20'
+                    }`}
+                  >
+                    <ShoppingBasket className="size-3.5" aria-hidden />
+                    En la cesta ({basketCount})
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={filter === 'home'}
+                    onClick={() => setFilter('home')}
+                    className={`inline-flex shrink-0 items-center gap-1 rounded-full px-3 py-1 text-xs font-extrabold transition-colors ${
+                      filter === 'home' ? 'bg-brand text-white' : 'bg-brand-soft text-brand-dark hover:bg-brand/20'
+                    }`}
+                  >
+                    <House className="size-3.5" aria-hidden />
+                    En casa ({homeCount})
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={filter === 'none'}
+                    onClick={() => setFilter('none')}
+                    className={`inline-flex shrink-0 items-center gap-1 rounded-full px-3 py-1 text-xs font-extrabold transition-colors ${
+                      filter === 'none' ? 'bg-ink/75 text-white' : 'bg-panel text-muted hover:text-ink'
+                    }`}
+                  >
+                    <CircleDot className="size-3.5" aria-hidden />
+                    Sin acción ({noneCount})
+                  </button>
+                </div>
+
+                {/* Acciones rápidas en bloque si hay ingredientes pendientes */}
+                {noneCount > 0 && filter !== 'basket' && filter !== 'home' && (
+                  <div className="mb-3 flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      onClick={addAllPendingToBasket}
+                      className="inline-flex items-center gap-1 rounded-xl bg-cream px-3 py-1.5 text-xs font-extrabold text-accent-dark hover:bg-accent/20 transition-colors"
+                    >
+                      <ShoppingBasket className="size-3.5" aria-hidden />
+                      Añadir pendientes a la cesta ({noneCount})
+                    </button>
+                    <button
+                      type="button"
+                      onClick={markAllPendingAsHome}
+                      className="inline-flex items-center gap-1 rounded-xl bg-brand-soft px-3 py-1.5 text-xs font-extrabold text-brand-dark hover:bg-brand/20 transition-colors"
+                    >
+                      <House className="size-3.5" aria-hidden />
+                      Tengo todo lo pendiente en casa
+                    </button>
+                  </div>
+                )}
+
+                {displayedIngredients.length === 0 ? (
+                  <div className="rounded-2xl bg-panel p-4 text-center text-sm font-semibold text-muted">
+                    {filter === 'basket' && 'No has añadido ningún ingrediente a la cesta.'}
+                    {filter === 'home' && 'No has marcado ningún ingrediente como que lo tienes en casa.'}
+                    {filter === 'none' && '¡Has decidido sobre todos los ingredientes de esta receta!'}
+                  </div>
+                ) : (
+                  <ul className="divide-y divide-line">
+                    {displayedIngredients.map(({ line, index, status }) => (
+                      <IngredientRow
+                        key={`${line.ingredient.name}-${index}`}
+                        line={line}
+                        store={store}
+                        status={status}
+                        onToggleBasket={() => toggleBasket(index)}
+                        onToggleHome={() => toggleHome(index)}
+                      />
+                    ))}
+                  </ul>
+                )}
+              </>
             )}
           </Section>
 
@@ -365,41 +562,48 @@ function SheetContent({ info, onClose }: { info: RecipeInfo; onClose: () => void
 
       {/* CTA fija */}
       <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-white via-white to-white/0 px-5 pb-[calc(var(--bottom-inset)+14px)] pt-6">
-        {inBasket ? (
+        {basketCount > 0 ? (
           <div className="flex gap-2">
-            <button
+            <motion.button
               type="button"
+              whileTap={{ scale: 0.98 }}
               onClick={() => {
                 onClose()
                 ui.goTo('cesta')
               }}
               className="flex h-14 flex-1 items-center justify-center gap-2 rounded-full bg-brand text-lg font-extrabold text-white shadow-button"
             >
-              <Check className="size-5" strokeWidth={3} aria-hidden /> En tu cesta · Ver cesta
-            </button>
+              <ShoppingBasket className="size-5" strokeWidth={2.5} aria-hidden />
+              Ver cesta ({basketCount} {plural(basketCount, 'producto', 'productos')})
+            </motion.button>
             <button
               type="button"
               onClick={() => {
                 dispatch({ type: 'removeFromBasket', id: recipe.id })
-                ui.notify('Receta quitada de la cesta')
+                ui.notify('Ingredientes quitados de la cesta')
               }}
-              aria-label={`Quitar ${recipe.name} de la cesta`}
+              aria-label={`Quitar ingredientes de ${recipe.name} de la cesta`}
+              title="Quitar de la cesta"
               className="grid size-14 place-items-center rounded-full bg-panel text-pass"
             >
               <Trash2 className="size-5" aria-hidden />
             </button>
           </div>
-        ) : (
+        ) : noneCount > 0 ? (
           <motion.button
             type="button"
             whileTap={{ scale: 0.97 }}
-            onClick={add}
+            onClick={addAllPendingToBasket}
             className="flex h-14 w-full items-center justify-center gap-2 rounded-full bg-accent text-lg font-extrabold text-white shadow-button"
           >
             <ShoppingBasket className="size-5" strokeWidth={2.5} aria-hidden />
-            Añadir a la cesta
-            {cost.inBasket !== null && !cost.inBasketPartial && <span className="font-bold opacity-90">· {formatEuro(cost.inBasket)}</span>}
+            Añadir pendientes a la cesta ({noneCount})
           </motion.button>
+        ) : (
+          <div className="flex h-14 w-full items-center justify-center gap-2 rounded-full bg-brand-soft text-base font-extrabold text-brand-dark">
+            <Check className="size-5" strokeWidth={3} aria-hidden />
+            Todos los ingredientes los tienes en casa
+          </div>
         )}
       </div>
     </motion.div>

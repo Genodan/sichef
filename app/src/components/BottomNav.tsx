@@ -27,7 +27,7 @@ export function BottomNav({ tab, onChange, basketCount }: Props) {
                 type="button"
                 onClick={() => onChange(id)}
                 aria-current={active ? 'page' : undefined}
-                aria-label={id === 'cesta' && basketCount > 0 ? `${label} (${basketCount} recetas)` : label}
+                aria-label={id === 'cesta' && basketCount > 0 ? `${label} (${basketCount} ${basketCount === 1 ? 'producto' : 'productos'})` : label}
                 className={`relative flex w-full flex-col items-center gap-0.5 pb-2 pt-2.5 text-[11px] font-extrabold transition-colors ${
                   active ? 'text-brand' : 'text-muted hover:text-ink'
                 }`}

@@ -10,10 +10,12 @@ interface Props {
   visibility?: Visibility
   /** Botones a la derecha (cesta, quitar…). */
   actions?: ReactNode
+  /** Resumen de estado de ingredientes (cesta, casa, pendientes). */
+  ingredientSummary?: ReactNode
 }
 
 /** Fila de receta para listas (Buscar, Recetario). */
-export function RecipeRow({ info, onOpen, visibility, actions }: Props) {
+export function RecipeRow({ info, onOpen, visibility, actions, ingredientSummary }: Props) {
   const { recipe, cost, nutrition, priceDecreased } = info
   const hidden = visibility && !visibility.visible
   return (
@@ -42,6 +44,7 @@ export function RecipeRow({ info, onOpen, visibility, actions }: Props) {
               </span>
             )}
           </p>
+          {ingredientSummary && <div className="mt-1.5">{ingredientSummary}</div>}
           {hidden && (
             <p className="mt-1 inline-flex items-center gap-1 text-xs font-extrabold text-pass">
               <ShieldAlert className="size-3.5" aria-hidden />
