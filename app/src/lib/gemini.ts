@@ -179,7 +179,7 @@ async function callChatBackend(
   const data = await res.json()
   const text = data?.candidates?.[0]?.content?.parts?.[0]?.text
   if (!text) {
-    throw new Error('Respuesta vacía de Google Gemini')
+    throw new Error('No se recibió respuesta del asistente')
   }
 
   return { text }
@@ -341,7 +341,7 @@ export async function askGeminiChef(params: ChatContextParams): Promise<Recommen
       parsed = {
         recipeId: null,
         reply: text,
-        reason: 'Respuesta generada por Google Gemini.',
+        reason: 'Recomendación basada en tus preferencias y el catálogo de SíChef.',
       }
     }
 

@@ -74,7 +74,7 @@ function chatApiPlugin(apiKey: string): Plugin {
             res.setHeader('Content-Type', 'application/json')
             res.end(
               JSON.stringify({
-                error: lastError?.message || 'Error al conectar con los modelos de Google Gemini',
+                error: lastError?.message || 'Error al procesar la respuesta del asistente',
               }),
             )
           } catch (err) {

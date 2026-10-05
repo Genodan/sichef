@@ -80,7 +80,7 @@ export default async function handler(req: Request): Promise<Response> {
 
     return new Response(
       JSON.stringify({
-        error: lastError?.message || 'Error al conectar con los modelos de Google Gemini',
+        error: lastError?.message || 'Error al procesar la respuesta del asistente',
       }),
       {
         status: 502,
