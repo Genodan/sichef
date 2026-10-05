@@ -56,34 +56,48 @@ CATEGORY_TO_AISLE_RUZAFA = {
     "Fruta y verdura": 1,
     "Verdura": 1,
     "Fruta": 1,
-    "Aves y pollo": 2,
-    "Carnicería": 2,
-    "Pescado fresco": 3,
-    "Pescados y mariscos": 3,
-    "Charcutería y embutidos": 4,
-    "Huevos y lácteos": 5,
+    "Pescadería": 2,
+    "Pescado fresco": 2,
+    "Pescados y mariscos": 2,
+    "Carnicería": 3,
+    "Aves y pollo": 3,
+    "Charcutería y embutidos": 3,
+    "Lácteos y huevos": 4,
+    "Huevos y lácteos": 4,
+    "Arroz, legumbres y pasta": 5,
     "Aceite, vinagre y sal": 6,
     "Aceite, especias y salsas": 6,
-    "Arroz, legumbres y pasta": 7,
-    "Conservas, caldos y cremas": 8,
-    "Congelados": 10,
+    "Conservas, caldos y cremas": 7,
+    "Conservas y caldos": 7,
+    "Panadería y cereales": 8,
+    "Aperitivos y dulces": 8,
+    "Congelados": 9,
+    "Bebidas": 10,
+    "Alimentación": 5,
 }
 
 CATEGORY_TO_AISLE_BENIMACLET = {
+    "Bebidas": 1,
+    "Congelados": 1,
     "Fruta y verdura": 2,
     "Verdura": 2,
     "Fruta": 2,
-    "Aves y pollo": 4,
+    "Lácteos y huevos": 3,
+    "Huevos y lácteos": 3,
     "Carnicería": 4,
+    "Aves y pollo": 4,
+    "Charcutería y embutidos": 4,
+    "Panadería y cereales": 5,
+    "Aperitivos y dulces": 5,
+    "Pescadería": 6,
     "Pescado fresco": 6,
     "Pescados y mariscos": 6,
-    "Charcutería y embutidos": 5,
-    "Huevos y lácteos": 3,
     "Conservas, caldos y cremas": 7,
+    "Conservas y caldos": 7,
     "Arroz, legumbres y pasta": 8,
     "Aceite, vinagre y sal": 9,
     "Aceite, especias y salsas": 9,
-    "Congelados": 10,
+    "Alimentación": 8,
 }
 
 RECIPE_STEPS = {
@@ -154,6 +168,35 @@ CATEGORIES_MAP = {
     "66778": "Conservas, caldos y cremas",
 }
 
+
+
+def infer_category(name: str, pid: str) -> str:
+    if pid in CATEGORIES_MAP:
+        return CATEGORIES_MAP[pid]
+    n = name.lower()
+    if any(w in n for w in ['congelad', 'congelada']):
+        return 'Congelados'
+    if any(w in n for w in ['pimiento', 'cebolla', 'ajo', 'patata', 'calabacín', 'calabacin', 'zanahoria', 'espinacas frescas', 'champiñón', 'champinon', 'limón', 'limon', 'manzana', 'plátano', 'platano', 'naranja', 'pera', 'lechuga', 'pepino', 'calabaza', 'berenjena']):
+        return 'Fruta y verdura'
+    if any(w in n for w in ['pollo', 'pavo', 'ternera', 'cerdo', 'lomo', 'solomillo', 'costilla', 'alitas', 'muslos', 'salchichas', 'bacon', 'jamón', 'jamon', 'chorizo', 'croquetas']):
+        return 'Carnicería'
+    if any(w in n for w in ['merluza', 'atún', 'atun', 'salmón', 'salmon', 'pulpo', 'langostinos', 'mejillones', 'sardinillas', 'calamares']):
+        return 'Pescadería'
+    if any(w in n for w in ['arroz', 'garbanzo', 'lenteja', 'alubia', 'macarrones', 'espaguetis']):
+        return 'Arroz, legumbres y pasta'
+    if any(w in n for w in ['huevo', 'leche', 'queso', 'mozzarella', 'mantequilla', 'nata', 'yogur']):
+        return 'Lácteos y huevos'
+    if any(w in n for w in ['aceite', 'sal marina', 'pimentón', 'vinagre', 'mayonesa', 'soja', 'salsa', 'ketchup', 'mostaza', 'pepinillos', 'aceitunas']):
+        return 'Aceite, especias y salsas'
+    if any(w in n for w in ['pan ', 'pan de', 'harina', 'avena', 'muesli', 'cereales', 'galletas', 'levadura']):
+        return 'Panadería y cereales'
+    if any(w in n for w in ['agua', 'zumo', 'cola', 'cerveza', 'vino', 'refresco', 'café', 'cafe']):
+        return 'Bebidas'
+    if any(w in n for w in ['chocolate', 'azúcar', 'azucar', 'patatas fritas', 'frutos secos', 'pipas', 'hummus', 'guacamole', 'pizza']):
+        return 'Aperitivos y dulces'
+    if any(w in n for w in ['caldo', 'tomate triturado', 'tomate frito', 'maíz', 'maiz', 'conserva']):
+        return 'Conservas y caldos'
+    return 'Alimentación'
 
 def parse_formato(formato: str, precio: float) -> Dict[str, Any]:
     f = formato.strip().lower()
@@ -229,7 +272,7 @@ def normalize_product(p: Dict[str, Any]) -> Dict[str, Any]:
             traces.append(k_code)
 
     status = "declarado"
-    category = CATEGORIES_MAP.get(pid, "Alimentación")
+    category = infer_category(name, pid)
     if category in ("Verdura", "Fruta"):
         status = "producto_fresco"
 

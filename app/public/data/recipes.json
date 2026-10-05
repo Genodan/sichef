@@ -69,7 +69,7 @@
     "name": "Arroz con pollo y caldo",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Arroz_con_pollo.jpg",
+      "url": "/img/recipes/receta-pollo-arroz.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Arroz_con_pollo.jpg"
@@ -129,7 +129,7 @@
     "name": "Lentejas tradicionales",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Lentejas_con_chorizo.jpg",
+      "url": "/img/recipes/receta-lentejas.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Lentejas_con_chorizo.jpg"
@@ -189,7 +189,7 @@
     "name": "Merluza al tomate",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Fish_dish.jpg",
+      "url": "/img/recipes/receta-merluza-tomate.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Fish_dish.jpg"
@@ -241,7 +241,7 @@
     "name": "Macarrones con carne y tomate",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Spaghetti_Bolognese_small.jpg",
+      "url": "/img/recipes/receta-macarrones-bolonesa.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Spaghetti_Bolognese_small.jpg"
@@ -301,7 +301,7 @@
     "name": "Tortilla de patatas clásica",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Tortilla_de_patatas_madrid.jpg",
+      "url": "/img/recipes/receta-tortilla-patatas.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Tortilla_de_patatas_madrid.jpg"
@@ -361,7 +361,7 @@
     "name": "Ensalada fresca con salmón ahumado",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Smoked_salmon_salad.jpg",
+      "url": "/img/recipes/receta-salmorn-ensalada.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Smoked_salmon_salad.jpg"
@@ -421,7 +421,7 @@
     "name": "Crema suave de calabacín",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Zucchini_soup.jpg",
+      "url": "/img/recipes/receta-crema-calabacin.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Zucchini_soup.jpg"
@@ -481,7 +481,7 @@
     "name": "Pizza rápida de mozzarella",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-en_pizza_margherita.jpg",
+      "url": "/img/recipes/receta-pizza-casera.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-en_pizza_margherita.jpg"
@@ -533,7 +533,7 @@
     "name": "Brócoli salteado al ajillo",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Broccoli_cooking.jpg",
+      "url": "/img/recipes/receta-brocoli-salteado.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Broccoli_cooking.jpg"
@@ -585,7 +585,7 @@
     "name": "Arroz basmati con atún y maíz",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Rice_and_tuna.jpg",
+      "url": "/img/recipes/receta-arroz-basmati-atun.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Rice_and_tuna.jpg"
@@ -637,7 +637,7 @@
     "name": "Alubias blancas con bacon",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/White_bean_soup.jpg",
+      "url": "/img/recipes/receta-alubias-bacon.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/White_bean_soup.jpg"
@@ -689,7 +689,7 @@
     "name": "Espaguetis con espinacas y queso",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Spaghetti_with_spinach.jpg",
+      "url": "/img/recipes/receta-pasta-espinacas.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Spaghetti_with_spinach.jpg"
@@ -741,7 +741,7 @@
     "name": "Costillas de cerdo asadas con patatas",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Pork_ribs_with_potatoes.jpg",
+      "url": "/img/recipes/receta-costilla-horno.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Pork_ribs_with_potatoes.jpg"
@@ -793,7 +793,7 @@
     "name": "Pollo especial con salsa secreta",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Chicken_with_sauce.jpg",
+      "url": "/img/recipes/receta-alerta-alergeno.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Chicken_with_sauce.jpg"
@@ -837,7 +837,7 @@
     "name": "Solomillo de cerdo a la plancha",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Pork_tenderloin.jpg",
+      "url": "/img/recipes/receta-solomillo-pimienta.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Pork_tenderloin.jpg"
@@ -889,7 +889,7 @@
     "name": "Pechuga de pollo empanada con ensalada",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Breaded_chicken_cutlet.jpg",
+      "url": "/img/recipes/receta-pollo-empanado.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Breaded_chicken_cutlet.jpg"
@@ -941,7 +941,7 @@
     "name": "Menú de croquetas con patatas",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Croquetas_de_jamon.jpg",
+      "url": "/img/recipes/receta-croquetas-caseras.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Croquetas_de_jamon.jpg"
@@ -993,7 +993,7 @@
     "name": "Espaguetis con bacon y nata",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Spaghetti_Carbonara.jpg",
+      "url": "/img/recipes/receta-pasta-carbonara.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Spaghetti_Carbonara.jpg"
@@ -1053,7 +1053,7 @@
     "name": "Arroz con langostinos",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Seafood_paella.jpg",
+      "url": "/img/recipes/receta-arroz-caldoso-marisco.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Seafood_paella.jpg"
@@ -1113,7 +1113,7 @@
     "name": "Hummus con bastoncitos de zanahoria",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Hummus_with_pita.jpg",
+      "url": "/img/recipes/receta-hummus-crudites.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Hummus_with_pita.jpg"
@@ -1157,7 +1157,7 @@
     "name": "Muslos de pollo al horno con patatas",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Roast_chicken_legs.jpg",
+      "url": "/img/recipes/receta-muslos-horno.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Roast_chicken_legs.jpg"
@@ -1209,7 +1209,7 @@
     "name": "Alitas de pollo especiadas",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Chicken_wings.jpg",
+      "url": "/img/recipes/receta-alitas-picantes.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Chicken_wings.jpg"
@@ -1261,7 +1261,7 @@
     "name": "Ensalada templada de pulpo",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Octopus_salad.jpg",
+      "url": "/img/recipes/receta-ensalada-pulpo.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Octopus_salad.jpg"
@@ -1321,7 +1321,7 @@
     "name": "Crema de calabaza de otoño",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Pumpkin_soup.jpg",
+      "url": "/img/recipes/receta-crema-calabaza.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Pumpkin_soup.jpg"
@@ -1381,7 +1381,7 @@
     "name": "Berenjenas rellenas de carne",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Stuffed_eggplant.jpg",
+      "url": "/img/recipes/receta-berenjenas-rellenas.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Stuffed_eggplant.jpg"
@@ -1441,7 +1441,7 @@
     "name": "Guacamole fresco con patatas fritas",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Guacamole_with_chips.jpg",
+      "url": "/img/recipes/receta-guacamole-nachos.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Guacamole_with_chips.jpg"
@@ -1485,7 +1485,7 @@
     "name": "Porridge de avena con manzana",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Porridge_with_apple.jpg",
+      "url": "/img/recipes/receta-avena-manzana.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Porridge_with_apple.jpg"
@@ -1537,7 +1537,7 @@
     "name": "Tosta de sardinillas con tomate",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Sardine_bruschetta.jpg",
+      "url": "/img/recipes/receta-sardinillas-pan.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Sardine_bruschetta.jpg"
@@ -1589,7 +1589,7 @@
     "name": "Postre de café y chocolate negro",
     "subtitle": "Receta casera",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Dark_chocolate_pieces.jpg",
+      "url": "/img/recipes/receta-crema-chocolate.jpg",
       "author": "Equipo SíChef",
       "license": "CC BY-SA 4.0",
       "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Dark_chocolate_pieces.jpg"
