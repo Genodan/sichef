@@ -171,22 +171,20 @@ CATEGORIES_MAP = {
 
 
 def infer_category(name: str, pid: str) -> str:
-    if pid in CATEGORIES_MAP:
-        return CATEGORIES_MAP[pid]
     n = name.lower()
-    if any(w in n for w in ['congelad', 'congelada']):
+    if 'congelad' in n:
         return 'Congelados'
-    if any(w in n for w in ['pimiento', 'cebolla', 'ajo', 'patata', 'calabacín', 'calabacin', 'zanahoria', 'espinacas frescas', 'champiñón', 'champinon', 'limón', 'limon', 'manzana', 'plátano', 'platano', 'naranja', 'pera', 'lechuga', 'pepino', 'calabaza', 'berenjena']):
+    if any(w in n for w in ['pimiento', 'cebolla', 'ajo', 'patata', 'calabacín', 'calabacin', 'zanahoria', 'espinacas frescas', 'champiñón', 'champinon', 'limón', 'limon', 'manzana', 'plátano', 'platano', 'naranja', 'pera', 'lechuga', 'pepino', 'calabaza', 'berenjena', 'aguacate', 'espárragos verdes']):
         return 'Fruta y verdura'
-    if any(w in n for w in ['pollo', 'pavo', 'ternera', 'cerdo', 'lomo', 'solomillo', 'costilla', 'alitas', 'muslos', 'salchichas', 'bacon', 'jamón', 'jamon', 'chorizo', 'croquetas']):
+    if any(w in n for w in ['pollo', 'pavo', 'ternera', 'cerdo', 'lomo', 'solomillo', 'costilla', 'alitas', 'muslos', 'salchichas', 'bacon', 'jamón', 'jamon', 'chorizo', 'croquetas', 'conejo']):
         return 'Carnicería'
-    if any(w in n for w in ['merluza', 'atún', 'atun', 'salmón', 'salmon', 'pulpo', 'langostinos', 'mejillones', 'sardinillas', 'calamares']):
+    if any(w in n for w in ['merluza', 'atún', 'atun', 'salmón', 'salmon', 'pulpo', 'langostinos', 'mejillones', 'sardinillas', 'calamares', 'almejas', 'gambas']):
         return 'Pescadería'
-    if any(w in n for w in ['arroz', 'garbanzo', 'lenteja', 'alubia', 'macarrones', 'espaguetis']):
+    if any(w in n for w in ['arroz', 'garbanzo', 'lenteja', 'alubia', 'macarrones', 'espaguetis', 'quinoa']):
         return 'Arroz, legumbres y pasta'
     if any(w in n for w in ['huevo', 'leche', 'queso', 'mozzarella', 'mantequilla', 'nata', 'yogur']):
         return 'Lácteos y huevos'
-    if any(w in n for w in ['aceite', 'sal marina', 'pimentón', 'vinagre', 'mayonesa', 'soja', 'salsa', 'ketchup', 'mostaza', 'pepinillos', 'aceitunas']):
+    if any(w in n for w in ['aceite', 'sal marina', 'pimentón', 'vinagre', 'mayonesa', 'soja', 'salsa', 'ketchup', 'mostaza', 'pepinillos', 'aceitunas', 'pimienta', 'perejil', 'laurel', 'orégano', 'oregano', 'azafrán', 'azafran', 'nuez moscada', 'albahaca', 'tomillo', 'romero', 'alcaparras']):
         return 'Aceite, especias y salsas'
     if any(w in n for w in ['pan ', 'pan de', 'harina', 'avena', 'muesli', 'cereales', 'galletas', 'levadura']):
         return 'Panadería y cereales'
@@ -194,7 +192,7 @@ def infer_category(name: str, pid: str) -> str:
         return 'Bebidas'
     if any(w in n for w in ['chocolate', 'azúcar', 'azucar', 'patatas fritas', 'frutos secos', 'pipas', 'hummus', 'guacamole', 'pizza']):
         return 'Aperitivos y dulces'
-    if any(w in n for w in ['caldo', 'tomate triturado', 'tomate frito', 'maíz', 'maiz', 'conserva']):
+    if any(w in n for w in ['caldo', 'tomate triturado', 'tomate frito', 'maíz', 'maiz', 'conserva', 'espárragos blancos']):
         return 'Conservas y caldos'
     return 'Alimentación'
 
@@ -345,44 +343,64 @@ def normalize_recipe(r: Dict[str, Any], products_by_id: Dict[str, Dict[str, Any]
     for ing in r.get("ingredientes", []):
         pid = str(ing.get("producto_id"))
         p = products_by_id.get(pid, {})
-        p_name = p.get("name") or p.get("nombre") or f"Producto {pid}"
-        q, unit, label = parse_quantity(str(ing.get("cantidad", "1 ud")))
+        p_name = ing.get("name") or p.get("name") or p.get("nombre") or f"Producto {pid}"
+        
+        # Si ya viene parsed
+        if "quantity" in ing and "unit" in ing:
+            q = float(ing["quantity"])
+            unit = str(ing["unit"])
+            label = str(ing.get("label", ing.get("cantidad", f"{q} {unit}")))
+        else:
+            q, unit, label = parse_quantity(str(ing.get("cantidad", "1 ud")))
+            
         ingredients.append({
             "name": p_name.replace(" Hacendado", ""),
             "quantity": q,
             "unit": unit,
             "label": label,
             "product_id": pid,
-            "optional": False,
+            "optional": bool(ing.get("optional", False)),
         })
 
-    steps = r.get("steps") or r.get("pasos") or RECIPE_STEPS.get(rid, ["Preparar los ingredientes.", "Cocinar a fuego medio.", "Servir caliente."])
+    steps = r.get("steps") or r.get("pasos") or RECIPE_STEPS.get(rid, ["Preparar los ingredientes.", "Cocinar a fuego medio siguiendo la receta tradicional.", "Servir caliente."])
     servings = int(r.get("servings") or r.get("raciones") or meta.get("servings", 2))
     time_min = int(r.get("time_min") or r.get("tiempo_min") or meta.get("time_min", 25))
-    tags = r.get("tags") or r.get("etiquetas") or meta.get("tags", ["casera"])
+    tags = r.get("tags") or r.get("etiquetas") or meta.get("tags", ["casera", "tradicional"])
+    subtitle = r.get("subtitle") or meta.get("subtitle", "Cocina tradicional")
+
+    img_data = r.get("image")
+    if not img_data or not isinstance(img_data, dict) or not img_data.get("url"):
+        local_img = PUBLIC_DATA.parent / f"img/recipes/{rid}.jpg"
+        image = meta.get("image", {
+            "url": f"/img/recipes/{rid}.jpg" if local_img.exists() else (r.get("foto_real_url") or f"https://commons.wikimedia.org/wiki/Special:FilePath/{rid}.jpg"),
+            "author": "Equipo SíChef",
+            "license": "CC BY-SA 4.0",
+            "source_url": r.get("foto_real_url", ""),
+        })
+    else:
+        image = dict(img_data)
+        local_img = PUBLIC_DATA.parent / f"img/recipes/{rid}.jpg"
+        if local_img.exists():
+            image["url"] = f"/img/recipes/{rid}.jpg"
+
+    source = r.get("source") or meta.get("source", {
+        "name": r.get("fuente") or "info.mercadona.es",
+        "url": r.get("foto_real_url") or "https://info.mercadona.es",
+        "license": "Receta Mercadona / CC BY-SA 4.0",
+    })
 
     return {
         "id": rid,
         "name": name,
-        "subtitle": meta.get("subtitle", "Receta casera"),
-        "image": meta.get("image", {
-            "url": f"/img/recipes/{rid}.jpg" if (PUBLIC_DATA.parent / f"img/recipes/{rid}.jpg").exists() else (r.get("foto_real_url") or f"https://commons.wikimedia.org/wiki/Special:FilePath/{rid}.jpg"),
-            "author": "Equipo SíChef",
-            "license": "CC BY-SA 4.0",
-            "source_url": r.get("foto_real_url", ""),
-        }),
+        "subtitle": subtitle,
+        "image": image,
         "servings": servings,
         "time_min": time_min,
         "tags": tags,
         "ingredients": ingredients,
         "steps": steps,
-        "source": meta.get("source", {
-            "name": "info.mercadona.es",
-            "url": "https://info.mercadona.es",
-            "license": "Receta Mercadona",
-        }),
+        "source": source,
     }
-
 
 def main():
     print("[SíChef] Generando catalogo con SOLO los datos de branch Datos...")

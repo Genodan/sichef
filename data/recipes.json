@@ -5,13 +5,5026 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Garbanzos_con_espinacas.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "45120", "cantidad": "400g" },
-      { "producto_id": "77890", "cantidad": "200g" },
-      { "producto_id": "11234", "cantidad": "20ml" },
-      { "producto_id": "33445", "cantidad": "10g" }
+      {
+        "producto_id": "45120",
+        "cantidad": "400g"
+      },
+      {
+        "producto_id": "77890",
+        "cantidad": "200g"
+      },
+      {
+        "producto_id": "11234",
+        "cantidad": "20ml"
+      },
+      {
+        "producto_id": "33445",
+        "cantidad": "10g"
+      }
     ],
-    "alergenos_derivados": { "gluten": "libre" },
-    "nutricion_calculada": { "kcal": 450, "precio_total": 2.45 }
+    "alergenos_derivados": {
+      "gluten": "libre"
+    },
+    "nutricion_calculada": {
+      "kcal": 450,
+      "precio_total": 2.45
+    },
+    "image": {
+      "url": "/img/recipes/receta-garbanzos.jpg",
+      "author": "Equipo SíChef (Recetario Tradicional)",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Garbanzos_con_espinacas.jpg"
+    },
+    "steps": [
+      "Preparar y limpiar los ingredientes.",
+      "Cocinar a fuego medio siguiendo la técnica tradicional.",
+      "Ajustar de punto de sal y servir caliente."
+    ]
+  },
+  {
+    "id": "receta-pollo",
+    "nombre": "Arroz con pollo y caldo",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Arroz_con_pollo.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      {
+        "producto_id": "32145",
+        "cantidad": "200g"
+      },
+      {
+        "producto_id": "22334",
+        "cantidad": "250g"
+      },
+      {
+        "producto_id": "66778",
+        "cantidad": "500ml"
+      },
+      {
+        "producto_id": "99002",
+        "cantidad": "100g"
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "libre"
+    },
+    "nutricion_calculada": {
+      "kcal": 820,
+      "precio_total": 3.45
+    },
+    "image": {
+      "url": "/img/recipes/receta-pollo.jpg",
+      "author": "Equipo SíChef (Recetario Tradicional)",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Arroz_con_pollo.jpg"
+    },
+    "steps": [
+      "Preparar y limpiar los ingredientes.",
+      "Cocinar a fuego medio siguiendo la técnica tradicional.",
+      "Ajustar de punto de sal y servir caliente."
+    ]
+  },
+  {
+    "id": "receta-tortilla-de-patatas",
+    "nombre": "Tortilla de patatas",
+    "foto_real_url": "https://commons.wikimedia.org/wiki/File:Tortilla_de_Patatas_(Corte_transversal).jpg",
+    "fuente": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+    "ingredientes": [
+      {
+        "producto_id": "10018",
+        "name": "patatas",
+        "cantidad": "800g",
+        "quantity": 800,
+        "unit": "g",
+        "label": "800 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10014",
+        "name": "huevos",
+        "cantidad": "6 ud",
+        "quantity": 6,
+        "unit": "ud",
+        "label": "6 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "99002",
+        "name": "cebolla",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva virgen extra",
+        "cantidad": "250ml",
+        "quantity": 250,
+        "unit": "ml",
+        "label": "250 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      }
+    ],
+    "alergenos_derivados": {
+      "huevos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Estimación para la demo (pendiente de calcular con productos reales)",
+      "kcal": 420,
+      "proteinas": 13.0,
+      "grasas": 28.0,
+      "saturadas": 5.0,
+      "hidratos": 30.0,
+      "azucares": 3.0,
+      "fibra": 3.0,
+      "sal": 1.0,
+      "precio_total": 3.2,
+      "precio_racion": 0.8
+    },
+    "subtitle": "Cocina española",
+    "image": {
+      "url": "/img/recipes/receta-tortilla-de-patatas.jpg",
+      "author": "Tamorlan",
+      "license": "CC BY-SA 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tortilla_de_Patatas_(Corte_transversal).jpg"
+    },
+    "servings": 4,
+    "time_min": 40,
+    "tags": [
+      "vegetariana",
+      "sin gluten",
+      "sin lactosa",
+      "cocina española"
+    ],
+    "steps": [
+      "Pela las patatas y córtalas en láminas finas. Pica la cebolla en juliana.",
+      "Calienta el aceite en una sartén a fuego medio y pocha las patatas y la cebolla con un poco de sal unos 20 minutos, hasta que estén tiernas pero sin dorarse.",
+      "Escúrrelas bien del aceite (resérvalo para otros usos) y deja que se templen un par de minutos.",
+      "Bate los huevos con una pizca de sal en un bol grande, añade las patatas y la cebolla y deja reposar 5 minutos para que se mezclen bien.",
+      "Calienta 1 cucharada del aceite en una sartén antiadherente de unos 22 cm a fuego medio-alto y vierte la mezcla. Cuaja 2-3 minutos moviendo la sartén para que no se pegue.",
+      "Dale la vuelta con ayuda de un plato y cuaja 1-2 minutos más por el otro lado. Sírvela jugosa por dentro."
+    ],
+    "source": {
+      "name": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+      "url": "",
+      "license": "pendiente de fuente"
+    }
+  },
+  {
+    "id": "receta-albondigas-en-salsa-de-tomate",
+    "nombre": "Albóndigas en salsa de tomate",
+    "foto_real_url": "https://img.spoonacular.com/recipes/660868-636x393.jpg",
+    "fuente": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "ingredientes": [
+      {
+        "producto_id": "10102",
+        "name": "hoja de laurel",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 dientes",
+        "optional": false
+      },
+      {
+        "producto_id": "10038",
+        "name": "carne picada de vacuno",
+        "cantidad": "455g",
+        "quantity": 455,
+        "unit": "g",
+        "label": "455 g",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "240ml",
+        "quantity": 240,
+        "unit": "ml",
+        "label": "240 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "99002",
+        "name": "cebolla",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10101",
+        "name": "perejil",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10023",
+        "name": "pimentón de la Vera",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 pizca",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal y pimienta",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      },
+      {
+        "producto_id": "10088",
+        "name": "azúcar",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomates",
+        "cantidad": "600g",
+        "quantity": 600,
+        "unit": "g",
+        "label": "600 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10055",
+        "name": "pan de molde",
+        "cantidad": "4 ud",
+        "quantity": 4.0,
+        "unit": "ud",
+        "label": "4 rebanadas",
+        "optional": false
+      },
+      {
+        "producto_id": "10014",
+        "name": "huevo",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 grande",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "huevos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 137,
+      "proteinas": 5.6,
+      "grasas": 8.6,
+      "saturadas": 2.4,
+      "hidratos": 9.5,
+      "azucares": 3.8,
+      "fibra": 1.5,
+      "sal": 0.6,
+      "precio_total": 6.5,
+      "precio_racion": 0.33
+    },
+    "subtitle": "Spanish, European",
+    "image": {
+      "url": "/img/recipes/receta-albondigas-en-salsa-de-tomate.jpg",
+      "author": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit (vía Spoonacular)",
+      "license": "CC BY 3.0",
+      "source_url": "https://www.foodista.com/recipe/B5G2KB4R/spanish-meatballs-in-tomato-sauce"
+    },
+    "servings": 20,
+    "time_min": 45,
+    "tags": [
+      "sin lactosa"
+    ],
+    "steps": [
+      "Empieza por la salsa de tomate: pica fina 1 cebolla. Pela 600 g de tomates con un pelador de sierra y córtalos en trozos pequeños.",
+      "Pon 2 cucharadas de aceite de oliva en un cazo.",
+      "Añade la cebolla picada.",
+      "Añade una pizca de pimentón de la Vera dulce (unos 1/4 de cucharadita).",
+      "Añade más si prefieres la salsa picante.",
+      "Incorpora el tomate picado a la cebolla y remueve bien.",
+      "Añade 1 hoja de laurel fresca (o 2 secas).",
+      "Añade 1 cucharadita de azúcar y sal y pimienta al gusto. Tapa el cazo, baja a fuego medio-bajo y deja que el tomate se reduzca hasta tener textura de salsa. Mientras tanto, prepara las albóndigas: pon 1/2 cebolla en la picadora.",
+      "Añade 2 dientes de ajo y pica hasta que la cebolla y el ajo queden muy finos. Póchalos en una sartén con un poco de aceite de oliva.",
+      "Mezcla la cebolla y el ajo con 500 g de carne picada en un bol. Quita la corteza a 4 rebanadas de pan de molde.",
+      "Corta el pan en dados pequeños de 1 cm.",
+      "Añade el pan a la carne.",
+      "Añade 2 cucharadas de perejil picado.",
+      "Añade 1 huevo grande.",
+      "Salpimienta al gusto (aprox. 1/4 de cucharadita de sal y una pizca de pimienta negra).",
+      "Mezcla bien y forma bolas algo más grandes que una pelota de golf.",
+      "Haz rodar la carne entre las manos para compactar las albóndigas.",
+      "Pon unos 180 ml de aceite de oliva en una sartén (que cubra unos 3/4 cm).",
+      "Calienta a fuego medio-alto y fríe las albóndigas, girándolas para que se doren por todos lados. Cuando estén bien doradas, retíralas y resérvalas. La salsa de tomate ya debería estar reducida: puedes triturarla con la batidora o dejarla con tropezones.",
+      "Añade las albóndigas a la salsa de tomate y deja que se calienten.",
+      "Decora con más perejil picado."
+    ],
+    "source": {
+      "name": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit · «Spanish Meatballs In Tomato Sauce» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/B5G2KB4R/spanish-meatballs-in-tomato-sauce",
+      "license": "CC BY 3.0"
+    }
+  },
+  {
+    "id": "receta-paella-valenciana",
+    "nombre": "Paella valenciana",
+    "foto_real_url": "https://commons.wikimedia.org/wiki/File:01_Paella_Valenciana_original.jpg",
+    "fuente": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+    "ingredientes": [
+      {
+        "producto_id": "32145",
+        "name": "arroz bomba",
+        "cantidad": "400g",
+        "quantity": 400,
+        "unit": "g",
+        "label": "400 g",
+        "optional": false
+      },
+      {
+        "producto_id": "22334",
+        "name": "pollo troceado",
+        "cantidad": "600g",
+        "quantity": 600,
+        "unit": "g",
+        "label": "600 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10111",
+        "name": "conejo troceado",
+        "cantidad": "400g",
+        "quantity": 400,
+        "unit": "g",
+        "label": "400 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10021",
+        "name": "judía verde plana",
+        "cantidad": "200g",
+        "quantity": 200,
+        "unit": "g",
+        "label": "200 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10035",
+        "name": "garrofón",
+        "cantidad": "150g",
+        "quantity": 150,
+        "unit": "g",
+        "label": "150 g",
+        "optional": false
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomate triturado",
+        "cantidad": "150g",
+        "quantity": 150,
+        "unit": "g",
+        "label": "150 g",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva virgen extra",
+        "cantidad": "80ml",
+        "quantity": 80,
+        "unit": "ml",
+        "label": "80 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10023",
+        "name": "pimentón dulce",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10104",
+        "name": "azafrán",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 pizca",
+        "optional": false
+      },
+      {
+        "producto_id": "10108",
+        "name": "romero",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 ramita",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      }
+    ],
+    "alergenos_derivados": {},
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Estimación para la demo (pendiente de calcular con productos reales)",
+      "kcal": 680,
+      "proteinas": 42.0,
+      "grasas": 22.0,
+      "saturadas": 5.0,
+      "hidratos": 78.0,
+      "azucares": 3.0,
+      "fibra": 5.0,
+      "sal": 1.5,
+      "precio_total": 12.5,
+      "precio_racion": 3.12
+    },
+    "subtitle": "Cocina española",
+    "image": {
+      "url": "/img/recipes/receta-paella-valenciana.jpg",
+      "author": "Jan Harenburg",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:01_Paella_Valenciana_original.jpg"
+    },
+    "servings": 4,
+    "time_min": 60,
+    "tags": [
+      "sin gluten",
+      "sin lactosa",
+      "cocina española"
+    ],
+    "steps": [
+      "Calienta el aceite en la paellera a fuego medio-alto, sala la carne y dórala bien por todos los lados (unos 15 minutos).",
+      "Añade la judía verde y el garrofón y rehoga 5 minutos.",
+      "Haz un hueco en el centro, añade el tomate y sofríelo 3 minutos. Incorpora el pimentón y remueve sin dejar que se queme.",
+      "Vierte 1,4 l de agua, añade el azafrán y sal, y deja hervir 20 minutos a fuego medio para que se haga el caldo.",
+      "Reparte el arroz en forma de cruz y extiéndelo por toda la paellera. Cocina 10 minutos a fuego fuerte y 8 minutos a fuego suave, sin remover.",
+      "En los últimos minutos pon la ramita de romero. Si quieres socarrat, sube el fuego 1 minuto al final. Deja reposar 5 minutos tapada con un paño antes de servir."
+    ],
+    "source": {
+      "name": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+      "url": "",
+      "license": "pendiente de fuente"
+    }
+  },
+  {
+    "id": "receta-gazpacho-andaluz",
+    "nombre": "Gazpacho andaluz",
+    "foto_real_url": "https://img.spoonacular.com/recipes/1095841-636x393.jpg",
+    "fuente": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "ingredientes": [
+      {
+        "producto_id": "88991",
+        "name": "tomates",
+        "cantidad": "1000g",
+        "quantity": 1000,
+        "unit": "g",
+        "label": "1000 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10069",
+        "name": "pepino",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10016",
+        "name": "pimiento",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 mediano",
+        "optional": false
+      },
+      {
+        "producto_id": "99002",
+        "name": "cebolla",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 pequeño",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 diente",
+        "optional": false
+      },
+      {
+        "producto_id": "10055",
+        "name": "pan",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 rebanadas",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "30ml",
+        "quantity": 30.0,
+        "unit": "ml",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10032",
+        "name": "vinagre",
+        "cantidad": "30ml",
+        "quantity": 30.0,
+        "unit": "ml",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 170,
+      "proteinas": 4.6,
+      "grasas": 8.3,
+      "saturadas": 1.2,
+      "hidratos": 21.3,
+      "azucares": 9.9,
+      "fibra": 4.9,
+      "sal": 0.7,
+      "precio_total": 3.8,
+      "precio_racion": 0.95
+    },
+    "subtitle": "Spanish, European",
+    "image": {
+      "url": "/img/recipes/receta-gazpacho-andaluz.jpg",
+      "author": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit (vía Spoonacular)",
+      "license": "CC BY 3.0",
+      "source_url": "https://www.foodista.com/recipe/J8FLJFS5/spanish-gazpacho-soup"
+    },
+    "servings": 4,
+    "time_min": 10,
+    "tags": [
+      "vegana",
+      "sin lactosa",
+      "rápida"
+    ],
+    "steps": [
+      "Corta todas las verduras en trozos y ponlas en la batidora o en un bol grande.",
+      "Añade el pan, el agua, el ajo, el aceite de oliva, el vinagre y la sal, y tritura hasta que quede fino.",
+      "Deja enfriar en la nevera al menos una hora.",
+      "Sirve en bol, tarro o vaso con unos cubitos de hielo."
+    ],
+    "source": {
+      "name": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit · «Spanish Gazpacho Soup» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/J8FLJFS5/spanish-gazpacho-soup",
+      "license": "CC BY 3.0"
+    }
+  },
+  {
+    "id": "receta-salmorejo-cordobes",
+    "nombre": "Salmorejo cordobés",
+    "foto_real_url": "https://commons.wikimedia.org/wiki/File:Salmorejo_cordouan.JPG",
+    "fuente": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+    "ingredientes": [
+      {
+        "producto_id": "88991",
+        "name": "tomates maduros",
+        "cantidad": "1000g",
+        "quantity": 1000,
+        "unit": "g",
+        "label": "1000 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10055",
+        "name": "pan de barra del día anterior",
+        "cantidad": "200g",
+        "quantity": 200,
+        "unit": "g",
+        "label": "200 g",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 diente",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva virgen extra",
+        "cantidad": "100ml",
+        "quantity": 100,
+        "unit": "ml",
+        "label": "100 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10014",
+        "name": "huevos",
+        "cantidad": "2 ud",
+        "quantity": 2,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10027",
+        "name": "jamón serrano en taquitos",
+        "cantidad": "60g",
+        "quantity": 60,
+        "unit": "g",
+        "label": "60 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "huevos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Estimación para la demo (pendiente de calcular con productos reales)",
+      "kcal": 330,
+      "proteinas": 10.0,
+      "grasas": 21.0,
+      "saturadas": 3.5,
+      "hidratos": 26.0,
+      "azucares": 7.0,
+      "fibra": 3.5,
+      "sal": 1.6,
+      "precio_total": 4.9,
+      "precio_racion": 1.23
+    },
+    "subtitle": "Cocina española",
+    "image": {
+      "url": "/img/recipes/receta-salmorejo-cordobes.jpg",
+      "author": "P.Lechien",
+      "license": "CC0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Salmorejo_cordouan.JPG"
+    },
+    "servings": 4,
+    "time_min": 20,
+    "tags": [
+      "sin lactosa",
+      "rápida",
+      "cocina española"
+    ],
+    "steps": [
+      "Cuece los huevos 10 minutos, enfríalos en agua fría, pélalos y pícalos.",
+      "Lava los tomates, trocéalos y tritúralos con la batidora hasta que quede un puré fino. Cuélalo para quitar pieles y pepitas.",
+      "Añade el pan troceado y el ajo pelado y deja que el pan se empape 5 minutos.",
+      "Tritura de nuevo mientras añades el aceite en hilo, hasta que quede una crema espesa y brillante. Sala al gusto.",
+      "Refrigera al menos 1 hora y sirve frío con el huevo picado, el jamón y un chorrito de aceite por encima."
+    ],
+    "source": {
+      "name": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+      "url": "",
+      "license": "pendiente de fuente"
+    }
+  },
+  {
+    "id": "receta-salmon-al-horno-a-la-espanola",
+    "nombre": "Salmón al horno a la española",
+    "foto_real_url": "https://img.spoonacular.com/recipes/1095806-636x393.jpg",
+    "fuente": "foodista.com",
+    "ingredientes": [
+      {
+        "producto_id": "10055",
+        "name": "picatostes",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10095",
+        "name": "aceitunas",
+        "cantidad": "0.75 ud",
+        "quantity": 0.75,
+        "unit": "ud",
+        "label": "0,75 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "99002",
+        "name": "cebollas",
+        "cantidad": "3 ud",
+        "quantity": 3.0,
+        "unit": "ud",
+        "label": "3 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10017",
+        "name": "pimientos",
+        "cantidad": "3 ud",
+        "quantity": 3.0,
+        "unit": "ud",
+        "label": "3 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10023",
+        "name": "pimentón",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal gruesa",
+        "cantidad": "1.5 ud",
+        "quantity": 1.5,
+        "unit": "ud",
+        "label": "1,5 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10100",
+        "name": "pimienta molida",
+        "cantidad": "1.5 ud",
+        "quantity": 1.5,
+        "unit": "ud",
+        "label": "1,5 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "75ml",
+        "quantity": 75.0,
+        "unit": "ml",
+        "label": "5 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "lomos de salmón",
+        "cantidad": "455g",
+        "quantity": 455,
+        "unit": "g",
+        "label": "455 g",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "pescado": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 945,
+      "proteinas": 52.9,
+      "grasas": 59.9,
+      "saturadas": 8.7,
+      "hidratos": 51.4,
+      "azucares": 14.8,
+      "fibra": 10.3,
+      "sal": 7.15,
+      "precio_total": 9.8,
+      "precio_racion": 4.9
+    },
+    "subtitle": "Spanish, European",
+    "image": {
+      "url": "/img/recipes/receta-salmon-al-horno-a-la-espanola.jpg",
+      "author": "foodista.com (vía Spoonacular)",
+      "license": "no indicada",
+      "source_url": "https://www.foodista.com/recipe/JS5W8D53/spanish-style-salmon-fillets"
+    },
+    "servings": 2,
+    "time_min": 30,
+    "tags": [
+      "sin lactosa",
+      "rápida"
+    ],
+    "steps": [
+      "Corta las cebollas en gajos y los pimientos en tiras.",
+      "Pon los picatostes, las aceitunas, la cebolla y los pimientos en una bandeja de horno.",
+      "Añade el pimentón ahumado, sal, pimienta y 3 cucharadas de aceite de oliva, y mezcla bien.",
+      "Hornea a 200 °C unos 15 minutos. Unta el salmón con las 2 cucharadas de aceite restantes, salpimiéntalo y colócalo entre las verduras en la bandeja.",
+      "Hornea 10-15 minutos o hasta que el salmón esté hecho."
+    ],
+    "source": {
+      "name": "foodista.com · «Spanish style salmon fillets» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/JS5W8D53/spanish-style-salmon-fillets",
+      "license": "no indicada"
+    }
+  },
+  {
+    "id": "receta-lentejas-con-chorizo",
+    "nombre": "Lentejas con chorizo",
+    "foto_real_url": "https://commons.wikimedia.org/wiki/File:Quick_Lentils_with_Chorizo_(7017166123).jpg",
+    "fuente": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+    "ingredientes": [
+      {
+        "producto_id": "11111",
+        "name": "lentejas pardinas",
+        "cantidad": "300g",
+        "quantity": 300,
+        "unit": "g",
+        "label": "300 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10026",
+        "name": "chorizo",
+        "cantidad": "150g",
+        "quantity": 150,
+        "unit": "g",
+        "label": "150 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10018",
+        "name": "patata",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10020",
+        "name": "zanahorias",
+        "cantidad": "2 ud",
+        "quantity": 2,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "99002",
+        "name": "cebolla",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10017",
+        "name": "pimiento verde",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "2 ud",
+        "quantity": 2,
+        "unit": "ud",
+        "label": "2 dientes",
+        "optional": false
+      },
+      {
+        "producto_id": "10023",
+        "name": "pimentón dulce",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10102",
+        "name": "hoja de laurel",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva virgen extra",
+        "cantidad": "30ml",
+        "quantity": 30,
+        "unit": "ml",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      }
+    ],
+    "alergenos_derivados": {},
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Estimación para la demo (pendiente de calcular con productos reales)",
+      "kcal": 480,
+      "proteinas": 26.0,
+      "grasas": 17.0,
+      "saturadas": 5.5,
+      "hidratos": 52.0,
+      "azucares": 5.0,
+      "fibra": 13.0,
+      "sal": 1.4,
+      "precio_total": 4.6,
+      "precio_racion": 1.15
+    },
+    "subtitle": "Cocina española",
+    "image": {
+      "url": "/img/recipes/receta-lentejas-con-chorizo.jpg",
+      "author": "Jonathan Pincas from Leon, Spain",
+      "license": "CC BY 2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Quick_Lentils_with_Chorizo_(7017166123).jpg"
+    },
+    "servings": 4,
+    "time_min": 60,
+    "tags": [
+      "sin gluten",
+      "sin lactosa",
+      "cocina española"
+    ],
+    "steps": [
+      "Lava las lentejas y escúrrelas (las pardinas no necesitan remojo).",
+      "En una olla, calienta el aceite y sofríe la cebolla, el pimiento y el ajo picados durante 8 minutos.",
+      "Añade la zanahoria en rodajas y el chorizo en rodajas y rehoga 3 minutos. Retira del fuego, añade el pimentón y remueve.",
+      "Incorpora las lentejas, la patata cascada en trozos, el laurel y 1,5 l de agua fría.",
+      "Lleva a ebullición, baja el fuego y cocina tapado unos 40 minutos, hasta que las lentejas estén tiernas. Sala al final y deja reposar 5 minutos."
+    ],
+    "source": {
+      "name": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+      "url": "",
+      "license": "pendiente de fuente"
+    }
+  },
+  {
+    "id": "receta-paella-catalana-con-mejillones-calamar-y-langostinos",
+    "nombre": "Paella catalana con mejillones, calamar y langostinos",
+    "foto_real_url": "https://img.spoonacular.com/recipes/654331-636x393.jpg",
+    "fuente": "foodista.com",
+    "ingredientes": [
+      {
+        "producto_id": "10027",
+        "name": "jamoncitos de pollo",
+        "cantidad": "8 ud",
+        "quantity": 8.0,
+        "unit": "ud",
+        "label": "8 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10026",
+        "name": "chorizo",
+        "cantidad": "3 ud",
+        "quantity": 3.0,
+        "unit": "ud",
+        "label": "3 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10101",
+        "name": "perejil",
+        "cantidad": "10 ud",
+        "quantity": 10,
+        "unit": "ud",
+        "label": "10 raciones",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "dientes de ajo",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "32145",
+        "name": "arroz",
+        "cantidad": "500g",
+        "quantity": 500,
+        "unit": "g",
+        "label": "500 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10080",
+        "name": "mejillones",
+        "cantidad": "12 ud",
+        "quantity": 12,
+        "unit": "ud",
+        "label": "12 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "15ml",
+        "quantity": 15,
+        "unit": "ml",
+        "label": "15 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "99002",
+        "name": "cebolla",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 mediano",
+        "optional": false
+      },
+      {
+        "producto_id": "10100",
+        "name": "pimienta recién molida",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      },
+      {
+        "producto_id": "10039",
+        "name": "cerdo",
+        "cantidad": "500g",
+        "quantity": 500,
+        "unit": "g",
+        "label": "500 g",
+        "optional": false
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomates",
+        "cantidad": "200g",
+        "quantity": 200,
+        "unit": "g",
+        "label": "200 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10042",
+        "name": "mantequilla",
+        "cantidad": "0.25 ud",
+        "quantity": 0.25,
+        "unit": "ud",
+        "label": "0,25 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10029",
+        "name": "guisantes",
+        "cantidad": "200g",
+        "quantity": 200,
+        "unit": "g",
+        "label": "200 g",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "leche": "contiene",
+      "moluscos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 668,
+      "proteinas": 35.0,
+      "grasas": 36.7,
+      "saturadas": 14.0,
+      "hidratos": 45.6,
+      "azucares": 2.2,
+      "fibra": 2.4,
+      "sal": 0.34,
+      "precio_total": 24.0,
+      "precio_racion": 2.4
+    },
+    "subtitle": "Spanish, European",
+    "image": {
+      "url": "/img/recipes/receta-paella-catalana-con-mejillones-calamar-y-langostinos.jpg",
+      "author": "foodista.com (vía Spoonacular)",
+      "license": "no indicada",
+      "source_url": "https://www.foodista.com/recipe/SVHX43GF/paella-catalane-with-mussels-squid-crevettes"
+    },
+    "servings": 10,
+    "time_min": 45,
+    "tags": [
+      "sin gluten"
+    ],
+    "steps": [
+      "En una paellera, calienta el aceite de oliva y la mantequilla.",
+      "Añade el pollo y dóralo por ambos lados.",
+      "Añade el cerdo y el jamón y sigue cocinando a fuego medio.",
+      "Mientras tanto, cuece los mejillones 10 minutos en una olla con agua hirviendo.",
+      "Escúrrelos y resérvalos.",
+      "Lava los tomates y escáldalos 2-3 minutos en agua hirviendo, pinchándolos antes una vez.",
+      "Pásalos por agua fría y pélalos.",
+      "Córtalos en 4 gajos y quítales las semillas bajo el grifo (opcional).",
+      "Añade los tomates y el ajo a la paellera y mézclalos con la carne.",
+      "Mientras se cocina, corta el calamar en trozos pequeños y añádelo.",
+      "Añade la cebolla picada y 1,5 l de agua y deja hervir suavemente.",
+      "Añade el arroz. A los 15 minutos, incorpora el chorizo en rodajas y los langostinos. Remueve de vez en cuando para que no se pegue.",
+      "Por último, añade los guisantes, la pimienta y el perejil. Casi al final, añade los mejillones y cocina unos minutos más. La paella está lista cuando el arroz ha absorbido todo el líquido. Da para unas 10 personas.",
+      "Sirve con vino blanco o rosado."
+    ],
+    "source": {
+      "name": "foodista.com · «Paella Catalane With Mussels, Squid & Crevettes» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/SVHX43GF/paella-catalane-with-mussels-squid-crevettes",
+      "license": "no indicada"
+    }
+  },
+  {
+    "id": "receta-pollo-al-ajillo",
+    "nombre": "Pollo al ajillo",
+    "foto_real_url": "https://commons.wikimedia.org/wiki/File:Alitas_de_pollo_al_ajillo_con_patatas_a_lo_pobre.jpg",
+    "fuente": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+    "ingredientes": [
+      {
+        "producto_id": "22334",
+        "name": "pollo troceado",
+        "cantidad": "1200g",
+        "quantity": 1200,
+        "unit": "g",
+        "label": "1200 g",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "10 ud",
+        "quantity": 10,
+        "unit": "ud",
+        "label": "10 dientes",
+        "optional": false
+      },
+      {
+        "producto_id": "10112",
+        "name": "vino blanco",
+        "cantidad": "100ml",
+        "quantity": 100,
+        "unit": "ml",
+        "label": "100 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva virgen extra",
+        "cantidad": "80ml",
+        "quantity": 80,
+        "unit": "ml",
+        "label": "80 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10101",
+        "name": "perejil",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 manojo",
+        "optional": false
+      },
+      {
+        "producto_id": "10102",
+        "name": "hoja de laurel",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10023",
+        "name": "guindilla",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      }
+    ],
+    "alergenos_derivados": {
+      "sulfitos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Estimación para la demo (pendiente de calcular con productos reales)",
+      "kcal": 520,
+      "proteinas": 40.0,
+      "grasas": 37.0,
+      "saturadas": 9.0,
+      "hidratos": 3.0,
+      "azucares": 0.5,
+      "fibra": 0.5,
+      "sal": 1.2,
+      "precio_total": 7.8,
+      "precio_racion": 1.95
+    },
+    "subtitle": "Cocina española",
+    "image": {
+      "url": "/img/recipes/receta-pollo-al-ajillo.jpg",
+      "author": "Avicentegil",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Alitas_de_pollo_al_ajillo_con_patatas_a_lo_pobre.jpg"
+    },
+    "servings": 4,
+    "time_min": 45,
+    "tags": [
+      "sin gluten",
+      "sin lactosa",
+      "cocina española"
+    ],
+    "steps": [
+      "Salpimienta el pollo. Pela los ajos y lamínalos (o déjalos enteros y aplastados).",
+      "Calienta el aceite en una sartén grande o cazuela y dora los ajos a fuego suave. Retíralos antes de que se quemen y resérvalos.",
+      "En ese aceite, dora el pollo a fuego medio-alto por todos los lados, unos 15 minutos.",
+      "Devuelve los ajos, añade el laurel y la guindilla y vierte el vino blanco. Deja que se evapore el alcohol 2 minutos.",
+      "Tapa y cocina a fuego medio-bajo 15-20 minutos, hasta que el pollo esté hecho y la salsa reducida. Espolvorea perejil picado y sirve."
+    ],
+    "source": {
+      "name": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+      "url": "",
+      "license": "pendiente de fuente"
+    }
+  },
+  {
+    "id": "receta-almejas-con-chorizo",
+    "nombre": "Almejas con chorizo",
+    "foto_real_url": "https://img.spoonacular.com/recipes/639557-636x393.jpg",
+    "fuente": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "ingredientes": [
+      {
+        "producto_id": "10102",
+        "name": "hoja de laurel",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10018",
+        "name": "patatas pequeñas",
+        "cantidad": "455g",
+        "quantity": 455,
+        "unit": "g",
+        "label": "455 g",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 dientes",
+        "optional": false
+      },
+      {
+        "producto_id": "10110",
+        "name": "almejas",
+        "cantidad": "905g",
+        "quantity": 905,
+        "unit": "g",
+        "label": "905 g",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "15ml",
+        "quantity": 15.0,
+        "unit": "ml",
+        "label": "1 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10101",
+        "name": "perejil",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10026",
+        "name": "chorizo",
+        "cantidad": "235g",
+        "quantity": 235,
+        "unit": "g",
+        "label": "235 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10112",
+        "name": "vino blanco",
+        "cantidad": "480ml",
+        "quantity": 480,
+        "unit": "ml",
+        "label": "480 ml",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "moluscos": "contiene",
+      "sulfitos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 411,
+      "proteinas": 16.6,
+      "grasas": 17.1,
+      "saturadas": 5.6,
+      "hidratos": 24.7,
+      "azucares": 2.1,
+      "fibra": 2.6,
+      "sal": 0.08,
+      "precio_total": 14.5,
+      "precio_racion": 3.62
+    },
+    "subtitle": "Spanish, European",
+    "image": {
+      "url": "/img/recipes/receta-almejas-con-chorizo.jpg",
+      "author": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit (vía Spoonacular)",
+      "license": "CC BY 3.0",
+      "source_url": "https://www.foodista.com/recipe/2QNCHWJW/clams-with-spanish-sausage"
+    },
+    "servings": 4,
+    "time_min": 45,
+    "tags": [
+      "sin gluten",
+      "sin lactosa"
+    ],
+    "steps": [
+      "Lava bien las almejas y descarta las que estén abiertas o huelan mal.",
+      "Calienta aceite de oliva en una olla y sofríe el ajo. Añade el chorizo en rodajas y dóralo.",
+      "Añade las patatas partidas a lo largo, mézclalas con la grasa del chorizo y cocínalas a fuego medio hasta que se doren un poco.",
+      "Añade un chorrito de vino para que no se pegue y despegar el fondo.",
+      "Añade el resto del vino, baja el fuego, tapa y cocina unos 10 minutos hasta que las patatas estén tiernas.",
+      "Añade las almejas, sube a fuego medio, tapa y cocina 10 minutos más hasta que se abran todas.",
+      "Espolvorea perejil picado y sirve."
+    ],
+    "source": {
+      "name": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit · «Clams With Spanish Sausage» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/2QNCHWJW/clams-with-spanish-sausage",
+      "license": "CC BY 3.0"
+    }
+  },
+  {
+    "id": "receta-croquetas-de-jamon",
+    "nombre": "Croquetas de jamón",
+    "foto_real_url": "https://commons.wikimedia.org/wiki/File:Croquetas_Caseras_(7068664101).jpg",
+    "fuente": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+    "ingredientes": [
+      {
+        "producto_id": "10015",
+        "name": "leche entera",
+        "cantidad": "1000ml",
+        "quantity": 1000,
+        "unit": "ml",
+        "label": "1000 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10042",
+        "name": "mantequilla",
+        "cantidad": "100g",
+        "quantity": 100,
+        "unit": "g",
+        "label": "100 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10041",
+        "name": "harina de trigo",
+        "cantidad": "100g",
+        "quantity": 100,
+        "unit": "g",
+        "label": "100 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10027",
+        "name": "jamón serrano en taquitos",
+        "cantidad": "150g",
+        "quantity": 150,
+        "unit": "g",
+        "label": "150 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10105",
+        "name": "nuez moscada",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 pizca",
+        "optional": false
+      },
+      {
+        "producto_id": "10014",
+        "name": "huevos",
+        "cantidad": "2 ud",
+        "quantity": 2,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10055",
+        "name": "pan rallado",
+        "cantidad": "150g",
+        "quantity": 150,
+        "unit": "g",
+        "label": "150 g",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de girasol",
+        "cantidad": "500ml",
+        "quantity": 500,
+        "unit": "ml",
+        "label": "500 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "huevos": "contiene",
+      "leche": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Estimación para la demo (pendiente de calcular con productos reales)",
+      "kcal": 560,
+      "proteinas": 22.0,
+      "grasas": 32.0,
+      "saturadas": 14.0,
+      "hidratos": 46.0,
+      "azucares": 12.0,
+      "fibra": 2.0,
+      "sal": 2.2,
+      "precio_total": 6.9,
+      "precio_racion": 1.73
+    },
+    "subtitle": "Cocina española",
+    "image": {
+      "url": "/img/recipes/receta-croquetas-de-jamon.jpg",
+      "author": "Jonathan Pincas from Leon, Spain",
+      "license": "CC BY 2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Croquetas_Caseras_(7068664101).jpg"
+    },
+    "servings": 4,
+    "time_min": 60,
+    "tags": [
+      "cocina española"
+    ],
+    "steps": [
+      "Derrite la mantequilla en una cazuela a fuego medio, añade el jamón picado y rehógalo 1 minuto.",
+      "Añade la harina y tuéstala 2-3 minutos sin dejar de remover.",
+      "Incorpora la leche caliente poco a poco, removiendo con varillas para que no se formen grumos. Cocina 10-15 minutos hasta tener una bechamel espesa que se despegue de la cazuela. Sazona con nuez moscada y sal.",
+      "Extiende la masa en una fuente, cúbrela con film en contacto y refrigera al menos 4 horas (mejor toda la noche).",
+      "Forma las croquetas, pásalas por huevo batido y pan rallado.",
+      "Fríelas en abundante aceite caliente (180 °C) en tandas pequeñas hasta que se doren. Escúrrelas sobre papel de cocina."
+    ],
+    "source": {
+      "name": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+      "url": "",
+      "license": "pendiente de fuente"
+    }
+  },
+  {
+    "id": "receta-pasta-con-sardinas",
+    "nombre": "Pasta con sardinas",
+    "foto_real_url": "https://img.spoonacular.com/recipes/1697577-636x393.jpg",
+    "fuente": "maplewoodroad",
+    "ingredientes": [
+      {
+        "producto_id": "10084",
+        "name": "fettuccine",
+        "cantidad": "225g",
+        "quantity": 225,
+        "unit": "g",
+        "label": "225 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10081",
+        "name": "filetes de sardina",
+        "cantidad": "105g",
+        "quantity": 105,
+        "unit": "g",
+        "label": "105 g",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "30ml",
+        "quantity": 30.0,
+        "unit": "ml",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "99002",
+        "name": "cebolla",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 pequeño",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 dientes",
+        "optional": false
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomates cherry",
+        "cantidad": "115g",
+        "quantity": 115,
+        "unit": "g",
+        "label": "115 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10095",
+        "name": "aceitunas",
+        "cantidad": "55g",
+        "quantity": 55,
+        "unit": "g",
+        "label": "55 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10095",
+        "name": "aceitunas",
+        "cantidad": "55g",
+        "quantity": 55,
+        "unit": "g",
+        "label": "55 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10119",
+        "name": "alcaparras",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10049",
+        "name": "zumo de limón",
+        "cantidad": "15ml",
+        "quantity": 15.0,
+        "unit": "ml",
+        "label": "1 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10023",
+        "name": "copos de guindilla",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10060",
+        "name": "agua de cocción de la pasta",
+        "cantidad": "120ml",
+        "quantity": 120,
+        "unit": "ml",
+        "label": "120 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10100",
+        "name": "pimienta",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      },
+      {
+        "producto_id": "10054",
+        "name": "queso parmesano",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 raciones",
+        "optional": false
+      },
+      {
+        "producto_id": "10101",
+        "name": "perejil",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 raciones",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "leche": "contiene",
+      "pescado": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 920,
+      "proteinas": 40.2,
+      "grasas": 42.4,
+      "saturadas": 9.9,
+      "hidratos": 96.3,
+      "azucares": 6.5,
+      "fibra": 7.4,
+      "sal": 4.19,
+      "precio_total": 4.2,
+      "precio_racion": 2.1
+    },
+    "subtitle": "Spanish, European",
+    "image": {
+      "url": "/img/recipes/receta-pasta-con-sardinas.jpg",
+      "author": "maplewoodroad (vía Spoonacular)",
+      "license": "no indicada",
+      "source_url": "https://maplewoodroad.com/spanish-sardines-pasta/"
+    },
+    "servings": 2,
+    "time_min": 25,
+    "tags": [
+      "rápida"
+    ],
+    "steps": [
+      "Cuece la pasta como siempre. Antes de escurrirla, reserva 120 ml del agua de cocción.",
+      "Mientras se cuece, calienta aceite de oliva en una sartén a fuego bajo.",
+      "Añade la cebolla y cocina 3 minutos hasta que empiece a ablandarse.",
+      "Añade el ajo y cocina 1 minuto más.",
+      "Añade el tomate, las aceitunas, las alcaparras, el zumo de limón, la guindilla y las sardinas (con su aceite) y cocina 4 minutos, desmigando las sardinas con un tenedor.",
+      "Añade el agua de cocción reservada y pimienta recién molida al gusto, y cocina 2 minutos más.",
+      "Por último, añade la pasta a la sartén y mézclala con la salsa.",
+      "Decora con parmesano rallado y perejil, y sirve con pan crujiente."
+    ],
+    "source": {
+      "name": "maplewoodroad · «Spanish Sardines Pasta» (traducida al español)",
+      "url": "https://maplewoodroad.com/spanish-sardines-pasta/",
+      "license": "no indicada"
+    }
+  },
+  {
+    "id": "receta-pisto-manchego-con-huevo",
+    "nombre": "Pisto manchego con huevo",
+    "foto_real_url": "https://commons.wikimedia.org/wiki/File:Pisto_con_huevos.jpg",
+    "fuente": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+    "ingredientes": [
+      {
+        "producto_id": "10019",
+        "name": "calabacines",
+        "cantidad": "2 ud",
+        "quantity": 2,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10017",
+        "name": "pimientos verdes",
+        "cantidad": "2 ud",
+        "quantity": 2,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10016",
+        "name": "pimiento rojo",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "99002",
+        "name": "cebollas",
+        "cantidad": "2 ud",
+        "quantity": 2,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomate triturado",
+        "cantidad": "800g",
+        "quantity": 800,
+        "unit": "g",
+        "label": "800 g",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva virgen extra",
+        "cantidad": "100ml",
+        "quantity": 100,
+        "unit": "ml",
+        "label": "100 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10088",
+        "name": "azúcar",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10014",
+        "name": "huevos",
+        "cantidad": "4 ud",
+        "quantity": 4,
+        "unit": "ud",
+        "label": "4 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      }
+    ],
+    "alergenos_derivados": {
+      "huevos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Estimación para la demo (pendiente de calcular con productos reales)",
+      "kcal": 340,
+      "proteinas": 10.0,
+      "grasas": 26.0,
+      "saturadas": 4.5,
+      "hidratos": 18.0,
+      "azucares": 13.0,
+      "fibra": 6.0,
+      "sal": 1.0,
+      "precio_total": 5.4,
+      "precio_racion": 1.35
+    },
+    "subtitle": "Cocina española",
+    "image": {
+      "url": "/img/recipes/receta-pisto-manchego-con-huevo.jpg",
+      "author": "El Mono Español",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pisto_con_huevos.jpg"
+    },
+    "servings": 4,
+    "time_min": 50,
+    "tags": [
+      "vegetariana",
+      "sin gluten",
+      "sin lactosa",
+      "cocina española"
+    ],
+    "steps": [
+      "Pica la cebolla y los pimientos en dados pequeños y el calabacín en dados algo más grandes.",
+      "Pocha la cebolla en el aceite a fuego medio-bajo 10 minutos. Añade los pimientos y cocina 10 minutos más.",
+      "Incorpora el calabacín con un poco de sal y cocina 10 minutos.",
+      "Añade el tomate y el azúcar (para corregir la acidez) y cocina a fuego suave 15-20 minutos, removiendo de vez en cuando, hasta que espese.",
+      "Fríe los huevos y sirve cada ración de pisto con un huevo frito encima."
+    ],
+    "source": {
+      "name": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+      "url": "",
+      "license": "pendiente de fuente"
+    }
+  },
+  {
+    "id": "receta-pescado-al-horno-a-la-griega",
+    "nombre": "Pescado al horno a la griega",
+    "foto_real_url": "https://img.spoonacular.com/recipes/716408-636x393.jpg",
+    "fuente": "Full Belly Sisters",
+    "ingredientes": [
+      {
+        "producto_id": "10016",
+        "name": "pimiento",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "32145",
+        "name": "arroz",
+        "cantidad": "4 ud",
+        "quantity": 4.0,
+        "unit": "ud",
+        "label": "4 raciones",
+        "optional": false
+      },
+      {
+        "producto_id": "10106",
+        "name": "albahaca",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10054",
+        "name": "queso feta",
+        "cantidad": "55g",
+        "quantity": 55,
+        "unit": "g",
+        "label": "55 g",
+        "optional": false
+      },
+      {
+        "producto_id": "22222",
+        "name": "filetes de pescado blanco",
+        "cantidad": "455g",
+        "quantity": 455,
+        "unit": "g",
+        "label": "455 g",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "30ml",
+        "quantity": 30.0,
+        "unit": "ml",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10103",
+        "name": "orégano",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10100",
+        "name": "pimienta",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      },
+      {
+        "producto_id": "99002",
+        "name": "cebolla",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal y pimienta",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomate",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10112",
+        "name": "vino blanco",
+        "cantidad": "60ml",
+        "quantity": 60,
+        "unit": "ml",
+        "label": "60 ml",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "leche": "contiene",
+      "pescado": "contiene",
+      "sulfitos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 344,
+      "proteinas": 27.8,
+      "grasas": 12.4,
+      "saturadas": 3.6,
+      "hidratos": 28.0,
+      "azucares": 2.9,
+      "fibra": 1.9,
+      "sal": 1.05,
+      "precio_total": 9.2,
+      "precio_racion": 2.3
+    },
+    "subtitle": "Mediterranean, European",
+    "image": {
+      "url": "/img/recipes/receta-pescado-al-horno-a-la-griega.jpg",
+      "author": "Full Belly Sisters (vía Spoonacular)",
+      "license": "CC BY-SA 3.0",
+      "source_url": "https://fullbellysisters.blogspot.com/2012/04/greek-style-baked-fish-fresh-simple-and.html"
+    },
+    "servings": 4,
+    "time_min": 30,
+    "tags": [
+      "sin gluten",
+      "rápida"
+    ],
+    "steps": [
+      "Precalienta el horno a 230 °C. Elige una fuente donde quepa el pescado sin solaparse y engrásala.",
+      "Coloca los filetes en una sola capa, salpimiéntalos y cúbrelos con la cebolla morada y el pimiento.",
+      "Espolvorea albahaca y orégano secos, el tomate y el queso feta, y riega con el vino blanco y el aceite de oliva. Añade pimienta recién molida.",
+      "Hornea sin tapar 12-15 minutos o hasta que el pescado se desmigue fácilmente. Exprime limón por encima, decora con albahaca u orégano frescos y sirve con arroz."
+    ],
+    "source": {
+      "name": "Full Belly Sisters · «Greek-Style Baked Fish: Fresh, Simple, and Delicious» (traducida al español)",
+      "url": "https://fullbellysisters.blogspot.com/2012/04/greek-style-baked-fish-fresh-simple-and.html",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  {
+    "id": "receta-fabada-asturiana",
+    "nombre": "Fabada asturiana",
+    "foto_real_url": "https://commons.wikimedia.org/wiki/File:Fabada_Asturiana_y_Compangu_(13231802453).jpg",
+    "fuente": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+    "ingredientes": [
+      {
+        "producto_id": "10022",
+        "name": "fabes (alubias blancas)",
+        "cantidad": "500g",
+        "quantity": 500,
+        "unit": "g",
+        "label": "500 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10026",
+        "name": "chorizo asturiano",
+        "cantidad": "2 ud",
+        "quantity": 2,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10026",
+        "name": "morcilla asturiana",
+        "cantidad": "2 ud",
+        "quantity": 2,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10055",
+        "name": "panceta",
+        "cantidad": "200g",
+        "quantity": 200,
+        "unit": "g",
+        "label": "200 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10027",
+        "name": "lacón",
+        "cantidad": "200g",
+        "quantity": 200,
+        "unit": "g",
+        "label": "200 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10104",
+        "name": "azafrán",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 pizca",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      }
+    ],
+    "alergenos_derivados": {},
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Estimación para la demo (pendiente de calcular con productos reales)",
+      "kcal": 780,
+      "proteinas": 42.0,
+      "grasas": 42.0,
+      "saturadas": 15.0,
+      "hidratos": 58.0,
+      "azucares": 3.0,
+      "fibra": 20.0,
+      "sal": 3.0,
+      "precio_total": 13.5,
+      "precio_racion": 3.38
+    },
+    "subtitle": "Cocina española",
+    "image": {
+      "url": "/img/recipes/receta-fabada-asturiana.jpg",
+      "author": "Flavio Lorenzo Sánchez from Gijón, España",
+      "license": "CC BY-SA 2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fabada_Asturiana_y_Compangu_(13231802453).jpg"
+    },
+    "servings": 4,
+    "time_min": 180,
+    "tags": [
+      "sin gluten",
+      "sin lactosa",
+      "cocina española"
+    ],
+    "steps": [
+      "La noche anterior, pon las fabes en remojo en agua fría (y el lacón en otro recipiente para desalarlo).",
+      "Pon las fabes escurridas en una olla ancha con el compango (chorizo, morcilla, panceta y lacón) y cubre con agua fría, 2 dedos por encima.",
+      "Lleva a ebullición a fuego fuerte, retira la espuma y baja el fuego al mínimo.",
+      "Añade el azafrán y cocina a fuego muy suave unas 2,5-3 horas. Cada 30 minutos «asusta» las fabes con un chorrito de agua fría y mueve la olla en lugar de remover, para que no se rompan.",
+      "Al final, prueba y sala si hace falta. Deja reposar 15 minutos, trocea el compango y sirve todo junto."
+    ],
+    "source": {
+      "name": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+      "url": "",
+      "license": "pendiente de fuente"
+    }
+  },
+  {
+    "id": "receta-quinoa-salteada-con-bimi-y-nueces",
+    "nombre": "Quinoa salteada con bimi y nueces",
+    "foto_real_url": "https://img.spoonacular.com/recipes/715769-636x393.jpg",
+    "fuente": "pickfreshfoods.com",
+    "ingredientes": [
+      {
+        "producto_id": "10046",
+        "name": "bimi",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 manojo",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "diente de ajo",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "15ml",
+        "quantity": 15.0,
+        "unit": "ml",
+        "label": "1 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "99002",
+        "name": "cebolla",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10118",
+        "name": "quinoa",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10033",
+        "name": "caldo de verduras",
+        "cantidad": "480ml",
+        "quantity": 480,
+        "unit": "ml",
+        "label": "480 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10097",
+        "name": "nueces",
+        "cantidad": "55g",
+        "quantity": 55,
+        "unit": "g",
+        "label": "55 g",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "frutos_cascara": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 625,
+      "proteinas": 19.9,
+      "grasas": 30.7,
+      "saturadas": 3.3,
+      "hidratos": 71.7,
+      "azucares": 6.5,
+      "fibra": 9.6,
+      "sal": 2.43,
+      "precio_total": 6.3,
+      "precio_racion": 3.15
+    },
+    "subtitle": "Mediterranean, Italian",
+    "image": {
+      "url": "/img/recipes/receta-quinoa-salteada-con-bimi-y-nueces.jpg",
+      "author": "pickfreshfoods.com (vía Spoonacular)",
+      "license": "no indicada",
+      "source_url": "https://pickfreshfoods.com/broccolini-quinoa-pilaf/"
+    },
+    "servings": 2,
+    "time_min": 30,
+    "tags": [
+      "vegana",
+      "sin gluten",
+      "sin lactosa",
+      "rápida"
+    ],
+    "steps": [
+      "En una sartén grande con tapa, calienta el aceite de oliva a fuego medio-alto.",
+      "Añade la cebolla y cocina 1 minuto.",
+      "Añade el ajo y cocina hasta que la cebolla esté transparente y el ajo suelte su aroma.",
+      "Añade la quinoa y remueve. Incorpora el caldo poco a poco y lleva a ebullición. Tapa, baja el fuego y cocina 15 minutos. En los últimos 2-3 minutos, pon el bimi encima de la quinoa (sin remover) y tapa. Destapa y mezcla. Salpimienta al gusto.",
+      "Añade las nueces y sirve caliente."
+    ],
+    "source": {
+      "name": "pickfreshfoods.com · «Broccolini Quinoa Pilaf» (traducida al español)",
+      "url": "https://pickfreshfoods.com/broccolini-quinoa-pilaf/",
+      "license": "no indicada"
+    }
+  },
+  {
+    "id": "receta-patatas-bravas",
+    "nombre": "Patatas bravas",
+    "foto_real_url": "https://commons.wikimedia.org/wiki/File:Patatas_bravas_madrid_(cropped).jpg",
+    "fuente": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+    "ingredientes": [
+      {
+        "producto_id": "10018",
+        "name": "patatas",
+        "cantidad": "1000g",
+        "quantity": 1000,
+        "unit": "g",
+        "label": "1000 g",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de girasol",
+        "cantidad": "500ml",
+        "quantity": 500,
+        "unit": "ml",
+        "label": "500 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva virgen extra",
+        "cantidad": "30ml",
+        "quantity": 30,
+        "unit": "ml",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10041",
+        "name": "harina de trigo",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10023",
+        "name": "pimentón dulce",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10023",
+        "name": "pimentón picante",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10033",
+        "name": "caldo de verduras",
+        "cantidad": "300ml",
+        "quantity": 300,
+        "unit": "ml",
+        "label": "300 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Estimación para la demo (pendiente de calcular con productos reales)",
+      "kcal": 360,
+      "proteinas": 5.0,
+      "grasas": 19.0,
+      "saturadas": 2.5,
+      "hidratos": 42.0,
+      "azucares": 2.0,
+      "fibra": 4.0,
+      "sal": 1.0,
+      "precio_total": 3.1,
+      "precio_racion": 0.78
+    },
+    "subtitle": "Cocina española",
+    "image": {
+      "url": "/img/recipes/receta-patatas-bravas.jpg",
+      "author": "Krista",
+      "license": "CC BY 2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Patatas_bravas_madrid_(cropped).jpg"
+    },
+    "servings": 4,
+    "time_min": 40,
+    "tags": [
+      "vegana",
+      "sin lactosa",
+      "cocina española"
+    ],
+    "steps": [
+      "Pela las patatas y córtalas en dados irregulares de unos 3 cm. Lávalas y sécalas bien.",
+      "Fríelas en abundante aceite a fuego medio unos 10 minutos para que se hagan por dentro. Sácalas y sube el fuego.",
+      "Vuelve a freírlas 3-4 minutos a fuego fuerte hasta que estén doradas y crujientes. Escúrrelas y sálalas.",
+      "Para la salsa: calienta el aceite de oliva en un cazo, añade la harina y tuéstala 1 minuto. Retira del fuego y añade los dos pimentones.",
+      "Incorpora el caldo poco a poco, removiendo, y cocina 5 minutos hasta que espese. Tritúrala si quieres una salsa más fina.",
+      "Sirve las patatas con la salsa brava por encima."
+    ],
+    "source": {
+      "name": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+      "url": "",
+      "license": "pendiente de fuente"
+    }
+  },
+  {
+    "id": "receta-pisto-al-horno-con-brie",
+    "nombre": "Pisto al horno con brie",
+    "foto_real_url": "https://img.spoonacular.com/recipes/657939-636x393.jpg",
+    "fuente": "foodista.com",
+    "ingredientes": [
+      {
+        "producto_id": "10054",
+        "name": "queso brie",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10071",
+        "name": "berenjena",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 pequeño",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "115g",
+        "quantity": 115,
+        "unit": "g",
+        "label": "115 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10019",
+        "name": "calabacín",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10019",
+        "name": "calabacín amarillo",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomates pera",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10107",
+        "name": "tomillo",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 cdta",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {},
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 490,
+      "proteinas": 14.3,
+      "grasas": 44.5,
+      "saturadas": 13.8,
+      "hidratos": 11.4,
+      "azucares": 7.4,
+      "fibra": 4.9,
+      "sal": 0.91,
+      "precio_total": 7.4,
+      "precio_racion": 1.85
+    },
+    "subtitle": "Mediterranean, French",
+    "image": {
+      "url": "/img/recipes/receta-pisto-al-horno-con-brie.jpg",
+      "author": "foodista.com (vía Spoonacular)",
+      "license": "no indicada",
+      "source_url": "https://www.foodista.com/recipe/YKQ5H3TL/ratatouille-with-brie"
+    },
+    "servings": 4,
+    "time_min": 45,
+    "tags": [
+      "vegetariana",
+      "sin gluten",
+      "sin lactosa"
+    ],
+    "steps": [
+      "Pela la berenjena y córtala en dados de 1 cm.",
+      "Calienta 2-3 cucharadas de aceite de oliva en una sartén gruesa.",
+      "Saltea la berenjena 2-3 minutos y déjala escurrir sobre papel de cocina.",
+      "Pásala a una fuente de horno ovalada pequeña.",
+      "Precalienta el horno a 190 °C.",
+      "Corta el calabacín, el calabacín amarillo y los tomates en rodajas de 1 cm.",
+      "Corta también el brie en lonchas de 1 cm.",
+      "Coloca las rodajas de calabacín, brie y tomate alternándolas en espiral desde el borde hacia el centro de la fuente.",
+      "Cuando esté todo colocado, riega con el aceite restante y espolvorea tomillo picado.",
+      "Salpimienta y hornea 10-15 minutos hasta que burbujee."
+    ],
+    "source": {
+      "name": "foodista.com · «Ratatouille With Brie» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/YKQ5H3TL/ratatouille-with-brie",
+      "license": "no indicada"
+    }
+  },
+  {
+    "id": "receta-pulpo-a-la-gallega",
+    "nombre": "Pulpo a la gallega",
+    "foto_real_url": "https://commons.wikimedia.org/wiki/File:Plato_de_pulpo_a_la_gallega.jpg",
+    "fuente": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+    "ingredientes": [
+      {
+        "producto_id": "10078",
+        "name": "pulpo cocido",
+        "cantidad": "800g",
+        "quantity": 800,
+        "unit": "g",
+        "label": "800 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10018",
+        "name": "patatas",
+        "cantidad": "600g",
+        "quantity": 600,
+        "unit": "g",
+        "label": "600 g",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva virgen extra",
+        "cantidad": "60ml",
+        "quantity": 60,
+        "unit": "ml",
+        "label": "60 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10023",
+        "name": "pimentón dulce",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10023",
+        "name": "pimentón picante",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal gruesa",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      }
+    ],
+    "alergenos_derivados": {
+      "moluscos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Estimación para la demo (pendiente de calcular con productos reales)",
+      "kcal": 380,
+      "proteinas": 34.0,
+      "grasas": 15.0,
+      "saturadas": 2.2,
+      "hidratos": 28.0,
+      "azucares": 1.0,
+      "fibra": 2.5,
+      "sal": 2.0,
+      "precio_total": 21.0,
+      "precio_racion": 5.25
+    },
+    "subtitle": "Cocina española",
+    "image": {
+      "url": "/img/recipes/receta-pulpo-a-la-gallega.jpg",
+      "author": "Juan Emilio Prades Bel",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Plato_de_pulpo_a_la_gallega.jpg"
+    },
+    "servings": 4,
+    "time_min": 30,
+    "tags": [
+      "sin gluten",
+      "sin lactosa",
+      "rápida",
+      "cocina española"
+    ],
+    "steps": [
+      "Cuece las patatas con piel en agua con sal unos 20 minutos, hasta que estén tiernas. Pélalas y córtalas en rodajas de 1 cm.",
+      "Calienta el pulpo cocido 2-3 minutos en agua hirviendo (o en el agua de las patatas) y córtalo en rodajas con unas tijeras.",
+      "Coloca las patatas en la base de un plato de madera o una fuente y el pulpo encima.",
+      "Espolvorea sal gruesa y los dos pimentones, y riega con un buen chorro de aceite de oliva virgen extra. Sirve templado."
+    ],
+    "source": {
+      "name": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+      "url": "",
+      "license": "pendiente de fuente"
+    }
+  },
+  {
+    "id": "receta-gambas-al-ajillo-con-vino-blanco",
+    "nombre": "Gambas al ajillo con vino blanco",
+    "foto_real_url": "https://img.spoonacular.com/recipes/642096-636x393.jpg",
+    "fuente": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "ingredientes": [
+      {
+        "producto_id": "10042",
+        "name": "mantequilla",
+        "cantidad": "4 ud",
+        "quantity": 4.0,
+        "unit": "ud",
+        "label": "4 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10101",
+        "name": "perejil",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "6 ud",
+        "quantity": 6.0,
+        "unit": "ud",
+        "label": "6 dientes",
+        "optional": false
+      },
+      {
+        "producto_id": "10049",
+        "name": "zumo de limón",
+        "cantidad": "30ml",
+        "quantity": 30.0,
+        "unit": "ml",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "15ml",
+        "quantity": 15.0,
+        "unit": "ml",
+        "label": "1 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10100",
+        "name": "pimienta",
+        "cantidad": "0.25 ud",
+        "quantity": 0.25,
+        "unit": "ud",
+        "label": "0,25 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10109",
+        "name": "gambas",
+        "cantidad": "455g",
+        "quantity": 455,
+        "unit": "g",
+        "label": "455 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10112",
+        "name": "vino blanco",
+        "cantidad": "125ml",
+        "quantity": 125,
+        "unit": "ml",
+        "label": "125 ml",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "crustaceos": "contiene",
+      "leche": "contiene",
+      "sulfitos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 262,
+      "proteinas": 23.3,
+      "grasas": 15.5,
+      "saturadas": 7.8,
+      "hidratos": 3.0,
+      "azucares": 0.6,
+      "fibra": 0,
+      "sal": 1.3,
+      "precio_total": 11.8,
+      "precio_racion": 2.95
+    },
+    "subtitle": "Mediterranean, Italian",
+    "image": {
+      "url": "/img/recipes/receta-gambas-al-ajillo-con-vino-blanco.jpg",
+      "author": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit (vía Spoonacular)",
+      "license": "CC BY 3.0",
+      "source_url": "https://www.foodista.com/recipe/PVM55SR7/shrimp-scampi"
+    },
+    "servings": 4,
+    "time_min": 45,
+    "tags": [
+      "sin gluten"
+    ],
+    "steps": [
+      "En una sartén grande, derrite la mantequilla con el aceite.",
+      "Añade el ajo y saltéalo 30 segundos. Añade el vino y el zumo de limón y cocina 1 minuto. Incorpora las gambas, el perejil, sal y pimienta, y cocina 2-3 minutos a fuego fuerte sin dejar de remover.",
+      "Sirve con pasta o arroz."
+    ],
+    "source": {
+      "name": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit · «Easy Shrimp Scampi» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/PVM55SR7/shrimp-scampi",
+      "license": "CC BY 3.0"
+    }
+  },
+  {
+    "id": "receta-merluza-en-salsa-verde",
+    "nombre": "Merluza en salsa verde",
+    "foto_real_url": "https://commons.wikimedia.org/wiki/File:Cuisine_of_the_Basque_Country_Merluza_a_la_Koskera_(Salsa_verde_o_a_la_Vasca)_001.JPG",
+    "fuente": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+    "ingredientes": [
+      {
+        "producto_id": "22222",
+        "name": "merluza en rodajas",
+        "cantidad": "800g",
+        "quantity": 800,
+        "unit": "g",
+        "label": "800 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10110",
+        "name": "almejas",
+        "cantidad": "250g",
+        "quantity": 250,
+        "unit": "g",
+        "label": "250 g",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "4 ud",
+        "quantity": 4,
+        "unit": "ud",
+        "label": "4 dientes",
+        "optional": false
+      },
+      {
+        "producto_id": "10041",
+        "name": "harina de trigo",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10112",
+        "name": "vino blanco",
+        "cantidad": "100ml",
+        "quantity": 100,
+        "unit": "ml",
+        "label": "100 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10113",
+        "name": "caldo de pescado",
+        "cantidad": "200ml",
+        "quantity": 200,
+        "unit": "ml",
+        "label": "200 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10101",
+        "name": "perejil",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 manojo",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva virgen extra",
+        "cantidad": "60ml",
+        "quantity": 60,
+        "unit": "ml",
+        "label": "60 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10014",
+        "name": "huevos",
+        "cantidad": "2 ud",
+        "quantity": 2,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10116",
+        "name": "espárragos blancos",
+        "cantidad": "4 ud",
+        "quantity": 4,
+        "unit": "ud",
+        "label": "4 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "huevos": "contiene",
+      "moluscos": "contiene",
+      "pescado": "contiene",
+      "sulfitos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Estimación para la demo (pendiente de calcular con productos reales)",
+      "kcal": 360,
+      "proteinas": 40.0,
+      "grasas": 17.0,
+      "saturadas": 2.7,
+      "hidratos": 7.0,
+      "azucares": 1.0,
+      "fibra": 1.0,
+      "sal": 1.8,
+      "precio_total": 17.5,
+      "precio_racion": 4.38
+    },
+    "subtitle": "Cocina española",
+    "image": {
+      "url": "/img/recipes/receta-merluza-en-salsa-verde.jpg",
+      "author": "Valdavia",
+      "license": "CC BY-SA 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cuisine_of_the_Basque_Country_Merluza_a_la_Koskera_(Salsa_verde_o_a_la_Vasca)_001.JPG"
+    },
+    "servings": 4,
+    "time_min": 30,
+    "tags": [
+      "sin lactosa",
+      "rápida",
+      "cocina española"
+    ],
+    "steps": [
+      "Pon las almejas en agua con sal 30 minutos para que suelten la arena. Cuece los huevos 10 minutos y córtalos en cuartos.",
+      "En una cazuela de barro o sartén ancha, calienta el aceite y dora el ajo picado a fuego suave sin que se queme.",
+      "Añade la harina, remueve 1 minuto y vierte el vino blanco. Deja que se evapore el alcohol.",
+      "Incorpora el caldo de pescado y la mitad del perejil picado y cocina 2 minutos.",
+      "Sala la merluza y colócala en la cazuela junto con las almejas. Cocina 5-6 minutos moviendo la cazuela en vaivén para que la salsa ligue con la gelatina del pescado.",
+      "Cuando se abran las almejas, añade los espárragos y el huevo cocido, espolvorea el resto del perejil y sirve."
+    ],
+    "source": {
+      "name": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+      "url": "",
+      "license": "pendiente de fuente"
+    }
+  },
+  {
+    "id": "receta-sopa-griega-de-pollo-limon-y-orzo",
+    "nombre": "Sopa griega de pollo, limón y orzo",
+    "foto_real_url": "https://img.spoonacular.com/recipes/1098350-636x393.jpg",
+    "fuente": "foodista.com",
+    "ingredientes": [
+      {
+        "producto_id": "22334",
+        "name": "pechugas de pollo",
+        "cantidad": "3 ud",
+        "quantity": 3.0,
+        "unit": "ud",
+        "label": "3 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "22334",
+        "name": "caldo de pollo",
+        "cantidad": "1800g",
+        "quantity": 1800,
+        "unit": "g",
+        "label": "1800 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10020",
+        "name": "zanahorias",
+        "cantidad": "3 ud",
+        "quantity": 3.0,
+        "unit": "ud",
+        "label": "3 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10020",
+        "name": "tallos de apio",
+        "cantidad": "3 ud",
+        "quantity": 3.0,
+        "unit": "ud",
+        "label": "3 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10107",
+        "name": "tomillo",
+        "cantidad": "3 ud",
+        "quantity": 3.0,
+        "unit": "ud",
+        "label": "3 ramitas",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva virgen extra",
+        "cantidad": "5ml",
+        "quantity": 5.0,
+        "unit": "ml",
+        "label": "1 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10013",
+        "name": "pasta orzo",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10107",
+        "name": "tomillo molido",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10100",
+        "name": "pimienta",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10049",
+        "name": "limón",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 grande",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "apio": "contiene",
+      "gluten": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 281,
+      "proteinas": 26.9,
+      "grasas": 4.0,
+      "saturadas": 0.9,
+      "hidratos": 33.4,
+      "azucares": 3.4,
+      "fibra": 2.7,
+      "sal": 4.45,
+      "precio_total": 11.2,
+      "precio_racion": 1.4
+    },
+    "subtitle": "Mediterranean, European",
+    "image": {
+      "url": "/img/recipes/receta-sopa-griega-de-pollo-limon-y-orzo.jpg",
+      "author": "foodista.com (vía Spoonacular)",
+      "license": "no indicada",
+      "source_url": "https://www.foodista.com/recipe/DPVTGWX6/light-greek-lemon-chicken-orzo-soup"
+    },
+    "servings": 8,
+    "time_min": 30,
+    "tags": [
+      "sin lactosa",
+      "rápida"
+    ],
+    "steps": [
+      "En una olla grande, calienta el aceite de oliva a fuego medio-alto.",
+      "Añade la zanahoria y el apio y cocina 5 minutos a fuego medio.",
+      "Añade el caldo de pollo.",
+      "Añade el tomillo molido, sal y pimienta.",
+      "Añade la pechuga cocida en dados y el tomillo fresco. Lleva a ebullición.",
+      "Añade el orzo y cocina 7-10 minutos hasta que la pasta esté hecha.",
+      "Añade la ralladura y el zumo de 1 limón grande.",
+      "Sirve con una rodaja de limón."
+    ],
+    "source": {
+      "name": "foodista.com · «Light Greek Lemon Chicken Orzo Soup» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/DPVTGWX6/light-greek-lemon-chicken-orzo-soup",
+      "license": "no indicada"
+    }
+  },
+  {
+    "id": "receta-espinacas-con-garbanzos",
+    "nombre": "Espinacas con garbanzos",
+    "foto_real_url": "https://commons.wikimedia.org/wiki/File:Potaje_de_vigilia.jpg",
+    "fuente": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+    "ingredientes": [
+      {
+        "producto_id": "45120",
+        "name": "garbanzos cocidos",
+        "cantidad": "800g",
+        "quantity": 800,
+        "unit": "g",
+        "label": "800 g",
+        "optional": false
+      },
+      {
+        "producto_id": "77890",
+        "name": "espinacas frescas",
+        "cantidad": "300g",
+        "quantity": 300,
+        "unit": "g",
+        "label": "300 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10055",
+        "name": "pan de barra",
+        "cantidad": "2 ud",
+        "quantity": 2,
+        "unit": "ud",
+        "label": "2 rebanadas",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "3 ud",
+        "quantity": 3,
+        "unit": "ud",
+        "label": "3 dientes",
+        "optional": false
+      },
+      {
+        "producto_id": "10107",
+        "name": "comino molido",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10023",
+        "name": "pimentón dulce",
+        "cantidad": "1 ud",
+        "quantity": 1,
+        "unit": "ud",
+        "label": "1 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10032",
+        "name": "vinagre de Jerez",
+        "cantidad": "15ml",
+        "quantity": 15,
+        "unit": "ml",
+        "label": "1 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva virgen extra",
+        "cantidad": "60ml",
+        "quantity": 60,
+        "unit": "ml",
+        "label": "60 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10014",
+        "name": "huevos",
+        "cantidad": "2 ud",
+        "quantity": 2,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "huevos": "contiene",
+      "sulfitos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Estimación para la demo (pendiente de calcular con productos reales)",
+      "kcal": 330,
+      "proteinas": 15.0,
+      "grasas": 17.0,
+      "saturadas": 2.5,
+      "hidratos": 30.0,
+      "azucares": 2.0,
+      "fibra": 10.0,
+      "sal": 1.4,
+      "precio_total": 4.8,
+      "precio_racion": 1.2
+    },
+    "subtitle": "Cocina española",
+    "image": {
+      "url": "/img/recipes/receta-espinacas-con-garbanzos.jpg",
+      "author": "Toniher",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Potaje_de_vigilia.jpg"
+    },
+    "servings": 4,
+    "time_min": 25,
+    "tags": [
+      "vegetariana",
+      "sin lactosa",
+      "rápida",
+      "cocina española"
+    ],
+    "steps": [
+      "Cuece los huevos 10 minutos y córtalos en cuartos. Enjuaga y escurre los garbanzos.",
+      "En una sartén, fríe en el aceite el pan y los ajos hasta que se doren. Pásalos al mortero (o a la picadora) con el comino, el pimentón y el vinagre, y machaca hasta tener una pasta.",
+      "En el mismo aceite, saltea las espinacas con una pizca de sal hasta que se reduzcan.",
+      "Añade los garbanzos, la pasta del mortero y un vaso de agua (200 ml). Cocina 10 minutos a fuego medio hasta que la salsa espese.",
+      "Sirve con el huevo cocido por encima."
+    ],
+    "source": {
+      "name": "Receta tradicional (texto redactado con IA, sin fuente con licencia)",
+      "url": "",
+      "license": "pendiente de fuente"
+    }
+  },
+  {
+    "id": "receta-pasta-con-guisantes-y-salchicha-italiana",
+    "nombre": "Pasta con guisantes y salchicha italiana",
+    "foto_real_url": "https://img.spoonacular.com/recipes/654935-636x393.jpg",
+    "fuente": "foodista.com",
+    "ingredientes": [
+      {
+        "producto_id": "10042",
+        "name": "mantequilla",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomate triturado",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 kilo",
+        "optional": false
+      },
+      {
+        "producto_id": "10013",
+        "name": "pasta farfalle",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 caja",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "salchicha",
+        "cantidad": "4 ud",
+        "quantity": 4.0,
+        "unit": "ud",
+        "label": "4 raciones",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "15ml",
+        "quantity": 15.0,
+        "unit": "ml",
+        "label": "1 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10029",
+        "name": "guisantes",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal y pimienta",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomate triturado",
+        "cantidad": "735g",
+        "quantity": 735,
+        "unit": "g",
+        "label": "735 g",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "leche": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 576,
+      "proteinas": 19.1,
+      "grasas": 11.9,
+      "saturadas": 4.6,
+      "hidratos": 99.0,
+      "azucares": 11.6,
+      "fibra": 8.4,
+      "sal": 2.82,
+      "precio_total": 7.9,
+      "precio_racion": 1.98
+    },
+    "subtitle": "Mediterranean, Italian",
+    "image": {
+      "url": "/img/recipes/receta-pasta-con-guisantes-y-salchicha-italiana.jpg",
+      "author": "foodista.com (vía Spoonacular)",
+      "license": "no indicada",
+      "source_url": "https://www.foodista.com/recipe/6TFQVSP7/pasta-with-peas-and-italian-sausage"
+    },
+    "servings": 4,
+    "time_min": 45,
+    "tags": [],
+    "steps": [
+      "Cuece la pasta según el envase. Mientras tanto, en una sartén muy grande a fuego medio, pon el aceite de oliva y la carne de salchicha. Dórala un poco, añade los guisantes congelados y el tomate. Salpimienta al gusto. Baja a fuego medio y cocina 10-15 minutos más.",
+      "Escurre la pasta y vuelve a ponerla en la olla con la mantequilla y la salsa de tomate con salchicha.",
+      "Mezcla bien y sirve caliente."
+    ],
+    "source": {
+      "name": "foodista.com · «Pasta with Peas and Italian Sausage» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/6TFQVSP7/pasta-with-peas-and-italian-sausage",
+      "license": "no indicada"
+    }
+  },
+  {
+    "id": "receta-bruschetta-de-tomate",
+    "nombre": "Bruschetta de tomate",
+    "foto_real_url": "https://img.spoonacular.com/recipes/658753-636x393.jpg",
+    "fuente": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "ingredientes": [
+      {
+        "producto_id": "10032",
+        "name": "vinagre balsámico",
+        "cantidad": "30ml",
+        "quantity": 30.0,
+        "unit": "ml",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva virgen extra",
+        "cantidad": "60ml",
+        "quantity": 60.0,
+        "unit": "ml",
+        "label": "4 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10055",
+        "name": "pan",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 barra de pan",
+        "optional": false
+      },
+      {
+        "producto_id": "10106",
+        "name": "albahaca",
+        "cantidad": "10 ud",
+        "quantity": 10,
+        "unit": "ud",
+        "label": "10 hojas",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 diente",
+        "optional": false
+      },
+      {
+        "producto_id": "10016",
+        "name": "pimiento",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomates",
+        "cantidad": "4 ud",
+        "quantity": 4.0,
+        "unit": "ud",
+        "label": "4 mediano",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "sulfitos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 446,
+      "proteinas": 12.8,
+      "grasas": 16.9,
+      "saturadas": 2.5,
+      "hidratos": 62.8,
+      "azucares": 12.2,
+      "fibra": 5.3,
+      "sal": 2.02,
+      "precio_total": 3.9,
+      "precio_racion": 0.97
+    },
+    "subtitle": "Mediterranean, Italian",
+    "image": {
+      "url": "/img/recipes/receta-bruschetta-de-tomate.jpg",
+      "author": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit (vía Spoonacular)",
+      "license": "CC BY 3.0",
+      "source_url": "https://www.foodista.com/recipe/M3RH6LBH/roma-tomato-bruschetta"
+    },
+    "servings": 4,
+    "time_min": 45,
+    "tags": [
+      "vegana",
+      "sin lactosa"
+    ],
+    "steps": [
+      "Corta el pan al bies en rebanadas de 1 cm (unas 10-12). Mezcla 2 cucharadas de aceite de oliva virgen extra con sal y pimienta al gusto.",
+      "Pinta el pan por ambos lados con la mezcla.",
+      "Coloca las rebanadas en una bandeja y hornea a 200 °C unos 3-4 minutos por cada lado hasta que se doren. Al sacarlas, frótalas con un diente de ajo. Pica los tomates, corta la albahaca en tiras finas y mézclala con el tomate.",
+      "Añade sal, pimienta, aceite de oliva y vinagre balsámico y deja reposar unos minutos. Pon una buena cantidad de tomate sobre cada tostada y sirve."
+    ],
+    "source": {
+      "name": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit · «Roma Tomato Bruschetta» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/M3RH6LBH/roma-tomato-bruschetta",
+      "license": "CC BY 3.0"
+    }
+  },
+  {
+    "id": "receta-risotto-de-setas",
+    "nombre": "Risotto de setas",
+    "foto_real_url": "https://img.spoonacular.com/recipes/642595-636x393.jpg",
+    "fuente": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "ingredientes": [
+      {
+        "producto_id": "32145",
+        "name": "arroz para risotto",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10102",
+        "name": "hojas de laurel",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10042",
+        "name": "mantequilla",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10054",
+        "name": "queso parmesano",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "22334",
+        "name": "caldo de pollo",
+        "cantidad": "1900ml",
+        "quantity": 1900,
+        "unit": "ml",
+        "label": "1900 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10037",
+        "name": "champiñones portobello",
+        "cantidad": "220g",
+        "quantity": 220,
+        "unit": "g",
+        "label": "220 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10032",
+        "name": "vino",
+        "cantidad": "185ml",
+        "quantity": 185,
+        "unit": "ml",
+        "label": "185 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 dientes",
+        "optional": false
+      },
+      {
+        "producto_id": "10037",
+        "name": "colmenillas",
+        "cantidad": "220g",
+        "quantity": 220,
+        "unit": "g",
+        "label": "220 g",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "45ml",
+        "quantity": 45.0,
+        "unit": "ml",
+        "label": "3 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "99002",
+        "name": "cebolla",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10101",
+        "name": "perejil",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal y pimienta",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      },
+      {
+        "producto_id": "10107",
+        "name": "cdta de tomillo",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de trufa",
+        "cantidad": "6 ud",
+        "quantity": 6.0,
+        "unit": "ud",
+        "label": "6 raciones",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "leche": "contiene",
+      "sulfitos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 569,
+      "proteinas": 11.0,
+      "grasas": 29.3,
+      "saturadas": 7.3,
+      "hidratos": 61.0,
+      "azucares": 3.3,
+      "fibra": 3.6,
+      "sal": 3.66,
+      "precio_total": 18.5,
+      "precio_racion": 3.08
+    },
+    "subtitle": "Mediterranean, Italian",
+    "image": {
+      "url": "/img/recipes/receta-risotto-de-setas.jpg",
+      "author": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit (vía Spoonacular)",
+      "license": "CC BY 3.0",
+      "source_url": "https://www.foodista.com/recipe/4C8YNZY6/farmers-market-wild-mushroom-risotto"
+    },
+    "servings": 6,
+    "time_min": 45,
+    "tags": [
+      "sin gluten"
+    ],
+    "steps": [
+      "Calienta el caldo de pollo en un cazo y mantenlo caliente a fuego bajo.",
+      "Calienta 1 cucharada de aceite en una sartén grande a fuego medio.",
+      "Añade 1/2 cebolla y 1 diente de ajo y cocina removiendo unos 5 minutos, hasta que esté transparente.",
+      "Añade las setas, las hierbas y la mantequilla.",
+      "Saltea 3-5 minutos hasta que se doren un poco y salpimienta.",
+      "Saltea 1 minuto más, retira del fuego y reserva. En una cazuela, calienta las 2 cucharadas de aceite restantes y sofríe a fuego medio la otra 1/2 cebolla y el ajo.",
+      "Añade el arroz y remueve 2-3 minutos hasta que esté bien impregnado y nacarado.",
+      "Añade el vino y cocina hasta que casi se evapore. Añade un cazo (240 ml) de caldo caliente y cocina removiendo hasta que el arroz lo absorba.",
+      "Añade el resto del caldo poco a poco, removiendo y dejando que el arroz absorba cada adición antes de añadir más. El risotto debe quedar meloso y al dente.",
+      "Incorpora las setas al arroz. Añade el parmesano y cocina hasta que se funda. Sirve con un hilo de aceite de trufa y perejil picado."
+    ],
+    "source": {
+      "name": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit · «Farmer's Market Wild Mushroom Risotto» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/4C8YNZY6/farmers-market-wild-mushroom-risotto",
+      "license": "CC BY 3.0"
+    }
+  },
+  {
+    "id": "receta-quiche-de-esparragos-y-havarti",
+    "nombre": "Quiche de espárragos y havarti",
+    "foto_real_url": "https://img.spoonacular.com/recipes/646348-636x393.jpg",
+    "fuente": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "ingredientes": [
+      {
+        "producto_id": "10117",
+        "name": "espárragos verdes",
+        "cantidad": "8 ud",
+        "quantity": 8.0,
+        "unit": "ud",
+        "label": "8 tallos",
+        "optional": false
+      },
+      {
+        "producto_id": "10043",
+        "name": "nata",
+        "cantidad": "250ml",
+        "quantity": 250,
+        "unit": "ml",
+        "label": "250 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10014",
+        "name": "huevos",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10041",
+        "name": "harina de trigo",
+        "cantidad": "1.25 ud",
+        "quantity": 1.25,
+        "unit": "ud",
+        "label": "1,25 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10054",
+        "name": "queso havarti",
+        "cantidad": "220g",
+        "quantity": 220,
+        "unit": "g",
+        "label": "220 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10088",
+        "name": "azúcar",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10042",
+        "name": "mantequilla",
+        "cantidad": "0.75 ud",
+        "quantity": 0.75,
+        "unit": "ud",
+        "label": "0,75 tazas",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "huevos": "contiene",
+      "leche": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 537,
+      "proteinas": 11.7,
+      "grasas": 36.9,
+      "saturadas": 23.1,
+      "hidratos": 41.7,
+      "azucares": 26.2,
+      "fibra": 0.9,
+      "sal": 1.0,
+      "precio_total": 9.6,
+      "precio_racion": 1.2
+    },
+    "subtitle": "Mediterranean, French",
+    "image": {
+      "url": "/img/recipes/receta-quiche-de-esparragos-y-havarti.jpg",
+      "author": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit (vía Spoonacular)",
+      "license": "CC BY 3.0",
+      "source_url": "https://www.foodista.com/recipe/WVNLTYYJ/havarti-and-asparagus-quiche"
+    },
+    "servings": 8,
+    "time_min": 45,
+    "tags": [
+      "vegetariana"
+    ],
+    "steps": [
+      "En el vaso del robot, mezcla la harina, la sal y el azúcar.",
+      "Añade la mantequilla y tritura a golpes hasta que la mezcla tenga el tamaño de guisantes pequeños.",
+      "Añade las 5 primeras cucharadas de agua de una en una. Si la masa se mantiene unida al pellizcarla, está lista; si se desmorona, añade la última cucharada de agua poco a poco. Pásala a un trozo de film, forma un disco y refrigérala 30 minutos antes de estirarla, para que la mantequilla esté fría y la masa quede hojaldrada. Mientras, pon a hervir una olla con agua. Recorta los espárragos para que quepan en el molde colocados como los radios de una rueda.",
+      "Escálfalos 2-3 minutos en el agua hirviendo.",
+      "Pásalos a un bol con agua y hielo para cortar la cocción y mantener el color verde. Reserva. Precalienta el horno a 175 °C. Estira la masa en un círculo algo mayor que el molde, pásala al molde y ajústala bien a las esquinas. Recorta el exceso dejando 2,5 cm de borde, dóblalo hacia dentro y pellízcalo con los dedos. Pincha la base con un tenedor y hornéala en blanco 5 minutos para que no se empape.",
+      "Saca la base del horno y espolvorea el queso havarti. Sube el horno a 190 °C. En un bol grande, bate bien los huevos con la nata y la leche.",
+      "Vierte la mezcla de huevo con cuidado sobre el queso.",
+      "Coloca los espárragos con las puntas hacia fuera, como los radios de una rueda, con los extremos juntos en el centro.",
+      "Hornea 40 minutos. Si el borde se dora demasiado, cúbrelo con papel de aluminio sin que toque el relleno.",
+      "Hornea 10-12 minutos más. Para comprobar si está hecha, pincha con un cuchillo: debe salir limpio. Si no, hornea 3-4 minutos más tapada con el aluminio."
+    ],
+    "source": {
+      "name": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit · «Havarti and Asparagus Quiche» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/WVNLTYYJ/havarti-and-asparagus-quiche",
+      "license": "CC BY 3.0"
+    }
+  },
+  {
+    "id": "receta-pollo-a-la-parmesana-con-aguacate",
+    "nombre": "Pollo a la parmesana con aguacate",
+    "foto_real_url": "https://img.spoonacular.com/recipes/633133-636x393.jpg",
+    "fuente": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "ingredientes": [
+      {
+        "producto_id": "22334",
+        "name": "filete de pechuga de pollo",
+        "cantidad": "220g",
+        "quantity": 220,
+        "unit": "g",
+        "label": "220 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10041",
+        "name": "harina de trigo",
+        "cantidad": "0.25 ud",
+        "quantity": 0.25,
+        "unit": "ud",
+        "label": "0,25 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10014",
+        "name": "huevo",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10055",
+        "name": "pan rallado",
+        "cantidad": "1.75 ud",
+        "quantity": 1.75,
+        "unit": "ud",
+        "label": "1,75 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "8 ud",
+        "quantity": 8.0,
+        "unit": "ud",
+        "label": "8 raciones",
+        "optional": false
+      },
+      {
+        "producto_id": "88991",
+        "name": "salsa de tomate para pasta",
+        "cantidad": "60ml",
+        "quantity": 60.0,
+        "unit": "ml",
+        "label": "4 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10114",
+        "name": "aguacate",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10054",
+        "name": "queso parmesano",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "ensalada para acompañar",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 hojas",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "huevos": "contiene",
+      "leche": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 298,
+      "proteinas": 11.1,
+      "grasas": 18.7,
+      "saturadas": 3.0,
+      "hidratos": 21.5,
+      "azucares": 1.9,
+      "fibra": 2.1,
+      "sal": 0.68,
+      "precio_total": 5.9,
+      "precio_racion": 0.74
+    },
+    "subtitle": "Mediterranean, Italian",
+    "image": {
+      "url": "/img/recipes/receta-pollo-a-la-parmesana-con-aguacate.jpg",
+      "author": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit (vía Spoonacular)",
+      "license": "CC BY 3.0",
+      "source_url": "https://www.foodista.com/recipe/XWFPFM56/avocado-chicken-parmigiana"
+    },
+    "servings": 8,
+    "time_min": 45,
+    "tags": [],
+    "steps": [
+      "Precalienta el horno a 200 °C con ventilador.",
+      "Pon el pollo entre 2 láminas de film y aplánalo con el rodillo hasta 0,5 cm de grosor.",
+      "Pasa el pollo por harina (sacude el exceso), luego por huevo batido y por último por pan rallado.",
+      "Colócalo en una bandeja de horno. Repite con el resto del pollo.",
+      "Pulveriza el pollo con aceite de oliva.",
+      "Hornea 5 minutos.",
+      "Saca del horno y pon 2 cucharadas de salsa de tomate sobre cada filete. Reparte el aguacate y espolvorea el queso. Vuelve a meterlo en el horno.",
+      "Hornea 5-7 minutos más hasta que se dore y el pollo esté hecho."
+    ],
+    "source": {
+      "name": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit · «Avocado Chicken Parmigiana» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/XWFPFM56/avocado-chicken-parmigiana",
+      "license": "CC BY 3.0"
+    }
+  },
+  {
+    "id": "receta-ensalada-caprese",
+    "nombre": "Ensalada caprese",
+    "foto_real_url": "https://img.spoonacular.com/recipes/657537-636x393.jpg",
+    "fuente": "foodista.com",
+    "ingredientes": [
+      {
+        "producto_id": "10032",
+        "name": "vinagre balsámico",
+        "cantidad": "4 ud",
+        "quantity": 4.0,
+        "unit": "ud",
+        "label": "4 raciones",
+        "optional": false
+      },
+      {
+        "producto_id": "10106",
+        "name": "hojas de albahaca",
+        "cantidad": "0.25 ud",
+        "quantity": 0.25,
+        "unit": "ud",
+        "label": "0,25 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10025",
+        "name": "queso mozzarella",
+        "cantidad": "225g",
+        "quantity": 225,
+        "unit": "g",
+        "label": "225 g",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "4 ud",
+        "quantity": 4.0,
+        "unit": "ud",
+        "label": "4 raciones",
+        "optional": false
+      },
+      {
+        "producto_id": "10016",
+        "name": "pimiento",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomates",
+        "cantidad": "4 ud",
+        "quantity": 4.0,
+        "unit": "ud",
+        "label": "4 ud",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "leche": "contiene",
+      "sulfitos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 350,
+      "proteinas": 14.5,
+      "grasas": 27.1,
+      "saturadas": 9.5,
+      "hidratos": 13.3,
+      "azucares": 9.3,
+      "fibra": 3.1,
+      "sal": 1.65,
+      "precio_total": 5.2,
+      "precio_racion": 1.3
+    },
+    "subtitle": "Mediterranean, Italian",
+    "image": {
+      "url": "/img/recipes/receta-ensalada-caprese.jpg",
+      "author": "foodista.com (vía Spoonacular)",
+      "license": "no indicada",
+      "source_url": "https://www.foodista.com/recipe/FCD4TQFH/quick-and-easy-caprese-salad"
+    },
+    "servings": 4,
+    "time_min": 45,
+    "tags": [
+      "vegetariana",
+      "sin gluten"
+    ],
+    "steps": [
+      "Corta la mozzarella y los tomates en rodajas de 0,5 cm y colócalos en una fuente.",
+      "Reparte hojas de albahaca por encima.",
+      "Riega con aceite y vinagre.",
+      "Salpimienta al gusto."
+    ],
+    "source": {
+      "name": "foodista.com · «Quick and Easy Caprese Salad» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/FCD4TQFH/quick-and-easy-caprese-salad",
+      "license": "no indicada"
+    }
+  },
+  {
+    "id": "receta-risotto-con-guisantes",
+    "nombre": "Risotto con guisantes",
+    "foto_real_url": "https://img.spoonacular.com/recipes/658384-636x393.jpg",
+    "fuente": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "ingredientes": [
+      {
+        "producto_id": "22334",
+        "name": "caldo de pollo",
+        "cantidad": "1900ml",
+        "quantity": 1900,
+        "unit": "ml",
+        "label": "1900 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10042",
+        "name": "mantequilla",
+        "cantidad": "0.25 ud",
+        "quantity": 0.25,
+        "unit": "ud",
+        "label": "0,25 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva virgen extra",
+        "cantidad": "30ml",
+        "quantity": 30.0,
+        "unit": "ml",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "99002",
+        "name": "cebollas",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "dientes de ajo",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "32145",
+        "name": "arroz para risotto",
+        "cantidad": "1.5 ud",
+        "quantity": 1.5,
+        "unit": "ud",
+        "label": "1,5 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10032",
+        "name": "vino",
+        "cantidad": "160ml",
+        "quantity": 160,
+        "unit": "ml",
+        "label": "160 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10029",
+        "name": "guisantes",
+        "cantidad": "0.75 ud",
+        "quantity": 0.75,
+        "unit": "ud",
+        "label": "0,75 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10054",
+        "name": "queso parmesano",
+        "cantidad": "0.75 ud",
+        "quantity": 0.75,
+        "unit": "ud",
+        "label": "0,75 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10102",
+        "name": "hoja de laurel",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal y pimienta",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      }
+    ],
+    "alergenos_derivados": {
+      "leche": "contiene",
+      "sulfitos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 506,
+      "proteinas": 17.0,
+      "grasas": 19.4,
+      "saturadas": 8.5,
+      "hidratos": 59.9,
+      "azucares": 8.7,
+      "fibra": 3.4,
+      "sal": 2.24,
+      "precio_total": 9.4,
+      "precio_racion": 1.57
+    },
+    "subtitle": "Mediterranean, Italian",
+    "image": {
+      "url": "/img/recipes/receta-risotto-con-guisantes.jpg",
+      "author": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit (vía Spoonacular)",
+      "license": "CC BY 3.0",
+      "source_url": "https://www.foodista.com/recipe/RZ8Y824Q/risotto-with-fresh-peas"
+    },
+    "servings": 6,
+    "time_min": 45,
+    "tags": [
+      "sin gluten"
+    ],
+    "steps": [
+      "Derrite la mantequilla en una cazuela grande a fuego medio y añade el aceite, el laurel y la cebolla. Salpimienta y cocina hasta que la cebolla esté transparente.",
+      "Añade el ajo picado.",
+      "Rehoga unos 8 minutos hasta que esté tierno.",
+      "Añade el arroz y tuéstalo unos minutos.",
+      "Añade el vino y cocina unos 2 minutos, removiendo, hasta que se absorba.",
+      "Añade el caldo de pollo CALIENTE de 240 ml en 240 ml, removiendo a menudo y esperando a que se absorba. A fuego medio-bajo tardará unos 28 minutos.",
+      "Añade 240 ml de caldo cada 3 minutos aproximadamente, hasta que el arroz esté tierno y cremoso.",
+      "Incorpora los guisantes y el parmesano, y salpimienta al gusto. Cocina hasta que se absorba todo el líquido.",
+      "Deja templar antes de servir."
+    ],
+    "source": {
+      "name": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit · «Risotto With Fresh Peas» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/RZ8Y824Q/risotto-with-fresh-peas",
+      "license": "CC BY 3.0"
+    }
+  },
+  {
+    "id": "receta-osobuco",
+    "nombre": "Osobuco",
+    "foto_real_url": "https://img.spoonacular.com/recipes/654125-636x393.jpg",
+    "fuente": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "ingredientes": [
+      {
+        "producto_id": "10038",
+        "name": "jarretes de ternera",
+        "cantidad": "6 ud",
+        "quantity": 6.0,
+        "unit": "ud",
+        "label": "6 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10101",
+        "name": "perejil",
+        "cantidad": "4 ud",
+        "quantity": 4.0,
+        "unit": "ud",
+        "label": "4 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10049",
+        "name": "piel de limón",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 de",
+        "optional": false
+      },
+      {
+        "producto_id": "10041",
+        "name": "harina de trigo",
+        "cantidad": "6 ud",
+        "quantity": 6.0,
+        "unit": "ud",
+        "label": "6 raciones",
+        "optional": false
+      },
+      {
+        "producto_id": "10016",
+        "name": "pimiento",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva",
+        "cantidad": "60ml",
+        "quantity": 60.0,
+        "unit": "ml",
+        "label": "4 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "3 ud",
+        "quantity": 3.0,
+        "unit": "ud",
+        "label": "3 dientes",
+        "optional": false
+      },
+      {
+        "producto_id": "99002",
+        "name": "cebolla",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "22334",
+        "name": "caldo de pollo",
+        "cantidad": "245ml",
+        "quantity": 245,
+        "unit": "ml",
+        "label": "245 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10032",
+        "name": "vino",
+        "cantidad": "245ml",
+        "quantity": 245,
+        "unit": "ml",
+        "label": "245 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "88991",
+        "name": "salsa de tomate",
+        "cantidad": "60ml",
+        "quantity": 60.0,
+        "unit": "ml",
+        "label": "4 cda",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "sulfitos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 445,
+      "proteinas": 46.3,
+      "grasas": 18.1,
+      "saturadas": 3.9,
+      "hidratos": 15.6,
+      "azucares": 5.3,
+      "fibra": 2.4,
+      "sal": 0.76,
+      "precio_total": 22.0,
+      "precio_racion": 3.67
+    },
+    "subtitle": "Mediterranean, Italian",
+    "image": {
+      "url": "/img/recipes/receta-osobuco.jpg",
+      "author": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit (vía Spoonacular)",
+      "license": "CC BY 3.0",
+      "source_url": "https://www.foodista.com/recipe/8J6ZKVBH/osso-buco"
+    },
+    "servings": 6,
+    "time_min": 45,
+    "tags": [
+      "sin lactosa"
+    ],
+    "steps": [
+      "Pasa la ternera por harina sazonada y dórala en aceite de oliva por todos los lados.",
+      "Añade el ajo y la cebolla.",
+      "Vierte el caldo hirviendo, el vino blanco y la salsa de tomate sobre la carne. Tapa y cocina a fuego suave 1,5 horas o hasta que la carne esté tierna.",
+      "Añade el perejil y la ralladura de limón.",
+      "Sirve sobre arroz con azafrán."
+    ],
+    "source": {
+      "name": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit · «Osso Buco» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/8J6ZKVBH/osso-buco",
+      "license": "CC BY 3.0"
+    }
+  },
+  {
+    "id": "receta-tostas-de-pera-y-pesto",
+    "nombre": "Tostas de pera y pesto",
+    "foto_real_url": "https://img.spoonacular.com/recipes/655400-636x393.jpg",
+    "fuente": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "ingredientes": [
+      {
+        "producto_id": "10055",
+        "name": "pan",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 barra de pan",
+        "optional": false
+      },
+      {
+        "producto_id": "10106",
+        "name": "hojas de albahaca",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 diente",
+        "optional": false
+      },
+      {
+        "producto_id": "10037",
+        "name": "piñones",
+        "cantidad": "0.25 ud",
+        "quantity": 0.25,
+        "unit": "ud",
+        "label": "0,25 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10025",
+        "name": "pecorino romano",
+        "cantidad": "0.25 ud",
+        "quantity": 0.25,
+        "unit": "ud",
+        "label": "0,25 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "tu mejor aceite de oliva",
+        "cantidad": "45ml",
+        "quantity": 45.0,
+        "unit": "ml",
+        "label": "3 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal y pimienta",
+        "cantidad": "al gusto",
+        "quantity": 0,
+        "unit": "ud",
+        "label": "al gusto",
+        "optional": true
+      },
+      {
+        "producto_id": "10067",
+        "name": "pera conferencia",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "leche": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 452,
+      "proteinas": 12.2,
+      "grasas": 25.7,
+      "saturadas": 4.3,
+      "hidratos": 46.1,
+      "azucares": 9.4,
+      "fibra": 4.0,
+      "sal": 1.74,
+      "precio_total": 6.1,
+      "precio_racion": 2.03
+    },
+    "subtitle": "Mediterranean, Italian",
+    "image": {
+      "url": "/img/recipes/receta-tostas-de-pera-y-pesto.jpg",
+      "author": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit (vía Spoonacular)",
+      "license": "CC BY 3.0",
+      "source_url": "https://www.foodista.com/recipe/7DGVJG5X/pear-and-pesto-crostini"
+    },
+    "servings": 3,
+    "time_min": 45,
+    "tags": [
+      "vegetariana"
+    ],
+    "steps": [
+      "Precalienta el horno a 200 °C. Corta la barra de pan en rebanadas de 1 cm y píntalas con aceite de oliva.",
+      "Colócalas en una bandeja y tuéstalas en el horno 10-15 minutos hasta que los bordes estén bien dorados.",
+      "Saca del horno y reserva.",
+      "Mientras, prepara el pesto: en la picadora, pon la albahaca, el ajo, los piñones y el queso. Tritura a golpes hasta que tenga textura de arena gruesa.",
+      "Añade el aceite de oliva y tritura hasta integrarlo. Prueba.",
+      "Salpimienta si hace falta. Pasa el pesto a un bol y reserva (saldrán unos 180 ml).",
+      "Unta las tostadas con el pesto y cubre con pera y pimienta negra recién molida."
+    ],
+    "source": {
+      "name": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit · «Pear and Pesto Crostini» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/7DGVJG5X/pear-and-pesto-crostini",
+      "license": "CC BY 3.0"
+    }
+  },
+  {
+    "id": "receta-ensalada-panzanella",
+    "nombre": "Ensalada panzanella",
+    "foto_real_url": "https://img.spoonacular.com/recipes/1005368-636x393.jpg",
+    "fuente": "pickfreshfoods.com",
+    "ingredientes": [
+      {
+        "producto_id": "10055",
+        "name": "dados de pan",
+        "cantidad": "3 ud",
+        "quantity": 3.0,
+        "unit": "ud",
+        "label": "3 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomates cherry",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10093",
+        "name": "mostaza de Dijon",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10069",
+        "name": "pepino",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "11234",
+        "name": "aceite de oliva virgen extra",
+        "cantidad": "125ml",
+        "quantity": 125,
+        "unit": "ml",
+        "label": "125 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10106",
+        "name": "albahaca",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "diente de ajo",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 pequeño",
+        "optional": false
+      },
+      {
+        "producto_id": "10100",
+        "name": "pimienta molida",
+        "cantidad": "0.25 ud",
+        "quantity": 0.25,
+        "unit": "ud",
+        "label": "0,25 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10103",
+        "name": "sazonador",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "10025",
+        "name": "mozzarella",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10032",
+        "name": "vinagre de vino blanco",
+        "cantidad": "45ml",
+        "quantity": 45.0,
+        "unit": "ml",
+        "label": "3 cda",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "leche": "contiene",
+      "mostaza": "contiene",
+      "sulfitos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 657,
+      "proteinas": 23.4,
+      "grasas": 20.0,
+      "saturadas": 4.5,
+      "hidratos": 97.1,
+      "azucares": 10.7,
+      "fibra": 4.9,
+      "sal": 3.66,
+      "precio_total": 5.6,
+      "precio_racion": 1.4
+    },
+    "subtitle": "Mediterranean, Italian",
+    "image": {
+      "url": "/img/recipes/receta-ensalada-panzanella.jpg",
+      "author": "pickfreshfoods.com (vía Spoonacular)",
+      "license": "no indicada",
+      "source_url": "https://pickfreshfoods.com/panzanella-salad/"
+    },
+    "servings": 4,
+    "time_min": 45,
+    "tags": [
+      "vegetariana"
+    ],
+    "steps": [
+      "Precalienta el horno a 190 °C.",
+      "Corta el pan en dados de 2 cm.",
+      "Colócalos en una bandeja de horno.",
+      "Mézclalos con 2 cucharadas de aceite de oliva y espolvorea bien de hierbas italianas.",
+      "Tuesta el pan 15 minutos, dándole la vuelta a mitad.",
+      "Pon el pan tostado, el tomate, el pepino y la mozzarella en una ensaladera.",
+      "Aliña con la vinagreta.",
+      "Espolvorea albahaca fresca.",
+      "Para la vinagreta, mezcla en un bol el ajo, la mostaza y el vinagre. Añade el aceite de oliva poco a poco mientras bates con la batidora hasta que emulsione.",
+      "Salpimienta al gusto."
+    ],
+    "source": {
+      "name": "pickfreshfoods.com · «Panzanella Salad» (traducida al español)",
+      "url": "https://pickfreshfoods.com/panzanella-salad/",
+      "license": "no indicada"
+    }
+  },
+  {
+    "id": "receta-risotto-de-tomate-con-verduras-a-la-plancha",
+    "nombre": "Risotto de tomate con verduras a la plancha",
+    "foto_real_url": "https://img.spoonacular.com/recipes/1095751-636x393.jpg",
+    "fuente": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "ingredientes": [
+      {
+        "producto_id": "99002",
+        "name": "cebolla",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "33445",
+        "name": "ajo",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 diente",
+        "optional": false
+      },
+      {
+        "producto_id": "10032",
+        "name": "vino",
+        "cantidad": "60ml",
+        "quantity": 60,
+        "unit": "ml",
+        "label": "60 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10033",
+        "name": "caldo de verduras",
+        "cantidad": "960ml",
+        "quantity": 960,
+        "unit": "ml",
+        "label": "960 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "32145",
+        "name": "arroz para risotto",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomates",
+        "cantidad": "6 ud",
+        "quantity": 6.0,
+        "unit": "ud",
+        "label": "6 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10046",
+        "name": "brócoli",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10019",
+        "name": "calabacín",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10029",
+        "name": "guisantes",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 tazas",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "sulfitos": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 296,
+      "proteinas": 8.9,
+      "grasas": 1.1,
+      "saturadas": 0.2,
+      "hidratos": 61.4,
+      "azucares": 11.6,
+      "fibra": 7.6,
+      "sal": 2.43,
+      "precio_total": 7.2,
+      "precio_racion": 1.8
+    },
+    "subtitle": "Mediterranean, Italian",
+    "image": {
+      "url": "/img/recipes/receta-risotto-de-tomate-con-verduras-a-la-plancha.jpg",
+      "author": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit (vía Spoonacular)",
+      "license": "CC BY 3.0",
+      "source_url": "https://www.foodista.com/recipe/BDP4N4KC/fresh-tomato-risotto-with-grilled-greens"
+    },
+    "servings": 4,
+    "time_min": 60,
+    "tags": [
+      "vegana",
+      "sin gluten",
+      "sin lactosa"
+    ],
+    "steps": [
+      "Calienta el caldo de verduras en un cazo y mantenlo justo por debajo del hervor. Tritura 4 de los tomates hasta hacer un puré y añádelo al caldo.",
+      "Calienta 1 cucharada de aceite de oliva en una sartén grande y honda a fuego medio y rehoga la cebolla 2-3 minutos hasta que esté transparente.",
+      "Añade el ajo y rehoga 1 minuto más.",
+      "Añade el arroz y remueve 1 minuto para que se impregne. Añade el vino y remueve hasta que se absorba. Ve añadiendo el caldo con tomate cazo a cazo, removiendo y esperando a que se absorba antes de añadir más, hasta terminarlo (35-45 minutos). Corta los otros dos tomates en dados y añádelos al final para que se calienten. Asa las verduras verdes a la plancha (envueltas en papel de aluminio si son pequeñas) hasta que estén hechas pero al dente.",
+      "Sirve enseguida con el risotto."
+    ],
+    "source": {
+      "name": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit · «Fresh Tomato Risotto with Grilled Green Vegetables» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/BDP4N4KC/fresh-tomato-risotto-with-grilled-greens",
+      "license": "CC BY 3.0"
+    }
+  },
+  {
+    "id": "receta-quiche-de-espinacas-y-jamon",
+    "nombre": "Quiche de espinacas y jamón",
+    "foto_real_url": "https://img.spoonacular.com/recipes/661249-636x393.jpg",
+    "fuente": "foodista.com",
+    "ingredientes": [
+      {
+        "producto_id": "10042",
+        "name": "mantequilla",
+        "cantidad": "100g",
+        "quantity": 100,
+        "unit": "g",
+        "label": "100 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10054",
+        "name": "queso cheddar",
+        "cantidad": "50g",
+        "quantity": 50,
+        "unit": "g",
+        "label": "50 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10014",
+        "name": "huevos",
+        "cantidad": "2 ud",
+        "quantity": 2.0,
+        "unit": "ud",
+        "label": "2 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10027",
+        "name": "jamón cocido",
+        "cantidad": "125g",
+        "quantity": 125,
+        "unit": "g",
+        "label": "125 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10060",
+        "name": "agua helada",
+        "cantidad": "75ml",
+        "quantity": 75.0,
+        "unit": "ml",
+        "label": "5 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10015",
+        "name": "leche",
+        "cantidad": "80ml",
+        "quantity": 80,
+        "unit": "ml",
+        "label": "80 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "10100",
+        "name": "pimienta",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 chorrito",
+        "optional": false
+      },
+      {
+        "producto_id": "10041",
+        "name": "harina de trigo",
+        "cantidad": "200g",
+        "quantity": 200,
+        "unit": "g",
+        "label": "200 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10022",
+        "name": "sal",
+        "cantidad": "0.25 ud",
+        "quantity": 0.25,
+        "unit": "ud",
+        "label": "0,25 cdta",
+        "optional": false
+      },
+      {
+        "producto_id": "99002",
+        "name": "chalota",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "77890",
+        "name": "espinacas",
+        "cantidad": "125g",
+        "quantity": 125,
+        "unit": "g",
+        "label": "125 g",
+        "optional": false
+      },
+      {
+        "producto_id": "10043",
+        "name": "nata para montar",
+        "cantidad": "80ml",
+        "quantity": 80,
+        "unit": "ml",
+        "label": "80 ml",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "huevos": "contiene",
+      "leche": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 305,
+      "proteinas": 10.0,
+      "grasas": 20.2,
+      "saturadas": 11.5,
+      "hidratos": 20.8,
+      "azucares": 1.0,
+      "fibra": 1.1,
+      "sal": 0.95,
+      "precio_total": 7.3,
+      "precio_racion": 0.91
+    },
+    "subtitle": "Mediterranean, French",
+    "image": {
+      "url": "/img/recipes/receta-quiche-de-espinacas-y-jamon.jpg",
+      "author": "foodista.com (vía Spoonacular)",
+      "license": "no indicada",
+      "source_url": "https://www.foodista.com/recipe/Z7KLXBR8/spinach-ham-quiche"
+    },
+    "servings": 8,
+    "time_min": 45,
+    "tags": [],
+    "steps": [
+      "Con un poco de aceite, fríe la chalota hasta que se dore y suelte su aroma.",
+      "Añade el jamón y fríelo un poco; añade las espinacas y cocínalas hasta que se reduzcan. Reserva. Mezcla la nata y la leche en un vaso medidor (puedes usar solo 160 ml de leche), añade los huevos ligeramente batidos y una pizca de sal y mezcla bien.",
+      "Reparte el jamón con espinacas y el cheddar en el fondo del molde de tarta preparado, añade un poco de pimienta y vierte con cuidado la mezcla de huevo por encima.",
+      "Hornea a 180 °C (horno precalentado) durante 40 minutos y sirve caliente o templada."
+    ],
+    "source": {
+      "name": "foodista.com · «Spinach & Ham Quiche» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/Z7KLXBR8/spinach-ham-quiche",
+      "license": "no indicada"
+    }
+  },
+  {
+    "id": "receta-ensalada-griega",
+    "nombre": "Ensalada griega",
+    "foto_real_url": "https://img.spoonacular.com/recipes/645265-636x393.jpg",
+    "fuente": "foodista.com",
+    "ingredientes": [
+      {
+        "producto_id": "10069",
+        "name": "pepinos",
+        "cantidad": "6 ud",
+        "quantity": 6.0,
+        "unit": "ud",
+        "label": "6 pequeño",
+        "optional": false
+      },
+      {
+        "producto_id": "10054",
+        "name": "queso feta",
+        "cantidad": "1.5 ud",
+        "quantity": 1.5,
+        "unit": "ud",
+        "label": "1,5 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "10095",
+        "name": "aceitunas negras kalamata",
+        "cantidad": "1 ud",
+        "quantity": 1.0,
+        "unit": "ud",
+        "label": "1 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomates pera",
+        "cantidad": "3 ud",
+        "quantity": 3.0,
+        "unit": "ud",
+        "label": "3 tazas",
+        "optional": false
+      },
+      {
+        "producto_id": "88991",
+        "name": "tomates secos en aceite",
+        "cantidad": "75ml",
+        "quantity": 75,
+        "unit": "ml",
+        "label": "75 ml",
+        "optional": false
+      },
+      {
+        "producto_id": "99002",
+        "name": "cebolla",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 ud",
+        "optional": false
+      },
+      {
+        "producto_id": "10032",
+        "name": "vinagre de arroz",
+        "cantidad": "15ml",
+        "quantity": 15.0,
+        "unit": "ml",
+        "label": "1 cda",
+        "optional": false
+      },
+      {
+        "producto_id": "10103",
+        "name": "especias griegas",
+        "cantidad": "0.5 ud",
+        "quantity": 0.5,
+        "unit": "ud",
+        "label": "0,5 cdta",
+        "optional": false
+      }
+    ],
+    "alergenos_derivados": {
+      "leche": "contiene"
+    },
+    "nutricion_calculada": {
+      "por_racion": true,
+      "fuente": "Spoonacular (calculado a partir de los ingredientes)",
+      "kcal": 290,
+      "proteinas": 12.8,
+      "grasas": 18.3,
+      "saturadas": 8.3,
+      "hidratos": 22.3,
+      "azucares": 12.2,
+      "fibra": 6.5,
+      "sal": 2.98,
+      "precio_total": 8.4,
+      "precio_racion": 2.1
+    },
+    "subtitle": "Mediterranean, European",
+    "image": {
+      "url": "/img/recipes/receta-ensalada-griega.jpg",
+      "author": "foodista.com (vía Spoonacular)",
+      "license": "no indicada",
+      "source_url": "https://www.foodista.com/recipe/GPCD3SV6/great-greek-salad"
+    },
+    "servings": 4,
+    "time_min": 45,
+    "tags": [
+      "vegetariana",
+      "sin gluten"
+    ],
+    "steps": [
+      "En una ensaladera grande, mezcla el pepino, las aceitunas, el tomate, los tomates secos, 2 cucharadas de su aceite, la cebolla morada, el vinagre y las especias.",
+      "Enfría en la nevera hasta servir.",
+      "Justo antes de servir, añade el feta y mezcla."
+    ],
+    "source": {
+      "name": "foodista.com · «Great Greek Salad» (traducida al español)",
+      "url": "https://www.foodista.com/recipe/GPCD3SV6/great-greek-salad",
+      "license": "no indicada"
+    }
   },
   {
     "id": "receta-pollo-arroz",
@@ -19,27 +5032,30 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Arroz_con_pollo.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "32145", "cantidad": "200g" },
-      { "producto_id": "22334", "cantidad": "250g" },
-      { "producto_id": "66778", "cantidad": "500ml" },
-      { "producto_id": "99002", "cantidad": "100g" }
+      {
+        "producto_id": "32145",
+        "cantidad": "200g"
+      },
+      {
+        "producto_id": "22334",
+        "cantidad": "250g"
+      },
+      {
+        "producto_id": "66778",
+        "cantidad": "500ml"
+      },
+      {
+        "producto_id": "99002",
+        "cantidad": "100g"
+      }
     ],
-    "alergenos_derivados": { "gluten": "libre" },
-    "nutricion_calculada": { "kcal": 820, "precio_total": 3.45 }
-  },
-  {
-    "id": "receta-lentejas",
-    "nombre": "Lentejas tradicionales",
-    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Lentejas_con_chorizo.jpg",
-    "fuente": "info.mercadona.es",
-    "ingredientes": [
-      { "producto_id": "11111", "cantidad": "300g" },
-      { "producto_id": "99002", "cantidad": "100g" },
-      { "producto_id": "33445", "cantidad": "10g" },
-      { "producto_id": "88991", "cantidad": "200g" }
-    ],
-    "alergenos_derivados": { "gluten": "libre" },
-    "nutricion_calculada": { "kcal": 510, "precio_total": 3.85 }
+    "alergenos_derivados": {
+      "gluten": "libre"
+    },
+    "nutricion_calculada": {
+      "kcal": 820,
+      "precio_total": 3.45
+    }
   },
   {
     "id": "receta-merluza-tomate",
@@ -47,12 +5063,26 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Fish_dish.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "22222", "cantidad": "400g" },
-      { "producto_id": "88991", "cantidad": "400g" },
-      { "producto_id": "11234", "cantidad": "30ml" }
+      {
+        "producto_id": "22222",
+        "cantidad": "400g"
+      },
+      {
+        "producto_id": "88991",
+        "cantidad": "400g"
+      },
+      {
+        "producto_id": "11234",
+        "cantidad": "30ml"
+      }
     ],
-    "alergenos_derivados": { "pescado": "contiene" },
-    "nutricion_calculada": { "kcal": 420, "precio_total": 6.15 }
+    "alergenos_derivados": {
+      "pescado": "contiene"
+    },
+    "nutricion_calculada": {
+      "kcal": 420,
+      "precio_total": 6.15
+    }
   },
   {
     "id": "receta-macarrones-bolonesa",
@@ -60,27 +5090,30 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Spaghetti_Bolognese_small.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10013", "cantidad": "250g" },
-      { "producto_id": "10038", "cantidad": "200g" },
-      { "producto_id": "88991", "cantidad": "300g" },
-      { "producto_id": "11234", "cantidad": "20ml" }
+      {
+        "producto_id": "10013",
+        "cantidad": "250g"
+      },
+      {
+        "producto_id": "10038",
+        "cantidad": "200g"
+      },
+      {
+        "producto_id": "88991",
+        "cantidad": "300g"
+      },
+      {
+        "producto_id": "11234",
+        "cantidad": "20ml"
+      }
     ],
-    "alergenos_derivados": { "gluten": "contiene" },
-    "nutricion_calculada": { "kcal": 750, "precio_total": 5.40 }
-  },
-  {
-    "id": "receta-tortilla-patatas",
-    "nombre": "Tortilla de patatas clásica",
-    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Tortilla_de_patatas_madrid.jpg",
-    "fuente": "info.mercadona.es",
-    "ingredientes": [
-      { "producto_id": "10018", "cantidad": "600g" },
-      { "producto_id": "10014", "cantidad": "240g" },
-      { "producto_id": "99002", "cantidad": "150g" },
-      { "producto_id": "11234", "cantidad": "50ml" }
-    ],
-    "alergenos_derivados": { "huevo": "contiene" },
-    "nutricion_calculada": { "kcal": 680, "precio_total": 4.90 }
+    "alergenos_derivados": {
+      "gluten": "contiene"
+    },
+    "nutricion_calculada": {
+      "kcal": 750,
+      "precio_total": 5.4
+    }
   },
   {
     "id": "receta-salmorn-ensalada",
@@ -88,13 +5121,30 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Smoked_salmon_salad.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10068", "cantidad": "200g" },
-      { "producto_id": "10028", "cantidad": "100g" },
-      { "producto_id": "11234", "cantidad": "20ml" },
-      { "producto_id": "10032", "cantidad": "10ml" }
+      {
+        "producto_id": "10068",
+        "cantidad": "200g"
+      },
+      {
+        "producto_id": "10028",
+        "cantidad": "100g"
+      },
+      {
+        "producto_id": "11234",
+        "cantidad": "20ml"
+      },
+      {
+        "producto_id": "10032",
+        "cantidad": "10ml"
+      }
     ],
-    "alergenos_derivados": { "pescado": "contiene" },
-    "nutricion_calculada": { "kcal": 310, "precio_total": 5.45 }
+    "alergenos_derivados": {
+      "pescado": "contiene"
+    },
+    "nutricion_calculada": {
+      "kcal": 310,
+      "precio_total": 5.45
+    }
   },
   {
     "id": "receta-crema-calabacin",
@@ -102,13 +5152,30 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Zucchini_soup.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10019", "cantidad": "500g" },
-      { "producto_id": "99002", "cantidad": "100g" },
-      { "producto_id": "10043", "cantidad": "100ml" },
-      { "producto_id": "11234", "cantidad": "20ml" }
+      {
+        "producto_id": "10019",
+        "cantidad": "500g"
+      },
+      {
+        "producto_id": "99002",
+        "cantidad": "100g"
+      },
+      {
+        "producto_id": "10043",
+        "cantidad": "100ml"
+      },
+      {
+        "producto_id": "11234",
+        "cantidad": "20ml"
+      }
     ],
-    "alergenos_derivados": { "leche": "contiene" },
-    "nutricion_calculada": { "kcal": 280, "precio_total": 3.35 }
+    "alergenos_derivados": {
+      "leche": "contiene"
+    },
+    "nutricion_calculada": {
+      "kcal": 280,
+      "precio_total": 3.35
+    }
   },
   {
     "id": "receta-pizza-casera",
@@ -116,12 +5183,27 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-en_pizza_margherita.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10040", "cantidad": "200g" },
-      { "producto_id": "88991", "cantidad": "150g" },
-      { "producto_id": "10025", "cantidad": "100g" }
+      {
+        "producto_id": "10040",
+        "cantidad": "200g"
+      },
+      {
+        "producto_id": "88991",
+        "cantidad": "150g"
+      },
+      {
+        "producto_id": "10025",
+        "cantidad": "100g"
+      }
     ],
-    "alergenos_derivados": { "gluten": "contiene", "leche": "contiene" },
-    "nutricion_calculada": { "kcal": 550, "precio_total": 2.95 }
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "leche": "contiene"
+    },
+    "nutricion_calculada": {
+      "kcal": 550,
+      "precio_total": 2.95
+    }
   },
   {
     "id": "receta-brocoli-salteado",
@@ -129,12 +5211,26 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Broccoli_cooking.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10046", "cantidad": "400g" },
-      { "producto_id": "33445", "cantidad": "15g" },
-      { "producto_id": "11234", "cantidad": "30ml" }
+      {
+        "producto_id": "10046",
+        "cantidad": "400g"
+      },
+      {
+        "producto_id": "33445",
+        "cantidad": "15g"
+      },
+      {
+        "producto_id": "11234",
+        "cantidad": "30ml"
+      }
     ],
-    "alergenos_derivados": { "gluten": "libre" },
-    "nutricion_calculada": { "kcal": 310, "precio_total": 3.45 }
+    "alergenos_derivados": {
+      "gluten": "libre"
+    },
+    "nutricion_calculada": {
+      "kcal": 310,
+      "precio_total": 3.45
+    }
   },
   {
     "id": "receta-arroz-basmati-atun",
@@ -142,12 +5238,26 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Rice_and_tuna.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10083", "cantidad": "200g" },
-      { "producto_id": "55678", "cantidad": "150g" },
-      { "producto_id": "10030", "cantidad": "100g" }
+      {
+        "producto_id": "10083",
+        "cantidad": "200g"
+      },
+      {
+        "producto_id": "55678",
+        "cantidad": "150g"
+      },
+      {
+        "producto_id": "10030",
+        "cantidad": "100g"
+      }
     ],
-    "alergenos_derivados": { "pescado": "contiene" },
-    "nutricion_calculada": { "kcal": 610, "precio_total": 3.40 }
+    "alergenos_derivados": {
+      "pescado": "contiene"
+    },
+    "nutricion_calculada": {
+      "kcal": 610,
+      "precio_total": 3.4
+    }
   },
   {
     "id": "receta-alubias-bacon",
@@ -155,12 +5265,26 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/White_bean_soup.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10035", "cantidad": "400g" },
-      { "producto_id": "10073", "cantidad": "100g" },
-      { "producto_id": "99002", "cantidad": "100g" }
+      {
+        "producto_id": "10035",
+        "cantidad": "400g"
+      },
+      {
+        "producto_id": "10073",
+        "cantidad": "100g"
+      },
+      {
+        "producto_id": "99002",
+        "cantidad": "100g"
+      }
     ],
-    "alergenos_derivados": { "gluten": "libre" },
-    "nutricion_calculada": { "kcal": 490, "precio_total": 3.35 }
+    "alergenos_derivados": {
+      "gluten": "libre"
+    },
+    "nutricion_calculada": {
+      "kcal": 490,
+      "precio_total": 3.35
+    }
   },
   {
     "id": "receta-pasta-espinacas",
@@ -168,12 +5292,27 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Spaghetti_with_spinach.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10084", "cantidad": "250g" },
-      { "producto_id": "10036", "cantidad": "150g" },
-      { "producto_id": "10025", "cantidad": "50g" }
+      {
+        "producto_id": "10084",
+        "cantidad": "250g"
+      },
+      {
+        "producto_id": "10036",
+        "cantidad": "150g"
+      },
+      {
+        "producto_id": "10025",
+        "cantidad": "50g"
+      }
     ],
-    "alergenos_derivados": { "gluten": "contiene", "leche": "contiene" },
-    "nutricion_calculada": { "kcal": 620, "precio_total": 3.00 }
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "leche": "contiene"
+    },
+    "nutricion_calculada": {
+      "kcal": 620,
+      "precio_total": 3.0
+    }
   },
   {
     "id": "receta-costilla-horno",
@@ -181,12 +5320,26 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Pork_ribs_with_potatoes.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10039", "cantidad": "500g" },
-      { "producto_id": "10018", "cantidad": "400g" },
-      { "producto_id": "11234", "cantidad": "30ml" }
+      {
+        "producto_id": "10039",
+        "cantidad": "500g"
+      },
+      {
+        "producto_id": "10018",
+        "cantidad": "400g"
+      },
+      {
+        "producto_id": "11234",
+        "cantidad": "30ml"
+      }
     ],
-    "alergenos_derivados": { "gluten": "libre" },
-    "nutricion_calculada": { "kcal": 950, "precio_total": 6.85 }
+    "alergenos_derivados": {
+      "gluten": "libre"
+    },
+    "nutricion_calculada": {
+      "kcal": 950,
+      "precio_total": 6.85
+    }
   },
   {
     "id": "receta-alerta-alergeno",
@@ -194,11 +5347,22 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Chicken_with_sauce.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "22334", "cantidad": "300g" },
-      { "producto_id": "99999", "cantidad": "50ml" }
+      {
+        "producto_id": "22334",
+        "cantidad": "300g"
+      },
+      {
+        "producto_id": "99999",
+        "cantidad": "50ml"
+      }
     ],
-    "alergenos_derivados": { "frutos_secos": "desconocido" },
-    "nutricion_calculada": { "kcal": 400, "precio_total": 5.75 }
+    "alergenos_derivados": {
+      "frutos_secos": "desconocido"
+    },
+    "nutricion_calculada": {
+      "kcal": 400,
+      "precio_total": 5.75
+    }
   },
   {
     "id": "receta-solomillo-pimienta",
@@ -206,12 +5370,26 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Pork_tenderloin.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10075", "cantidad": "350g" },
-      { "producto_id": "11234", "cantidad": "20ml" },
-      { "producto_id": "10022", "cantidad": "5g" }
+      {
+        "producto_id": "10075",
+        "cantidad": "350g"
+      },
+      {
+        "producto_id": "11234",
+        "cantidad": "20ml"
+      },
+      {
+        "producto_id": "10022",
+        "cantidad": "5g"
+      }
     ],
-    "alergenos_derivados": { "gluten": "libre" },
-    "nutricion_calculada": { "kcal": 490, "precio_total": 6.80 }
+    "alergenos_derivados": {
+      "gluten": "libre"
+    },
+    "nutricion_calculada": {
+      "kcal": 490,
+      "precio_total": 6.8
+    }
   },
   {
     "id": "receta-pollo-empanado",
@@ -219,25 +5397,26 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Breaded_chicken_cutlet.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10050", "cantidad": "400g" },
-      { "producto_id": "10068", "cantidad": "150g" },
-      { "producto_id": "10069", "cantidad": "100g" }
+      {
+        "producto_id": "10050",
+        "cantidad": "400g"
+      },
+      {
+        "producto_id": "10068",
+        "cantidad": "150g"
+      },
+      {
+        "producto_id": "10069",
+        "cantidad": "100g"
+      }
     ],
-    "alergenos_derivados": { "gluten": "contiene" },
-    "nutricion_calculada": { "kcal": 520, "precio_total": 4.30 }
-  },
-  {
-    "id": "receta-croquetas-caseras",
-    "nombre": "Menú de croquetas con patatas",
-    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Croquetas_de_jamon.jpg",
-    "fuente": "info.mercadona.es",
-    "ingredientes": [
-      { "producto_id": "10051", "cantidad": "250g" },
-      { "producto_id": "10018", "cantidad": "300g" },
-      { "producto_id": "11234", "cantidad": "20ml" }
-    ],
-    "alergenos_derivados": { "gluten": "contiene", "leche": "contiene" },
-    "nutricion_calculada": { "kcal": 610, "precio_total": 2.80 }
+    "alergenos_derivados": {
+      "gluten": "contiene"
+    },
+    "nutricion_calculada": {
+      "kcal": 520,
+      "precio_total": 4.3
+    }
   },
   {
     "id": "receta-pasta-carbonara",
@@ -245,27 +5424,32 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Spaghetti_Carbonara.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10084", "cantidad": "250g" },
-      { "producto_id": "10073", "cantidad": "100g" },
-      { "producto_id": "10043", "cantidad": "100ml" },
-      { "producto_id": "10014", "cantidad": "1 ud" }
+      {
+        "producto_id": "10084",
+        "cantidad": "250g"
+      },
+      {
+        "producto_id": "10073",
+        "cantidad": "100g"
+      },
+      {
+        "producto_id": "10043",
+        "cantidad": "100ml"
+      },
+      {
+        "producto_id": "10014",
+        "cantidad": "1 ud"
+      }
     ],
-    "alergenos_derivados": { "gluten": "contiene", "leche": "contiene", "huevo": "contiene" },
-    "nutricion_calculada": { "kcal": 840, "precio_total": 3.70 }
-  },
-  {
-    "id": "receta-arroz-caldoso-marisco",
-    "nombre": "Arroz con langostinos",
-    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Seafood_paella.jpg",
-    "fuente": "info.mercadona.es",
-    "ingredientes": [
-      { "producto_id": "32145", "cantidad": "200g" },
-      { "producto_id": "10079", "cantidad": "250g" },
-      { "producto_id": "10033", "cantidad": "500ml" },
-      { "producto_id": "99002", "cantidad": "80g" }
-    ],
-    "alergenos_derivados": { "crustaceos": "contiene", "apio": "contiene" },
-    "nutricion_calculada": { "kcal": 680, "precio_total": 5.20 }
+    "alergenos_derivados": {
+      "gluten": "contiene",
+      "leche": "contiene",
+      "huevo": "contiene"
+    },
+    "nutricion_calculada": {
+      "kcal": 840,
+      "precio_total": 3.7
+    }
   },
   {
     "id": "receta-hummus-crudites",
@@ -273,11 +5457,22 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Hummus_with_pita.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10098", "cantidad": "120g" },
-      { "producto_id": "10020", "cantidad": "150g" }
+      {
+        "producto_id": "10098",
+        "cantidad": "120g"
+      },
+      {
+        "producto_id": "10020",
+        "cantidad": "150g"
+      }
     ],
-    "alergenos_derivados": { "sesamo": "contiene" },
-    "nutricion_calculada": { "kcal": 310, "precio_total": 1.90 }
+    "alergenos_derivados": {
+      "sesamo": "contiene"
+    },
+    "nutricion_calculada": {
+      "kcal": 310,
+      "precio_total": 1.9
+    }
   },
   {
     "id": "receta-muslos-horno",
@@ -285,12 +5480,26 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Roast_chicken_legs.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10076", "cantidad": "500g" },
-      { "producto_id": "10018", "cantidad": "400g" },
-      { "producto_id": "11234", "cantidad": "30ml" }
+      {
+        "producto_id": "10076",
+        "cantidad": "500g"
+      },
+      {
+        "producto_id": "10018",
+        "cantidad": "400g"
+      },
+      {
+        "producto_id": "11234",
+        "cantidad": "30ml"
+      }
     ],
-    "alergenos_derivados": { "gluten": "libre" },
-    "nutricion_calculada": { "kcal": 790, "precio_total": 4.50 }
+    "alergenos_derivados": {
+      "gluten": "libre"
+    },
+    "nutricion_calculada": {
+      "kcal": 790,
+      "precio_total": 4.5
+    }
   },
   {
     "id": "receta-alitas-picantes",
@@ -298,26 +5507,26 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Chicken_wings.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10077", "cantidad": "500g" },
-      { "producto_id": "10023", "cantidad": "10g" },
-      { "producto_id": "11234", "cantidad": "20ml" }
+      {
+        "producto_id": "10077",
+        "cantidad": "500g"
+      },
+      {
+        "producto_id": "10023",
+        "cantidad": "10g"
+      },
+      {
+        "producto_id": "11234",
+        "cantidad": "20ml"
+      }
     ],
-    "alergenos_derivados": { "gluten": "libre" },
-    "nutricion_calculada": { "kcal": 850, "precio_total": 3.40 }
-  },
-  {
-    "id": "receta-ensalada-pulpo",
-    "nombre": "Ensalada templada de pulpo",
-    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Octopus_salad.jpg",
-    "fuente": "info.mercadona.es",
-    "ingredientes": [
-      { "producto_id": "10078", "cantidad": "150g" },
-      { "producto_id": "10068", "cantidad": "150g" },
-      { "producto_id": "10069", "cantidad": "100g" },
-      { "producto_id": "11234", "cantidad": "20ml" }
-    ],
-    "alergenos_derivados": { "moluscos": "contiene" },
-    "nutricion_calculada": { "kcal": 340, "precio_total": 6.30 }
+    "alergenos_derivados": {
+      "gluten": "libre"
+    },
+    "nutricion_calculada": {
+      "kcal": 850,
+      "precio_total": 3.4
+    }
   },
   {
     "id": "receta-crema-calabaza",
@@ -325,13 +5534,30 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Pumpkin_soup.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10070", "cantidad": "500g" },
-      { "producto_id": "99002", "cantidad": "100g" },
-      { "producto_id": "10043", "cantidad": "100ml" },
-      { "producto_id": "11234", "cantidad": "20ml" }
+      {
+        "producto_id": "10070",
+        "cantidad": "500g"
+      },
+      {
+        "producto_id": "99002",
+        "cantidad": "100g"
+      },
+      {
+        "producto_id": "10043",
+        "cantidad": "100ml"
+      },
+      {
+        "producto_id": "11234",
+        "cantidad": "20ml"
+      }
     ],
-    "alergenos_derivados": { "leche": "contiene" },
-    "nutricion_calculada": { "kcal": 260, "precio_total": 2.90 }
+    "alergenos_derivados": {
+      "leche": "contiene"
+    },
+    "nutricion_calculada": {
+      "kcal": 260,
+      "precio_total": 2.9
+    }
   },
   {
     "id": "receta-berenjenas-rellenas",
@@ -339,13 +5565,30 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Stuffed_eggplant.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10071", "cantidad": "400g" },
-      { "producto_id": "10038", "cantidad": "200g" },
-      { "producto_id": "88991", "cantidad": "200g" },
-      { "producto_id": "10025", "cantidad": "60g" }
+      {
+        "producto_id": "10071",
+        "cantidad": "400g"
+      },
+      {
+        "producto_id": "10038",
+        "cantidad": "200g"
+      },
+      {
+        "producto_id": "88991",
+        "cantidad": "200g"
+      },
+      {
+        "producto_id": "10025",
+        "cantidad": "60g"
+      }
     ],
-    "alergenos_derivados": { "leche": "contiene" },
-    "nutricion_calculada": { "kcal": 490, "precio_total": 6.10 }
+    "alergenos_derivados": {
+      "leche": "contiene"
+    },
+    "nutricion_calculada": {
+      "kcal": 490,
+      "precio_total": 6.1
+    }
   },
   {
     "id": "receta-guacamole-nachos",
@@ -353,11 +5596,22 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Guacamole_with_chips.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10099", "cantidad": "200g" },
-      { "producto_id": "10096", "cantidad": "150g" }
+      {
+        "producto_id": "10099",
+        "cantidad": "200g"
+      },
+      {
+        "producto_id": "10096",
+        "cantidad": "150g"
+      }
     ],
-    "alergenos_derivados": { "gluten": "libre" },
-    "nutricion_calculada": { "kcal": 650, "precio_total": 3.15 }
+    "alergenos_derivados": {
+      "gluten": "libre"
+    },
+    "nutricion_calculada": {
+      "kcal": 650,
+      "precio_total": 3.15
+    }
   },
   {
     "id": "receta-avena-manzana",
@@ -365,12 +5619,27 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Porridge_with_apple.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10085", "cantidad": "80g" },
-      { "producto_id": "10015", "cantidad": "250ml" },
-      { "producto_id": "10064", "cantidad": "150g" }
+      {
+        "producto_id": "10085",
+        "cantidad": "80g"
+      },
+      {
+        "producto_id": "10015",
+        "cantidad": "250ml"
+      },
+      {
+        "producto_id": "10064",
+        "cantidad": "150g"
+      }
     ],
-    "alergenos_derivados": { "leche": "contiene", "gluten": "puede_contener" },
-    "nutricion_calculada": { "kcal": 440, "precio_total": 1.70 }
+    "alergenos_derivados": {
+      "leche": "contiene",
+      "gluten": "puede_contener"
+    },
+    "nutricion_calculada": {
+      "kcal": 440,
+      "precio_total": 1.7
+    }
   },
   {
     "id": "receta-sardinillas-pan",
@@ -378,12 +5647,27 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Sardine_bruschetta.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10081", "cantidad": "115g" },
-      { "producto_id": "10055", "cantidad": "100g" },
-      { "producto_id": "88991", "cantidad": "100g" }
+      {
+        "producto_id": "10081",
+        "cantidad": "115g"
+      },
+      {
+        "producto_id": "10055",
+        "cantidad": "100g"
+      },
+      {
+        "producto_id": "88991",
+        "cantidad": "100g"
+      }
     ],
-    "alergenos_derivados": { "pescado": "contiene", "gluten": "contiene" },
-    "nutricion_calculada": { "kcal": 410, "precio_total": 3.40 }
+    "alergenos_derivados": {
+      "pescado": "contiene",
+      "gluten": "contiene"
+    },
+    "nutricion_calculada": {
+      "kcal": 410,
+      "precio_total": 3.4
+    }
   },
   {
     "id": "receta-crema-chocolate",
@@ -391,10 +5675,21 @@
     "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Dark_chocolate_pieces.jpg",
     "fuente": "info.mercadona.es",
     "ingredientes": [
-      { "producto_id": "10057", "cantidad": "50g" },
-      { "producto_id": "10058", "cantidad": "15g" }
+      {
+        "producto_id": "10057",
+        "cantidad": "50g"
+      },
+      {
+        "producto_id": "10058",
+        "cantidad": "15g"
+      }
     ],
-    "alergenos_derivados": { "soja": "contiene" },
-    "nutricion_calculada": { "kcal": 300, "precio_total": 1.85 }
+    "alergenos_derivados": {
+      "soja": "contiene"
+    },
+    "nutricion_calculada": {
+      "kcal": 300,
+      "precio_total": 1.85
+    }
   }
 ]

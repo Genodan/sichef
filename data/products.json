@@ -1,102 +1,2020 @@
 [
-  { "id": "32145", "ean": "8480000321453", "nombre": "Arroz redondo Hacendado", "precio": 1.45, "formato": "Paquete 1 kg", "nutricion_100g": { "kcal": 350, "grasas": 1.0, "hidratos": 75.0, "proteinas": 7.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "45120", "ean": "8480000451204", "nombre": "Garbanzo cocido Hacendado", "precio": 1.10, "formato": "Bote 400g", "nutricion_100g": { "kcal": 100, "grasas": 2.0, "hidratos": 15.0, "proteinas": 6.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "11234", "ean": "8480000112344", "nombre": "Aceite de oliva virgen extra Hacendado", "precio": 4.85, "formato": "Botella 1 L", "nutricion_100g": { "kcal": 900, "grasas": 100.0, "hidratos": 0.0, "proteinas": 0.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "55678", "ean": "8480000556787", "nombre": "Atún claro en aceite de girasol Hacendado", "precio": 3.80, "formato": "Pack 3 latas", "nutricion_100g": { "kcal": 200, "grasas": 12.0, "hidratos": 0.0, "proteinas": 22.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "pescado": "contiene" } },
-  { "id": "77890", "ean": "8480000778905", "nombre": "Espinacas troceadas congeladas Hacendado", "precio": 1.20, "formato": "Bolsa 400g", "nutricion_100g": { "kcal": 30, "grasas": 0.5, "hidratos": 3.0, "proteinas": 2.5 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "22334", "ean": "8480000223347", "nombre": "Pechuga de pollo Hacendado", "precio": 3.65, "formato": "Bandeja 500g", "nutricion_100g": { "kcal": 110, "grasas": 1.5, "hidratos": 0.0, "proteinas": 22.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "88991", "ean": "8480000889915", "nombre": "Tomate triturado natural Hacendado", "precio": 0.90, "formato": "Bote 800g", "nutricion_100g": { "kcal": 25, "grasas": 0.2, "hidratos": 4.0, "proteinas": 1.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "99002", "ean": "8480000990024", "nombre": "Cebolla Hacendado", "precio": 1.65, "formato": "Malla 1 kg", "nutricion_100g": { "kcal": 40, "grasas": 0.2, "hidratos": 9.0, "proteinas": 1.1 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "33445", "ean": "8480000334453", "nombre": "Ajo Hacendado", "precio": 1.80, "formato": "Malla 250g", "nutricion_100g": { "kcal": 150, "grasas": 0.5, "hidratos": 30.0, "proteinas": 6.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "66778", "ean": "8480000667780", "nombre": "Caldo de pollo Hacendado", "precio": 1.50, "formato": "Brik 1 L", "nutricion_100g": { "kcal": 20, "grasas": 0.5, "hidratos": 1.0, "proteinas": 2.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "apio": "puede_contener" } },
-  { "id": "11111", "ean": "8480000111111", "nombre": "Lenteja castellana Hacendado", "precio": 1.30, "formato": "Paquete 1 kg", "nutricion_100g": { "kcal": 320, "grasas": 1.5, "hidratos": 54.0, "proteinas": 23.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "22222", "ean": "8480000222222", "nombre": "Merluza filetes congelada Hacendado", "precio": 4.50, "formato": "Bolsa 600g", "nutricion_100g": { "kcal": 85, "grasas": 1.0, "hidratos": 0.0, "proteinas": 17.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "pescado": "contiene" } },
-  { "id": "10013", "ean": "8480000100138", "nombre": "Macarrones Hacendado", "precio": 0.95, "formato": "Paquete 1 kg", "nutricion_100g": { "kcal": 360, "grasas": 1.5, "hidratos": 72.0, "proteinas": 12.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "contiene" } },
-  { "id": "10014", "ean": "8480000100145", "nombre": "Huevos camperos Hacendado", "precio": 2.30, "formato": "Doena 12 uds", "nutricion_100g": { "kcal": 155, "grasas": 11.0, "hidratos": 0.5, "proteinas": 13.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "huevo": "contiene" } },
-  { "id": "10015", "ean": "8480000100152", "nombre": "Leche entera Hacendado", "precio": 0.91, "formato": "Brik 1 L", "nutricion_100g": { "kcal": 63, "grasas": 3.6, "hidratos": 4.7, "proteinas": 3.1 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "leche": "contiene" } },
-  { "id": "10016", "ean": "8480000100169", "nombre": "Pimiento rojo Hacendado", "precio": 2.20, "formato": "Granel 1 kg", "nutricion_100g": { "kcal": 31, "grasas": 0.3, "hidratos": 6.0, "proteinas": 1.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10017", "ean": "8480000100176", "nombre": "Pimiento verde Hacendado", "precio": 1.90, "formato": "Granel 1 kg", "nutricion_100g": { "kcal": 20, "grasas": 0.2, "hidratos": 3.5, "proteinas": 0.9 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10018", "ean": "8480000100183", "nombre": "Patata Hacendado", "precio": 1.75, "formato": "Malla 3 kg", "nutricion_100g": { "kcal": 77, "grasas": 0.1, "hidratos": 17.0, "proteinas": 2.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10019", "ean": "8480000100190", "nombre": "Calabacín Hacendado", "precio": 1.85, "formato": "Granel 1 kg", "nutricion_100g": { "kcal": 17, "grasas": 0.3, "hidratos": 3.1, "proteinas": 1.2 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10020", "ean": "8480000100206", "nombre": "Zanahoria Hacendado", "precio": 1.10, "formato": "Bolsa 1 kg", "nutricion_100g": { "kcal": 41, "grasas": 0.2, "hidratos": 9.6, "proteinas": 0.9 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10021", "ean": "8480000100213", "nombre": "Judías verdes planas congeladas Hacendado", "precio": 1.45, "formato": "Bolsa 400g", "nutricion_100g": { "kcal": 30, "grasas": 0.2, "hidratos": 4.5, "proteinas": 1.8 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10022", "ean": "8480000100220", "nombre": "Sal marina fina Hacendado", "precio": 0.40, "formato": "Paquete 1 kg", "nutricion_100g": { "kcal": 0, "grasas": 0.0, "hidratos": 0.0, "proteinas": 0.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10023", "ean": "8480000100237", "nombre": "Pimentón dulce Hacendado", "precio": 1.05, "formato": "Bote 75g", "nutricion_100g": { "kcal": 282, "grasas": 13.0, "hidratos": 35.0, "proteinas": 14.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10024", "ean": "8480000100244", "nombre": "Pechuga de pavo en lonchas Hacendado", "precio": 1.60, "formato": "Pack 2 envases", "nutricion_100g": { "kcal": 105, "grasas": 1.5, "hidratos": 1.0, "proteinas": 21.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "soja": "puede_contener" } },
-  { "id": "10025", "ean": "8480000100251", "nombre": "Queso rallado mozzarella Hacendado", "precio": 1.85, "formato": "Bolsa 200g", "nutricion_100g": { "kcal": 310, "grasas": 23.0, "hidratos": 2.0, "proteinas": 24.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "leche": "contiene" } },
-  { "id": "10026", "ean": "8480000100268", "nombre": "Chorizo curado en rodajas Hacendado", "precio": 1.70, "formato": "Bandeja 150g", "nutricion_100g": { "kcal": 450, "grasas": 39.0, "hidratos": 1.5, "proteinas": 24.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10027", "ean": "8480000100275", "nombre": "Jamón serrano en lonchas Hacendado", "precio": 2.50, "formato": "Bandeja 160g", "nutricion_100g": { "kcal": 240, "grasas": 13.0, "hidratos": 0.5, "proteinas": 30.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10028", "ean": "8480000100282", "nombre": "Salmón ahumado Hacendado", "precio": 3.95, "formato": "Estuche 100g", "nutricion_100g": { "kcal": 210, "grasas": 14.0, "hidratos": 0.5, "proteinas": 20.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "pescado": "contiene" } },
-  { "id": "10029", "ean": "8480000100299", "nombre": "Guisantes congelados Hacendado", "precio": 1.25, "formato": "Bolsa 600g", "nutricion_100g": { "kcal": 75, "grasas": 0.4, "hidratos": 12.0, "proteinas": 5.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10030", "ean": "8480000100305", "nombre": "Maíz dulce en grano Hacendado", "precio": 1.20, "formato": "Pack 3 latas", "nutricion_100g": { "kcal": 96, "grasas": 1.5, "hidratos": 18.0, "proteinas": 3.2 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10031", "ean": "8480000100312", "nombre": "Salsa Mayonesa Hacendado", "precio": 1.55, "formato": "Tarro 450ml", "nutricion_100g": { "kcal": 650, "grasas": 70.0, "hidratos": 1.5, "proteinas": 1.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "huevo": "contiene" } },
-  { "id": "10032", "ean": "8480000100329", "nombre": "Vinagre de vino blanco Hacendado", "precio": 0.85, "formato": "Botella 1 L", "nutricion_100g": { "kcal": 10, "grasas": 0.0, "hidratos": 0.1, "proteinas": 0.1 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "sulfitos": "contiene" } },
-  { "id": "10033", "ean": "8480000100336", "nombre": "Caldo de verduras Hacendado", "precio": 1.50, "formato": "Brik 1 L", "nutricion_100g": { "kcal": 15, "grasas": 0.5, "hidratos": 1.5, "proteinas": 0.5 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "apio": "contiene" } },
-  { "id": "10034", "ean": "8480000100343", "nombre": "Garbanzo seco Hacendado", "precio": 1.40, "formato": "Paquete 1 kg", "nutricion_100g": { "kcal": 340, "grasas": 6.0, "hidratos": 45.0, "proteinas": 20.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10035", "ean": "8480000100350", "nombre": "Alubia blanca cocida Hacendado", "precio": 1.15, "formato": "Bote 400g", "nutricion_100g": { "kcal": 95, "grasas": 0.8, "hidratos": 14.0, "proteinas": 6.5 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10036", "ean": "8480000100367", "nombre": "Espinacas frescas Hacendado", "precio": 1.35, "formato": "Bolsa 300g", "nutricion_100g": { "kcal": 23, "grasas": 0.4, "hidratos": 1.4, "proteinas": 2.8 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10037", "ean": "8480000100374", "nombre": "Champiñón laminado Hacendado", "precio": 1.75, "formato": "Bandeja 300g", "nutricion_100g": { "kcal": 22, "grasas": 0.3, "hidratos": 2.5, "proteinas": 2.1 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10038", "ean": "8480000100398", "nombre": "Filete de ternera Hacendado", "precio": 6.95, "formato": "Bandeja 350g", "nutricion_100g": { "kcal": 140, "grasas": 5.0, "hidratos": 0.0, "proteinas": 22.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10039", "ean": "8480000100398", "nombre": "Costilla de cerdo Hacendado", "precio": 4.20, "formato": "Bandeja 600g", "nutricion_100g": { "kcal": 250, "grasas": 20.0, "hidratos": 0.0, "proteinas": 17.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10040", "ean": "8480000100404", "nombre": "Pan de molde sin corteza Hacendado", "precio": 1.30, "formato": "Bolsa 500g", "nutricion_100g": { "kcal": 265, "grasas": 3.2, "hidratos": 48.0, "proteinas": 8.5 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "contiene" } },
-  { "id": "10041", "ean": "8480000100411", "nombre": "Harina de trigo Hacendado", "precio": 0.85, "formato": "Paquete 1 kg", "nutricion_100g": { "kcal": 340, "grasas": 1.2, "hidratos": 71.0, "proteinas": 10.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "contiene" } },
-  { "id": "10042", "ean": "8480000100428", "nombre": "Mantequilla sin sal Hacendado", "precio": 2.25, "formato": "Paquete 250g", "nutricion_100g": { "kcal": 745, "grasas": 82.0, "hidratos": 0.7, "proteinas": 0.7 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "leche": "contiene" } },
-  { "id": "10043", "ean": "8480000100435", "nombre": "Nata para cocinar Hacendado", "precio": 1.20, "formato": "Brik 200ml", "nutricion_100g": { "kcal": 200, "grasas": 18.0, "hidratos": 3.8, "proteinas": 2.2 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "leche": "contiene" } },
-  { "id": "10044", "ean": "8480000100442", "nombre": "Queso fresco cabra Hacendado", "precio": 2.60, "formato": "Rulo 180g", "nutricion_100g": { "kcal": 280, "grasas": 23.0, "hidratos": 1.5, "proteinas": 17.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "leche": "contiene" } },
-  { "id": "10045", "ean": "8480000100459", "nombre": "Lomo adobado en adobo Hacendado", "precio": 3.90, "formato": "Bandeja 500g", "nutricion_100g": { "kcal": 160, "grasas": 7.5, "hidratos": 1.0, "proteinas": 22.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10046", "ean": "8480000100466", "nombre": "Brócoli congelado Hacendado", "precio": 1.40, "formato": "Bolsa 500g", "nutricion_100g": { "kcal": 34, "grasas": 0.4, "hidratos": 4.4, "proteinas": 3.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10047", "ean": "8480000100473", "nombre": "Salsa de soja Hacendado", "precio": 1.60, "formato": "Botella 250ml", "nutricion_100g": { "kcal": 60, "grasas": 0.0, "hidratos": 8.5, "proteinas": 6.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "soja": "contiene", "gluten": "contiene" } },
-  { "id": "10048", "ean": "8480000100480", "nombre": "Pipas de girasol peladas Hacendado", "precio": 1.15, "formato": "Bolsa 200g", "nutricion_100g": { "kcal": 580, "grasas": 50.0, "hidratos": 12.0, "proteinas": 21.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "frutos_secos": "puede_contener" } },
-  { "id": "10049", "ean": "8480000100497", "nombre": "Limón Hacendado", "precio": 1.95, "formato": "Malla 1 kg", "nutricion_100g": { "kcal": 29, "grasas": 0.3, "hidratos": 9.0, "proteinas": 1.1 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "99999", "ean": "8480000999999", "nombre": "Salsa secreta Hacendado (Test Alérgeno)", "precio": 2.10, "formato": "Tarro 250ml", "nutricion_100g": { "kcal": 180, "grasas": 12.0, "hidratos": 10.0, "proteinas": 2.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "frutos_secos": "desconocido" } },
-  { "id": "10050", "ean": "8480000100503", "nombre": "Pechuga de pollo empanada Hacendado", "precio": 2.75, "formato": "Bandeja 400g", "nutricion_100g": { "kcal": 215, "grasas": 9.0, "hidratos": 16.0, "proteinas": 17.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "contiene" } },
-  { "id": "10051", "ean": "8480000100510", "nombre": "Croquetas de jamón cocido Hacendado", "precio": 1.60, "formato": "Bolsa 500g", "nutricion_100g": { "kcal": 195, "grasas": 10.0, "hidratos": 20.0, "proteinas": 6.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "contiene", "leche": "contiene" } },
-  { "id": "10052", "ean": "8480000100527", "nombre": "Pizza 4 quesos Hacendado", "precio": 2.50, "formato": "Unidad 400g", "nutricion_100g": { "kcal": 260, "grasas": 11.0, "hidratos": 31.0, "proteinas": 10.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "contiene", "leche": "contiene" } },
-  { "id": "10053", "ean": "8480000100534", "nombre": "Yogur natural Hacendado", "precio": 0.85, "formato": "Pack 6 ud", "nutricion_100g": { "kcal": 58, "grasas": 3.0, "hidratos": 4.5, "proteinas": 3.8 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "leche": "contiene" } },
-  { "id": "10054", "ean": "8480000100541", "nombre": "Queso tierno de vaca Hacendado", "precio": 3.20, "formato": "Cuña 400g", "nutricion_100g": { "kcal": 350, "grasas": 29.0, "hidratos": 1.0, "proteinas": 22.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "leche": "contiene" } },
-  { "id": "10055", "ean": "8480000100558", "nombre": "Pan de barra Hacendado", "precio": 0.55, "formato": "Unidad 250g", "nutricion_100g": { "kcal": 260, "grasas": 1.2, "hidratos": 52.0, "proteinas": 8.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "contiene" } },
-  { "id": "10056", "ean": "8480000100565", "nombre": "Galletas María Hacendado", "precio": 0.95, "formato": "Rollo 800g", "nutricion_100g": { "kcal": 430, "grasas": 11.0, "hidratos": 73.0, "proteinas": 7.5 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "contiene", "leche": "contiene" } },
-  { "id": "10057", "ean": "8480000100572", "nombre": "Chocolate negro 85% Hacendado", "precio": 1.45, "formato": "Tableta 100g", "nutricion_100g": { "kcal": 580, "grasas": 52.0, "hidratos": 18.0, "proteinas": 10.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "soja": "contiene" } },
-  { "id": "10058", "ean": "8480000100589", "nombre": "Café molido natural Hacendado", "precio": 1.95, "formato": "Paquete 250g", "nutricion_100g": { "kcal": 2, "grasas": 0.0, "hidratos": 0.0, "proteinas": 0.2 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10059", "ean": "8480000100596", "nombre": "Zumo de naranja exprimido Hacendado", "precio": 1.80, "formato": "Botella 1 L", "nutricion_100g": { "kcal": 43, "grasas": 0.1, "hidratos": 9.5, "proteinas": 0.7 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10060", "ean": "8480000100602", "nombre": "Agua mineral Hacendado", "precio": 0.35, "formato": "Botella 1.5 L", "nutricion_100g": { "kcal": 0, "grasas": 0.0, "hidratos": 0.0, "proteinas": 0.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10061", "ean": "8480000100619", "nombre": "Refresco de cola Hacendado", "precio": 0.75, "formato": "Botella 2 L", "nutricion_100g": { "kcal": 42, "grasas": 0.0, "hidratos": 10.5, "proteinas": 0.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10062", "ean": "8480000100626", "nombre": "Cerveza rubia Hacendado", "precio": 0.42, "formato": "Lata 33cl", "nutricion_100g": { "kcal": 43, "grasas": 0.0, "hidratos": 3.5, "proteinas": 0.5 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "contiene" } },
-  { "id": "10063", "ean": "8480000100633", "nombre": "Vino tinto roble Hacendado", "precio": 2.30, "formato": "Botella 75cl", "nutricion_100g": { "kcal": 85, "grasas": 0.0, "hidratos": 2.6, "proteinas": 0.1 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "sulfitos": "contiene" } },
-  { "id": "10064", "ean": "8480000100640", "nombre": "Manzana Golden Hacendado", "precio": 1.95, "formato": "Granel 1 kg", "nutricion_100g": { "kcal": 52, "grasas": 0.2, "hidratos": 12.0, "proteinas": 0.3 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10065", "ean": "8480000100657", "nombre": "Plátano de Canarias Hacendado", "precio": 1.85, "formato": "Granel 1 kg", "nutricion_100g": { "kcal": 89, "grasas": 0.3, "hidratos": 22.0, "proteinas": 1.1 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10066", "ean": "8480000100664", "nombre": "Naranja de mesa Hacendado", "precio": 1.65, "formato": "Malla 2 kg", "nutricion_100g": { "kcal": 47, "grasas": 0.1, "hidratos": 9.4, "proteinas": 0.9 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10067", "ean": "8480000100671", "nombre": "Pera Conference Hacendado", "precio": 2.40, "formato": "Granel 1 kg", "nutricion_100g": { "kcal": 58, "grasas": 0.1, "hidratos": 14.0, "proteinas": 0.4 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10068", "ean": "8480000100688", "nombre": "Lechuga iceberg Hacendado", "precio": 1.10, "formato": "Unidad", "nutricion_100g": { "kcal": 14, "grasas": 0.2, "hidratos": 1.8, "proteinas": 0.9 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10069", "ean": "8480000100695", "nombre": "Pepino Hacendado", "precio": 1.45, "formato": "Granel 1 kg", "nutricion_100g": { "kcal": 15, "grasas": 0.1, "hidratos": 3.6, "proteinas": 0.6 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10070", "ean": "8480000100701", "nombre": "Calabaza Hacendado", "precio": 1.80, "formato": "Trozo 1 kg", "nutricion_100g": { "kcal": 26, "grasas": 0.1, "hidratos": 6.5, "proteinas": 1.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10071", "ean": "8480000100718", "nombre": "Berenjena Hacendado", "precio": 2.10, "formato": "Granel 1 kg", "nutricion_100g": { "kcal": 25, "grasas": 0.2, "hidratos": 3.6, "proteinas": 1.2 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10072", "ean": "8480000100725", "nombre": "Salchichas Frankfurt Hacendado", "precio": 1.35, "formato": "Paquete 6 uds", "nutricion_100g": { "kcal": 260, "grasas": 23.0, "hidratos": 2.0, "proteinas": 11.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "soja": "puede_contener", "leche": "contiene" } },
-  { "id": "10073", "ean": "8480000100732", "nombre": "Bacon ahumado en lonchas Hacendado", "precio": 1.85, "formato": "Bandeja 200g", "nutricion_100g": { "kcal": 370, "grasas": 34.0, "hidratos": 0.5, "proteinas": 15.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10074", "ean": "8480000100749", "nombre": "Lomo de cerdo fresco Hacendado", "precio": 4.10, "formato": "Bandeja 500g", "nutricion_100g": { "kcal": 145, "grasas": 6.0, "hidratos": 0.0, "proteinas": 22.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10075", "ean": "8480000100756", "nombre": "Solomillo de cerdo Hacendado", "precio": 6.50, "formato": "Bandeja 400g", "nutricion_100g": { "kcal": 120, "grasas": 3.5, "hidratos": 0.0, "proteinas": 23.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10076", "ean": "8480000100763", "nombre": "Muslos de pollo Hacendado", "precio": 3.25, "formato": "Bandeja 700g", "nutricion_100g": { "kcal": 185, "grasas": 12.0, "hidratos": 0.0, "proteinas": 18.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10077", "ean": "8480000100770", "nombre": "Alitas de pollo Hacendado", "precio": 2.95, "formato": "Bandeja 600g", "nutricion_100g": { "kcal": 230, "grasas": 18.0, "hidratos": 0.0, "proteinas": 16.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10078", "ean": "8480000100787", "nombre": "Pulpo cocido Hacendado", "precio": 7.95, "formato": "Bandeja 250g", "nutricion_100g": { "kcal": 165, "grasas": 2.1, "hidratos": 0.5, "proteinas": 30.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "moluscos": "contiene" } },
-  { "id": "10079", "ean": "8480000100794", "nombre": "Langostinos cocidos congelados Hacendado", "precio": 5.80, "formato": "Bolsa 500g", "nutricion_100g": { "kcal": 95, "grasas": 1.2, "hidratos": 0.5, "proteinas": 20.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "crustaceos": "contiene" } },
-  { "id": "10080", "ean": "8480000100800", "nombre": "Mejillones en escabeche Hacendado", "precio": 1.90, "formato": "Pack 3 latas", "nutricion_100g": { "kcal": 180, "grasas": 10.0, "hidratos": 4.0, "proteinas": 18.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "moluscos": "contiene" } },
-  { "id": "10081", "ean": "8480000100817", "nombre": "Sardinillas en aceite de oliva Hacendado", "precio": 2.40, "formato": "Lata 115g", "nutricion_100g": { "kcal": 210, "grasas": 14.0, "hidratos": 0.0, "proteinas": 22.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "pescado": "contiene" } },
-  { "id": "10082", "ean": "8480000100824", "nombre": "Calamares en su tinta Hacendado", "precio": 2.10, "formato": "Lata 3 latas", "nutricion_100g": { "kcal": 125, "grasas": 6.0, "hidratos": 4.5, "proteinas": 13.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "moluscos": "contiene", "gluten": "contiene" } },
-  { "id": "10083", "ean": "8480000100831", "nombre": "Arroz basmati Hacendado", "precio": 1.65, "formato": "Paquete 1 kg", "nutricion_100g": { "kcal": 350, "grasas": 0.8, "hidratos": 78.0, "proteinas": 7.5 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10084", "ean": "8480000100848", "nombre": "Espaguetis Hacendado", "precio": 0.95, "formato": "Paquete 1 kg", "nutricion_100g": { "kcal": 360, "grasas": 1.5, "hidratos": 72.0, "proteinas": 12.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "contiene" } },
-  { "id": "10085", "ean": "8480000100855", "nombre": "Avena en copos Hacendado", "precio": 1.10, "formato": "Bolsa 500g", "nutricion_100g": { "kcal": 375, "grasas": 7.0, "hidratos": 56.0, "proteinas": 13.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "puede_contener" } },
-  { "id": "10086", "ean": "8480000100862", "nombre": "Cereales Muesli con frutas Hacendado", "precio": 1.90, "formato": "Bolsa 500g", "nutricion_100g": { "kcal": 380, "grasas": 6.5, "hidratos": 68.0, "proteinas": 9.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "contiene", "frutos_secos": "puede_contener" } },
-  { "id": "10087", "ean": "8480000100879", "nombre": "Pan rallado Hacendado", "precio": 0.90, "formato": "Bolsa 1 kg", "nutricion_100g": { "kcal": 355, "grasas": 1.3, "hidratos": 73.0, "proteinas": 11.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "contiene" } },
-  { "id": "10088", "ean": "8480000100886", "nombre": "Azúcar blanco Hacendado", "precio": 1.25, "formato": "Paquete 1 kg", "nutricion_100g": { "kcal": 400, "grasas": 0.0, "hidratos": 100.0, "proteinas": 0.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10089", "ean": "8480000100893", "nombre": "Azúcar moreno de caña Hacendado", "precio": 1.70, "formato": "Paquete 500g", "nutricion_100g": { "kcal": 380, "grasas": 0.0, "hidratos": 95.0, "proteinas": 0.1 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10090", "ean": "8480000100909", "nombre": "Levadura química en polvo Hacendado", "precio": 0.70, "formato": "Pack 4 sobres", "nutricion_100g": { "kcal": 100, "grasas": 0.0, "hidratos": 20.0, "proteinas": 0.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10091", "ean": "8480000100916", "nombre": "Tomate frito clásico Hacendado", "precio": 0.95, "formato": "Brik 3 pack", "nutricion_100g": { "kcal": 85, "grasas": 4.5, "hidratos": 10.0, "proteinas": 1.2 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10092", "ean": "8480000100923", "nombre": "Ketchup Hacendado", "precio": 1.15, "formato": "Botella 500ml", "nutricion_100g": { "kcal": 105, "grasas": 0.1, "hidratos": 24.0, "proteinas": 1.4 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10093", "ean": "8480000100930", "nombre": "Mostaza fina Hacendado", "precio": 1.20, "formato": "Tarro 300g", "nutricion_100g": { "kcal": 145, "grasas": 10.0, "hidratos": 5.0, "proteinas": 7.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "mostaza": "contiene" } },
-  { "id": "10094", "ean": "8480000100947", "nombre": "Pepinillos en vinagre Hacendado", "precio": 1.40, "formato": "Tarro 350g", "nutricion_100g": { "kcal": 18, "grasas": 0.2, "hidratos": 2.5, "proteinas": 1.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "sulfitos": "contiene" } },
-  { "id": "10095", "ean": "8480000100954", "nombre": "Aceitunas rellenas de anchoa Hacendado", "precio": 1.65, "formato": "Lata 3 pack", "nutricion_100g": { "kcal": 150, "grasas": 15.0, "hidratos": 0.5, "proteinas": 1.5 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "pescado": "contiene" } },
-  { "id": "10096", "ean": "8480000100961", "nombre": "Patatas fritas de bolsa clásicas Hacendado", "precio": 1.40, "formato": "Bolsa 300g", "nutricion_100g": { "kcal": 535, "grasas": 33.0, "hidratos": 53.0, "proteinas": 6.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } },
-  { "id": "10097", "ean": "8480000100978", "nombre": "Frutos secos mezcla tostada Hacendado", "precio": 1.90, "formato": "Bolsa 200g", "nutricion_100g": { "kcal": 610, "grasas": 54.0, "hidratos": 12.0, "proteinas": 20.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "frutos_secos": "contiene", "cacahuetes": "contiene" } },
-  { "id": "10098", "ean": "8480000100985", "nombre": "Hummus clásico Hacendado", "precio": 1.35, "formato": "Tarro 240g", "nutricion_100g": { "kcal": 245, "grasas": 20.0, "hidratos": 8.5, "proteinas": 6.5 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "sesamo": "contiene" } },
-  { "id": "10099", "ean": "8480000100992", "nombre": "Guacamole fresco Hacendado", "precio": 2.05, "formato": "Tarro 200g", "nutricion_100g": { "kcal": 160, "grasas": 14.5, "hidratos": 3.5, "proteinas": 2.0 }, "fuente_nutricion": "OFF ODbL", "alergenos": { "gluten": "libre" } }
+  {
+    "id": "32145",
+    "ean": "8480000321453",
+    "nombre": "Arroz redondo Hacendado",
+    "precio": 1.45,
+    "formato": "Paquete 1 kg",
+    "nutricion_100g": {
+      "kcal": 350,
+      "grasas": 1.0,
+      "hidratos": 75.0,
+      "proteinas": 7.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "45120",
+    "ean": "8480000451204",
+    "nombre": "Garbanzo cocido Hacendado",
+    "precio": 1.1,
+    "formato": "Bote 400g",
+    "nutricion_100g": {
+      "kcal": 100,
+      "grasas": 2.0,
+      "hidratos": 15.0,
+      "proteinas": 6.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "11234",
+    "ean": "8480000112344",
+    "nombre": "Aceite de oliva virgen extra Hacendado",
+    "precio": 4.85,
+    "formato": "Botella 1 L",
+    "nutricion_100g": {
+      "kcal": 900,
+      "grasas": 100.0,
+      "hidratos": 0.0,
+      "proteinas": 0.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "55678",
+    "ean": "8480000556787",
+    "nombre": "Atún claro en aceite de girasol Hacendado",
+    "precio": 3.8,
+    "formato": "Pack 3 latas",
+    "nutricion_100g": {
+      "kcal": 200,
+      "grasas": 12.0,
+      "hidratos": 0.0,
+      "proteinas": 22.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "pescado": "contiene"
+    }
+  },
+  {
+    "id": "77890",
+    "ean": "8480000778905",
+    "nombre": "Espinacas troceadas congeladas Hacendado",
+    "precio": 1.2,
+    "formato": "Bolsa 400g",
+    "nutricion_100g": {
+      "kcal": 30,
+      "grasas": 0.5,
+      "hidratos": 3.0,
+      "proteinas": 2.5
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "22334",
+    "ean": "8480000223347",
+    "nombre": "Pechuga de pollo Hacendado",
+    "precio": 3.65,
+    "formato": "Bandeja 500g",
+    "nutricion_100g": {
+      "kcal": 110,
+      "grasas": 1.5,
+      "hidratos": 0.0,
+      "proteinas": 22.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "88991",
+    "ean": "8480000889915",
+    "nombre": "Tomate triturado natural Hacendado",
+    "precio": 0.9,
+    "formato": "Bote 800g",
+    "nutricion_100g": {
+      "kcal": 25,
+      "grasas": 0.2,
+      "hidratos": 4.0,
+      "proteinas": 1.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "99002",
+    "ean": "8480000990024",
+    "nombre": "Cebolla Hacendado",
+    "precio": 1.65,
+    "formato": "Malla 1 kg",
+    "nutricion_100g": {
+      "kcal": 40,
+      "grasas": 0.2,
+      "hidratos": 9.0,
+      "proteinas": 1.1
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "33445",
+    "ean": "8480000334453",
+    "nombre": "Ajo Hacendado",
+    "precio": 1.8,
+    "formato": "Malla 250g",
+    "nutricion_100g": {
+      "kcal": 150,
+      "grasas": 0.5,
+      "hidratos": 30.0,
+      "proteinas": 6.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "66778",
+    "ean": "8480000667780",
+    "nombre": "Caldo de pollo Hacendado",
+    "precio": 1.5,
+    "formato": "Brik 1 L",
+    "nutricion_100g": {
+      "kcal": 20,
+      "grasas": 0.5,
+      "hidratos": 1.0,
+      "proteinas": 2.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "apio": "puede_contener"
+    }
+  },
+  {
+    "id": "11111",
+    "ean": "8480000111111",
+    "nombre": "Lenteja castellana Hacendado",
+    "precio": 1.3,
+    "formato": "Paquete 1 kg",
+    "nutricion_100g": {
+      "kcal": 320,
+      "grasas": 1.5,
+      "hidratos": 54.0,
+      "proteinas": 23.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "22222",
+    "ean": "8480000222222",
+    "nombre": "Merluza filetes congelada Hacendado",
+    "precio": 4.5,
+    "formato": "Bolsa 600g",
+    "nutricion_100g": {
+      "kcal": 85,
+      "grasas": 1.0,
+      "hidratos": 0.0,
+      "proteinas": 17.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "pescado": "contiene"
+    }
+  },
+  {
+    "id": "10013",
+    "ean": "8480000100138",
+    "nombre": "Macarrones Hacendado",
+    "precio": 0.95,
+    "formato": "Paquete 1 kg",
+    "nutricion_100g": {
+      "kcal": 360,
+      "grasas": 1.5,
+      "hidratos": 72.0,
+      "proteinas": 12.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "contiene"
+    }
+  },
+  {
+    "id": "10014",
+    "ean": "8480000100145",
+    "nombre": "Huevos camperos Hacendado",
+    "precio": 2.3,
+    "formato": "Doena 12 uds",
+    "nutricion_100g": {
+      "kcal": 155,
+      "grasas": 11.0,
+      "hidratos": 0.5,
+      "proteinas": 13.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "huevo": "contiene"
+    }
+  },
+  {
+    "id": "10015",
+    "ean": "8480000100152",
+    "nombre": "Leche entera Hacendado",
+    "precio": 0.91,
+    "formato": "Brik 1 L",
+    "nutricion_100g": {
+      "kcal": 63,
+      "grasas": 3.6,
+      "hidratos": 4.7,
+      "proteinas": 3.1
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "leche": "contiene"
+    }
+  },
+  {
+    "id": "10016",
+    "ean": "8480000100169",
+    "nombre": "Pimiento rojo Hacendado",
+    "precio": 2.2,
+    "formato": "Granel 1 kg",
+    "nutricion_100g": {
+      "kcal": 31,
+      "grasas": 0.3,
+      "hidratos": 6.0,
+      "proteinas": 1.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10017",
+    "ean": "8480000100176",
+    "nombre": "Pimiento verde Hacendado",
+    "precio": 1.9,
+    "formato": "Granel 1 kg",
+    "nutricion_100g": {
+      "kcal": 20,
+      "grasas": 0.2,
+      "hidratos": 3.5,
+      "proteinas": 0.9
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10018",
+    "ean": "8480000100183",
+    "nombre": "Patata Hacendado",
+    "precio": 1.75,
+    "formato": "Malla 3 kg",
+    "nutricion_100g": {
+      "kcal": 77,
+      "grasas": 0.1,
+      "hidratos": 17.0,
+      "proteinas": 2.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10019",
+    "ean": "8480000100190",
+    "nombre": "Calabacín Hacendado",
+    "precio": 1.85,
+    "formato": "Granel 1 kg",
+    "nutricion_100g": {
+      "kcal": 17,
+      "grasas": 0.3,
+      "hidratos": 3.1,
+      "proteinas": 1.2
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10020",
+    "ean": "8480000100206",
+    "nombre": "Zanahoria Hacendado",
+    "precio": 1.1,
+    "formato": "Bolsa 1 kg",
+    "nutricion_100g": {
+      "kcal": 41,
+      "grasas": 0.2,
+      "hidratos": 9.6,
+      "proteinas": 0.9
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10021",
+    "ean": "8480000100213",
+    "nombre": "Judías verdes planas congeladas Hacendado",
+    "precio": 1.45,
+    "formato": "Bolsa 400g",
+    "nutricion_100g": {
+      "kcal": 30,
+      "grasas": 0.2,
+      "hidratos": 4.5,
+      "proteinas": 1.8
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10022",
+    "ean": "8480000100220",
+    "nombre": "Sal marina fina Hacendado",
+    "precio": 0.4,
+    "formato": "Paquete 1 kg",
+    "nutricion_100g": {
+      "kcal": 0,
+      "grasas": 0.0,
+      "hidratos": 0.0,
+      "proteinas": 0.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10023",
+    "ean": "8480000100237",
+    "nombre": "Pimentón dulce Hacendado",
+    "precio": 1.05,
+    "formato": "Bote 75g",
+    "nutricion_100g": {
+      "kcal": 282,
+      "grasas": 13.0,
+      "hidratos": 35.0,
+      "proteinas": 14.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10024",
+    "ean": "8480000100244",
+    "nombre": "Pechuga de pavo en lonchas Hacendado",
+    "precio": 1.6,
+    "formato": "Pack 2 envases",
+    "nutricion_100g": {
+      "kcal": 105,
+      "grasas": 1.5,
+      "hidratos": 1.0,
+      "proteinas": 21.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "soja": "puede_contener"
+    }
+  },
+  {
+    "id": "10025",
+    "ean": "8480000100251",
+    "nombre": "Queso rallado mozzarella Hacendado",
+    "precio": 1.85,
+    "formato": "Bolsa 200g",
+    "nutricion_100g": {
+      "kcal": 310,
+      "grasas": 23.0,
+      "hidratos": 2.0,
+      "proteinas": 24.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "leche": "contiene"
+    }
+  },
+  {
+    "id": "10026",
+    "ean": "8480000100268",
+    "nombre": "Chorizo curado en rodajas Hacendado",
+    "precio": 1.7,
+    "formato": "Bandeja 150g",
+    "nutricion_100g": {
+      "kcal": 450,
+      "grasas": 39.0,
+      "hidratos": 1.5,
+      "proteinas": 24.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10027",
+    "ean": "8480000100275",
+    "nombre": "Jamón serrano en lonchas Hacendado",
+    "precio": 2.5,
+    "formato": "Bandeja 160g",
+    "nutricion_100g": {
+      "kcal": 240,
+      "grasas": 13.0,
+      "hidratos": 0.5,
+      "proteinas": 30.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10028",
+    "ean": "8480000100282",
+    "nombre": "Salmón ahumado Hacendado",
+    "precio": 3.95,
+    "formato": "Estuche 100g",
+    "nutricion_100g": {
+      "kcal": 210,
+      "grasas": 14.0,
+      "hidratos": 0.5,
+      "proteinas": 20.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "pescado": "contiene"
+    }
+  },
+  {
+    "id": "10029",
+    "ean": "8480000100299",
+    "nombre": "Guisantes congelados Hacendado",
+    "precio": 1.25,
+    "formato": "Bolsa 600g",
+    "nutricion_100g": {
+      "kcal": 75,
+      "grasas": 0.4,
+      "hidratos": 12.0,
+      "proteinas": 5.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10030",
+    "ean": "8480000100305",
+    "nombre": "Maíz dulce en grano Hacendado",
+    "precio": 1.2,
+    "formato": "Pack 3 latas",
+    "nutricion_100g": {
+      "kcal": 96,
+      "grasas": 1.5,
+      "hidratos": 18.0,
+      "proteinas": 3.2
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10031",
+    "ean": "8480000100312",
+    "nombre": "Salsa Mayonesa Hacendado",
+    "precio": 1.55,
+    "formato": "Tarro 450ml",
+    "nutricion_100g": {
+      "kcal": 650,
+      "grasas": 70.0,
+      "hidratos": 1.5,
+      "proteinas": 1.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "huevo": "contiene"
+    }
+  },
+  {
+    "id": "10032",
+    "ean": "8480000100329",
+    "nombre": "Vinagre de vino blanco Hacendado",
+    "precio": 0.85,
+    "formato": "Botella 1 L",
+    "nutricion_100g": {
+      "kcal": 10,
+      "grasas": 0.0,
+      "hidratos": 0.1,
+      "proteinas": 0.1
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "sulfitos": "contiene"
+    }
+  },
+  {
+    "id": "10033",
+    "ean": "8480000100336",
+    "nombre": "Caldo de verduras Hacendado",
+    "precio": 1.5,
+    "formato": "Brik 1 L",
+    "nutricion_100g": {
+      "kcal": 15,
+      "grasas": 0.5,
+      "hidratos": 1.5,
+      "proteinas": 0.5
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "apio": "contiene"
+    }
+  },
+  {
+    "id": "10034",
+    "ean": "8480000100343",
+    "nombre": "Garbanzo seco Hacendado",
+    "precio": 1.4,
+    "formato": "Paquete 1 kg",
+    "nutricion_100g": {
+      "kcal": 340,
+      "grasas": 6.0,
+      "hidratos": 45.0,
+      "proteinas": 20.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10035",
+    "ean": "8480000100350",
+    "nombre": "Alubia blanca cocida Hacendado",
+    "precio": 1.15,
+    "formato": "Bote 400g",
+    "nutricion_100g": {
+      "kcal": 95,
+      "grasas": 0.8,
+      "hidratos": 14.0,
+      "proteinas": 6.5
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10036",
+    "ean": "8480000100367",
+    "nombre": "Espinacas frescas Hacendado",
+    "precio": 1.35,
+    "formato": "Bolsa 300g",
+    "nutricion_100g": {
+      "kcal": 23,
+      "grasas": 0.4,
+      "hidratos": 1.4,
+      "proteinas": 2.8
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10037",
+    "ean": "8480000100374",
+    "nombre": "Champiñón laminado Hacendado",
+    "precio": 1.75,
+    "formato": "Bandeja 300g",
+    "nutricion_100g": {
+      "kcal": 22,
+      "grasas": 0.3,
+      "hidratos": 2.5,
+      "proteinas": 2.1
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10038",
+    "ean": "8480000100398",
+    "nombre": "Filete de ternera Hacendado",
+    "precio": 6.95,
+    "formato": "Bandeja 350g",
+    "nutricion_100g": {
+      "kcal": 140,
+      "grasas": 5.0,
+      "hidratos": 0.0,
+      "proteinas": 22.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10039",
+    "ean": "8480000100398",
+    "nombre": "Costilla de cerdo Hacendado",
+    "precio": 4.2,
+    "formato": "Bandeja 600g",
+    "nutricion_100g": {
+      "kcal": 250,
+      "grasas": 20.0,
+      "hidratos": 0.0,
+      "proteinas": 17.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10040",
+    "ean": "8480000100404",
+    "nombre": "Pan de molde sin corteza Hacendado",
+    "precio": 1.3,
+    "formato": "Bolsa 500g",
+    "nutricion_100g": {
+      "kcal": 265,
+      "grasas": 3.2,
+      "hidratos": 48.0,
+      "proteinas": 8.5
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "contiene"
+    }
+  },
+  {
+    "id": "10041",
+    "ean": "8480000100411",
+    "nombre": "Harina de trigo Hacendado",
+    "precio": 0.85,
+    "formato": "Paquete 1 kg",
+    "nutricion_100g": {
+      "kcal": 340,
+      "grasas": 1.2,
+      "hidratos": 71.0,
+      "proteinas": 10.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "contiene"
+    }
+  },
+  {
+    "id": "10042",
+    "ean": "8480000100428",
+    "nombre": "Mantequilla sin sal Hacendado",
+    "precio": 2.25,
+    "formato": "Paquete 250g",
+    "nutricion_100g": {
+      "kcal": 745,
+      "grasas": 82.0,
+      "hidratos": 0.7,
+      "proteinas": 0.7
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "leche": "contiene"
+    }
+  },
+  {
+    "id": "10043",
+    "ean": "8480000100435",
+    "nombre": "Nata para cocinar Hacendado",
+    "precio": 1.2,
+    "formato": "Brik 200ml",
+    "nutricion_100g": {
+      "kcal": 200,
+      "grasas": 18.0,
+      "hidratos": 3.8,
+      "proteinas": 2.2
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "leche": "contiene"
+    }
+  },
+  {
+    "id": "10044",
+    "ean": "8480000100442",
+    "nombre": "Queso fresco cabra Hacendado",
+    "precio": 2.6,
+    "formato": "Rulo 180g",
+    "nutricion_100g": {
+      "kcal": 280,
+      "grasas": 23.0,
+      "hidratos": 1.5,
+      "proteinas": 17.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "leche": "contiene"
+    }
+  },
+  {
+    "id": "10045",
+    "ean": "8480000100459",
+    "nombre": "Lomo adobado en adobo Hacendado",
+    "precio": 3.9,
+    "formato": "Bandeja 500g",
+    "nutricion_100g": {
+      "kcal": 160,
+      "grasas": 7.5,
+      "hidratos": 1.0,
+      "proteinas": 22.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10046",
+    "ean": "8480000100466",
+    "nombre": "Brócoli congelado Hacendado",
+    "precio": 1.4,
+    "formato": "Bolsa 500g",
+    "nutricion_100g": {
+      "kcal": 34,
+      "grasas": 0.4,
+      "hidratos": 4.4,
+      "proteinas": 3.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10047",
+    "ean": "8480000100473",
+    "nombre": "Salsa de soja Hacendado",
+    "precio": 1.6,
+    "formato": "Botella 250ml",
+    "nutricion_100g": {
+      "kcal": 60,
+      "grasas": 0.0,
+      "hidratos": 8.5,
+      "proteinas": 6.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "soja": "contiene",
+      "gluten": "contiene"
+    }
+  },
+  {
+    "id": "10048",
+    "ean": "8480000100480",
+    "nombre": "Pipas de girasol peladas Hacendado",
+    "precio": 1.15,
+    "formato": "Bolsa 200g",
+    "nutricion_100g": {
+      "kcal": 580,
+      "grasas": 50.0,
+      "hidratos": 12.0,
+      "proteinas": 21.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "frutos_secos": "puede_contener"
+    }
+  },
+  {
+    "id": "10049",
+    "ean": "8480000100497",
+    "nombre": "Limón Hacendado",
+    "precio": 1.95,
+    "formato": "Malla 1 kg",
+    "nutricion_100g": {
+      "kcal": 29,
+      "grasas": 0.3,
+      "hidratos": 9.0,
+      "proteinas": 1.1
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "99999",
+    "ean": "8480000999999",
+    "nombre": "Salsa secreta Hacendado (Test Alérgeno)",
+    "precio": 2.1,
+    "formato": "Tarro 250ml",
+    "nutricion_100g": {
+      "kcal": 180,
+      "grasas": 12.0,
+      "hidratos": 10.0,
+      "proteinas": 2.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "frutos_secos": "desconocido"
+    }
+  },
+  {
+    "id": "10050",
+    "ean": "8480000100503",
+    "nombre": "Pechuga de pollo empanada Hacendado",
+    "precio": 2.75,
+    "formato": "Bandeja 400g",
+    "nutricion_100g": {
+      "kcal": 215,
+      "grasas": 9.0,
+      "hidratos": 16.0,
+      "proteinas": 17.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "contiene"
+    }
+  },
+  {
+    "id": "10051",
+    "ean": "8480000100510",
+    "nombre": "Croquetas de jamón cocido Hacendado",
+    "precio": 1.6,
+    "formato": "Bolsa 500g",
+    "nutricion_100g": {
+      "kcal": 195,
+      "grasas": 10.0,
+      "hidratos": 20.0,
+      "proteinas": 6.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "contiene",
+      "leche": "contiene"
+    }
+  },
+  {
+    "id": "10052",
+    "ean": "8480000100527",
+    "nombre": "Pizza 4 quesos Hacendado",
+    "precio": 2.5,
+    "formato": "Unidad 400g",
+    "nutricion_100g": {
+      "kcal": 260,
+      "grasas": 11.0,
+      "hidratos": 31.0,
+      "proteinas": 10.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "contiene",
+      "leche": "contiene"
+    }
+  },
+  {
+    "id": "10053",
+    "ean": "8480000100534",
+    "nombre": "Yogur natural Hacendado",
+    "precio": 0.85,
+    "formato": "Pack 6 ud",
+    "nutricion_100g": {
+      "kcal": 58,
+      "grasas": 3.0,
+      "hidratos": 4.5,
+      "proteinas": 3.8
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "leche": "contiene"
+    }
+  },
+  {
+    "id": "10054",
+    "ean": "8480000100541",
+    "nombre": "Queso tierno de vaca Hacendado",
+    "precio": 3.2,
+    "formato": "Cuña 400g",
+    "nutricion_100g": {
+      "kcal": 350,
+      "grasas": 29.0,
+      "hidratos": 1.0,
+      "proteinas": 22.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "leche": "contiene"
+    }
+  },
+  {
+    "id": "10055",
+    "ean": "8480000100558",
+    "nombre": "Pan de barra Hacendado",
+    "precio": 0.55,
+    "formato": "Unidad 250g",
+    "nutricion_100g": {
+      "kcal": 260,
+      "grasas": 1.2,
+      "hidratos": 52.0,
+      "proteinas": 8.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "contiene"
+    }
+  },
+  {
+    "id": "10056",
+    "ean": "8480000100565",
+    "nombre": "Galletas María Hacendado",
+    "precio": 0.95,
+    "formato": "Rollo 800g",
+    "nutricion_100g": {
+      "kcal": 430,
+      "grasas": 11.0,
+      "hidratos": 73.0,
+      "proteinas": 7.5
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "contiene",
+      "leche": "contiene"
+    }
+  },
+  {
+    "id": "10057",
+    "ean": "8480000100572",
+    "nombre": "Chocolate negro 85% Hacendado",
+    "precio": 1.45,
+    "formato": "Tableta 100g",
+    "nutricion_100g": {
+      "kcal": 580,
+      "grasas": 52.0,
+      "hidratos": 18.0,
+      "proteinas": 10.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "soja": "contiene"
+    }
+  },
+  {
+    "id": "10058",
+    "ean": "8480000100589",
+    "nombre": "Café molido natural Hacendado",
+    "precio": 1.95,
+    "formato": "Paquete 250g",
+    "nutricion_100g": {
+      "kcal": 2,
+      "grasas": 0.0,
+      "hidratos": 0.0,
+      "proteinas": 0.2
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10059",
+    "ean": "8480000100596",
+    "nombre": "Zumo de naranja exprimido Hacendado",
+    "precio": 1.8,
+    "formato": "Botella 1 L",
+    "nutricion_100g": {
+      "kcal": 43,
+      "grasas": 0.1,
+      "hidratos": 9.5,
+      "proteinas": 0.7
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10060",
+    "ean": "8480000100602",
+    "nombre": "Agua mineral Hacendado",
+    "precio": 0.35,
+    "formato": "Botella 1.5 L",
+    "nutricion_100g": {
+      "kcal": 0,
+      "grasas": 0.0,
+      "hidratos": 0.0,
+      "proteinas": 0.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10061",
+    "ean": "8480000100619",
+    "nombre": "Refresco de cola Hacendado",
+    "precio": 0.75,
+    "formato": "Botella 2 L",
+    "nutricion_100g": {
+      "kcal": 42,
+      "grasas": 0.0,
+      "hidratos": 10.5,
+      "proteinas": 0.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10062",
+    "ean": "8480000100626",
+    "nombre": "Cerveza rubia Hacendado",
+    "precio": 0.42,
+    "formato": "Lata 33cl",
+    "nutricion_100g": {
+      "kcal": 43,
+      "grasas": 0.0,
+      "hidratos": 3.5,
+      "proteinas": 0.5
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "contiene"
+    }
+  },
+  {
+    "id": "10063",
+    "ean": "8480000100633",
+    "nombre": "Vino tinto roble Hacendado",
+    "precio": 2.3,
+    "formato": "Botella 75cl",
+    "nutricion_100g": {
+      "kcal": 85,
+      "grasas": 0.0,
+      "hidratos": 2.6,
+      "proteinas": 0.1
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "sulfitos": "contiene"
+    }
+  },
+  {
+    "id": "10064",
+    "ean": "8480000100640",
+    "nombre": "Manzana Golden Hacendado",
+    "precio": 1.95,
+    "formato": "Granel 1 kg",
+    "nutricion_100g": {
+      "kcal": 52,
+      "grasas": 0.2,
+      "hidratos": 12.0,
+      "proteinas": 0.3
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10065",
+    "ean": "8480000100657",
+    "nombre": "Plátano de Canarias Hacendado",
+    "precio": 1.85,
+    "formato": "Granel 1 kg",
+    "nutricion_100g": {
+      "kcal": 89,
+      "grasas": 0.3,
+      "hidratos": 22.0,
+      "proteinas": 1.1
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10066",
+    "ean": "8480000100664",
+    "nombre": "Naranja de mesa Hacendado",
+    "precio": 1.65,
+    "formato": "Malla 2 kg",
+    "nutricion_100g": {
+      "kcal": 47,
+      "grasas": 0.1,
+      "hidratos": 9.4,
+      "proteinas": 0.9
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10067",
+    "ean": "8480000100671",
+    "nombre": "Pera Conference Hacendado",
+    "precio": 2.4,
+    "formato": "Granel 1 kg",
+    "nutricion_100g": {
+      "kcal": 58,
+      "grasas": 0.1,
+      "hidratos": 14.0,
+      "proteinas": 0.4
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10068",
+    "ean": "8480000100688",
+    "nombre": "Lechuga iceberg Hacendado",
+    "precio": 1.1,
+    "formato": "Unidad",
+    "nutricion_100g": {
+      "kcal": 14,
+      "grasas": 0.2,
+      "hidratos": 1.8,
+      "proteinas": 0.9
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10069",
+    "ean": "8480000100695",
+    "nombre": "Pepino Hacendado",
+    "precio": 1.45,
+    "formato": "Granel 1 kg",
+    "nutricion_100g": {
+      "kcal": 15,
+      "grasas": 0.1,
+      "hidratos": 3.6,
+      "proteinas": 0.6
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10070",
+    "ean": "8480000100701",
+    "nombre": "Calabaza Hacendado",
+    "precio": 1.8,
+    "formato": "Trozo 1 kg",
+    "nutricion_100g": {
+      "kcal": 26,
+      "grasas": 0.1,
+      "hidratos": 6.5,
+      "proteinas": 1.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10071",
+    "ean": "8480000100718",
+    "nombre": "Berenjena Hacendado",
+    "precio": 2.1,
+    "formato": "Granel 1 kg",
+    "nutricion_100g": {
+      "kcal": 25,
+      "grasas": 0.2,
+      "hidratos": 3.6,
+      "proteinas": 1.2
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10072",
+    "ean": "8480000100725",
+    "nombre": "Salchichas Frankfurt Hacendado",
+    "precio": 1.35,
+    "formato": "Paquete 6 uds",
+    "nutricion_100g": {
+      "kcal": 260,
+      "grasas": 23.0,
+      "hidratos": 2.0,
+      "proteinas": 11.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "soja": "puede_contener",
+      "leche": "contiene"
+    }
+  },
+  {
+    "id": "10073",
+    "ean": "8480000100732",
+    "nombre": "Bacon ahumado en lonchas Hacendado",
+    "precio": 1.85,
+    "formato": "Bandeja 200g",
+    "nutricion_100g": {
+      "kcal": 370,
+      "grasas": 34.0,
+      "hidratos": 0.5,
+      "proteinas": 15.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10074",
+    "ean": "8480000100749",
+    "nombre": "Lomo de cerdo fresco Hacendado",
+    "precio": 4.1,
+    "formato": "Bandeja 500g",
+    "nutricion_100g": {
+      "kcal": 145,
+      "grasas": 6.0,
+      "hidratos": 0.0,
+      "proteinas": 22.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10075",
+    "ean": "8480000100756",
+    "nombre": "Solomillo de cerdo Hacendado",
+    "precio": 6.5,
+    "formato": "Bandeja 400g",
+    "nutricion_100g": {
+      "kcal": 120,
+      "grasas": 3.5,
+      "hidratos": 0.0,
+      "proteinas": 23.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10076",
+    "ean": "8480000100763",
+    "nombre": "Muslos de pollo Hacendado",
+    "precio": 3.25,
+    "formato": "Bandeja 700g",
+    "nutricion_100g": {
+      "kcal": 185,
+      "grasas": 12.0,
+      "hidratos": 0.0,
+      "proteinas": 18.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10077",
+    "ean": "8480000100770",
+    "nombre": "Alitas de pollo Hacendado",
+    "precio": 2.95,
+    "formato": "Bandeja 600g",
+    "nutricion_100g": {
+      "kcal": 230,
+      "grasas": 18.0,
+      "hidratos": 0.0,
+      "proteinas": 16.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10078",
+    "ean": "8480000100787",
+    "nombre": "Pulpo cocido Hacendado",
+    "precio": 7.95,
+    "formato": "Bandeja 250g",
+    "nutricion_100g": {
+      "kcal": 165,
+      "grasas": 2.1,
+      "hidratos": 0.5,
+      "proteinas": 30.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "moluscos": "contiene"
+    }
+  },
+  {
+    "id": "10079",
+    "ean": "8480000100794",
+    "nombre": "Langostinos cocidos congelados Hacendado",
+    "precio": 5.8,
+    "formato": "Bolsa 500g",
+    "nutricion_100g": {
+      "kcal": 95,
+      "grasas": 1.2,
+      "hidratos": 0.5,
+      "proteinas": 20.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "crustaceos": "contiene"
+    }
+  },
+  {
+    "id": "10080",
+    "ean": "8480000100800",
+    "nombre": "Mejillones en escabeche Hacendado",
+    "precio": 1.9,
+    "formato": "Pack 3 latas",
+    "nutricion_100g": {
+      "kcal": 180,
+      "grasas": 10.0,
+      "hidratos": 4.0,
+      "proteinas": 18.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "moluscos": "contiene"
+    }
+  },
+  {
+    "id": "10081",
+    "ean": "8480000100817",
+    "nombre": "Sardinillas en aceite de oliva Hacendado",
+    "precio": 2.4,
+    "formato": "Lata 115g",
+    "nutricion_100g": {
+      "kcal": 210,
+      "grasas": 14.0,
+      "hidratos": 0.0,
+      "proteinas": 22.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "pescado": "contiene"
+    }
+  },
+  {
+    "id": "10082",
+    "ean": "8480000100824",
+    "nombre": "Calamares en su tinta Hacendado",
+    "precio": 2.1,
+    "formato": "Lata 3 latas",
+    "nutricion_100g": {
+      "kcal": 125,
+      "grasas": 6.0,
+      "hidratos": 4.5,
+      "proteinas": 13.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "moluscos": "contiene",
+      "gluten": "contiene"
+    }
+  },
+  {
+    "id": "10083",
+    "ean": "8480000100831",
+    "nombre": "Arroz basmati Hacendado",
+    "precio": 1.65,
+    "formato": "Paquete 1 kg",
+    "nutricion_100g": {
+      "kcal": 350,
+      "grasas": 0.8,
+      "hidratos": 78.0,
+      "proteinas": 7.5
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10084",
+    "ean": "8480000100848",
+    "nombre": "Espaguetis Hacendado",
+    "precio": 0.95,
+    "formato": "Paquete 1 kg",
+    "nutricion_100g": {
+      "kcal": 360,
+      "grasas": 1.5,
+      "hidratos": 72.0,
+      "proteinas": 12.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "contiene"
+    }
+  },
+  {
+    "id": "10085",
+    "ean": "8480000100855",
+    "nombre": "Avena en copos Hacendado",
+    "precio": 1.1,
+    "formato": "Bolsa 500g",
+    "nutricion_100g": {
+      "kcal": 375,
+      "grasas": 7.0,
+      "hidratos": 56.0,
+      "proteinas": 13.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "puede_contener"
+    }
+  },
+  {
+    "id": "10086",
+    "ean": "8480000100862",
+    "nombre": "Cereales Muesli con frutas Hacendado",
+    "precio": 1.9,
+    "formato": "Bolsa 500g",
+    "nutricion_100g": {
+      "kcal": 380,
+      "grasas": 6.5,
+      "hidratos": 68.0,
+      "proteinas": 9.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "contiene",
+      "frutos_secos": "puede_contener"
+    }
+  },
+  {
+    "id": "10087",
+    "ean": "8480000100879",
+    "nombre": "Pan rallado Hacendado",
+    "precio": 0.9,
+    "formato": "Bolsa 1 kg",
+    "nutricion_100g": {
+      "kcal": 355,
+      "grasas": 1.3,
+      "hidratos": 73.0,
+      "proteinas": 11.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "contiene"
+    }
+  },
+  {
+    "id": "10088",
+    "ean": "8480000100886",
+    "nombre": "Azúcar blanco Hacendado",
+    "precio": 1.25,
+    "formato": "Paquete 1 kg",
+    "nutricion_100g": {
+      "kcal": 400,
+      "grasas": 0.0,
+      "hidratos": 100.0,
+      "proteinas": 0.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10089",
+    "ean": "8480000100893",
+    "nombre": "Azúcar moreno de caña Hacendado",
+    "precio": 1.7,
+    "formato": "Paquete 500g",
+    "nutricion_100g": {
+      "kcal": 380,
+      "grasas": 0.0,
+      "hidratos": 95.0,
+      "proteinas": 0.1
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10090",
+    "ean": "8480000100909",
+    "nombre": "Levadura química en polvo Hacendado",
+    "precio": 0.7,
+    "formato": "Pack 4 sobres",
+    "nutricion_100g": {
+      "kcal": 100,
+      "grasas": 0.0,
+      "hidratos": 20.0,
+      "proteinas": 0.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10091",
+    "ean": "8480000100916",
+    "nombre": "Tomate frito clásico Hacendado",
+    "precio": 0.95,
+    "formato": "Brik 3 pack",
+    "nutricion_100g": {
+      "kcal": 85,
+      "grasas": 4.5,
+      "hidratos": 10.0,
+      "proteinas": 1.2
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10092",
+    "ean": "8480000100923",
+    "nombre": "Ketchup Hacendado",
+    "precio": 1.15,
+    "formato": "Botella 500ml",
+    "nutricion_100g": {
+      "kcal": 105,
+      "grasas": 0.1,
+      "hidratos": 24.0,
+      "proteinas": 1.4
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10093",
+    "ean": "8480000100930",
+    "nombre": "Mostaza fina Hacendado",
+    "precio": 1.2,
+    "formato": "Tarro 300g",
+    "nutricion_100g": {
+      "kcal": 145,
+      "grasas": 10.0,
+      "hidratos": 5.0,
+      "proteinas": 7.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "mostaza": "contiene"
+    }
+  },
+  {
+    "id": "10094",
+    "ean": "8480000100947",
+    "nombre": "Pepinillos en vinagre Hacendado",
+    "precio": 1.4,
+    "formato": "Tarro 350g",
+    "nutricion_100g": {
+      "kcal": 18,
+      "grasas": 0.2,
+      "hidratos": 2.5,
+      "proteinas": 1.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "sulfitos": "contiene"
+    }
+  },
+  {
+    "id": "10095",
+    "ean": "8480000100954",
+    "nombre": "Aceitunas rellenas de anchoa Hacendado",
+    "precio": 1.65,
+    "formato": "Lata 3 pack",
+    "nutricion_100g": {
+      "kcal": 150,
+      "grasas": 15.0,
+      "hidratos": 0.5,
+      "proteinas": 1.5
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "pescado": "contiene"
+    }
+  },
+  {
+    "id": "10096",
+    "ean": "8480000100961",
+    "nombre": "Patatas fritas de bolsa clásicas Hacendado",
+    "precio": 1.4,
+    "formato": "Bolsa 300g",
+    "nutricion_100g": {
+      "kcal": 535,
+      "grasas": 33.0,
+      "hidratos": 53.0,
+      "proteinas": 6.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10097",
+    "ean": "8480000100978",
+    "nombre": "Frutos secos mezcla tostada Hacendado",
+    "precio": 1.9,
+    "formato": "Bolsa 200g",
+    "nutricion_100g": {
+      "kcal": 610,
+      "grasas": 54.0,
+      "hidratos": 12.0,
+      "proteinas": 20.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "frutos_secos": "contiene",
+      "cacahuetes": "contiene"
+    }
+  },
+  {
+    "id": "10098",
+    "ean": "8480000100985",
+    "nombre": "Hummus clásico Hacendado",
+    "precio": 1.35,
+    "formato": "Tarro 240g",
+    "nutricion_100g": {
+      "kcal": 245,
+      "grasas": 20.0,
+      "hidratos": 8.5,
+      "proteinas": 6.5
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "sesamo": "contiene"
+    }
+  },
+  {
+    "id": "10099",
+    "ean": "8480000100992",
+    "nombre": "Guacamole fresco Hacendado",
+    "precio": 2.05,
+    "formato": "Tarro 200g",
+    "nutricion_100g": {
+      "kcal": 160,
+      "grasas": 14.5,
+      "hidratos": 3.5,
+      "proteinas": 2.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "gluten": "libre"
+    }
+  },
+  {
+    "id": "10100",
+    "ean": "8480000101005",
+    "nombre": "Pimienta negra molida Hacendado",
+    "precio": 1.25,
+    "formato": "Tarro 50 g",
+    "nutricion_100g": {
+      "kcal": 251,
+      "grasas": 3.3,
+      "hidratos": 38.0,
+      "proteinas": 10.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  },
+  {
+    "id": "10101",
+    "ean": "8480000101012",
+    "nombre": "Perejil picado Hacendado",
+    "precio": 0.95,
+    "formato": "Tarro 25 g",
+    "nutricion_100g": {
+      "kcal": 292,
+      "grasas": 5.5,
+      "hidratos": 50.0,
+      "proteinas": 26.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  },
+  {
+    "id": "10102",
+    "ean": "8480000101029",
+    "nombre": "Hoja de laurel Hacendado",
+    "precio": 0.85,
+    "formato": "Bolsa 20 g",
+    "nutricion_100g": {
+      "kcal": 313,
+      "grasas": 8.4,
+      "hidratos": 75.0,
+      "proteinas": 7.6
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  },
+  {
+    "id": "10103",
+    "ean": "8480000101036",
+    "nombre": "Orégano Hacendado",
+    "precio": 0.9,
+    "formato": "Tarro 25 g",
+    "nutricion_100g": {
+      "kcal": 265,
+      "grasas": 4.3,
+      "hidratos": 69.0,
+      "proteinas": 9.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  },
+  {
+    "id": "10104",
+    "ean": "8480000101043",
+    "nombre": "Azafrán molido Hacendado",
+    "precio": 1.9,
+    "formato": "Caja 4 sobres",
+    "nutricion_100g": {
+      "kcal": 310,
+      "grasas": 5.8,
+      "hidratos": 65.0,
+      "proteinas": 11.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  },
+  {
+    "id": "10105",
+    "ean": "8480000101050",
+    "nombre": "Nuez moscada molida Hacendado",
+    "precio": 1.4,
+    "formato": "Tarro 50 g",
+    "nutricion_100g": {
+      "kcal": 525,
+      "grasas": 36.0,
+      "hidratos": 49.0,
+      "proteinas": 5.8
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  },
+  {
+    "id": "10106",
+    "ean": "8480000101067",
+    "nombre": "Albahaca seca Hacendado",
+    "precio": 1.1,
+    "formato": "Tarro 20 g",
+    "nutricion_100g": {
+      "kcal": 233,
+      "grasas": 4.0,
+      "hidratos": 48.0,
+      "proteinas": 23.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  },
+  {
+    "id": "10107",
+    "ean": "8480000101074",
+    "nombre": "Tomillo Hacendado",
+    "precio": 0.95,
+    "formato": "Tarro 30 g",
+    "nutricion_100g": {
+      "kcal": 276,
+      "grasas": 7.4,
+      "hidratos": 64.0,
+      "proteinas": 9.1
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  },
+  {
+    "id": "10108",
+    "ean": "8480000101081",
+    "nombre": "Romero Hacendado",
+    "precio": 0.95,
+    "formato": "Tarro 35 g",
+    "nutricion_100g": {
+      "kcal": 331,
+      "grasas": 15.0,
+      "hidratos": 64.0,
+      "proteinas": 4.9
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  },
+  {
+    "id": "10109",
+    "ean": "8480000101098",
+    "nombre": "Gambas peladas congeladas Hacendado",
+    "precio": 4.2,
+    "formato": "Bolsa 400 g",
+    "nutricion_100g": {
+      "kcal": 85,
+      "grasas": 1.2,
+      "hidratos": 0.5,
+      "proteinas": 18.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "crustaceos": "contiene"
+    }
+  },
+  {
+    "id": "10110",
+    "ean": "8480000101104",
+    "nombre": "Almejas del Pacífico congeladas Hacendado",
+    "precio": 3.1,
+    "formato": "Bolsa 500 g",
+    "nutricion_100g": {
+      "kcal": 74,
+      "grasas": 1.0,
+      "hidratos": 2.5,
+      "proteinas": 13.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "moluscos": "contiene"
+    }
+  },
+  {
+    "id": "10111",
+    "ean": "8480000101111",
+    "nombre": "Conejo troceado Hacendado",
+    "precio": 7.8,
+    "formato": "Bandeja 1 kg",
+    "nutricion_100g": {
+      "kcal": 136,
+      "grasas": 5.0,
+      "hidratos": 0.0,
+      "proteinas": 21.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  },
+  {
+    "id": "10112",
+    "ean": "8480000101128",
+    "nombre": "Vino blanco para cocinar Hacendado",
+    "precio": 1.65,
+    "formato": "Botella 1 L",
+    "nutricion_100g": {
+      "kcal": 82,
+      "grasas": 0.0,
+      "hidratos": 2.6,
+      "proteinas": 0.1
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "sulfitos": "contiene"
+    }
+  },
+  {
+    "id": "10113",
+    "ean": "8480000101135",
+    "nombre": "Caldo de pescado Hacendado",
+    "precio": 1.6,
+    "formato": "Brik 1 L",
+    "nutricion_100g": {
+      "kcal": 12,
+      "grasas": 0.5,
+      "hidratos": 0.8,
+      "proteinas": 1.2
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "pescado": "contiene"
+    }
+  },
+  {
+    "id": "10114",
+    "ean": "8480000101142",
+    "nombre": "Aguacate fresco Hacendado",
+    "precio": 2.3,
+    "formato": "Malla 500 g",
+    "nutricion_100g": {
+      "kcal": 160,
+      "grasas": 15.0,
+      "hidratos": 9.0,
+      "proteinas": 2.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  },
+  {
+    "id": "10115",
+    "ean": "8480000101159",
+    "nombre": "Queso feta en dados Hacendado",
+    "precio": 2.1,
+    "formato": "Tarrina 150 g",
+    "nutricion_100g": {
+      "kcal": 264,
+      "grasas": 21.0,
+      "hidratos": 4.1,
+      "proteinas": 14.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {
+      "leche": "contiene"
+    }
+  },
+  {
+    "id": "10116",
+    "ean": "8480000101166",
+    "nombre": "Espárragos blancos Hacendado",
+    "precio": 1.95,
+    "formato": "Bote 205 g",
+    "nutricion_100g": {
+      "kcal": 18,
+      "grasas": 0.2,
+      "hidratos": 2.2,
+      "proteinas": 1.5
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  },
+  {
+    "id": "10117",
+    "ean": "8480000101173",
+    "nombre": "Espárragos verdes Hacendado",
+    "precio": 2.4,
+    "formato": "Manojo 250 g",
+    "nutricion_100g": {
+      "kcal": 20,
+      "grasas": 0.2,
+      "hidratos": 2.2,
+      "proteinas": 2.2
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  },
+  {
+    "id": "10118",
+    "ean": "8480000101180",
+    "nombre": "Quinoa blanca Hacendado",
+    "precio": 1.9,
+    "formato": "Paquete 500 g",
+    "nutricion_100g": {
+      "kcal": 368,
+      "grasas": 6.0,
+      "hidratos": 64.0,
+      "proteinas": 14.0
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  },
+  {
+    "id": "10119",
+    "ean": "8480000101197",
+    "nombre": "Alcaparras en vinagre Hacendado",
+    "precio": 1.15,
+    "formato": "Bote 100 g",
+    "nutricion_100g": {
+      "kcal": 23,
+      "grasas": 0.9,
+      "hidratos": 1.7,
+      "proteinas": 2.4
+    },
+    "fuente_nutricion": "OFF ODbL",
+    "alergenos": {}
+  }
 ]

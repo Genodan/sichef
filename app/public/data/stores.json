@@ -62,7 +62,7 @@
         "shelf": "A"
       },
       "55678": {
-        "aisle": 7,
+        "aisle": 2,
         "side": "der",
         "shelf": "A"
       },
@@ -92,7 +92,7 @@
         "shelf": "B"
       },
       "66778": {
-        "aisle": 7,
+        "aisle": 3,
         "side": "der",
         "shelf": "C"
       },
@@ -545,6 +545,106 @@
         "aisle": 8,
         "side": "der",
         "shelf": "D"
+      },
+      "10100": {
+        "aisle": 6,
+        "side": "der",
+        "shelf": "C"
+      },
+      "10101": {
+        "aisle": 6,
+        "side": "der",
+        "shelf": "C"
+      },
+      "10102": {
+        "aisle": 6,
+        "side": "izq",
+        "shelf": "B"
+      },
+      "10103": {
+        "aisle": 6,
+        "side": "izq",
+        "shelf": "D"
+      },
+      "10104": {
+        "aisle": 6,
+        "side": "izq",
+        "shelf": "D"
+      },
+      "10105": {
+        "aisle": 6,
+        "side": "der",
+        "shelf": "A"
+      },
+      "10106": {
+        "aisle": 6,
+        "side": "der",
+        "shelf": "A"
+      },
+      "10107": {
+        "aisle": 6,
+        "side": "der",
+        "shelf": "D"
+      },
+      "10108": {
+        "aisle": 6,
+        "side": "der",
+        "shelf": "D"
+      },
+      "10109": {
+        "aisle": 9,
+        "side": "izq",
+        "shelf": "B"
+      },
+      "10110": {
+        "aisle": 9,
+        "side": "izq",
+        "shelf": "B"
+      },
+      "10111": {
+        "aisle": 3,
+        "side": "izq",
+        "shelf": "C"
+      },
+      "10112": {
+        "aisle": 10,
+        "side": "izq",
+        "shelf": "B"
+      },
+      "10113": {
+        "aisle": 7,
+        "side": "der",
+        "shelf": "D"
+      },
+      "10114": {
+        "aisle": 1,
+        "side": "der",
+        "shelf": "A"
+      },
+      "10115": {
+        "aisle": 4,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "10116": {
+        "aisle": 7,
+        "side": "der",
+        "shelf": "D"
+      },
+      "10117": {
+        "aisle": 1,
+        "side": "der",
+        "shelf": "A"
+      },
+      "10118": {
+        "aisle": 5,
+        "side": "der",
+        "shelf": "B"
+      },
+      "10119": {
+        "aisle": 6,
+        "side": "der",
+        "shelf": "C"
       }
     },
     "stock": {
@@ -647,7 +747,27 @@
       "10096": true,
       "10097": true,
       "10098": true,
-      "10099": true
+      "10099": true,
+      "10100": true,
+      "10101": true,
+      "10102": true,
+      "10103": true,
+      "10104": true,
+      "10105": true,
+      "10106": true,
+      "10107": true,
+      "10108": true,
+      "10109": true,
+      "10110": true,
+      "10111": true,
+      "10112": true,
+      "10113": true,
+      "10114": true,
+      "10115": true,
+      "10116": true,
+      "10117": true,
+      "10118": true,
+      "10119": true
     }
   },
   {
@@ -717,7 +837,7 @@
         "shelf": "A"
       },
       "55678": {
-        "aisle": 7,
+        "aisle": 6,
         "side": "izq",
         "shelf": "D"
       },
@@ -747,7 +867,7 @@
         "shelf": "D"
       },
       "66778": {
-        "aisle": 7,
+        "aisle": 4,
         "side": "der",
         "shelf": "B"
       },
@@ -1200,6 +1320,106 @@
         "aisle": 5,
         "side": "izq",
         "shelf": "B"
+      },
+      "10100": {
+        "aisle": 9,
+        "side": "izq",
+        "shelf": "B"
+      },
+      "10101": {
+        "aisle": 9,
+        "side": "der",
+        "shelf": "B"
+      },
+      "10102": {
+        "aisle": 9,
+        "side": "der",
+        "shelf": "D"
+      },
+      "10103": {
+        "aisle": 9,
+        "side": "der",
+        "shelf": "D"
+      },
+      "10104": {
+        "aisle": 9,
+        "side": "der",
+        "shelf": "C"
+      },
+      "10105": {
+        "aisle": 9,
+        "side": "der",
+        "shelf": "A"
+      },
+      "10106": {
+        "aisle": 9,
+        "side": "der",
+        "shelf": "B"
+      },
+      "10107": {
+        "aisle": 9,
+        "side": "der",
+        "shelf": "A"
+      },
+      "10108": {
+        "aisle": 9,
+        "side": "izq",
+        "shelf": "D"
+      },
+      "10109": {
+        "aisle": 1,
+        "side": "izq",
+        "shelf": "C"
+      },
+      "10110": {
+        "aisle": 1,
+        "side": "der",
+        "shelf": "A"
+      },
+      "10111": {
+        "aisle": 4,
+        "side": "der",
+        "shelf": "A"
+      },
+      "10112": {
+        "aisle": 1,
+        "side": "der",
+        "shelf": "B"
+      },
+      "10113": {
+        "aisle": 7,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "10114": {
+        "aisle": 2,
+        "side": "izq",
+        "shelf": "C"
+      },
+      "10115": {
+        "aisle": 3,
+        "side": "izq",
+        "shelf": "A"
+      },
+      "10116": {
+        "aisle": 7,
+        "side": "der",
+        "shelf": "A"
+      },
+      "10117": {
+        "aisle": 2,
+        "side": "izq",
+        "shelf": "C"
+      },
+      "10118": {
+        "aisle": 8,
+        "side": "der",
+        "shelf": "B"
+      },
+      "10119": {
+        "aisle": 9,
+        "side": "izq",
+        "shelf": "C"
       }
     },
     "stock": {
@@ -1302,7 +1522,27 @@
       "10096": true,
       "10097": true,
       "10098": true,
-      "10099": true
+      "10099": true,
+      "10100": true,
+      "10101": true,
+      "10102": true,
+      "10103": true,
+      "10104": true,
+      "10105": true,
+      "10106": true,
+      "10107": true,
+      "10108": true,
+      "10109": true,
+      "10110": true,
+      "10111": true,
+      "10112": true,
+      "10113": true,
+      "10114": true,
+      "10115": true,
+      "10116": true,
+      "10117": true,
+      "10118": true,
+      "10119": true
     }
   }
 ]
