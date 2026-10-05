@@ -1,7 +1,7 @@
-import { BookHeart, HeartOff, ShoppingBasket } from 'lucide-react'
+import { BookHeart, Check, CircleDot, HeartOff, House, ListChecks, ShoppingBasket } from 'lucide-react'
 import { RecipeRow } from '../components/RecipeRow.tsx'
 import { EmptyState, PrimaryButton, ScreenHeader } from '../components/ui.tsx'
-import { useAppState } from '../lib/appState.ts'
+import { getRecipeIngredientCounts, useAppState } from '../lib/appState.ts'
 import type { RecipeInfo } from '../lib/compute.ts'
 import { useCatalog } from '../lib/data.ts'
 import { plural } from '../lib/format.ts'
@@ -36,26 +36,52 @@ export function Cookbook() {
           <ul className="flex flex-col gap-2.5">
             {liked.map((i) => {
               const id = i.recipe.id
-              const inBasket = state.basket.recipeIds.includes(id)
+              const totalIngredients = i.recipe.ingredients.filter((ing) => !ing.optional).length
+              const counts = getRecipeIngredientCounts(state.pantry, id, totalIngredients)
               return (
                 <RecipeRow
                   key={id}
                   info={i}
                   visibility={visibility.get(id)}
                   onOpen={() => ui.openRecipe(id)}
+                  ingredientSummary={
+                    <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-extrabold">
+                      {counts.basket > 0 && (
+                        <span className="inline-flex items-center gap-1 rounded-full bg-cream px-2 py-0.5 text-accent-dark">
+                          <ShoppingBasket className="size-3 shrink-0" aria-hidden />
+                          {counts.basket} en cesta
+                        </span>
+                      )}
+                      {counts.home > 0 && (
+                        <span className="inline-flex items-center gap-1 rounded-full bg-brand-soft px-2 py-0.5 text-brand-dark">
+                          <House className="size-3 shrink-0" aria-hidden />
+                          {counts.home} en casa
+                        </span>
+                      )}
+                      {counts.none > 0 && (
+                        <span className="inline-flex items-center gap-1 rounded-full bg-panel px-2 py-0.5 text-muted">
+                          <CircleDot className="size-3 shrink-0" aria-hidden />
+                          {counts.none} {plural(counts.none, 'pendiente', 'pendientes')}
+                        </span>
+                      )}
+                      {counts.none === 0 && counts.basket === 0 && counts.home > 0 && (
+                        <span className="inline-flex items-center gap-1 rounded-full bg-brand-soft px-2 py-0.5 text-brand-dark">
+                          <Check className="size-3 shrink-0" aria-hidden />
+                          Todo en casa
+                        </span>
+                      )}
+                    </div>
+                  }
                   actions={
                     <>
                       <button
                         type="button"
-                        aria-pressed={inBasket}
-                        aria-label={inBasket ? `Quitar ${i.recipe.name} de la cesta` : `Añadir ${i.recipe.name} a la cesta`}
-                        onClick={() => {
-                          dispatch({ type: inBasket ? 'removeFromBasket' : 'addToBasket', id })
-                          ui.notify(inBasket ? 'Quitada de la cesta' : `«${i.recipe.name}» está en tu cesta`)
-                        }}
-                        className={`grid size-10 place-items-center rounded-full ${inBasket ? 'bg-accent text-white' : 'bg-cream text-accent-dark'}`}
+                        aria-label={`Ver ingredientes de ${i.recipe.name}`}
+                        onClick={() => ui.openRecipe(id)}
+                        className="flex items-center gap-1.5 rounded-2xl bg-cream px-2.5 py-2 text-xs font-black text-accent-dark hover:bg-accent hover:text-white transition-colors"
                       >
-                        <ShoppingBasket className="size-5" strokeWidth={2.5} aria-hidden />
+                        <ListChecks className="size-4 shrink-0" strokeWidth={2.5} aria-hidden />
+                        <span>Ingredientes</span>
                       </button>
                       <button
                         type="button"
@@ -66,13 +92,12 @@ export function Cookbook() {
                             label: 'Deshacer',
                             run: () => {
                               dispatch({ type: 'like', id })
-                              if (!inBasket) dispatch({ type: 'removeFromBasket', id })
                             },
                           })
                         }}
-                        className="grid size-10 place-items-center rounded-full bg-panel text-muted"
+                        className="grid size-8 place-items-center self-end rounded-full bg-panel text-muted hover:text-pass transition-colors"
                       >
-                        <HeartOff className="size-5" aria-hidden />
+                        <HeartOff className="size-4" aria-hidden />
                       </button>
                     </>
                   }

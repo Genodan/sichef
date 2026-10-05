@@ -1,9 +1,9 @@
 import { Check, Info, MapPin, PackageX, RotateCcw, ShoppingBasket, Store as StoreIcon, X } from 'lucide-react'
-import { useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import type { Recipe, Store } from '../types.ts'
 import { SafeImage } from '../components/SafeImage.tsx'
 import { EmptyState, PrimaryButton, ScreenHeader } from '../components/ui.tsx'
-import { useAppState } from '../lib/appState.ts'
+import { getIngredientStatus, useAppState } from '../lib/appState.ts'
 import { buildShoppingList, type ShoppingItem } from '../lib/compute.ts'
 import { useCatalog } from '../lib/data.ts'
 import { formatDate, formatEuro, NA, plural } from '../lib/format.ts'
@@ -115,7 +115,16 @@ export function Basket() {
     () => state.basket.recipeIds.map((id) => catalog.info.get(id)?.recipe).filter((r): r is Recipe => r !== undefined),
     [state.basket.recipeIds, catalog],
   )
-  const list = useMemo(() => buildShoppingList(recipes, catalog.productsById, store), [recipes, catalog, store])
+  const isIngredientInBasket = useCallback(
+    (recipeId: string, ingredientIndex: number) =>
+      getIngredientStatus(state.pantry, recipeId, ingredientIndex) === 'basket',
+    [state.pantry],
+  )
+
+  const list = useMemo(
+    () => buildShoppingList(recipes, catalog.productsById, store, isIngredientInBasket),
+    [recipes, catalog, store, isIngredientInBasket],
+  )
   const checked = useMemo(() => new Set(state.basket.checked), [state.basket.checked])
   const doneCount = list.items.filter((i) => checked.has(i.product.id)).length
   const doneAisles = useMemo(
@@ -167,10 +176,15 @@ export function Basket() {
 
         {recipes.length === 0 ? (
           <EmptyState icon={<ShoppingBasket className="size-9" />} title="Tu cesta está vacía">
-            <p>Di «¡Sí!» a una receta y sus productos de Mercadona aparecerán aquí, ordenados por pasillo.</p>
-            <PrimaryButton variant="brand" className="mt-4" onClick={() => ui.goTo('descubre')}>
-              Descubrir recetas
-            </PrimaryButton>
+            <p>Entra en tus recetas del Recetario y añade a la cesta los ingredientes que necesites comprar.</p>
+            <div className="mt-4 flex flex-col items-center gap-2">
+              <PrimaryButton variant="brand" onClick={() => ui.goTo('recetario')}>
+                Ir a mi Recetario
+              </PrimaryButton>
+              <PrimaryButton variant="ghost" onClick={() => ui.goTo('descubre')}>
+                Descubrir recetas
+              </PrimaryButton>
+            </div>
           </EmptyState>
         ) : (
           <>

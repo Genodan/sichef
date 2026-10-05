@@ -592,13 +592,16 @@ export function buildShoppingList(
   recipes: readonly Recipe[],
   products: ProductIndex,
   store: Store | null,
+  isIngredientInBasket?: (recipeId: string, ingredientIndex: number) => boolean,
 ): ShoppingList {
   const byProduct = new Map<string, { product: Product; qty: number; ok: boolean; uses: ShoppingItem['uses'] }>()
   const missing: ShoppingList['missing'] = []
 
   for (const recipe of recipes) {
-    for (const ing of recipe.ingredients) {
+    for (let i = 0; i < recipe.ingredients.length; i++) {
+      const ing = recipe.ingredients[i]
       if (ing.optional) continue
+      if (isIngredientInBasket && !isIngredientInBasket(recipe.id, i)) continue
       const product = ing.product_id ? products.get(ing.product_id) : undefined
       if (!product) {
         missing.push({ recipeId: recipe.id, recipeName: recipe.name, ingredient: ing.name, label: ing.label })
