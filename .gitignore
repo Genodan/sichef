@@ -1,0 +1,21 @@
+# Dependencias y builds
+node_modules/
+dist/
+.vite/
+
+# Secretos: NUNCA al repo
+.env
+.env.*
+!.env.example
+
+# Datos brutos descargados (pesados); lo que usa la app va en app/public/data/
+data/raw/
+
+# Sistema / editores
+.DS_Store
+*.log
+.vscode/*
+!.vscode/extensions.json
+.idea/
+__pycache__/
+.venv/
