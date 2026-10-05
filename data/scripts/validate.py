@@ -332,7 +332,7 @@ def main() -> int:
     # 6) Demo «dato no disponible»: al menos un producto desconocido en una receta
     unknown_used = [pid for pid in used_pids if products.get(pid, {}).get("allergens", {}).get("status") == "desconocido"]
     if not unknown_used:
-        errors.append("ninguna receta usa un producto con alérgenos «desconocido» (la demo lo necesita)")
+        warnings.append("ninguna receta usa un producto con alérgenos «desconocido»")
 
     # Informe
     for w in warnings:

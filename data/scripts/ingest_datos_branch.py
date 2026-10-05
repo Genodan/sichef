@@ -1,19 +1,15 @@
 #!/usr/bin/env python3
-"""Ingesta e normalizzazione dei dati creati dal gruppo Dati (branch Datos).
+"""Ingesta y normalización de los datos creados por el grupo Datos.
 
-Legge:
-  data/products.json
-  data/recipes.json
+Lee EXCLUSIVAMENTE:
+  data/products.json (10 productos de los compañeros)
+  data/recipes.json  (2 recetas de los compañeros)
 
-Normalizza i campi secondo il contratto app/src/types.ts e li unisce
-al catalogo in app/public/data/:
-  - allergens.json
-  - products.json
-  - recipes.json
-  - stores.json
-
-Uso:
-  python3 data/scripts/ingest_datos_branch.py
+Genera en app/public/data/ SOLO esas recetas y productos normalizados:
+  - app/public/data/products.json (10 productos)
+  - app/public/data/recipes.json  (2 recetas)
+  - app/public/data/stores.json   (ubicación y stock de los 10 productos)
+  - app/public/data/allergens.json (14 alérgenos UE)
 """
 
 from __future__ import annotations
@@ -30,7 +26,6 @@ DATA_DIR = ROOT / "data"
 PUBLIC_DATA = ROOT / "app" / "public" / "data"
 TODAY = dt.date.today().isoformat()
 
-# Mappatura delle categorie per pasillo nei negozi
 CATEGORY_TO_AISLE_RUZAFA = {
     "Fruta y verdura": 1,
     "Verdura": 1,
@@ -39,7 +34,6 @@ CATEGORY_TO_AISLE_RUZAFA = {
     "Carnicería": 2,
     "Pescado fresco": 3,
     "Pescados y mariscos": 3,
-    "Marisco": 3,
     "Charcutería y embutidos": 4,
     "Huevos y lácteos": 5,
     "Aceite, vinagre y sal": 6,
@@ -57,7 +51,6 @@ CATEGORY_TO_AISLE_BENIMACLET = {
     "Carnicería": 4,
     "Pescado fresco": 6,
     "Pescados y mariscos": 6,
-    "Marisco": 6,
     "Charcutería y embutidos": 5,
     "Huevos y lácteos": 3,
     "Conservas, caldos y cremas": 7,
@@ -67,7 +60,6 @@ CATEGORY_TO_AISLE_BENIMACLET = {
     "Congelados": 10,
 }
 
-# Passi culinari reali per le ricette del gruppo Dati
 RECIPE_STEPS = {
     "receta-garbanzos": [
         "Descongelar las espinacas en el microondas o cocerlas brevemente y escurrirlas bien.",
@@ -198,7 +190,6 @@ def normalize_product(p: Dict[str, Any]) -> Dict[str, Any]:
     precio = float(p.get("precio") or p.get("unit_price") or 0.0)
     formato_info = parse_formato(str(p.get("formato", "1 kg")), precio)
 
-    # Alérgenos
     raw_al = p.get("alergenos") or {}
     contains = []
     traces = []
@@ -215,7 +206,6 @@ def normalize_product(p: Dict[str, Any]) -> Dict[str, Any]:
     if category in ("Verdura", "Fruta"):
         status = "producto_fresco"
 
-    # Nutrición
     raw_nut = p.get("nutricion_100g") or {}
     nut: Optional[Dict[str, Optional[float]]] = {
         "kcal": raw_nut.get("kcal"),
@@ -226,7 +216,6 @@ def normalize_product(p: Dict[str, Any]) -> Dict[str, Any]:
         "protein": raw_nut.get("proteinas", raw_nut.get("protein")),
         "salt": raw_nut.get("sal", raw_nut.get("salt")),
     }
-    # Completar nulls no especificados para coherencia
     for k in ("saturated_fat", "sugars", "salt"):
         if nut[k] is None:
             nut[k] = 0.0 if status == "producto_fresco" else 0.1
@@ -322,92 +311,63 @@ def normalize_recipe(r: Dict[str, Any], products_by_id: Dict[str, Dict[str, Any]
 
 
 def main():
-    print("[SíChef] Ingesting and normalizing Datos branch data...")
+    print("[SíChef] Generando catalogo con SOLO los datos de branch Datos...")
 
-    # Carica file sorgente da data/
     with open(DATA_DIR / "products.json", encoding="utf-8") as f:
         raw_products = json.load(f)
     with open(DATA_DIR / "recipes.json", encoding="utf-8") as f:
         raw_recipes = json.load(f)
 
-    # Carica catalogo esistente da app/public/data/ se presente
-    pub_products_file = PUBLIC_DATA / "products.json"
-    pub_recipes_file = PUBLIC_DATA / "recipes.json"
+    # Normalizar EXCLUSIVAMENTE los 10 productos de los compañeros
+    products = [normalize_product(p) for p in raw_products]
+    products_by_id = {p["id"]: p for p in products}
+
+    # Normalizar EXCLUSIVAMENTE las 2 recetas de los compañeros
+    recipes = [normalize_recipe(r, products_by_id) for r in raw_recipes]
+
+    # Cargar tiendas base para mantener los nombres y pasillos
     pub_stores_file = PUBLIC_DATA / "stores.json"
+    with open(pub_stores_file, encoding="utf-8") as f:
+        stores = json.load(f)
 
-    existing_products: List[Dict[str, Any]] = []
-    if pub_products_file.exists():
-        with open(pub_products_file, encoding="utf-8") as f:
-            existing_products = json.load(f)
-
-    existing_recipes: List[Dict[str, Any]] = []
-    if pub_recipes_file.exists():
-        with open(pub_recipes_file, encoding="utf-8") as f:
-            existing_recipes = json.load(f)
-
-    existing_stores: List[Dict[str, Any]] = []
-    if pub_stores_file.exists():
-        with open(pub_stores_file, encoding="utf-8") as f:
-            existing_stores = json.load(f)
-
-    # Normalizza nuovi prodotti
-    normalized_new_products = [normalize_product(p) for p in raw_products]
-    all_products_by_id = {p["id"]: p for p in existing_products}
-    for p in normalized_new_products:
-        all_products_by_id[p["id"]] = p
-
-    merged_products = list(all_products_by_id.values())
-
-    # Normalizza nuove ricette
-    normalized_new_recipes = [normalize_recipe(r, all_products_by_id) for r in raw_recipes]
-    all_recipes_by_id = {r["id"]: r for r in existing_recipes}
-    for r in normalized_new_recipes:
-        all_recipes_by_id[r["id"]] = r
-
-    merged_recipes = list(all_recipes_by_id.values())
-
-    # Aggiorna negozi con corsie e stock per tutti i prodotti
-    for store in existing_stores:
+    # Actualizar ubicaciones y stock SOLO para estos 10 productos
+    for store in stores:
         is_ruzafa = "ruzafa" in store["id"]
-        locations = store.setdefault("locations", {})
-        stock = store.setdefault("stock", {})
+        locations = {}
+        stock = {}
 
-        for p in merged_products:
+        for p in products:
             pid = p["id"]
-            if pid not in locations:
-                cat = p.get("category", "")
-                if is_ruzafa:
-                    aisle = CATEGORY_TO_AISLE_RUZAFA.get(cat, 7)
-                else:
-                    aisle = CATEGORY_TO_AISLE_BENIMACLET.get(cat, 8)
+            cat = p.get("category", "")
+            aisle = CATEGORY_TO_AISLE_RUZAFA.get(cat, 7) if is_ruzafa else CATEGORY_TO_AISLE_BENIMACLET.get(cat, 8)
+            h = int(hashlib.md5(f"{store['id']}:{pid}".encode()).hexdigest(), 16)
+            side = "izq" if (h % 2 == 0) else "der"
+            shelf = ["A", "B", "C", "D"][(h // 2) % 4]
+            locations[pid] = {"aisle": aisle, "side": side, "shelf": shelf}
+            # Simular que el atún en Benimaclet no tiene stock para la demo
+            stock[pid] = not (store["id"] == "vlc-benimaclet" and pid == "55678")
 
-                h = int(hashlib.md5(f"{store['id']}:{pid}".encode()).hexdigest(), 16)
-                side = "izq" if (h % 2 == 0) else "der"
-                shelf = ["A", "B", "C", "D"][(h // 2) % 4]
-                locations[pid] = {"aisle": aisle, "side": side, "shelf": shelf}
+        store["locations"] = locations
+        store["stock"] = stock
 
-            if pid not in stock:
-                # Simula stock: tutto disponibile tranne qualche eccezione
-                stock[pid] = True
-
-    # Salva in app/public/data/
-    PUBLIC_DATA.mkdir(parents=True, exist_ok=True)
-    with open(pub_products_file, "w", encoding="utf-8") as f:
-        json.dump(merged_products, f, indent=2, ensure_ascii=False)
+    # Guardar en app/public/data/ SOLO estos datos
+    with open(PUBLIC_DATA / "products.json", "w", encoding="utf-8") as f:
+        json.dump(products, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
-    with open(pub_recipes_file, "w", encoding="utf-8") as f:
-        json.dump(merged_recipes, f, indent=2, ensure_ascii=False)
+    with open(PUBLIC_DATA / "recipes.json", "w", encoding="utf-8") as f:
+        json.dump(recipes, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
     with open(pub_stores_file, "w", encoding="utf-8") as f:
-        json.dump(existing_stores, f, indent=2, ensure_ascii=False)
+        json.dump(stores, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
-    print("✓ Ingestion completata con successo:")
-    print(f"  · Prodotti totali: {len(merged_products)} (di cui {len(normalized_new_products)} da Datos)")
-    print(f"  · Ricette totali: {len(merged_recipes)} (di cui {len(normalized_new_recipes)} da Datos)")
-    print(f"  · Negozi aggiornati: {len(existing_stores)}")
+    print(f"✓ Completado. El catálogo contiene AHORA:")
+    print(f"  · {len(products)} productos (exactamente los de data/products.json)")
+    print(f"  · {len(recipes)} recetas (exactamente las de data/recipes.json)")
+    for r in recipes:
+        print(f"    - {r['name']} ({r['id']})")
 
 
 if __name__ == "__main__":
