@@ -1,0 +1,30 @@
+[
+  {
+    "id": "receta-garbanzos",
+    "nombre": "Garbanzos con espinacas",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Garbanzos_con_espinacas.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "45120", "cantidad": "400g" },
+      { "producto_id": "77890", "cantidad": "200g" },
+      { "producto_id": "11234", "cantidad": "20ml" },
+      { "producto_id": "33445", "cantidad": "10g" }
+    ],
+    "alergenos_derivados": { "gluten": "libre" },
+    "nutricion_calculada": { "kcal": 450, "precio_total": 2.45 }
+  },
+  {
+    "id": "receta-pollo",
+    "nombre": "Arroz con pollo y caldo",
+    "foto_real_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Arroz_con_pollo.jpg",
+    "fuente": "info.mercadona.es",
+    "ingredientes": [
+      { "producto_id": "32145", "cantidad": "200g" },
+      { "producto_id": "22334", "cantidad": "250g" },
+      { "producto_id": "66778", "cantidad": "500ml" },
+      { "producto_id": "99002", "cantidad": "100g" }
+    ],
+    "alergenos_derivados": { "gluten": "libre" },
+    "nutricion_calculada": { "kcal": 820, "precio_total": 3.45 }
+  }
+]
